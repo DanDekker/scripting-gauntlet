@@ -1,0 +1,11 @@
+id = "052-resource-usage"
+family = "system-recon"
+title = "Answer \"is the data volume full?\" from captured df and load files"
+difficulty = 2
+timebox = 180
+teaches = [
+  "mount points are a longest-prefix match, not a startswith",
+  "strip the percent sign before you do arithmetic on Use%",
+  "the mount point can contain spaces, so it is fields 6..NF",
+  "normalise load by CPU count before you call a box loaded",
+]
