@@ -63,3 +63,8 @@ Calibration reports with source hashes and negative-control results:
   [encoding scrub](evidence/183-ruby-encoding-scrub.json)
 - Deeper, PowerShell: [JSON depth](evidence/184-ps1-json-depth.json) and
   [datetime parsing](evidence/185-ps1-datetime.json)
+- Advanced scripting: [Bash nameref dispatch](evidence/186-bash-nameref-dispatch.json),
+  [Lua binary pack](evidence/187-lua-binary-pack.json),
+  [Perl context dispatch](evidence/188-perl-context-dispatch.json),
+  [Ruby lazy pipeline](evidence/189-ruby-lazy-pipeline.json), and
+  [PowerShell exitcode trap](evidence/190-ps1-exitcode-trap.json)
