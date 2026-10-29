@@ -1,0 +1,11 @@
+id = "072-cron-expand"
+family = "system-recon"
+title = "Expand five crontab fields into the values they really mean"
+difficulty = 3
+timebox = 240
+teaches = [
+  "expand */15, 9-17 and 5-25/10 into concrete values",
+  "map MON-FRI and JAN,JUL through one name table",
+  "fold Sunday 7 back to 0",
+  "reject an out-of-range step instead of silently wrapping",
+]
