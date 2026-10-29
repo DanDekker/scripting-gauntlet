@@ -1,0 +1,11 @@
+id = "025-groupby-aggregate"
+family = "data-wrangling"
+title = "Roll sales up by region and month"
+difficulty = 2
+timebox = 180
+teaches = [
+  "one pass, one key per group",
+  "a composite key is two fields joined by a separator",
+  "count, sum and average from the same accumulator",
+  "skip rows you cannot aggregate, and say how many",
+]
