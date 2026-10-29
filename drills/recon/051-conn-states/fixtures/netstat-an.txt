@@ -1,0 +1,27 @@
+Active Internet connections (including servers)
+Proto Recv-Q Send-Q  Local Address          Foreign Address        (state)
+tcp46      0      0  *.22                   *.*                    LISTEN
+tcp4       0      0  *.631                  *.*                    LISTEN
+tcp6       0      0  *.631                  *.*                    LISTEN
+tcp4       0      0  *.8080                 *.*                    LISTEN
+tcp4       0      0  127.0.0.1.8080         *.*                    LISTEN
+tcp4       0      0  *.9000                 *.*                    LISTEN
+tcp4       0      0  *.9090                 *.*                    LISTEN
+tcp4       0      0  192.168.1.50.9090      *.*                    LISTEN
+tcp4       0      0  127.0.0.1.5432         *.*                    LISTEN
+tcp6       0      0  ::1.5432               *.*                    LISTEN
+tcp4       0      0  10.0.4.19.51234        93.184.216.34.443      ESTABLISHED
+tcp4       0      0  10.0.4.19.51235        93.184.216.34.443      ESTABLISHED
+tcp4       0      0  10.0.4.19.51236        93.184.216.34.443      ESTABLISHED
+tcp4       0      0  10.0.4.19.51237        93.184.216.34.443      ESTABLISHED
+tcp4       0      0  10.0.4.19.51238        140.82.114.4.22        ESTABLISHED
+tcp4       0      0  10.0.4.19.51239        140.82.114.4.22        ESTABLISHED
+tcp4       0      0  10.0.4.19.51240        140.82.114.4.22        ESTABLISHED
+tcp4       0      0  10.0.4.19.51241        1.1.1.1.443            TIME_WAIT
+tcp4       0      0  10.0.4.19.51242        8.8.8.8.53             CLOSE_WAIT
+tcp4       0      0  10.0.4.19.51243        140.82.114.4.22        FIN_WAIT_2
+tcp6       0      0  ::1.58900              ::1.5432               ESTABLISHED
+tcp4       0      0  127.0.0.1.8080         127.0.0.1.51244        ESTABLISHED
+tcp4       0      0  10.0.4.19.51245        93.184.216.34.443      TIME_WAIT
+udp4       0      0  *.5353                 *.*
+udp6       0      0  *.5353                 *.*

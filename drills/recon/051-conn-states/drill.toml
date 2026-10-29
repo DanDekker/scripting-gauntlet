@@ -1,0 +1,11 @@
+id = "051-conn-states"
+family = "network-recon"
+title = "Count socket states and rank peers from a netstat capture"
+difficulty = 2
+timebox = 180
+teaches = [
+  "one capture, two questions: state histogram and peer ranking",
+  "LISTEN has no peer, so it must not pollute the remote ranking",
+  "strip the port at the last dot to group by peer address",
+  "count desc with a byte-order tie-break gives a stable ranking",
+]
