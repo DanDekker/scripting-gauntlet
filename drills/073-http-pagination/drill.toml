@@ -1,0 +1,12 @@
+id = "073-http-pagination"
+family = "api-probing"
+title = "Follow a cursor to the end of a paginated collection"
+difficulty = 3
+timebox = 240
+teaches = [
+  "loop on the response's next cursor until it is null",
+  "deduplicate across page boundaries, first row wins",
+  "treat a 400 and a transport error differently from an empty page",
+  "cap the loop so a broken server fails loudly",
+]
+mock_server = "mock/server.py"
