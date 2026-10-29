@@ -1,0 +1,11 @@
+id = "007-quoted-fields"
+family = "data-wrangling"
+title = "Parse CSV where the commas and newlines are inside the quotes"
+difficulty = 3
+timebox = 300
+teaches = [
+  "why splitting on a comma is not parsing",
+  "escaped quotes are two quotes",
+  "a quoted field can contain a newline, so records span lines",
+  "re-emit valid CSV instead of leaking internal markers",
+]
