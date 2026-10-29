@@ -1,0 +1,11 @@
+id = "024-dedupe-exact"
+family = "data-wrangling"
+title = "Collapse exact duplicate rows, keep first occurrence"
+difficulty = 2
+timebox = 180
+teaches = [
+  "normalize before you compare",
+  "a hash key over the whole row is the dedupe",
+  "first occurrence order is a contract, not an accident",
+  "count the rows you dropped",
+]
