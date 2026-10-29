@@ -1,0 +1,11 @@
+id = "188-perl-context-dispatch"
+family = "data-wrangling"
+title = "Dispatch results based on caller context with wantarray"
+difficulty = 4
+timebox = 300
+teaches = [
+  "wantarray returns 1 in list context, defined-and-false in scalar context, undef in void context",
+  "my ($first) = sub() evaluates the right side in LIST context, not scalar context",
+  "my $count = sub() evaluates in SCALAR context",
+  "context-sensitive subroutines return lists in list context and summaries/counts in scalar context",
+]

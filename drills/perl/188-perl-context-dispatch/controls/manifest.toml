@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/perl-context-dispatch"
+fixture_origin = "Synthetic score records authored for this drill"
+
+[[negative]]
+path = "controls/wrong-scalar-parentheses.pl"
+defect = "Assumes parenthesized single variable ($x) is scalar context, returning count 3 instead of first element 1"
+expect = "3/result"

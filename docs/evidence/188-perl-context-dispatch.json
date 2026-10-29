@@ -1,0 +1,48 @@
+{
+  "calibrated_at": "2026-10-29T23:26:23.757554+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "188-perl-context-dispatch",
+  "fixture_origin": "Synthetic score records authored for this drill",
+  "lineage": "scripting-gauntlet/perl-context-dispatch",
+  "results": [
+    {
+      "elapsed_ms": 8,
+      "language": "pl",
+      "passed": true,
+      "path": "solutions/solve.pl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 28,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Assumes parenthesized single variable ($x) is scalar context, returning count 3 instead of first element 1",
+      "elapsed_ms": 12,
+      "expected_diagnostic": "3/result",
+      "language": "pl",
+      "passed": true,
+      "path": "controls/wrong-scalar-parentheses.pl",
+      "problems": [
+        "dispatches.csv row 3 [3/result]: expected '1', got '3'"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "c184c0d3a4b7384eb1bd4363f3c13b4f363ad5ec1214b7570bf76fc0f54b2929",
+    "controls/manifest.toml": "01ee0eb3e2874fe351e67b5ee94259b99c2811ea88a3ca6b5851782185ac689c",
+    "controls/wrong-scalar-parentheses.pl": "d167c3466d036c04ac1e4c11c56e6325268f10cb35fb045bbc3bf14d5cf5ab4e",
+    "drill.toml": "2be3b5a81c4f96cf633130cd25da9fed6da268cc3cec543bab179660267e71bf",
+    "fixtures/records.txt": "69b1df40ab32a383d6372d617f4ec70f561ac4b891de235e74bcfb63f5804fc6",
+    "solutions/solve.pl": "cef0592ea7937fa2d78e7d5bac1039ce3089b055e32e26827242220201ac05f1",
+    "solutions/solve.py": "0c09e76490727131eb6741d7b3721de819d2a08e28007737cb5c483eb7c0d4b4",
+    "verify.py": "172785adb66ca7060b9e8fa2dded30b42f7c2659aeae2434857e5c2517eb02af"
+  },
+  "stage": "reference-calibrated"
+}

@@ -1,0 +1,6 @@
+# id score label
+1 85 alpha
+2 40 beta
+3 95 gamma
+4 60 delta
+5 90 epsilon
