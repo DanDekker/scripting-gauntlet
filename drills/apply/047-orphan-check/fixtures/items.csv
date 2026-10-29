@@ -1,0 +1,5 @@
+item_id,order_id,sku,qty
+9001,5001,SKU-A,2
+9002,5001,SKU-B,1
+9003,5004,SKU-A,3
+9004,5099,SKU-C,1

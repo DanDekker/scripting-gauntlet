@@ -1,0 +1,11 @@
+id = "047-orphan-check"
+family = "data-wrangling"
+title = "Find referential-integrity orphans across three files"
+difficulty = 3
+timebox = 240
+teaches = [
+  "load the parent before you check the child",
+  "each reference is checked against its own parent file only",
+  "keep the child row number so the bad row can be found again",
+  "a sentinel key like 0 is a documented exception, not an orphan",
+]
