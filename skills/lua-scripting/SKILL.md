@@ -311,6 +311,22 @@ for k in pairs(leaf) do end             -- "name" only
 
 Drill: `179-lua-metatable-layers`.
 
+## Binary formats: pack and unpack
+
+```lua
+local packed = string.pack(">I2 I4 s2 I1", 0xCAFE, 1001, "payload", 42)
+local ok, magic, id, payload, cksum, next_pos = pcall(string.unpack, ">I2 I4 s2 I1", packed, 1)
+```
+
+`string.pack` formats binary buffers and `string.unpack` decodes them.
+Format specifier `>` enforces big-endian order (`<` for little-endian). `>I2` is a 16-bit uint,
+`>I4` is a 32-bit uint, and `s2` is a 2-byte length-prefixed string.
+Crucially, `string.unpack` returns decoded values **followed by the next byte offset** as its
+final return value. If the buffer is truncated, `string.unpack` raises "data string too short"
+instead of returning nil; always wrap stream-reading unpacks in `pcall`.
+
+Drill: `187-lua-binary-pack`.
+
 ## The four moves
 
 **1. Extract.** One pattern per shape, tried in order.

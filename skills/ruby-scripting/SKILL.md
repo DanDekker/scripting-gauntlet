@@ -210,6 +210,24 @@ input with `File.binread` and label it yourself.
 
 Drill: `183-ruby-encoding-scrub`.
 
+## Lazy enumeration: Enumerable#lazy
+
+```ruby
+File.open("huge.log").each_line.lazy
+  .map(&:strip)
+  .select { |l| l.include?("ERROR") }
+  .take(5)
+  .force
+```
+
+Chaining `.map`, `.select`, and `.reject` on standard arrays allocates a brand new Array at
+every intermediate step. On large or unbounded streams, eager evaluation exhausts memory or hangs.
+Calling `.lazy` returns an `Enumerator::Lazy`, deferring all processing until terminal methods
+like `.take(n).force` or `.to_a` demand elements. It short-circuits upstream consumption as
+soon as the demanded count is reached.
+
+Drill: `189-ruby-lazy-pipeline`.
+
 ## The four moves
 
 **1. Split.** `line.split(",", -1)` keeps trailing empty fields; a bare `split(",")`

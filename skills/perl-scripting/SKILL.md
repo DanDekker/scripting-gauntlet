@@ -253,6 +253,30 @@ rewrites in place.
 
 Drill: `181-perl-substr-index`.
 
+## Caller context: wantarray
+
+```perl
+sub query_items {
+    my ($threshold, @items) = @_;
+    my @passed = grep { $_ >= $threshold } @items;
+    return unless defined wantarray;     # void context: do nothing
+    return wantarray ? @passed : scalar @passed;
+}
+
+my $count  = query_items(10, @data);     # scalar context: returns count
+my @all    = query_items(10, @data);     # list context: returns array
+my ($head) = query_items(10, @data);     # LIST context! parens force list context
+```
+
+Perl functions can inspect caller context via `wantarray`:
+- `1` (true) in **list context** (`my @arr = f()`, `my ($x) = f()`, `for (f())`)
+- `0` (defined but false) in **scalar context** (`my $n = f()`, `if (f())`)
+- `undef` in **void context** (`f();`)
+Trap: `my ($first) = f()` is list context despite the single variable on the left; the
+parentheses enforce list context.
+
+Drill: `188-perl-context-dispatch`.
+
 ## The four moves
 
 **1. Split.** Choose the limit and the separator deliberately: `split /:/, $line, -1`.

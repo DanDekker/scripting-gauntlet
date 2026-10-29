@@ -169,6 +169,25 @@ shifts by the local offset. Epoch `0` is a real answer and is falsy.
 
 Drill: `185-ps1-datetime`.
 
+## Native binary exit codes and try/catch
+
+```powershell
+$ErrorActionPreference = 'Stop'
+# Invoking a native binary that exits 42:
+$null = my-tool --flag 2>&1
+if ($LASTEXITCODE -ne 0) {
+    throw "my-tool failed with exit code $LASTEXITCODE"
+}
+```
+
+`$ErrorActionPreference = 'Stop'` applies to PowerShell cmdlets and terminating script errors.
+It does **not** catch non-zero exit codes from native command-line executables (e.g. `git`,
+`curl`, `python`, `bash`).
+Wrapping a native call in `try { ... } catch { ... }` will silently succeed even when the binary
+exits with an error. Always check `$LASTEXITCODE` immediately after native process execution.
+
+Drill: `190-ps1-exitcode-trap`.
+
 ## The four moves
 
 **1. Parse.** `Import-Csv` / `ConvertFrom-Json` / `-split` (a regex). Decide case
