@@ -23,9 +23,18 @@ class Handler(BaseHTTPRequestHandler):
 ready = Path(sys.argv[1])
 stop = Path(sys.argv[2])
 heartbeat = Path(sys.argv[3])
+
+
+def beat(value: int) -> None:
+    """Publish the heartbeat atomically; a reader must never see a truncated file."""
+    temporary = heartbeat.with_suffix(".tmp")
+    temporary.write_text(f"{value}\n", encoding="utf-8")
+    temporary.replace(heartbeat)
+
+
 server = HTTPServer(("127.0.0.1", 0), Handler)
 server.timeout = 0.025
-heartbeat.write_text("0\n")
+beat(0)
 temporary = ready.with_suffix(".tmp")
 temporary.write_text(json.dumps({"pid": os.getpid(), "port": server.server_port}) + "\n")
 temporary.replace(ready)
@@ -34,6 +43,6 @@ count = 0
 deadline = time.monotonic() + 12
 while not stop.exists() and time.monotonic() < deadline:
     count += 1
-    heartbeat.write_text(str(count) + "\n")
+    beat(count)
     server.handle_request()
 server.server_close()
