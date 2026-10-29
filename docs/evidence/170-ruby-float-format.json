@@ -1,0 +1,48 @@
+{
+  "calibrated_at": "2026-10-29T22:44:47.428067+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "170-ruby-float-format",
+  "fixture_origin": "Synthetic numeric tokens with an exponent and a half-cent rounding case authored for this drill",
+  "lineage": "scripting-gauntlet/ruby-float-format",
+  "results": [
+    {
+      "elapsed_ms": 46,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 154,
+      "language": "rb",
+      "passed": true,
+      "path": "solutions/solve.rb",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Formats the double directly, so format(%.2f, 1.005) gives 1.00 instead of the rounded 1.01",
+      "elapsed_ms": 118,
+      "expected_diagnostic": "1.005/formatted",
+      "language": "rb",
+      "passed": true,
+      "path": "controls/wrong-format-only.rb",
+      "problems": [
+        "formatted.csv row 5 [1.005/formatted]: expected '1.01', got '1.00'"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "f7d9a66904d2b2a3420c849b4efbbf09457fe9beab87c01005b175659a5071fb",
+    "controls/manifest.toml": "0ca33bb9b1c6928273826e0992c54086235196ff2a388bcad3b4904e7a6c5814",
+    "controls/wrong-format-only.rb": "dac60d57101b07b752dd222fc46dcb487d6e4b6b64c00337794142cfdcd2c9ce",
+    "drill.toml": "2c2b1d27a562159745487ede6a67b87b8ff64972d6c15a2f15e1cf1a23dc565f",
+    "fixtures/amounts.txt": "8ac46f23d01651045c9056324413d4bc06fbdce2d119b79ef15d6f42f674dc0a",
+    "solutions/solve.py": "c50ece19b9fd379194d05a6e8a567fadc69d9d8957e34526439342943c3245b3",
+    "solutions/solve.rb": "af478f2c9296526f1b056546eeb517f3b56d9edff64e06991856fed608bd433e",
+    "verify.py": "c0c34ad539cda3037bd9e075a42847f49f63afa2b3409abf82fa23bd32d68fd6"
+  },
+  "stage": "reference-calibrated"
+}

@@ -1,0 +1,11 @@
+id = "170-ruby-float-format"
+family = "text-munging"
+title = "Format money with two decimals without to_s scientific notation"
+difficulty = 3
+timebox = 240
+teaches = [
+  "Float#to_s switches to scientific notation: 1e20.to_s is \"1.0e+20\"",
+  "Float#to_s keeps a trailing .0: 3.0.to_s is \"3.0\", not \"3\"",
+  "format(\"%.2f\", 1.005) is \"1.00\" because the double is 1.00499...; round(2) then format gives 1.01",
+  "integer tokens must be validated before Integer(), which accepts \" 42 \" and 0x prefixes",
+]

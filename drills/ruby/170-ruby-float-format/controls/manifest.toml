@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/ruby-float-format"
+fixture_origin = "Synthetic numeric tokens with an exponent and a half-cent rounding case authored for this drill"
+
+[[negative]]
+path = "controls/wrong-format-only.rb"
+defect = "Formats the double directly, so format(%.2f, 1.005) gives 1.00 instead of the rounded 1.01"
+expect = "1.005/formatted"
