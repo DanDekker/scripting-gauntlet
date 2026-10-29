@@ -1,0 +1,11 @@
+id = "157-lua-needle-haystack"
+family = "text-munging"
+title = "Find a needle across a corpus of text and binary files"
+difficulty = 3
+timebox = 240
+teaches = [
+  "find with plain=true: a needle containing '%' is a malformed pattern otherwise",
+  "a file with a NUL byte is binary: skip it and say how many you skipped",
+  "report one row per matching line, with a 1-based column",
+  "walk subdirectories and report paths relative to the corpus root",
+]
