@@ -1,0 +1,8 @@
+Q3 asset report
+================
+revenue: 4,210,000
+costs:   3,100,000
+margin:  1,110,000
+headcount: 41
+owners: ada, grace, linus
+status: final, signed off 2026-10-27

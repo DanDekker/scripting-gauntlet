@@ -1,0 +1,10 @@
+id = "038-hash-dedup-tree"
+family = "file-hygiene"
+title = "Find duplicated content across a tree and price the waste"
+difficulty = 2
+timebox = 180
+teaches = [
+  "group a whole tree by content hash",
+  "pick a keeper with a rule the next person can predict",
+  "state an explicit rule for zero-byte files",
+]

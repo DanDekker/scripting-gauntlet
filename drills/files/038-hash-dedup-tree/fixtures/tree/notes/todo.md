@@ -1,0 +1,3 @@
+- rotate deploy key
+- chase the metrics export
+- archive Q2
