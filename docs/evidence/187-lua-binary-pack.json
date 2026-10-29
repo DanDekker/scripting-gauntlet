@@ -1,0 +1,56 @@
+{
+  "calibrated_at": "2026-10-29T23:25:56.813338+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "187-lua-binary-pack",
+  "fixture_origin": "Synthetic binary packet stream authored for this drill",
+  "lineage": "scripting-gauntlet/lua-binary-pack",
+  "results": [
+    {
+      "elapsed_ms": 14,
+      "language": "lua",
+      "passed": true,
+      "path": "solutions/solve.lua",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 42,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Uses native or little-endian <I4 unpack, which inverts multi-byte msg_id values",
+      "elapsed_ms": 15,
+      "expected_diagnostic": "1001/status",
+      "language": "lua",
+      "passed": true,
+      "path": "controls/wrong-endianness.lua",
+      "problems": [
+        "frames.csv: expected 5 rows, got 1",
+        "frames.csv row 1 [1001/msg_id]: expected 1001, got '9999'",
+        "frames.csv row 1 [1001/status]: expected 'valid', got 'corrupt_checksum'",
+        "frames.csv row 1 [1001/len]: expected 15, got '0'",
+        "frames.csv row 1 [1001/payload]: expected 'auth_token_init', got ''",
+        "summary.json['frames']: expected 5, got 1",
+        "summary.json['valid']: expected 2, got 0",
+        "summary.json['bad_magic']: expected 1, got 0",
+        "summary.json['truncated']: expected 1, got 0"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "2869ab0e5a62a34904e62eff40426c32497d575477a305636a335e19ec34f556",
+    "controls/manifest.toml": "cad7512804ae8186027112cbacf01da5b99ef903a74f91e1df7ef00e7faa9e04",
+    "controls/wrong-endianness.lua": "a6e9f7482bd0b90e86b5bb352b506a2bd25964d6f2256e649587af25e2479fb5",
+    "drill.toml": "ad7a2ea7066a97904c2783a302696acfa02c04b6ee1d5e4a2ea34ee16dc0a6c9",
+    "fixtures/stream.bin": "d03bf1fa9b02992749e85e410d2ff1f1e742ad2e974da3128e565cc75eaa2173",
+    "solutions/solve.lua": "a64f06ae880e2b0b5548e87dd645935d72d7dc9348d9fef243f2fc7f0be05a60",
+    "solutions/solve.py": "ac1fbfb437ab4522b2bc36081791a92eb97859af45bd6ece4df50d5fb0dff5af",
+    "verify.py": "9b821a1d2af9ae1ecde70787c4e0841dfa91b8d181e1fff84fe3f871cd6c4364"
+  },
+  "stage": "reference-calibrated"
+}

@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/lua-binary-pack"
+fixture_origin = "Synthetic binary packet stream authored for this drill"
+
+[[negative]]
+path = "controls/wrong-endianness.lua"
+defect = "Uses native or little-endian <I4 unpack, which inverts multi-byte msg_id values"
+expect = "1001/status"

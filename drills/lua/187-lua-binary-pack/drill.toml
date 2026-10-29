@@ -1,0 +1,11 @@
+id = "187-lua-binary-pack"
+family = "data-wrangling"
+title = "Parse and validate binary frame headers with string.pack and string.unpack"
+difficulty = 4
+timebox = 300
+teaches = [
+  "string.unpack(fmt, s, [init]) returns unpacked values plus the next byte position",
+  ">I2 and >I4 format big-endian integers; s2 handles a uint16 length-prefixed string",
+  "pcall(string.unpack, ...) catches truncated payloads that would otherwise raise 'data string too short'",
+  "frame boundaries require careful pointer tracking when encountering corrupted or short records",
+]
