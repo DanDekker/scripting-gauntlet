@@ -1,0 +1,14 @@
+Hi, I'm locked out. Mail me at ada.lovelace@example.org or call +1 (555) 010-2030. Thanks.   
+
+card on file 4111 1111 1111 1111 expires 04/28
+the card ending 4111 1111 1111 1112 was declined (typo, not a card)
+SSN 123-45-6789 and old one 000-12-3456 on the form
+
+server 10.2.3.4 timed out but public 8.8.8.8 answered fine
+   
+ssh 192.168.1.20 and 172.20.5.9 are internal, 172.40.5.9 is not
+order 123456789 shipped; ref 1234567890123456789012 and callback 555.010.2030 please
+escalate to support-555-010-2031@example.com immediately
+ticket imported as 555-010-2032@example.net by the bot
+nothing sensitive here, just a question about invoices
+Send the refund to 3782 822463 10005 and note bob@example.io, SSN 666-12-3456 is bogus

@@ -1,0 +1,42 @@
+This log was exported with `git log --name-only` on 2026-10-02.
+Blocks with no file lines are still commits in the log; they just touch nothing.
+
+commit 4a1b2c3 (HEAD -> main)
+src/users.py
+src/export.py
+
+commit b7e8d90 feat: wire exports into the user table
+src/users.py
+  src/export.py  
+src/report.py
+
+commit c1d2e3f
+src/users.py
+	src/report.py
+src/export.py
+
+commit deadbee
+src/report.py
+src/export.py
+src/export.py
+
+commit 0badf00
+
+commit
+src/export.py
+src/billing.py
+
+commit 77aa001
+notes/README.md
+
+commit 88bb002
+src/report.py
+src/billing.py
+
+commit aa99003
+src/users.py
+src/export.py
+src/report.py
+src/billing.py	
+
+

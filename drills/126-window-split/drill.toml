@@ -1,0 +1,12 @@
+id = "126-window-split"
+family = "data-wrangling"
+title = "Cut a long document into overlapping windows that fit a prompt"
+difficulty = 3
+timebox = 240
+teaches = [
+  "windowing is a budget, not a paragraph: pack paragraphs until the next one does not fit",
+  "an overlap prefix carries context forward, and it costs budget like anything else",
+  "a paragraph that is too long is cut into pieces, never dropped",
+  "normalise the text first (trailing whitespace, blank paragraphs) or the count is wrong",
+  "a newline inside a cell has to be escaped or the CSV grows a line",
+]

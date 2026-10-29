@@ -1,0 +1,21 @@
+# Release notes: ledger service
+The ledger service now batches writes: each batch is flushed at most once per
+second, a failed flush is retried three times, and the retry counter is reset
+every hour.
+
+Config lives in /etc/ledger/config.yaml. Restart the process after editing it;
+the watcher only reloads the file every five minutes, which surprises people.
+
+The importer writes to C:\tmp\ledger\import on Windows and to /tmp/ledger/import
+everywhere else. Both paths are cleaned on start.   
+
+   
+
+Operators keep asking why the retry queue grows during a backfill. The queue is
+bounded at 10000 entries, and a backfill can outrun the writer for minutes at a
+time, so the queue fills, the oldest entries are dropped, and the log fills with
+warnings nobody reads until the next incident review. Ask "how long" first, then
+look at queue_depth, then at flush_errors, in that order: the metric that moves
+first is not the metric that pages you.   
+
+Ask #ledger-support before you change the retry settings.

@@ -1,0 +1,12 @@
+id = "125-pii-scan"
+family = "text-munging"
+title = "Spot personal data in support tickets before they go to a model"
+difficulty = 4
+timebox = 300
+teaches = [
+  "a PII detector needs validation, not just a shape: Luhn, an SSN range rule, a separator rule",
+  "a 16-digit run that fails Luhn is an order id, and an id in the wrong range is an id",
+  "a phone needs separators or a + prefix; a bare 10-digit run is a number, not a phone",
+  "private is a predicate on the address, not on it being an IP at all",
+  "overlapping matches resolve left to right: the earlier start wins, and at the same start the longer value wins",
+]

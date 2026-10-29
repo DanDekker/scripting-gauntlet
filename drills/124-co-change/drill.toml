@@ -1,0 +1,12 @@
+id = "124-co-change"
+family = "system-recon"
+title = "Find the files that always change together"
+difficulty = 4
+timebox = 300
+teaches = [
+  "files that change together are hidden coupling: the log says so, but only if you count commits, not lines",
+  "a commit is a set of files: a path listed twice in one block is one file",
+  "a commit that touched nothing is not a commit for coupling purposes, and a header needs no hash",
+  "normalise a pair before counting it, or (b,a) and (a,b) become two weaker pairs",
+  "strength is a Jaccard index: shared commits over the commits that touched either file",
+]

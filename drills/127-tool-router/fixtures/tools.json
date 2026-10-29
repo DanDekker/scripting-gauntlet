@@ -1,0 +1,7 @@
+{"tools":[
+  {"name":"search_code","keywords":["grep","search","find","locate"],"requires":["repo"]},
+  {"name":"read_file","keywords":["read","open","view","cat"],"requires":["path"]},
+  {"name":"run_tests","keywords":["test","pytest","ci"],"requires":["repo"]},
+  {"name":"web_search","keywords":["search","web","google"],"requires":[]},
+  {"name":"compile_cpp","keywords":["compile","c++"],"requires":["repo"]}
+]}

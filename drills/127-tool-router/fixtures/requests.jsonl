@@ -1,0 +1,24 @@
+{"id":"r1","text":"find the definition of parse_config in the repo","context":["repo"]}
+{"id":"r2","text":"search the web for this error code","context":[]}
+
+{"id":"r3","text":"search for the symbol in the repo","context":["repo"]}
+{"id":"r4","text":"grep and find and locate the symbol","context":["path"]}
+{"id":"r5","text":"read the source and grep for TODO","context":["path"]}
+{"id":"r6","text":"who won the contest last year","context":["repo"]}
+{"id":"r7","text":"OPEN the config file","context":["path"]}
+{"id":"r8","text":"run the ci pipeline and check pytest output","context":["repo"]}
+{"id":"r9","text":"","context":["repo"]}
+{"id":"r10","text":"   ","context":["repo"]}
+{"id":"r11","text":"summarise the release notes","context":["repo"]}
+{"id":"r12","text":"cat the log file","context":["path"]}
+{"id":"r13","text":"the C++ build is broken","context":["repo"]}
+{"id":"r14","text":"view and open the diff","context":["path"]}
+{"id":"dup","text":"locate the module","context":["repo"]}
+{"id":"dup","text":"locate it again","context":["repo"]}
+{"id":"r17","text":"open the README"}
+{"id":"r18","text":"broken,
+[1,2,3]
+{"text":"find stuff","context":["repo"]}
+{"id":"r21"}
+{"id":"r22","text":"google the error message","context":["repo"]}
+

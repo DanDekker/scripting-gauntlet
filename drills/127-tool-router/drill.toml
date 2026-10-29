@@ -1,0 +1,12 @@
+id = "127-tool-router"
+family = "data-wrangling"
+title = "Route a request to the right tool, and say when no tool fits"
+difficulty = 4
+timebox = 300
+teaches = [
+  "routing is a scored match plus an availability gate, not a first-hit lookup",
+  "a keyword matches as a whole word: test does not match contest, and test does not match pytest",
+  "an unavailable tool never wins, even when it is the only tool that matches at all",
+  "no tool fits is a real answer: report it as unrouted instead of guessing",
+  "skip the junk records loudly by counting only the ones that survive",
+]
