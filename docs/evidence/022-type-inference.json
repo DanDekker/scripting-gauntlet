@@ -1,0 +1,50 @@
+{
+  "calibrated_at": "2026-10-29T20:16:42.836821+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "022-type-inference",
+  "fixture_origin": "Synthetic spreadsheet sample authored for this drill",
+  "lineage": "scripting-gauntlet/type-inference",
+  "results": [
+    {
+      "elapsed_ms": 44,
+      "language": "bash",
+      "passed": true,
+      "path": "solutions/solve.bash",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 67,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Infers a float column for an integer that exceeds double precision",
+      "elapsed_ms": 96,
+      "expected_diagnostic": "types.csv row 3 col 2",
+      "language": "py",
+      "passed": true,
+      "path": "controls/wrong-large-int.py",
+      "problems": [
+        "types.csv row 3 col 2: expected 'integer', got 'float'"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "fceabd92478593dafb2c8c771074621799b8629694b3732b5c3ce463491d69b6",
+    "controls/manifest.toml": "603d1083de5088a338972d8121ea860f495be654ceabe58b36741fac690aafbd",
+    "controls/wrong-large-int.py": "49eb1dc49c70c5ed08fa847cd31f6fba8c8d5981ccc4a031eb986b0261ce97ad",
+    "drill.toml": "d6c28615961d3bf0a48be90e91515a568cd5026c5dc09a450b93502127ce65ce",
+    "fixtures/columns.csv": "4c078c7cdfa9ea665f1da23db8329ef163c68d7914453b3120fa906a20513c0a",
+    "solutions/__pycache__/solve.cpython-314.pyc": "53a887dfd50a0149fa540fde04ee018557496cdee3b8a1d840e0c67a683e2e24",
+    "solutions/__pycache__/solve.cpython-315.pyc": "6bc716111ce7aae6eda01960bf8bf2ae65aaf4a0d1f70cedcccde71137fc6d40",
+    "solutions/solve.bash": "8506d91c2d84c37c2b9f0d55482d4c5a6430378c1cfe300eade741bb5badf389",
+    "solutions/solve.py": "78841bdfa5ee1cfca31f8a6998d91e70b6ba4dbb3b88a79d2abc8941bbf5e71c",
+    "verify.py": "265f24ab51f27728d84f96d0820e5409b8521f646d937f110605e0fb3ce9f6d7"
+  },
+  "stage": "reference-calibrated"
+}

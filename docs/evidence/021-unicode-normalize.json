@@ -1,0 +1,50 @@
+{
+  "calibrated_at": "2026-10-29T20:16:43.275400+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "021-unicode-normalize",
+  "fixture_origin": "Synthetic CRM name export authored for this drill",
+  "lineage": "scripting-gauntlet/unicode-normalize",
+  "results": [
+    {
+      "elapsed_ms": 255,
+      "language": "bash",
+      "passed": true,
+      "path": "solutions/solve.bash",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 270,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Uses lowercase instead of casefold and leaves the sharp s intact",
+      "elapsed_ms": 123,
+      "expected_diagnostic": "normalised.csv row 3 col 2",
+      "language": "py",
+      "passed": true,
+      "path": "controls/wrong-lower.py",
+      "problems": [
+        "normalised.csv row 3 col 2: expected 'strasse', got 'stra\u00dfe'"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "6736fba7162e10d86d1a08e91246bd5e1679ba15e9ffd3f24389f1bf344b35a4",
+    "controls/manifest.toml": "5b626df1161b310511ad8f4db8ce2b9a5bf8d542bb19dd2e255d28cb444fc4ab",
+    "controls/wrong-lower.py": "8fd6cac4911e8bb564c98382f9df037d5b1a10fb953bda85051e8a71555b22cb",
+    "drill.toml": "05ee296fe5115a9623a8f16674136fddd0d8e34cf39f7017dfc114d296f1758a",
+    "fixtures/names.csv": "cb67b425817e624aa06fc7d508d45973d3fc4489d178bfd7a32cd3b395bcfdd6",
+    "solutions/__pycache__/solve.cpython-314.pyc": "4a5e4c3b17410e9c6ff61d9f2cb401f49a5220e1a150cbd18ac427fd7ad58014",
+    "solutions/__pycache__/solve.cpython-315.pyc": "e26d24999aa19597fe4a68c0b0b573f5e02577653db65b50ac77c7bd51293937",
+    "solutions/solve.bash": "00aacb494cb702cacb482b1915e691aecf671c460fe4206f152de1caebf0605b",
+    "solutions/solve.py": "6b41cf0ec5032f0646888dd9516b0262edff78e5caddeb90fbb5c43227467cf3",
+    "verify.py": "3364ca0e28e1a4e597141bcdb3c4e91cee12aba976c7d42269186621901aaa71"
+  },
+  "stage": "reference-calibrated"
+}

@@ -1,0 +1,50 @@
+{
+  "calibrated_at": "2026-10-29T20:16:42.845911+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "020-date-parsing",
+  "fixture_origin": "Synthetic mixed-format date export authored for this drill",
+  "lineage": "scripting-gauntlet/date-parsing",
+  "results": [
+    {
+      "elapsed_ms": 44,
+      "language": "bash",
+      "passed": true,
+      "path": "solutions/solve.bash",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 80,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Interprets 01/02/2026 as February 1 instead of January 2",
+      "elapsed_ms": 87,
+      "expected_diagnostic": "normalised.csv row 8 col 2",
+      "language": "py",
+      "passed": true,
+      "path": "controls/wrong-day-first.py",
+      "problems": [
+        "normalised.csv row 8 col 2: expected '2026-01-02', got '2026-02-01'"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "8e7a22c846877e27dcf4cdfe97b20b40ce41d7683eed058270f04ad14f1f051e",
+    "controls/manifest.toml": "acfc441a0e8052dc4cd004881587c6ea25b26475a790f3056fb0a33d75415e03",
+    "controls/wrong-day-first.py": "912231af7ef90ffb2768c62755516f25a28068dede374fa688266243f2bd7fe5",
+    "drill.toml": "a53e3c96bbb0eb0801cdf0d602575ed2151acf3e3ce23c6f3757c63621532bb6",
+    "fixtures/dates.csv": "a2010375a103a4fbdf38343ca9f0bfa27a837b06cb1f5bc356c7dfdca3b0927d",
+    "solutions/__pycache__/solve.cpython-314.pyc": "77a6b8b61bcc3f14c5a677f7b4550891d239e31389ed76c03a49fe9a343c505d",
+    "solutions/__pycache__/solve.cpython-315.pyc": "0596dc6bdba983d5c9c0511c6160514661555fd9bcb2ec90f80d92390e5dde02",
+    "solutions/solve.bash": "d64d49280451ce87af50080580fa2b4b3ecc3e0117c290a6d9bc0bdb20567cf2",
+    "solutions/solve.py": "6754a3234fbb17b0890cad5081657e1af396a4b339a6047ed33e81387773b8bc",
+    "verify.py": "526ee3b8d1d7c77d62acb1b2bccfbc8cb9a7d6b1e3852e793a1e7d4c9656bcd2"
+  },
+  "stage": "reference-calibrated"
+}

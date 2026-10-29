@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/unicode-normalize"
+fixture_origin = "Synthetic CRM name export authored for this drill"
+
+[[negative]]
+path = "controls/wrong-lower.py"
+defect = "Uses lowercase instead of casefold and leaves the sharp s intact"
+expect = "normalised.csv row 3 col 2"

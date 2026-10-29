@@ -1,0 +1,50 @@
+{
+  "calibrated_at": "2026-10-29T20:16:42.838896+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "019-number-parsing",
+  "fixture_origin": "Synthetic semicolon-delimited amount export authored for this drill",
+  "lineage": "scripting-gauntlet/number-parsing",
+  "results": [
+    {
+      "elapsed_ms": 44,
+      "language": "bash",
+      "passed": true,
+      "path": "solutions/solve.bash",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 74,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Divides a display percent by 100 instead of preserving its written value",
+      "elapsed_ms": 91,
+      "expected_diagnostic": "parsed.csv row 4 col 2",
+      "language": "py",
+      "passed": true,
+      "path": "controls/wrong-percent.py",
+      "problems": [
+        "parsed.csv row 4 col 2: expected 12.5, got '0.12'"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "8109bc492ada81a3f0b839d9ff057c7db2776bda99923b645c378c0091de0646",
+    "controls/manifest.toml": "f20d5a63690b72ef9dbf8d839cdbd85fd198b8bd27a0ac5de2352f8ad3386efa",
+    "controls/wrong-percent.py": "fe1377a056be3013ab5f9686c14c072e5ac36010358dd1fe75ef9ce3dcfcbf23",
+    "drill.toml": "0484c8bbd8336d181efaee44aec5296f1e623ac21fcdc332699e75e4f428d2dd",
+    "fixtures/amounts.csv": "099062f0116e82e18e45c6202e6bf46b3f0343da590d32b3201a83c278797bc3",
+    "solutions/__pycache__/solve.cpython-314.pyc": "b5986ba038aa3128b179a51082f89531751a771043981b427ea7e493f22a0390",
+    "solutions/__pycache__/solve.cpython-315.pyc": "b1b48098361d8a5af60bcc5fab47483588dd8d97288092830baf63741f1d1266",
+    "solutions/solve.bash": "5c2fd9cf23f9cdbbcaefaf033b9cc1c3161edc509eed0db44aa6490087e8ed1f",
+    "solutions/solve.py": "4e7d04f25bfa96ddbb39d9108e93a84f0a039335bbb2d63f09bc396f2cda56a2",
+    "verify.py": "f4299f56688b6e0327f7255575e3d04ceb54cb8c6d14541de6930c140d3bb74e"
+  },
+  "stage": "reference-calibrated"
+}

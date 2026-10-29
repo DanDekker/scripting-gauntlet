@@ -1,0 +1,11 @@
+id = "022-type-inference"
+family = "data-wrangling"
+title = "Infer column types, then list what inference would corrupt"
+difficulty = 3
+timebox = 180
+teaches = [
+  "a column is only as typed as its worst value",
+  "leading zeros, 0x, NaN and Infinity all defeat int()/float()",
+  "a 16-digit integer does not fit a double",
+  "name the exact rows that a naive cast would destroy",
+]

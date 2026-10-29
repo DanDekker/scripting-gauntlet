@@ -1,0 +1,11 @@
+id = "021-unicode-normalize"
+family = "data-wrangling"
+title = "Fold and normalise human names into match keys"
+difficulty = 3
+timebox = 180
+teaches = [
+  "NFC first, so two spellings of one codepoint sequence are one string",
+  "casefold is not lower: the sharp s folds to ss",
+  "strip combining marks with NFD, not a character table",
+  "collapse whitespace last, then count what merged",
+]

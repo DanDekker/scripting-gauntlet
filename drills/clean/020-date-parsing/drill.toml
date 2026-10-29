@@ -1,0 +1,11 @@
+id = "020-date-parsing"
+family = "data-wrangling"
+title = "Normalise five date notations to ISO"
+difficulty = 2
+timebox = 180
+teaches = [
+  "six shapes, one canonical form",
+  "month-first is a decision, not a guess",
+  "well-formed is not the same as possible",
+  "earliest and latest fall out of the normal form",
+]

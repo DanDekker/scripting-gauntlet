@@ -1,0 +1,11 @@
+id = "019-number-parsing"
+family = "data-wrangling"
+title = "Parse human-written numbers out of a spreadsheet export"
+difficulty = 2
+timebox = 180
+teaches = [
+  "strip currency, separators and percent signs before converting",
+  "parentheses mean negative",
+  "scientific notation and a leading plus are still numbers",
+  "count what could not be parsed instead of dying",
+]

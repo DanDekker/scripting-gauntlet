@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/type-inference"
+fixture_origin = "Synthetic spreadsheet sample authored for this drill"
+
+[[negative]]
+path = "controls/wrong-large-int.py"
+defect = "Infers a float column for an integer that exceeds double precision"
+expect = "types.csv row 3 col 2"

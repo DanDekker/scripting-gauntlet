@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/date-parsing"
+fixture_origin = "Synthetic mixed-format date export authored for this drill"
+
+[[negative]]
+path = "controls/wrong-day-first.py"
+defect = "Interprets 01/02/2026 as February 1 instead of January 2"
+expect = "normalised.csv row 8 col 2"

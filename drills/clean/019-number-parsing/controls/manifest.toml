@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/number-parsing"
+fixture_origin = "Synthetic semicolon-delimited amount export authored for this drill"
+
+[[negative]]
+path = "controls/wrong-percent.py"
+defect = "Divides a display percent by 100 instead of preserving its written value"
+expect = "parsed.csv row 4 col 2"
