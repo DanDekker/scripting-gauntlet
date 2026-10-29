@@ -272,6 +272,45 @@ pcall(f)               -- runtime errors come back as false, message
 
 Drill: `173-lua-load-sandbox`.
 
+## Rendering a number is not formatting it
+
+```lua
+tostring(1.0)        -- "1.0"     the float subtype shows
+tostring(1)          -- "1"
+tostring(1/3)        -- "0.33333333333333331"
+tostring(1e15)       -- "1e+15"   whole, but scientific
+string.format("%.17g", 0.1)        -- "0.10000000000000001"
+string.format("%.6g", 1000000000000000)  -- "1e+15"
+```
+
+`tostring` is the shortest text that round-trips, with a `.0` on integral floats. `%g`
+truncates to significant digits, so a value printed with `%g` and re-read is a different
+number. For a report, pick one rendering and stay with it; `%.17g` is for exposing the
+double, never for display. `string.format("%d", 3.5)` raises — `%d` needs an integral
+value.
+
+Drill: `178-lua-number-printing`.
+
+## Metatables are the object system
+
+```lua
+local base = { region = "eu" }
+local leaf = setmetatable({ name = "api" }, { __index = base })
+leaf.region            -- "eu"          inherited
+rawget(leaf, "region") -- nil           only own keys
+for k in pairs(leaf) do end             -- "name" only
+```
+
+- `__index` can be a table (single parent) or a function (computed lookup). Chains are
+  built by pointing one table's `__index` at the next.
+- `rawget`/`rawset` bypass the metatable — that is how you ask "does this layer own the
+  key" as opposed to "can it see the key".
+- `pairs`/`ipairs` iterate own keys only; inheritance is not enumeration.
+- `__newindex` fires only when the key is **absent** from the table itself, which is how a
+  proxy records writes.
+
+Drill: `179-lua-metatable-layers`.
+
 ## The four moves
 
 **1. Extract.** One pattern per shape, tried in order.

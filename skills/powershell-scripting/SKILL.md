@@ -136,6 +136,39 @@ $objects | Export-Csv -Path $path -NoTypeInformation -Encoding utf8
 `Export-Csv` quotes every field and writes a header; `-NoTypeInformation` drops the
 `#TYPE` line. Build `[pscustomobject]@{...}` values so the columns are named and ordered.
 
+## Depth 2 is the default
+
+```powershell
+@{a=@{b=@{c=@{d=1}}}} | ConvertTo-Json -Compress
+# {"a":{"b":{"c":"System.Collections.Hashtable"}}}   plus a warning on stream 3
+@{a=@{b=@{c=@{d=1}}}} | ConvertTo-Json -Compress -Depth 10
+# full nesting
+```
+
+`ConvertTo-Json` truncates anything deeper than 2 by default and replaces the object with
+its type name. The warning goes to stream 3, so a run that only watches stream 2 looks
+clean. Always pass `-Depth`. `ConvertFrom-Json` has no such limit and returns
+`PSCustomObject`: a JSON `null` is `$null`, a missing key is absent, and
+`.PSObject.Properties.Name` lists what is actually there.
+
+Drill: `184-ps1-json-depth`.
+
+## Dates are culture and kind
+
+```powershell
+[datetime]::Parse('03/04/2026', [cultureinfo]::InvariantCulture)   # March 4
+[datetime]::Parse('03/04/2026', [cultureinfo]::GetCultureInfo('en-GB'))  # April 3
+[datetime]::ParseExact('03/04/2026', 'dd/MM/yyyy', [cultureinfo]::InvariantCulture)
+```
+
+`[datetime]::Parse` decides field order from the culture. When the source format is known,
+`ParseExact` with an explicit pattern is the only safe route; an impossible date then
+fails instead of rolling forward. `ToUnixTimeSeconds` needs the value marked UTC — use
+`[datetime]::SpecifyKind($dt, 'Utc')` or `DateTimeStyles::AdjustToUniversal`, or the epoch
+shifts by the local offset. Epoch `0` is a real answer and is falsy.
+
+Drill: `185-ps1-datetime`.
+
 ## The four moves
 
 **1. Parse.** `Import-Csv` / `ConvertFrom-Json` / `-split` (a regex). Decide case

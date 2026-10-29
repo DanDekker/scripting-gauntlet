@@ -173,6 +173,43 @@ data = JSON.parse(File.read(path)) rescue abort "bad JSON in #{path}"
 Rescue the specific error class when you can; a bare `rescue` also catches `NoMethodError`
 on a typo. Print the file and line context in the abort message.
 
+## A default is not a factory
+
+```ruby
+h = Hash.new([])              # ONE array shared by every missing key
+h[:a] << 1
+h[:b]                         # [1]  — the same array
+h.keys                        # []   — reading a default stores nothing
+
+g = Hash.new { |store, k| store[k] = [] }   # factory: the key materialises
+g[:a] << 1
+g.keys                        # [:a]
+```
+
+`Hash.new(0)` is safe because `0` is immutable and `+=` replaces the value. `Hash.new([])`
+is the classic bug: the array is shared, and the read never creates the key, so the tally
+silently has no rows. `fetch` and `dig` read without touching the default; `default_proc`
+tells you which kind of default you have.
+
+Drill: `182-ruby-hash-default`.
+
+## Bytes are not characters
+
+```ruby
+bad = "caf\xE9".force_encoding("UTF-8")   # relabels, does not validate
+bad.valid_encoding?                        # false
+bad.scrub("?")                             # "caf?"
+"café".length     # 4      characters
+"café".bytesize   # 5      bytes
+```
+
+`force_encoding` only changes the label; validation is `valid_encoding?` and repair is
+`scrub` or `encode(..., invalid: :replace)`. On valid input `length` and `bytesize` differ
+by design, so decide which number the report means before printing either. Read unknown
+input with `File.binread` and label it yourself.
+
+Drill: `183-ruby-encoding-scrub`.
+
 ## The four moves
 
 **1. Split.** `line.split(",", -1)` keeps trailing empty fields; a bare `split(",")`

@@ -219,6 +219,40 @@ than `1.9.9` even though it sorts first as text. Sort the parsed objects and giv
 second key, or the order falls back to the input.
 Drill: `175-perl-version-sort`.
 
+## The replacement is code
+
+```perl
+my $n = ($s =~ s{(\w+)=(\S*)}{ uc($1) . ":" . uc($2) }ge);   # $n is the match count
+my $copy = $s =~ s/b/X/gr;                                    # non-destructive
+```
+
+- `s{}{}e` runs the replacement as Perl code; use braces when the replacement contains
+  `/`. `s{}{}ee` evaluates the result again — rarely what you want.
+- `$1`, `$2` are **package globals**. A nested match inside the replacement block resets
+  them, so copy to lexicals first if the block matches anything else.
+- Assigned in scalar context, `s///g` returns the number of substitutions.
+- After a failed match, `$1` still holds the last successful capture — never read it
+  without checking the match.
+
+Drill: `180-perl-substitution-eval`.
+
+## Offsets, not splits
+
+```perl
+substr("abcdef", -3)          # "def"   negative offset counts from the end
+substr("abcdef", 2, -1)       # "cde"   negative length leaves that many off the end
+substr("abcdef", 10)          # undef + "substr outside of string" warning
+index("abcabc", "abc", 1)     # 3       start offset finds the second occurrence
+rindex("abcabc", "abc")       # 3       search from the right
+```
+
+`index`/`rindex` return a **0-based** position or `-1`; the report usually wants 1-based,
+so the `+1` is yours. `substr` past the end is a warning plus `undef`, not an exception —
+clamp or check before slicing. `substr` is also an lvalue: `substr($s, 1, 3) = "XY"`
+rewrites in place.
+
+Drill: `181-perl-substr-index`.
+
 ## The four moves
 
 **1. Split.** Choose the limit and the separator deliberately: `split /:/, $line, -1`.
