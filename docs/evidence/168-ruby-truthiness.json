@@ -1,0 +1,66 @@
+{
+  "calibrated_at": "2026-10-29T22:44:46.415383+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "168-ruby-truthiness",
+  "fixture_origin": "Synthetic layered config with false and null authored for this drill",
+  "lineage": "scripting-gauntlet/ruby-truthiness",
+  "results": [
+    {
+      "elapsed_ms": 46,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 127,
+      "language": "rb",
+      "passed": true,
+      "path": "solutions/solve.rb",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Merges with override[k] || base[k], so an explicit false falls back to the base value and null is not a tombstone",
+      "elapsed_ms": 121,
+      "expected_diagnostic": "debug/key",
+      "language": "rb",
+      "passed": true,
+      "path": "controls/wrong-or-merge.rb",
+      "problems": [
+        "merged.csv: expected 5 rows, got 6",
+        "merged.csv row 1 [debug/key]: expected 'debug', got 'cache'",
+        "merged.csv row 1 [debug/type]: expected 'bool', got 'string'",
+        "merged.csv row 1 [debug/value]: expected 'false', got 'on'",
+        "merged.csv row 2 [extra/key]: expected 'extra', got 'debug'",
+        "merged.csv row 2 [extra/type]: expected 'int', got 'bool'",
+        "merged.csv row 2 [extra/value]: expected '5', got 'true'",
+        "merged.csv row 3 [label/key]: expected 'label', got 'extra'",
+        "merged.csv row 3 [label/type]: expected 'string', got 'int'",
+        "merged.csv row 3 [label/value]: expected '', got '5'",
+        "merged.csv row 4 [mode/key]: expected 'mode', got 'label'",
+        "merged.csv row 4 [mode/value]: expected 'fast', got ''",
+        "merged.csv row 5 [retries/key]: expected 'retries', got 'mode'",
+        "merged.csv row 5 [retries/type]: expected 'int', got 'string'",
+        "merged.csv row 5 [retries/value]: expected '0', got 'fast'",
+        "summary.json['keys']: expected 5, got 6",
+        "summary.json['from_override']: expected 4, got 0",
+        "summary.json['removed']: expected 1, got 0"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "008a7fd9438a9ea9e57fecdad1a32a293fc9ac802ff9c94c8fb4a8706094f06c",
+    "controls/manifest.toml": "2f5e51a4250bff27956cd7485a2fd04c971bdea42f85806de3b109df785c1e41",
+    "controls/wrong-or-merge.rb": "208fc3abf801ef55dbe4f9a1a5e0b59a78b6249ae8cad60766924b2e44c99eb3",
+    "drill.toml": "501c2471464067ee517f4b6544278467e297f623c47171fc1a515165c94b4f1e",
+    "fixtures/base.json": "c2c80771711de7da55e792e08b7c3d0b8367e38973bfb88ede1b5d3d6afa8680",
+    "fixtures/override.json": "4af4631b79bf839888ee0b044b5f3953168a86a0787352eeccdc5ba10b4ad73d",
+    "solutions/solve.py": "7fe82bc3816baad115f7de5c87bece5db291562dc447092accdaee2e63d60dba",
+    "solutions/solve.rb": "e9ce0f3d5c8b38c520997c6caf28e28b3bf87ce2ba5dfbcc2b2fb63f2cee47fb",
+    "verify.py": "d64d615daee37689d72639fa6d803fc54e60e0a51a86e8593bddc4bd4560f524"
+  },
+  "stage": "reference-calibrated"
+}

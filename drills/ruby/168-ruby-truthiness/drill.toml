@@ -1,0 +1,11 @@
+id = "168-ruby-truthiness"
+family = "text-munging"
+title = "Merge layered config where false and null both mean something"
+difficulty = 3
+timebox = 240
+teaches = [
+  "in Ruby only nil and false are falsy: 0 and \"\" are truthy",
+  "a || b drops an explicit false override and treats null as absent",
+  "an explicit null is a tombstone that removes the key, not a fallback",
+  "Hash#key? distinguishes present-with-nil from missing",
+]

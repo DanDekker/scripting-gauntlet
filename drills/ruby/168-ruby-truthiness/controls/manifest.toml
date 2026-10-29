@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/ruby-truthiness"
+fixture_origin = "Synthetic layered config with false and null authored for this drill"
+
+[[negative]]
+path = "controls/wrong-or-merge.rb"
+defect = "Merges with override[k] || base[k], so an explicit false falls back to the base value and null is not a tombstone"
+expect = "debug/key"
