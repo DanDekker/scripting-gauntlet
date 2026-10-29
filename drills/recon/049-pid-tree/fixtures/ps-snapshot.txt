@@ -1,0 +1,24 @@
+  PID  PPID   RSS  %CPU COMMAND
+    1     0  1948   0.0 /sbin/launchd
+   42     1  3104   0.1 /usr/sbin/syslogd
+   57     1  2796   0.0 /usr/libexec/UserEventAgent
+  101    42  8872   1.4 /usr/bin/sshd -D
+  102   101 15320   2.7 python3 /opt/agent/collector.py --interval 30
+  103   101 15320   0.9 python3 /opt/agent/collector.py --interval 120
+  104   101  4096   0.0 bash /opt/agent/run.sh
+  205     1 22088   3.8 /Applications/Safari.app/Contents/MacOS/Safari
+  206   205 11044   0.6 /Applications/Safari.app/Contents/MacOS/Safari
+  207   205   512   0.0 /usr/libexec/SafariCloudHistoryPushAgent
+  208   206  2200   0.0 /usr/libexec/SafariNotificationAgent
+  209   208   900   0.0 /usr/bin/curl https://example.com/feed
+
+  301     1  3300   0.0 /usr/sbin/cfprefsd daemon
+  388     1     0   0.0 node <defunct>
+  412   388  6440   0.2 /opt/homebrew/bin/node /srv/api/server.js
+  413   412 12088   1.1 node /srv/api/worker.js
+  414   412  9012   0.4 node /srv/api/worker.js
+  501     1 20480   5.2 /usr/bin/mds_stores
+  502     1 15320   0.3 /usr/libexec/taskgated -s
+  550   499  1760   0.0 /usr/bin/log stream --style compact
+  601     1  7284   0.0 [kworker/0:1]
+  602     2  1100   0.0 [kworker/1:2]

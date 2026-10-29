@@ -1,0 +1,11 @@
+id = "049-pid-tree"
+family = "system-recon"
+title = "Build the process tree out of a captured ps table"
+difficulty = 3
+timebox = 180
+teaches = [
+  "ppid is a foreign key into the same table",
+  "depth is a recursive property, memoize it or walk to the root",
+  "a transitive descendant set is a graph walk, not a one-step filter",
+  "orphans are rows whose parent is not in the table",
+]
