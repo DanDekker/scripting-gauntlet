@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/lua-coroutine-filter"
+fixture_origin = "Synthetic multi-stream event log authored for this drill"
+
+[[negative]]
+path = "controls/wrong-recreated-coroutine.lua"
+defect = "Recreates the coroutine on every event instead of resuming, resetting running totals and never triggering alerts"
+expect = "5/alert"

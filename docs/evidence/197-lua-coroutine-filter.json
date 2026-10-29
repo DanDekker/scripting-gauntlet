@@ -1,0 +1,57 @@
+{
+  "calibrated_at": "2026-10-29T23:42:26.514160+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "197-lua-coroutine-filter",
+  "fixture_origin": "Synthetic multi-stream event log authored for this drill",
+  "lineage": "scripting-gauntlet/lua-coroutine-filter",
+  "results": [
+    {
+      "elapsed_ms": 11,
+      "language": "lua",
+      "passed": true,
+      "path": "solutions/solve.lua",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 34,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Recreates the coroutine on every event instead of resuming, resetting running totals and never triggering alerts",
+      "elapsed_ms": 5,
+      "expected_diagnostic": "5/alert",
+      "language": "lua",
+      "passed": true,
+      "path": "controls/wrong-recreated-coroutine.lua",
+      "problems": [
+        "meter.csv row 3 [3/sum]: expected 35, got '25'",
+        "meter.csv row 4 [4/sum]: expected 35, got '15'",
+        "meter.csv row 5 [5/sum]: expected 55, got '20'",
+        "meter.csv row 5 [5/alert]: expected 'true', got 'false'",
+        "meter.csv row 6 [6/sum]: expected 65, got '30'",
+        "meter.csv row 6 [6/alert]: expected 'true', got 'false'",
+        "meter.csv row 7 [7/sum]: expected 60, got '5'",
+        "meter.csv row 7 [7/alert]: expected 'true', got 'false'",
+        "summary.json['alerts']: expected 3, got 0",
+        "summary.json['final_max']: expected 65, got 30"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "a4cfcc23a9b6dbdfb7cab3b85b0b5fc32ea016fd838b143809b4c6a27cdaff54",
+    "controls/manifest.toml": "0613921e8785dbe7b13c324a79722acdd4d3dd45bf901a8cd05fce74e82710be",
+    "controls/wrong-recreated-coroutine.lua": "e62f86693fc9784d9183b4de717218c30572990aa65cd730eba071efd8691957",
+    "drill.toml": "bee5e91657ed01c5067a9cdb11cee6cf6d07b4c17adeff4c049782f29db35a77",
+    "fixtures/events.txt": "7f03853a01e14ec28b6886f865f8ff314b72b15f33615865c7f4d6d2b46625f8",
+    "solutions/solve.lua": "fec4d397a31aed576456e7c6278e28b40297d305eb65083126ac24ca4d11cf35",
+    "solutions/solve.py": "dae07898f5b812daf6fe17c3bb4e87de93210aa54975e1d39fde0cee40fb34a2",
+    "verify.py": "22e1a7c23e660638c2a6df0a2d7cd610c4ded6eab942a85a3faa1c466265c04b"
+  },
+  "stage": "reference-calibrated"
+}

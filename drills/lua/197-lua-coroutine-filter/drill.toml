@@ -1,0 +1,11 @@
+id = "197-lua-coroutine-filter"
+family = "data-wrangling"
+title = "Stateful stream processing with bidirectional coroutine value passing"
+difficulty = 4
+timebox = 300
+teaches = [
+  "coroutine.create(fn) creates a suspended coroutine closure",
+  "coroutine.resume passes values into the coroutine that become return values of coroutine.yield",
+  "coroutine.yield returns values back to the resuming caller while suspending execution",
+  "bidirectional coroutines encapsulate stream state machines without global tables",
+]

@@ -1,0 +1,8 @@
+# Stream events
+A 10
+B 20
+A 25
+B 15
+A 20
+B 30
+A 5
