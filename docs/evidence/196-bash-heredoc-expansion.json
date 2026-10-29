@@ -1,0 +1,60 @@
+{
+  "calibrated_at": "2026-10-29T23:41:46.273306+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "196-bash-heredoc-expansion",
+  "fixture_origin": "Synthetic service definitions authored for this drill",
+  "lineage": "scripting-gauntlet/bash-heredoc-expansion",
+  "results": [
+    {
+      "elapsed_ms": 554,
+      "language": "bash",
+      "passed": true,
+      "path": "solutions/solve.bash",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 519,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Fails to escape ${1:-status} in unquoted heredoc, evaluating generator $1 and causing generated script to fail argument dispatch",
+      "elapsed_ms": 783,
+      "expected_diagnostic": "api/start/exit_code",
+      "language": "bash",
+      "passed": true,
+      "path": "controls/wrong-unescaped-action.bash",
+      "problems": [
+        "manifest.csv row 1 [api/start/exit_code]: expected 0, got '1'",
+        "manifest.csv row 1 [api/start/output]: expected 'Starting api in prod on port 8080...', got ''",
+        "manifest.csv row 2 [api/check/exit_code]: expected 0, got '1'",
+        "manifest.csv row 2 [api/check/output]: expected 'Checking health at http://127.0.0.1:8080/healthz', got ''",
+        "manifest.csv row 3 [auth/start/exit_code]: expected 0, got '1'",
+        "manifest.csv row 3 [auth/start/output]: expected 'Starting auth in staging on port 9000...', got ''",
+        "manifest.csv row 4 [auth/check/exit_code]: expected 0, got '1'",
+        "manifest.csv row 4 [auth/check/output]: expected 'Checking health at http://127.0.0.1:9000/status', got ''",
+        "manifest.csv row 5 [worker/start/exit_code]: expected 0, got '1'",
+        "manifest.csv row 5 [worker/start/output]: expected 'Starting worker in prod on port 5000...', got ''",
+        "manifest.csv row 6 [worker/check/exit_code]: expected 0, got '1'",
+        "manifest.csv row 6 [worker/check/output]: expected 'Checking health at http://127.0.0.1:5000/ping', got ''",
+        "summary.json['success']: expected 6, got 0"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "8d310bcd6ddd89459cc540be7c3d4b80ac7b4c68f8c83d6576eb3f579417cbe1",
+    "controls/manifest.toml": "74c98fd34b793816f21574a9cfdf2c971f9a3b4d1366a0808f3477b81cc0dcbb",
+    "controls/wrong-unescaped-action.bash": "4999753a5e027b1a192135f6fe355652f024f0a556b76a617cdff5c11f9d1833",
+    "drill.toml": "5a0731a2c78052b63b22cffdc8eb2768893bc5f7a31ee35477212b69030e3623",
+    "fixtures/services.csv": "c1de505990dc91d4b3242e7e67651e87194b54f49a968f3923518b0ca65a9029",
+    "solutions/solve.bash": "0ccace4b577ec4afb67d4f627300ed5cd0636875629cb3c6fffe34587eee549b",
+    "solutions/solve.py": "c72b58dd4518cbc776fe5a5138ccfa5dd97dffe79cd2fa1c22aa122f3f82514c",
+    "verify.py": "124f401d4752d4eea21a650930a8e114bb10e1c8c8dd5c5f2df6cb3590318471"
+  },
+  "stage": "reference-calibrated"
+}

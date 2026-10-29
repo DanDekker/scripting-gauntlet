@@ -1,0 +1,4 @@
+name,port,env,health_path
+api,8080,prod,/healthz
+auth,9000,staging,/status
+worker,5000,prod,/ping

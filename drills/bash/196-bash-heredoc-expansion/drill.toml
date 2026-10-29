@@ -1,0 +1,11 @@
+id = "196-bash-heredoc-expansion"
+family = "data-wrangling"
+title = "Generate wrapper scripts with mixed heredoc variable expansion"
+difficulty = 4
+timebox = 300
+teaches = [
+  "unquoted heredocs (<<EOF) expand variables at generation time",
+  "quoted heredocs (<<'EOF') suppress all variable expansion",
+  "mixed templates must expand build variables ($NAME) while escaping runtime variables (\\$1, \\$ACTION)",
+  "unescaped runtime variables bake the generator's own arguments into child scripts",
+]

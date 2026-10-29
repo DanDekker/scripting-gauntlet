@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/bash-heredoc-expansion"
+fixture_origin = "Synthetic service definitions authored for this drill"
+
+[[negative]]
+path = "controls/wrong-unescaped-action.bash"
+defect = "Fails to escape ${1:-status} in unquoted heredoc, evaluating generator $1 and causing generated script to fail argument dispatch"
+expect = "api/start/exit_code"
