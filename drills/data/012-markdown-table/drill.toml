@@ -1,0 +1,11 @@
+id = "012-markdown-table"
+family = "data-wrangling"
+title = "Pull a table out of a markdown report"
+difficulty = 1
+timebox = 120
+teaches = [
+  "a markdown table is a pipe table with a separator row",
+  "cells are padded, so trim them",
+  "skip the separator row, not the header",
+  "prose around the table is not data",
+]
