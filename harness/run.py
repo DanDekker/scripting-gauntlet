@@ -33,6 +33,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 DRILLS = ROOT / "drills"
+HARNESS_DIR = Path(__file__).resolve().parent
 
 # suffix -> interpreter argv. Language label is the suffix itself.
 INTERPRETERS: dict[str, list[str]] = {
@@ -78,6 +79,15 @@ class Drill:
     @property
     def langs(self) -> list[str]:
         return sorted(self.solutions)
+
+    @property
+    def track(self) -> str:
+        """Sub-track directory (data/, clean/, ops/, apply/), or '-' for a flat drill."""
+        try:
+            relative = self.dir.parent.relative_to(DRILLS).as_posix()
+        except ValueError:
+            return "-"
+        return relative if relative != "." else "-"
 
 
 @dataclass
@@ -127,10 +137,10 @@ def load_drill(path: Path) -> Drill:
 def discover() -> list[Drill]:
     if not DRILLS.is_dir():
         raise SystemExit(f"no drills/ directory at {DRILLS}")
-    found = [load_drill(d) for d in sorted(DRILLS.iterdir()) if d.is_dir()]
+    found = [load_drill(path.parent) for path in sorted(DRILLS.rglob("drill.toml"))]
     if not found:
         raise SystemExit("no drills found")
-    return found
+    return sorted(found, key=lambda drill: drill.id)
 
 
 # --------------------------------------------------------------------------- mock
@@ -182,6 +192,8 @@ def load_verifier(drill: Drill):
     path = drill.dir / "verify.py"
     if not path.is_file():
         raise SystemExit(f"{drill.id}: missing verify.py")
+    if str(HARNESS_DIR) not in sys.path:
+        sys.path.insert(0, str(HARNESS_DIR))  # so graders can `import verifylib`
     name = "verify_" + drill.id.replace("-", "_")
     spec = importlib.util.spec_from_file_location(name, path)
     if spec is None or spec.loader is None:
@@ -309,10 +321,10 @@ def cmd_run(args: argparse.Namespace) -> int:
 
 def cmd_list(_: argparse.Namespace) -> int:
     drills = discover()
-    print(f"{'id':<28} {'family':<16} {'d':>2} {'timebox':>8}  languages")
+    print(f"{'id':<28} {'track':<8} {'family':<16} {'d':>2} {'timebox':>8}  languages")
     for d in drills:
         print(
-            f"{d.id:<28} {d.meta['family']:<16} {d.meta['difficulty']:>2} "
+            f"{d.id:<28} {d.track:<8} {d.meta['family']:<16} {d.meta['difficulty']:>2} "
             f"{d.meta['timebox']:>7}s  {', '.join(d.langs) or '(none)'}"
         )
     print(f"\n{len(drills)} drills")
