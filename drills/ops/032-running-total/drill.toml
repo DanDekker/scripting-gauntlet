@@ -1,0 +1,11 @@
+id = "032-running-total"
+family = "data-wrangling"
+title = "Running balance per account, in date order"
+difficulty = 2
+timebox = 180
+teaches = [
+  "sort before you accumulate, not after",
+  "a running total resets at the group boundary",
+  "same-date rows need an explicit secondary key",
+  "negative amounts are just amounts",
+]
