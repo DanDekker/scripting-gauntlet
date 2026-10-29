@@ -1,0 +1,11 @@
+id = "076-runaway-files"
+family = "file-hygiene"
+title = "Find the files eating the disk without following loops or double-counting links"
+difficulty = 4
+timebox = 300
+teaches = [
+  "walk regular files only and never follow a symlink",
+  "count a hardlink's bytes once",
+  "exclude build junk from the total but report how much it hides",
+  "rank by size with a stable tie-break",
+]
