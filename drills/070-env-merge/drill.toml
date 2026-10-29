@@ -1,0 +1,11 @@
+id = "070-env-merge"
+family = "text-munging"
+title = "Merge layered .env files with quotes, comments and overrides"
+difficulty = 3
+timebox = 180
+teaches = [
+  "apply files in order so the last assignment wins",
+  "a quoted value is literal, including a # inside it",
+  "an unquoted # starts a comment",
+  "strip export prefixes and quotes without eating the data",
+]
