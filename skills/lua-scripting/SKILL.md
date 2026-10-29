@@ -46,6 +46,10 @@ for name in text:gmatch("(%a+)%s*=") do end         -- iterate every match
   Use it for nested delimiters instead of counting braces by hand.
 - **`%f[set]` is a frontier pattern**: it matches the empty string at a boundary, so
   `("%f[%a]%a+%f[%A]")` finds a word between two different character classes.
+- **A needle is data, not a pattern**: `s:find(needle, 1, true)` — the fourth argument is
+  the whole lesson. A needle ending in `%` (like `token=100%`) makes `find(s, needle)`
+  raise `malformed pattern (ends with '%')`, so the scan dies on the first line it reads.
+  See `157-lua-needle-haystack`.
 - `string.gsub` returns **two** values: the string and the number of replacements. In
   a table constructor or an argument list, `local s = s:gsub(...)` keeps only the
   string, and `f(s:gsub(...))` passes both. Capture the count when you need it:
@@ -84,6 +88,33 @@ around one.
   sorted before it is written.
 - A value of `0` is a value, not a gap. Test with `~= nil`, never with truthiness,
   when zero is legal data.
+
+## A glob is not a pattern either
+
+`*.log` is a glob, not a Lua pattern. Translating `*` to `.*` and stopping there gives
+`^.*.log$`, where the `.` before `log` matches **any** character — so `myblog` matches
+`*.log` and `c.log.old` is judged by a rule nobody wrote.
+
+Escape every literal first (`.`, `-`, `+`, `%`, `(`, `)`, `[`, `]`, `^`, `$`), then
+translate `*` → `.*` and `?` → `.`, and anchor the whole thing. Drill: `160-lua-file-hunt`.
+
+## There is no stat and no opendir
+
+Lua's standard library cannot list a directory or read a file's metadata. That is not a
+limitation to work around with a package; it is the shape of the language:
+
+```lua
+local pipe = assert(io.popen("find '" .. root .. "' -type f"))   -- the list
+for path in pipe:lines() do ... end
+pipe:close()
+
+local fh = assert(io.open(path, "rb"))
+local size = fh:seek("end")      -- the size, with no stat call
+fh:close()
+```
+
+`find -type f` also settles symlinks for you: it does not follow them and does not report
+them, which is usually exactly what a size roll-up wants. Drill: `159-lua-disk-scan`.
 
 ## `table.sort` is not stable
 
@@ -147,6 +178,9 @@ local ok, err = pcall(check, line)       -- false, "not an integer: three"
 
 ## Small things that bite
 
+- **A loop variable is const.** `for key in pairs(t) do key = trim(key) end` raises
+  `attempt to assign to const variable 'key'` in Lua 5.4+. Copy it into a local first:
+  `for piece in ... do local key = trim(piece)`.
 - **Strings are immutable**; `s:gsub` builds a new string. That is fine, but a loop
   that calls `gsub` per line is a loop that copies the whole line each time.
 - **`tonumber` is lenient**: `tonumber("0x10")` is 16 and `tonumber(" 12 ")` is 12. If
@@ -197,4 +231,5 @@ user would use, not in the words your parser happens to produce.
 
 See [references/lua-patterns.md](references/lua-patterns.md) for a pattern cheat sheet.
 Prove it against `drills/lua/150-lua-pattern-fields` and the rest of the `drills/lua/`
-track.
+track: field parsing, exact decimals, UTF-8 counting, sort ties, error levels, JSON
+output, sparse tables, needle search, plugin ordering, disk scans and file hunting.

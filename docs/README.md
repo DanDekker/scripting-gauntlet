@@ -32,5 +32,9 @@ Calibration reports with source hashes and negative-control results:
   [UTF-8 characters](evidence/152-lua-utf8-chars.json),
   [sort ties](evidence/153-lua-sort-ties.json),
   [error levels](evidence/154-lua-error-level.json),
-  [JSON writer](evidence/155-lua-json-writer.json), and
-  [sparse arrays](evidence/156-lua-sparse-array.json)
+  [JSON writer](evidence/155-lua-json-writer.json),
+  [sparse arrays](evidence/156-lua-sparse-array.json),
+  [needle search](evidence/157-lua-needle-haystack.json),
+  [plugin order](evidence/158-lua-plugin-order.json),
+  [disk scan](evidence/159-lua-disk-scan.json), and
+  [file hunt](evidence/160-lua-file-hunt.json)
