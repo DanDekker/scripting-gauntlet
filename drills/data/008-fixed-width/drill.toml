@@ -1,0 +1,11 @@
+id = "008-fixed-width"
+family = "data-wrangling"
+title = "Cut fixed-width records into columns"
+difficulty = 2
+timebox = 180
+teaches = [
+  "fixed-width records are sliced, not split",
+  "trim the padding off every field",
+  "right-aligned numbers need trimming before arithmetic",
+  "an empty name is a value, not a missing row",
+]
