@@ -1,0 +1,11 @@
+id = "030-pivot-melt"
+family = "data-wrangling"
+title = "Melt a wide quarter table into long rows"
+difficulty = 2
+timebox = 180
+teaches = [
+  "wide to long is a loop over the value columns",
+  "the header names the columns, do not hardcode them",
+  "an empty cell produces no row; a zero cell does",
+  "sort the melted rows, the input order is meaningless",
+]
