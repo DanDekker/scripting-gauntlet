@@ -1,0 +1,11 @@
+id = "018-null-semantics"
+family = "data-wrangling"
+title = "Decide what counts as missing"
+difficulty = 1
+timebox = 150
+teaches = [
+  "empty, NA, N/A, null and - are all the same thing",
+  "case-insensitive null tokens",
+  "zero is a value, not a missing value",
+  "count what you normalised",
+]
