@@ -1,0 +1,11 @@
+id = "048-ps-snapshot"
+family = "system-recon"
+title = "Rank processes by RSS out of a captured ps table"
+difficulty = 2
+timebox = 180
+teaches = [
+  "a ps table is whitespace columns plus one free-text tail",
+  "split on whitespace, then rebuild everything after the fourth field",
+  "top-N with an explicit tie-break instead of a lucky sort",
+  "group by executable basename, not by full command line",
+]
