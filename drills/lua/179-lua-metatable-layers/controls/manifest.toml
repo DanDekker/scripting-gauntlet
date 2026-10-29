@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/lua-metatable-layers"
+fixture_origin = "Synthetic layered config authored for this drill"
+
+[[negative]]
+path = "controls/wrong-rawget-only.lua"
+defect = "Resolves with rawget on the queried layer only, so every inherited key looks absent"
+expect = "leaf/retries/value"

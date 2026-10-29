@@ -1,0 +1,56 @@
+{
+  "calibrated_at": "2026-10-29T23:12:14.402584+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "179-lua-metatable-layers",
+  "fixture_origin": "Synthetic layered config authored for this drill",
+  "lineage": "scripting-gauntlet/lua-metatable-layers",
+  "results": [
+    {
+      "elapsed_ms": 10,
+      "language": "lua",
+      "passed": true,
+      "path": "solutions/solve.lua",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 43,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Resolves with rawget on the queried layer only, so every inherited key looks absent",
+      "elapsed_ms": 12,
+      "expected_diagnostic": "leaf/retries/value",
+      "language": "lua",
+      "passed": true,
+      "path": "controls/wrong-rawget-only.lua",
+      "problems": [
+        "lookups.csv row 1 [leaf/retries/value]: expected '5', got ''",
+        "lookups.csv row 1 [leaf/retries/source]: expected 'mid', got 'absent'",
+        "lookups.csv row 2 [leaf/region/value]: expected 'eu', got ''",
+        "lookups.csv row 2 [leaf/region/source]: expected 'base', got 'absent'",
+        "lookups.csv row 3 [leaf/tier/value]: expected 'gold', got ''",
+        "lookups.csv row 3 [leaf/tier/source]: expected 'mid', got 'absent'",
+        "summary.json['resolved']: expected 6, got 3",
+        "summary.json['absent']: expected 2, got 5"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "87dca7404fa64b3619a183ecf05b09fe40405980d229e7640cf9953e92fe8a07",
+    "controls/manifest.toml": "9497e310316f4826fae8736af5090e1d0cf5b86cc30f4fa281ff58ea0039505e",
+    "controls/wrong-rawget-only.lua": "9f2b7c8c0df92cf6d421e698091d78edd0dec243823030c0817195d46d403cde",
+    "drill.toml": "6e043af6debf9347ed20cc36612003c237f8f58f1ba01c252ce62e939744ca85",
+    "fixtures/layers.txt": "f41af965d7ea362cf89d11a9b99a1c992bd2fee868f9f59c2dcc1d14c5c63284",
+    "fixtures/lookups.txt": "c2b033e93fd7070eaba126e10bcbe0998b09e0fc9d2a0818515b3931aa0ccb6a",
+    "solutions/solve.lua": "7a6396be1ac5143ef4754fe48998f9d6f5cd041d92772f63b078b73945831e11",
+    "solutions/solve.py": "16d226cc489fbe7121f908a0fead4316790907d104833b36a980ca638f295434",
+    "verify.py": "ac118050835acd192dce6cd271f5499a9408ac658f23fd232ac688c3e4a9e733"
+  },
+  "stage": "reference-calibrated"
+}

@@ -1,0 +1,11 @@
+id = "179-lua-metatable-layers"
+family = "data-wrangling"
+title = "Resolve layered config through __index chains and say where a value came from"
+difficulty = 4
+timebox = 300
+teaches = [
+  "__index chains inheritance: a missing key falls through to the parent layer",
+  "rawget sees only the layer's own keys, so it is the wrong tool for resolution",
+  "pairs iterates own keys only; inherited keys are invisible to it",
+  "__newindex runs only when the key is absent from the table itself",
+]

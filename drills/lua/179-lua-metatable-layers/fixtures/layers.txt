@@ -1,0 +1,8 @@
+layer base
+region=eu
+retries=3
+layer mid
+retries=5
+tier=gold
+layer leaf
+name=api
