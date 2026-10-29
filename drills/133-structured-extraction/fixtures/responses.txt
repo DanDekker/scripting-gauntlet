@@ -1,0 +1,93 @@
+=== RESPONSE r01 ===
+Sure! Here is the JSON you requested:
+
+```json
+{"tool": "search", "args": {"query": "weather in Oslo"}, "max_results": 5}
+```
+
+Hope this helps! Let me know if you need anything else.
+
+=== RESPONSE r02 ===
+Here are the three candidate ids:
+
+```
+["a1", "b2", "c3"]
+```
+
+That's the list you asked for.
+
+=== RESPONSE r03 ===
+First, the helper you asked for:
+
+```python
+def load(path):
+    with open(path) as fh:
+        return json.load(fh)
+```
+
+And here is the config payload:
+
+```json
+{"retries": 3, "backoff": {"enabled": true, "base_ms": 250}}
+```
+
+=== RESPONSE r04 ===
+The final answer is {"status": "ok", "count": 7} - nothing else to add.
+
+=== RESPONSE r05 ===
+Here is the object, I think:
+
+```json
+{"status": "ok", "items": [1, 2, 3
+```
+
+Sorry, that one got cut off.
+
+=== RESPONSE r06 ===
+```json
+42
+```
+
+=== RESPONSE r07 ===
+
+
+=== RESPONSE r08 ===
+Here you go:
+
+```json
+{"status": "ok", "items": [1, 2, 3,],}
+```
+
+Let me fix that:
+
+```json
+["alpha", "beta"]
+```
+
+=== RESPONSE r09 ===
+```json
+"just-a-string"
+```
+
+Actually the object you want is {"ok": true, "id": 42} - use that.
+
+=== RESPONSE r10 ===
+I filled in the {config} template for you:
+
+{"service": "api", "ports": [8080, 8443], "tls": {"enabled": true, "min_version": "1.2"}}
+
+=== RESPONSE r11 ===   
+Option A:
+
+```
+["alpha", "beta"]
+```
+
+Option B (preferred):
+
+```json
+{"choice": "b"}
+```
+
+=== RESPONSE r12 ===
+I can't help with that request.

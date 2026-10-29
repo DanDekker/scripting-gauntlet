@@ -1,0 +1,20 @@
+{"session_id": "s1", "project": "infra", "role": "planner", "model": "gpt-4o", "prompt_tokens": 1500, "completion_tokens": 300, "success": true}
+{"session_id": "s1", "project": "infra", "role": "planner", "model": "gpt-4o", "prompt_tokens": 2000, "completion_tokens": 400, "success": true}
+{"session_id": "s2", "project": "frontend", "role": "coder", "model": "gpt-4o-mini", "prompt_tokens": 8000, "completion_tokens": 3000, "success": true}
+{"session_id": "s2", "project": "frontend", "role": "coder", "model": "gpt-4o-mini", "prompt_tokens": 12000, "completion_tokens": 5000, "success": false}
+
+{"session_id": "s3", "project": "data-platform", "role": "reviewer", "model": "claude-sonnet", "prompt_tokens": 3000, "completion_tokens": 600, "success": true}   
+{"session_id": "s4", "project": "infra", "role": "coder", "model": "gpt-4-turbo", "prompt_tokens": 5000, "completion_tokens": 1000}
+{"session_id": "s5", "project": "frontend", "role": "planner", "model": "gpt-4o", "prompt_tokens": 700, "completion_tokens": 100, "success": true}
+{"session_id": "s6", "project": "infra", "role": "  planner  ", "model": "gpt-4o", "prompt_tokens": 1000, "completion_tokens": 200, "success": true}
+{"session_id": "s7", "project": "infra", "role": "planner", "model": "  claude-sonnet  ", "prompt_tokens": 2000, "completion_tokens": 500, "success": true}
+{"session_id": "s8", "project": "research", "role": "coder", "model": "llama-3-70b", "prompt_tokens": 4000, "completion_tokens": 1000, "success": true}
+{"session_id": "s9", "project": "infra", "role": "coder", "model": "nonexistent-model", "prompt_tokens": 3000, "completion_tokens": 500, "success": true}
+{"session_id": "s10", "project": "infra", "role": "planner", "model": "gpt-4o", "prompt_tokens": -5, "completion_tokens": 100, "success": true}
+{"session_id": "s11", "project": "frontend", "role": "coder", "model": "gpt-4o", "prompt_tokens": "900", "completion_tokens": 100, "success": true}
+{not json at all
+{"session_id": "s12", "project": "", "role": "planner", "model": "gpt-4o", "prompt_tokens": 100, "completion_tokens": 10, "success": true}
+["s13"]
+{"session_id": "s13", "project": "infra", "role": "planner", "model": "gpt-4o", "prompt_tokens": 0, "completion_tokens": 0, "success": true}
+{"session_id": "s14", "project": "infra", "role": "planner", "model": "gpt-4o", "prompt_tokens": 500, "completion_tokens": 0, "success": false}
+{"session_id": "s15", "project": "infra", "role": "planner", "model": "gpt-4o", "prompt_tokens": 100, "completion_tokens": 10.5, "success": true}

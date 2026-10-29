@@ -1,0 +1,12 @@
+id = "134-cost-allocation"
+family = "data-wrangling"
+title = "Attribute multi-agent LLM spend across roles, projects, and budget limits"
+difficulty = 3
+timebox = 240
+teaches = [
+  "join three sources (jsonl turns, csv price sheet, json budgets) on a trimmed key",
+  "an unknown model is not an error: it is a priced-at-zero turn you must count",
+  "invalid turns are dropped before aggregation, but the raw record count is still reported",
+  "a session is successful only when every one of its turns succeeded",
+  "percent-of-spend is a share of priced spend, computed before the 4-decimal formatting",
+]

@@ -1,0 +1,4 @@
+TODO before the release
+<<<<<<< HEAD
+finish the merge by hand
+then run make check

@@ -1,0 +1,12 @@
+id = "136-log-anomaly"
+family = "system-recon"
+title = "Detect anomaly spikes in agent error rates and identify culprits"
+difficulty = 4
+timebox = 300
+teaches = [
+  "the baseline is a ratio of sums over the prior window, never a mean of rates",
+  "the current minute is not part of its own window",
+  "low-traffic minutes are not judged but still feed the history",
+  "a spike must clear the floor, the multiplier and the minimum traffic at once",
+  "a blank top_error is reported as Unknown, not as an empty cell",
+]

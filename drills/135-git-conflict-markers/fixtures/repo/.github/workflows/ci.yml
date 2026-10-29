@@ -1,0 +1,14 @@
+name: ci
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+<<<<<<< HEAD
+      - uses: actions/checkout@v4
+      - run: make check
+=======
+      - uses: actions/checkout@v3
+      - run: make check EXTRA=1
+      - run: make lint
+>>>>>>> ci/pin-actions

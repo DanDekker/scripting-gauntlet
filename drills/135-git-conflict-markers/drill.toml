@@ -1,0 +1,12 @@
+id = "135-git-conflict-markers"
+family = "file-hygiene"
+title = "Detect and catalogue unresolved git merge conflict markers across a repository"
+difficulty = 3
+timebox = 240
+teaches = [
+  "a conflict is a three-line agreement, not the presence of one marker",
+  "an orphaned <<<<<<< in a note or a doc fence is not a conflict",
+  "markers only count in column 1, so indented documentation stays documentation",
+  "diff3 adds a ||||||| base section that belongs to neither side and is counted by neither",
+  "branch labels are the whole remainder of the marker line, trimmed of trailing junk",
+]

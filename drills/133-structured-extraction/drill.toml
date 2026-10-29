@@ -1,0 +1,12 @@
+id = "133-structured-extraction"
+family = "data-wrangling"
+title = "Extract valid JSON from messy LLM conversational output"
+difficulty = 3
+timebox = 240
+teaches = [
+  "a reply is a sequence of candidate payloads, not one payload: try them in a fixed priority order",
+  "a fenced json block beats an unlabelled fence even when it appears later in the reply",
+  "a JSON primitive parses fine but is still the wrong answer",
+  "brace matching has to respect string quoting, or a template placeholder derails the scan",
+  "failed extraction is a status, not an exception",
+]
