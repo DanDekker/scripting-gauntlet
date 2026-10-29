@@ -1,0 +1,7 @@
+# Expressions to evaluate
+1|math.abs(-42)
+2|string.upper(name)
+3|os.execute('rm -rf /')
+4|x * 2 + y
+5|math.sqrt(9) + * 2
+6|io.open('/etc/passwd')

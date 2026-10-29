@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/lua-env-sandbox"
+fixture_origin = "Synthetic user expressions authored for this drill"
+
+[[negative]]
+path = "controls/wrong-global-leak.lua"
+defect = "Executes with standard global environment without sandboxing, allowing forbidden os calls to succeed"
+expect = "3/status"

@@ -1,0 +1,53 @@
+{
+  "calibrated_at": "2026-10-29T23:33:40.865808+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "192-lua-env-sandbox",
+  "fixture_origin": "Synthetic user expressions authored for this drill",
+  "lineage": "scripting-gauntlet/lua-env-sandbox",
+  "results": [
+    {
+      "elapsed_ms": 4,
+      "language": "lua",
+      "passed": true,
+      "path": "solutions/solve.lua",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 25,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Executes with standard global environment without sandboxing, allowing forbidden os calls to succeed",
+      "elapsed_ms": 5,
+      "expected_diagnostic": "3/status",
+      "language": "lua",
+      "passed": true,
+      "path": "controls/wrong-global-leak.lua",
+      "problems": [
+        "results.csv row 3 [3/status]: expected 'runtime_error', got 'ok'",
+        "results.csv row 3 [3/result]: expected '', got '0'",
+        "results.csv row 6 [6/status]: expected 'runtime_error', got 'ok'",
+        "results.csv row 6 [6/result]: expected '', got 'file'",
+        "summary.json['ok']: expected 3, got 5",
+        "summary.json['runtime_error']: expected 2, got 0"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "4da9200ed8eb359c339fe016dd5eb2e589f41d695043bcf9137b69a95cb93683",
+    "controls/manifest.toml": "fea6bab7be528f7382421b701cfb5cd236b2caceab5525ac89d6152b37d9282b",
+    "controls/wrong-global-leak.lua": "271a66e42c1d4d1ef58781f342355d101859cb655320bc24bd5b23fd553a5542",
+    "drill.toml": "f1b3ca13b61426dbb199f61584dbac88b8e00414ed840e12d0294c54f9af6026",
+    "fixtures/expressions.txt": "ebb8295debaaf434902396f7a572a155fb558cb6ddbf29112e5994cc0a057410",
+    "solutions/solve.lua": "35b7b1d81209ff12d0491c10a128fe2f3ef80d3fffe4d1ea2985ea9b99d24c9d",
+    "solutions/solve.py": "05d4f8a0f4080100b5b83fe4f2eb7079a45f450d209c490c288d525ee7ca17be",
+    "verify.py": "98fcafd8bc513e22946acf259845b247d62502d9b6d1f7e9ced1c6e7c6608d9b"
+  },
+  "stage": "reference-calibrated"
+}

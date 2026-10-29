@@ -1,0 +1,11 @@
+id = "192-lua-env-sandbox"
+family = "data-wrangling"
+title = "Safely evaluate dynamic user expressions in a restricted Lua environment"
+difficulty = 4
+timebox = 300
+teaches = [
+  "load(chunk, name, 't', env) binds the chunk's _ENV upvalue to a restricted table",
+  "omitting os, io, and debug from the sandbox prevents arbitrary system calls",
+  "load returns nil plus error message on syntax error without raising",
+  "pcall wraps execution to catch runtime errors when untrusted code attempts nil-indexing",
+]
