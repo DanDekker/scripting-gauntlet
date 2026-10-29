@@ -38,3 +38,8 @@ Calibration reports with source hashes and negative-control results:
   [plugin order](evidence/158-lua-plugin-order.json),
   [disk scan](evidence/159-lua-disk-scan.json), and
   [file hunt](evidence/160-lua-file-hunt.json)
+- Perl: [split limits](evidence/161-perl-split-limits.json),
+  [numification](evidence/162-perl-numify.json),
+  [literal matching](evidence/163-perl-literal-match.json),
+  [hash order](evidence/164-perl-hash-order.json), and
+  [epoch conversion](evidence/165-perl-timegm.json)
