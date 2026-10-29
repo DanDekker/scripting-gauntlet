@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/ruby-forwardable-delegation"
+fixture_origin = "Synthetic registry actions authored for this drill"
+
+[[negative]]
+path = "controls/wrong-hash-subclass.rb"
+defect = "Subclasses Hash instead of delegating with Forwardable, exposing delete and destroying encapsulated state"
+expect = "8/status"

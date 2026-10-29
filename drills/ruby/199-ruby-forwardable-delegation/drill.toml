@@ -1,0 +1,11 @@
+id = "199-ruby-forwardable-delegation"
+family = "data-wrangling"
+title = "Encapsulate data structures using Forwardable method delegation"
+difficulty = 4
+timebox = 300
+teaches = [
+  "extend Forwardable and def_delegators provide explicit method forwarding (composition over inheritance)",
+  "subclassing collections like Hash leaks dangerous mutating methods (clear, delete, replace)",
+  "def_delegator enables method aliasing and wrapper metering around encapsulated state",
+  "non-delegated methods raise NoMethodError, enforcing access control contracts",
+]

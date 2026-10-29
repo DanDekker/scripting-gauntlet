@@ -1,0 +1,52 @@
+{
+  "calibrated_at": "2026-10-29T23:44:04.868627+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "199-ruby-forwardable-delegation",
+  "fixture_origin": "Synthetic registry actions authored for this drill",
+  "lineage": "scripting-gauntlet/ruby-forwardable-delegation",
+  "results": [
+    {
+      "elapsed_ms": 26,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 84,
+      "language": "rb",
+      "passed": true,
+      "path": "solutions/solve.rb",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Subclasses Hash instead of delegating with Forwardable, exposing delete and destroying encapsulated state",
+      "elapsed_ms": 79,
+      "expected_diagnostic": "8/status",
+      "language": "rb",
+      "passed": true,
+      "path": "controls/wrong-hash-subclass.rb",
+      "problems": [
+        "audit.csv row 8 [8/status]: expected 'blocked', got 'ok'",
+        "audit.csv row 8 [8/result]: expected 'NoMethodError', got 'deleted'",
+        "audit.csv row 9 [9/result]: expected '500', got ''",
+        "summary.json['blocked']: expected 1, got 0",
+        "summary.json['final_size']: expected 3, got 2"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "64cb17300a3ba89c21db4a25deeb17852d04c3aa9e01ca20e108820a312f2578",
+    "controls/manifest.toml": "904dc6e707af1e4bd6c3ea15bf1b35bcd271fdbaff9b9e04aab86256d11f3de7",
+    "controls/wrong-hash-subclass.rb": "b4297b825713870856979e37c81598bdc73d6086e0f10784be295c3480106ed4",
+    "drill.toml": "b72bd9f3ec65ee3180308e051a3ad18d0a5d57bd6e2a454b1c4db5a21ce12c42",
+    "fixtures/actions.txt": "b26ec7b1a3f3b80bd5b1364a6a83d486cb3b1636f0710ddd2ef2d45bc15b133a",
+    "solutions/solve.py": "b37a69b00db9a67f6a9a67c18464378c2f9a8a4b640611e36003332c74ba221a",
+    "solutions/solve.rb": "097293ccb726888c66648998fbedf1bfb54fbb9f0d36287aa841276e98d12fa2",
+    "verify.py": "ded9af3511abcbcb786f13a410fe60c328ba898e2fad80870e8ec72e1a6b9b2d"
+  },
+  "stage": "reference-calibrated"
+}

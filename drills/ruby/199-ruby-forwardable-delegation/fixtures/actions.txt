@@ -1,0 +1,10 @@
+# Registry audit actions
+add cpu 4
+add mem 16
+get cpu
+add disk 500
+get mem
+size
+keys
+delete disk
+get disk
