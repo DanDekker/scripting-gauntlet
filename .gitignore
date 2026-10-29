@@ -11,6 +11,7 @@ work/
 __pycache__/
 *.pyc
 .venv/
+node_modules/
 
 # mac
 .DS_Store

@@ -40,6 +40,7 @@ formatted to exactly 2 decimal places.
 
 ## Timebox
 
-5 minutes. `html.parser` in python, or a scoped pattern match in lua. `awk`/`sed` on
-HTML is the wrong instinct here — this is exactly the point where markup stops being a
-text format and becomes a tree.
+5 minutes. Use `html.parser` in Python, a scoped pattern match in Lua, or browser DOM
+APIs in JavaScript. The included JavaScript reference runs its DOM code under jsdom;
+run `npm ci` first. `awk`/`sed` on HTML is the wrong instinct here — this is exactly
+the point where markup stops being a text format and becomes a tree.
