@@ -50,6 +50,7 @@ INTERPRETERS: dict[str, list[str]] = {
     "js": ["node"],
     "rb": ["ruby"],
     "pl": ["perl"],
+    "tcl": ["tclsh"],
     "ps1": ["pwsh", "-NoProfile", "-NonInteractive", "-File"],
 }
 

@@ -73,6 +73,7 @@ runner checks the probe's exit status before loading `verify.py`.
 | `.js` | `node` |
 | `.rb` | `ruby` |
 | `.pl` | `perl` |
+| `.tcl` | `tclsh` |
 
 Add to `INTERPRETERS` in `harness/run.py` to support more. `make check` runs every drill
 against every solution it ships.
