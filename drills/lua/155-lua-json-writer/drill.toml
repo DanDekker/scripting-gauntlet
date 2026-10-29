@@ -1,0 +1,11 @@
+id = "155-lua-json-writer"
+family = "data-wrangling"
+title = "Emit a JSON report by hand from a tab-separated export"
+difficulty = 4
+timebox = 300
+teaches = [
+  "string.format('%q') is lua escaping, not JSON: it writes \\a and \\ddd, not \\u00xx",
+  "escape a string byte by byte: quote, backslash, and every byte below 0x20",
+  "an integral number is written as an integer, a fractional one with six significant digits",
+  "a missing value is null, not an empty string",
+]

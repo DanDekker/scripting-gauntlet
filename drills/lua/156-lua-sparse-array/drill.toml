@@ -1,0 +1,11 @@
+id = "156-lua-sparse-array"
+family = "data-wrangling"
+title = "Fill a table with holes and report on it without trusting the length operator"
+difficulty = 3
+timebox = 240
+teaches = [
+  "the # operator on a table with holes is undefined: it may stop at the first nil",
+  "ipairs stops at the first nil, so it never reaches the entries after a hole",
+  "keep your own counter and your own bounds when the data has gaps",
+  "a zero value is a value: it is not the same as a missing entry",
+]

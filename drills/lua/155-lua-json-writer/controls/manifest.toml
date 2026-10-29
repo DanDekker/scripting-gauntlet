@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/lua-json-writer"
+fixture_origin = "Synthetic tab-separated export with control characters authored for this drill"
+
+[[negative]]
+path = "controls/wrong-lua-quoting.lua"
+defect = "Escapes strings with string.format('%q'), which is lua escaping and not JSON"
+expect = "not valid JSON"

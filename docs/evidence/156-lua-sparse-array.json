@@ -1,0 +1,52 @@
+{
+  "calibrated_at": "2026-10-29T21:50:06.352671+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "156-lua-sparse-array",
+  "fixture_origin": "Synthetic integer list with gaps authored for this drill",
+  "lineage": "scripting-gauntlet/lua-sparse-array",
+  "results": [
+    {
+      "elapsed_ms": 9,
+      "language": "lua",
+      "passed": true,
+      "path": "solutions/solve.lua",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 55,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Walks the table with ipairs, which stops at the first hole and loses every entry after it",
+      "elapsed_ms": 67,
+      "expected_diagnostic": "present.csv: expected 5 rows, got 2",
+      "language": "lua",
+      "passed": true,
+      "path": "controls/wrong-ipairs.lua",
+      "problems": [
+        "present.csv: expected 5 rows, got 2",
+        "summary.json['present']: expected 5, got 2",
+        "summary.json['missing']: expected 3, got 6",
+        "summary.json['total']: expected 100, got 30",
+        "summary.json['max']: expected 40, got 20"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "89ea6ebd7415380e02294e92658308d3c0dffe5346aa3bb098286d45e98cdbba",
+    "controls/manifest.toml": "4fca744c7fe3985e995e5b23703868918b6f45195046721388c19148b597dbdd",
+    "controls/wrong-ipairs.lua": "4e4fb3767b19a06f9f153dc1e0f5821e9446d16cbb1e78b40582f20c6e5a75bd",
+    "drill.toml": "ce7e4b99ee2b9dd77cc57f21852e08528c363e66a9ced6e2c5239a671fc8309d",
+    "fixtures/values.txt": "e23450bbbab14d269878031035cb1374331566ac3bce5bfa1537d17b98c09f28",
+    "solutions/solve.lua": "d6a5e8d4c320be0e2a964075f76e802c48aa186d8e40f38c83a2af1766ac6bc9",
+    "solutions/solve.py": "267e1a788fec86ea352931919a1b57d2d421ccd4b6eef00e3c9c02f54194f5c0",
+    "verify.py": "8bfa3d6f98b4cf1e5f6fc76766708af12967e25ab6aee71bcf590da54e09d88e"
+  },
+  "stage": "reference-calibrated"
+}

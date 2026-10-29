@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/lua-sparse-array"
+fixture_origin = "Synthetic integer list with gaps authored for this drill"
+
+[[negative]]
+path = "controls/wrong-ipairs.lua"
+defect = "Walks the table with ipairs, which stops at the first hole and loses every entry after it"
+expect = "present.csv: expected 5 rows, got 2"

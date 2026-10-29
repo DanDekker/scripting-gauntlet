@@ -1,0 +1,48 @@
+{
+  "calibrated_at": "2026-10-29T21:47:53.728292+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "155-lua-json-writer",
+  "fixture_origin": "Synthetic tab-separated export with control characters authored for this drill",
+  "lineage": "scripting-gauntlet/lua-json-writer",
+  "results": [
+    {
+      "elapsed_ms": 96,
+      "language": "lua",
+      "passed": true,
+      "path": "solutions/solve.lua",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 142,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Escapes strings with string.format('%q'), which is lua escaping and not JSON",
+      "elapsed_ms": 26,
+      "expected_diagnostic": "not valid JSON",
+      "language": "lua",
+      "passed": true,
+      "path": "controls/wrong-lua-quoting.lua",
+      "problems": [
+        "report.json is not valid JSON: Invalid \\escape: line 1 column 192 (char 191)"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "4498d58b44cddfbdb791d47bed5039c1ca4070e69e01343be98aa14e5415130d",
+    "controls/manifest.toml": "348ac3a16b94d55e3f3cb158da8aa0e0b8b6f2557c67cacce62c703579a48791",
+    "controls/wrong-lua-quoting.lua": "399ae1976ba3c0af9845f3464865d4cc2faeb2d3cd92b370c7e1ed354b020cd7",
+    "drill.toml": "fcdcf8d28c26858ef3bf25ce65609b103ac90eb878dbc2f3257c0157dd590f5f",
+    "setup.py": "cbbd25442aa8b2d6ba3c70331807d3bf2c24232543fceccc76f42f74f1c7920e",
+    "solutions/solve.lua": "7604671ba252bce69e0905889ac6cd7f00bb2313b64fb0b9b93d6cf24f71b236",
+    "solutions/solve.py": "3ff80daf3f72e8f2e455366301b81e7134682be716b3a3e9fbbf94afd38e34a9",
+    "verify.py": "c058db344e4ad0fe48f85109c889643dbddf434399e0eb32faaa0529aa13acf9"
+  },
+  "stage": "reference-calibrated"
+}
