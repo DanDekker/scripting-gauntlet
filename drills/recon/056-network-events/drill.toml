@@ -1,0 +1,11 @@
+id = "056-network-events"
+family = "network-recon"
+title = "Summarise firewall events by action, source and verdict"
+difficulty = 3
+timebox = 240
+teaches = [
+  "key=value event lines are not fixed-width",
+  "action verdicts: allow, drop, reject",
+  "a malformed event is skipped and counted",
+  "action tokens arrive in mixed case",
+]
