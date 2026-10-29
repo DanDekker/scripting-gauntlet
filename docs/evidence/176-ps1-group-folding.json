@@ -1,0 +1,60 @@
+{
+  "calibrated_at": "2026-10-29T22:57:05.343706+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "176-ps1-group-folding",
+  "fixture_origin": "Synthetic item rows with a case-variant group authored for this drill",
+  "lineage": "scripting-gauntlet/ps1-group-folding",
+  "results": [
+    {
+      "elapsed_ms": 436,
+      "language": "ps1",
+      "passed": true,
+      "path": "solutions/solve.ps1",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 27,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Groups with the default case-insensitive comparer, so Web and web merge into one group",
+      "elapsed_ms": 418,
+      "expected_diagnostic": "Web/group",
+      "language": "ps1",
+      "passed": true,
+      "path": "controls/wrong-case-fold.ps1",
+      "problems": [
+        "groups.csv: expected 4 rows, got 3",
+        "groups.csv row 1 [Web/group]: expected 'Web', got 'cache'",
+        "groups.csv row 1 [Web/total]: expected 5, got '0'",
+        "groups.csv row 1 [Web/missing]: expected 0, got '1'",
+        "groups.csv row 2 [cache/group]: expected 'cache', got 'db'",
+        "groups.csv row 2 [cache/count]: expected 1, got '2'",
+        "groups.csv row 2 [cache/total]: expected 0, got '10'",
+        "groups.csv row 2 [cache/missing]: expected 1, got '0'",
+        "groups.csv row 3 [db/group]: expected 'db', got 'web'",
+        "groups.csv row 3 [db/count]: expected 2, got '3'",
+        "groups.csv row 3 [db/total]: expected 10, got '15'",
+        "groups.csv row 3 [db/missing]: expected 0, got '1'",
+        "summary.json['groups']: expected 4, got 3"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "66ee3503ac3b08025c6146ef4437ad7c66f0db0f071291ffbee41f8a9897268c",
+    "controls/manifest.toml": "4e7a7ee033235d687e63da32f70e40ac7dc0a2a1bb705d5d6079cc23463da28e",
+    "controls/wrong-case-fold.ps1": "4a3be817e98918d56ce4f6db86d1f05e306bd80d4f2a4950660f24cf7b229f7f",
+    "drill.toml": "efa1116206e02dfe00b09806fb6d90da779168adbef77afb49b8735068245ead",
+    "fixtures/items.csv": "14e8c362724c5a0b7a35cf652dc7be9829d515c9e8c771b25be9c1665c0727cf",
+    "solutions/solve.ps1": "fbf46d8798a1561874f0c7779e7777873ddcdbb9f3bb457a6e094cb5b40c1d43",
+    "solutions/solve.py": "719e9305ed5adf2c19c42f155e0ef85c3bd5055942adb8c381cc7d0ad9fdf530",
+    "verify.py": "44f99a2fd2cde4dd2853ea921d5b4e9d7e82e4bf9272e737c84209caeef8a8e9"
+  },
+  "stage": "reference-calibrated"
+}

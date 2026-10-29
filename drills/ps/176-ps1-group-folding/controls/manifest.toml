@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/ps1-group-folding"
+fixture_origin = "Synthetic item rows with a case-variant group authored for this drill"
+
+[[negative]]
+path = "controls/wrong-case-fold.ps1"
+defect = "Groups with the default case-insensitive comparer, so Web and web merge into one group"
+expect = "Web/group"

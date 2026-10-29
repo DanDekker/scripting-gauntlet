@@ -1,0 +1,11 @@
+id = "176-ps1-group-folding"
+family = "text-munging"
+title = "Group rows case-sensitively and keep the empty amounts"
+difficulty = 4
+timebox = 300
+teaches = [
+  "Group-Object folds case by default; -CaseSensitive keeps Web and web apart",
+  "an empty CSV cell imports as an empty string, not $null",
+  "Measure-Object drops $null from the pipeline, so count the rows yourself",
+  "Sort-Object is culture-aware; ordinal order needs CompareOrdinal",
+]
