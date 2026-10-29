@@ -1,0 +1,10 @@
+# Metric action log
+alpha cpu 10
+beta mem 20
+
+alpha cpu 5
+gamma disk 100
+beta io 3
+# intermediate checkpoint
+alpha mem 4
+gamma disk 50

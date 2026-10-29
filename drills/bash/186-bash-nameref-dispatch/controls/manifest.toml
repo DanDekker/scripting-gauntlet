@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/bash-nameref-dispatch"
+fixture_origin = "Synthetic category metric actions authored for this drill"
+
+[[negative]]
+path = "controls/wrong-subshell-mutation.bash"
+defect = "Uses subshell command substitution instead of nameref in-place mutation, losing all updates in the parent scope"
+expect = "tallies.csv: expected 5 rows"

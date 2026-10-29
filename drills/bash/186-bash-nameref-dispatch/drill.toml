@@ -1,0 +1,11 @@
+id = "186-bash-nameref-dispatch"
+family = "data-wrangling"
+title = "Dispatch dynamic bucket tallies with bash namerefs"
+difficulty = 4
+timebox = 300
+teaches = [
+  "declare -n ref=$1 creates a nameref allowing in-place array mutation in caller scope",
+  "indirect expansion ${!var[@]} cannot expand array keys or elements; namerefs can",
+  "helper local variable names must not shadow or collide with the passed variable name",
+  "associative array buckets dynamically selected by name cleanly separate concerns",
+]

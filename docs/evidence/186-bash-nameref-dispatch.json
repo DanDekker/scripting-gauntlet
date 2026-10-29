@@ -1,0 +1,50 @@
+{
+  "calibrated_at": "2026-10-29T23:24:59.563138+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "186-bash-nameref-dispatch",
+  "fixture_origin": "Synthetic category metric actions authored for this drill",
+  "lineage": "scripting-gauntlet/bash-nameref-dispatch",
+  "results": [
+    {
+      "elapsed_ms": 74,
+      "language": "bash",
+      "passed": true,
+      "path": "solutions/solve.bash",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 72,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Uses subshell command substitution instead of nameref in-place mutation, losing all updates in the parent scope",
+      "elapsed_ms": 53,
+      "expected_diagnostic": "tallies.csv: expected 5 rows",
+      "language": "bash",
+      "passed": true,
+      "path": "controls/wrong-subshell-mutation.bash",
+      "problems": [
+        "tallies.csv: expected 5 rows, got 0",
+        "summary.json['entries']: expected 5, got 0",
+        "summary.json['total']: expected 192, got 0"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "9e03224da4feef97afc095d6492a1bfff1f7aff36c10d6e5669d8eb0e40d7bae",
+    "controls/manifest.toml": "374404d5188b3a0f4a8d83eacb3a39504257e3faec79befb940c628cfdcd5618",
+    "controls/wrong-subshell-mutation.bash": "3e463053d00e7f3b26f990d1255ef568ba5c3995ef36f5a81b5cc4284d726861",
+    "drill.toml": "702a83c563daf1d4678251b834e6172f854058b5dddc45f2a4fe19351e309c8f",
+    "fixtures/actions.txt": "78aab9c5a9684ce663b7360109046417f05411269a359add916d6ba034e804a7",
+    "solutions/solve.bash": "74022b9bb154565cc9bea7d7dfb170265c776aab6431b87bc5d3a1d89379dbd5",
+    "solutions/solve.py": "6046716edea96677f7a103eccdde2042384365fde5632111318c0f3a5afbab3c",
+    "verify.py": "af1bcd513cd6b30a1356428af1e2e666059bd7da41b914fddbab406a6bc0575f"
+  },
+  "stage": "reference-calibrated"
+}
