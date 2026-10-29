@@ -1,0 +1,11 @@
+id = "031-rank-ties"
+family = "data-wrangling"
+title = "Rank a leaderboard, with ties and a gap"
+difficulty = 2
+timebox = 180
+teaches = [
+  "competition rank versus dense rank",
+  "a tie is a property of the score, not the row index",
+  "track the previous value while streaming sorted rows",
+  "the tie-break decides the output order, not the rank",
+]
