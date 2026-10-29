@@ -1,0 +1,11 @@
+id = "001-csv-rollup"
+family = "data-wrangling"
+title = "Dedupe and roll up a dirty orders CSV"
+difficulty = 2
+timebox = 240
+teaches = [
+  "dedupe by key, keep the latest version",
+  "normalize case and trim before grouping",
+  "aggregate into buckets without a dataframe",
+  "drop-and-count rows that fail to parse",
+]
