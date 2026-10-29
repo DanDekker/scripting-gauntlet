@@ -1,0 +1,11 @@
+id = "166-ruby-integer-division"
+family = "data-wrangling"
+title = "Average a ledger with negative balances using floor division"
+difficulty = 3
+timebox = 240
+teaches = [
+  "Integer#/ floors toward negative infinity: -7 / 2 is -4, not -3",
+  "Integer#% returns a non-negative remainder for a positive divisor: -7 % 3 is 2",
+  "divmod gives both parts and satisfies q * d + r == n with 0 <= r < d",
+  "truncation (to_f / n then to_i) is a different rule and breaks on negative sums",
+]

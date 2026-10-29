@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/ruby-integer-division"
+fixture_origin = "Synthetic ledger with negative balances authored for this drill"
+
+[[negative]]
+path = "controls/wrong-truncation.rb"
+defect = "Divides through a float and truncates with to_i, so -15/2 becomes -7 instead of -8"
+expect = "bob/avg_cents"

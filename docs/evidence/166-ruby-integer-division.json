@@ -1,0 +1,51 @@
+{
+  "calibrated_at": "2026-10-29T22:44:45.355704+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "166-ruby-integer-division",
+  "fixture_origin": "Synthetic ledger with negative balances authored for this drill",
+  "lineage": "scripting-gauntlet/ruby-integer-division",
+  "results": [
+    {
+      "elapsed_ms": 43,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 166,
+      "language": "rb",
+      "passed": true,
+      "path": "solutions/solve.rb",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Divides through a float and truncates with to_i, so -15/2 becomes -7 instead of -8",
+      "elapsed_ms": 145,
+      "expected_diagnostic": "bob/avg_cents",
+      "language": "rb",
+      "passed": true,
+      "path": "controls/wrong-truncation.rb",
+      "problems": [
+        "averages.csv row 2 [bob/avg_cents]: expected -8, got '-7'",
+        "averages.csv row 2 [bob/carry]: expected 1, got '-1'",
+        "averages.csv row 4 [dana/avg_cents]: expected -4, got '-3'",
+        "averages.csv row 4 [dana/carry]: expected 1, got '-1'"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "36b3821fece5c71eddcda87be761bf01c389920d7fc0cefe95ba70dd4e602979",
+    "controls/manifest.toml": "171c8831be1e336289c61ef4208fd99981457957246cf2da59133041306d16d4",
+    "controls/wrong-truncation.rb": "1402d7992d924d1151593398a6eac16ee2fa77a60ac910ba0dcd6e4a8ea52304",
+    "drill.toml": "31a4015882694a9b33c3b1ddb1d446b38669a9dfdd936d9d1ccffa633329bd8f",
+    "fixtures/balances.csv": "e0b46487bf97bb7edef5999a83f84bf100190021e06962b38f70523ae3a924c9",
+    "solutions/solve.py": "9ba38a3b5b767e488601ab6f56cc2bb486c7562f0d65a54121eec7b289466b84",
+    "solutions/solve.rb": "88a1599369fe0c4b61e5d477cbc1b82e71004dd737bea7c7a93ea137c0b8fe5e",
+    "verify.py": "a2614b5d0ad7f28f350424c54ca5f88acbaa12e8149a590b492ffa4292e171d2"
+  },
+  "stage": "reference-calibrated"
+}
