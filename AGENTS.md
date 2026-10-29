@@ -1,4 +1,4 @@
-# AGENTS.md — working in scriptdeck
+# AGENTS.md — working in scripting-gauntlet
 
 This repo trains **scripting**: fast, disposable, correct-for-now programs that answer a
 question about messy data.

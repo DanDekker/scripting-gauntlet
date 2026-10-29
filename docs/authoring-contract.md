@@ -1,6 +1,6 @@
 # Drill authoring and admission
 
-scriptdeck trains short-lived scripting decisions. Its drills can inform Otto or a
+scripting-gauntlet trains short-lived scripting decisions. Its drills can inform Otto or a
 Weaver curriculum, but passing a local solution is only local evidence. A drill is
 not a model training sample, a held-out evaluation, or proof of learned skill.
 

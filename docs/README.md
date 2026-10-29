@@ -1,4 +1,4 @@
-# scriptdeck documentation
+# scripting-gauntlet documentation
 
 Start with the live contracts:
 
@@ -17,5 +17,13 @@ not an executable contract.
 drills that have controls. If documentation and the runner disagree, repair
 the mismatch before treating a drill as calibrated.
 
-The [001-csv-rollup calibration](evidence/001-csv-rollup.json) is the first
-durable reference and negative-control record.
+Calibration reports with source hashes and negative-control results:
+
+- [CSV rollup](evidence/001-csv-rollup.json)
+- Data cleaning: [number parsing](evidence/019-number-parsing.json),
+  [date parsing](evidence/020-date-parsing.json),
+  [Unicode normalization](evidence/021-unicode-normalize.json), and
+  [type inference](evidence/022-type-inference.json)
+- Operations: [percent of group](evidence/057-percent-of-group.json) and
+  [outer join](evidence/058-outer-join.json)
+- [macOS plist audit](evidence/149-macos-plist-audit.json)
