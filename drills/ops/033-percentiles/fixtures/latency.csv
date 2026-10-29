@@ -1,0 +1,17 @@
+endpoint,ms
+/api/users,12
+/api/users,15
+/api/users,20
+/api/users,25
+/api/users,30
+/api/users,42
+/api/users,55
+/api/users,60
+/api/users,90
+/api/users,300
+/api/orders,10
+/api/orders,11
+/api/orders,12
+/api/orders,13
+/api/orders,40
+/api/health,3

@@ -1,0 +1,11 @@
+id = "033-percentiles"
+family = "data-wrangling"
+title = "p50, p90 and max latency per endpoint"
+difficulty = 2
+timebox = 180
+teaches = [
+  "sort before you index, percentiles are order statistics",
+  "write the percentile rule down or the number is a rumour",
+  "nearest-rank is an index computation, not an average",
+  "group, then compute, then sort the report",
+]
