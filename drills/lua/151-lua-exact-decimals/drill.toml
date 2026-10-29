@@ -1,0 +1,11 @@
+id = "151-lua-exact-decimals"
+family = "data-wrangling"
+title = "Sum decimals exactly in thousandths and print them without float drift"
+difficulty = 4
+timebox = 300
+teaches = [
+  "scale decimals to integer thousandths before you sum; never add floats",
+  "lua's % is floor-modulo, so -250 %% 1000 is 750 and a direct format prints -1.750",
+  "format a scaled integer with sign, integer part and a zero-padded remainder",
+  "a value that is not a plain decimal is invalid and is counted, not guessed at",
+]

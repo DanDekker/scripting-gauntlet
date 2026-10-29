@@ -1,0 +1,48 @@
+{
+  "calibrated_at": "2026-10-29T21:47:48.073203+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "151-lua-exact-decimals",
+  "fixture_origin": "Synthetic sensor readings authored for this drill",
+  "lineage": "scripting-gauntlet/lua-exact-decimals",
+  "results": [
+    {
+      "elapsed_ms": 30,
+      "language": "lua",
+      "passed": true,
+      "path": "solutions/solve.lua",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 58,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Formats a negative scaled value with floor division, so -0.25 prints as -1.750",
+      "elapsed_ms": 87,
+      "expected_diagnostic": "alpha/min",
+      "language": "lua",
+      "passed": true,
+      "path": "controls/wrong-floor-modulo.lua",
+      "problems": [
+        "sensors.csv row 1 [alpha/min]: expected '-0.250', got '-1.750'"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "d79581f11c309b41826b698c49b7077b7d09db86d7dd2ba457cefed4480932a4",
+    "controls/manifest.toml": "b1ac1fae8dda5549f5edc0d8fa1bdd0fa92c7c361465d204859d355a0ccb870c",
+    "controls/wrong-floor-modulo.lua": "a0719a54ebab436044ffcea1bf7fa1ce07126c79d4f547dec34a6ed4fc222100",
+    "drill.toml": "8e59e5d5f9fdba32f13a9b5c1a45c41c01c3cc83f49387c143dd83083d22b065",
+    "fixtures/measurements.csv": "cd8c45a0b993809ab9d5d21073e04c2c0db90635d6d521059c19e69754cf2263",
+    "solutions/solve.lua": "64dec6b440d65db61920fa32e6f6552580d196ca3a1822897bb0bd66725aec44",
+    "solutions/solve.py": "4c4fea03da0a57abdbef38a4055702650dc023701964d08bcea2da0f08a5d516",
+    "verify.py": "150ad6ce88fe8e61536585d84fccf1eecc01aa1c9d557802c21f568400bce8c6"
+  },
+  "stage": "reference-calibrated"
+}

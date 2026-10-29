@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/lua-pattern-fields"
+fixture_origin = "Synthetic report card authored for this drill"
+
+[[negative]]
+path = "controls/wrong-first-wins.lua"
+defect = "Keeps the first value of a repeated key instead of the last one"
+expect = "name/value"

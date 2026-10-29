@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/lua-exact-decimals"
+fixture_origin = "Synthetic sensor readings authored for this drill"
+
+[[negative]]
+path = "controls/wrong-floor-modulo.lua"
+defect = "Formats a negative scaled value with floor division, so -0.25 prints as -1.750"
+expect = "alpha/min"

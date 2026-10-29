@@ -1,0 +1,12 @@
+id = "150-lua-pattern-fields"
+family = "text-munging"
+title = "Pull key/value fields out of a report with quoted values"
+difficulty = 3
+timebox = 240
+teaches = [
+  "a lua pattern is not a regex: match the alternatives in order, not with alternation",
+  "split on the first '=' with '^(.-)=(.*)$' so a value may contain '='",
+  "a quoted value keeps its spaces and commas; strip the quotes only when both ends match",
+  "a key may repeat: the last value wins and the repeat is counted",
+  "sort keys by bytes, not by locale collation",
+]

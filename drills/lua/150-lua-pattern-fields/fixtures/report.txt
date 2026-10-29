@@ -1,0 +1,12 @@
+# quarterly report card
+name=quarterly report
+owner="Ada Lovelace"
+note="costs $5,000 and 100% of budget"
+path=/var/log/app.log
+window=2026-10-01..2026-10-29
+blank=
+tag=a=b
+quoted="a=b"
+two words=value
+bad line without equals
+name=final report

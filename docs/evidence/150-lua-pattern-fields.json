@@ -1,0 +1,48 @@
+{
+  "calibrated_at": "2026-10-29T21:47:46.814190+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "150-lua-pattern-fields",
+  "fixture_origin": "Synthetic report card authored for this drill",
+  "lineage": "scripting-gauntlet/lua-pattern-fields",
+  "results": [
+    {
+      "elapsed_ms": 45,
+      "language": "lua",
+      "passed": true,
+      "path": "solutions/solve.lua",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 121,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Keeps the first value of a repeated key instead of the last one",
+      "elapsed_ms": 9,
+      "expected_diagnostic": "name/value",
+      "language": "lua",
+      "passed": true,
+      "path": "controls/wrong-first-wins.lua",
+      "problems": [
+        "fields.csv row 2 [name/value]: expected 'final report', got 'quarterly report'"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "a1e02f565a917743da1bac72e65dafe31f767adb6df345ad947cc453d3a16929",
+    "controls/manifest.toml": "c5b612f122b149b9705f2683b419214ba9d01f2a5849b02be9e7d0eeadbcae3b",
+    "controls/wrong-first-wins.lua": "78745398c0ca91ab6938609e53e471241cc401a056be0985a43ebe9812580c12",
+    "drill.toml": "5119a88c0e31d74e2257afb018d617eed2804a20898c225c049f7d1b477baedb",
+    "fixtures/report.txt": "cd743d86d570f9475193804d2289f41c3035fe7d2d882f811e1b8a7ef4eba863",
+    "solutions/solve.lua": "c1503684732b33d9058f7a2d97ca922e519e3828b86869fdb15a57c37366e37e",
+    "solutions/solve.py": "9f5f02f982efc0a422343136236629787504274725f7b30470e0591dfac9a825",
+    "verify.py": "e00ad38ac57d293d9bcc25bc36489d0fd00dd6e74e39be9bd3530b40497d9f21"
+  },
+  "stage": "reference-calibrated"
+}
