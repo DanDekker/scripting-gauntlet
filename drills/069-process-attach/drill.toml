@@ -1,0 +1,10 @@
+id = "069-process-attach"
+family = "system-recon"
+title = "Attach to a child process and stop it cleanly"
+difficulty = 4
+timebox = 300
+teaches = [
+  "wait for a child to publish a PID and readiness file",
+  "attach to the exact PID instead of searching by process name",
+  "request shutdown, wait, and force-stop only the child you started",
+]
