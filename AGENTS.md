@@ -23,7 +23,7 @@ make check                                # must pass before you commit
 
 Every drill needs, at minimum:
 
-- `drill.yaml` with `id`, `family`, `title`, `difficulty` (1–5), `timebox` (seconds), `teaches`
+- `drill.toml` with `id`, `family`, `title`, `difficulty` (1–5), `timebox` (seconds), `teaches`
 - `PROMPT.md` stating the output contract exactly — inputs, output paths, sorting, formats
 - `fixtures/` with input that is *messy in a realistic way* (blank rows, dupes, bad
   encoding, trailing whitespace, mixed case) and a note in `PROMPT.md` on which messes matter

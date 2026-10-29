@@ -41,7 +41,7 @@ interpreters it actually uses.
 
 ```
 drills/001-csv-rollup/
-├── drill.yaml       metadata: family, difficulty, timebox, what it teaches
+├── drill.toml       metadata: family, difficulty, timebox, what it teaches
 ├── PROMPT.md        the task, written the way you'd actually receive it
 ├── fixtures/        messy real-world input, copied into <work>/in/
 ├── verify.py        the grader — semantic, not golden-file diffing
@@ -80,7 +80,19 @@ smells like* — see [docs/taxonomy.md](docs/taxonomy.md) for the full reasoning
 
 ## Status
 
-Early. Six drills cover the five families; the backlog in
-[docs/taxonomy.md](docs/taxonomy.md#backlog) lists what's next.
+Five drills, thirteen solutions, all five families. `make check` runs the lot;
+`make lint` syntax-checks every solution and validates the skill frontmatter.
+
+| drill | family | languages | timebox |
+| --- | --- | --- | --- |
+| [001-csv-rollup](drills/001-csv-rollup) | data-wrangling | bash, python, lua | 4 min |
+| [002-log-triage](drills/002-log-triage) | text-munging | bash, python, lua | 3 min |
+| [003-http-probe](drills/003-http-probe) | api-probing | bash, python, pwsh | 3 min |
+| [004-scrape-table](drills/004-scrape-table) | web-scraping | python, lua | 5 min |
+| [005-dir-hygiene](drills/005-dir-hygiene) | file-hygiene | bash, python | 5 min |
+
+Five matching [skills](skills/) carry the judgement each drill tests. The backlog in
+[docs/taxonomy.md](docs/taxonomy.md#backlog) lists what comes next — process-glue,
+polling, sqlite, encoding rescue, GNU-vs-BSD.
 
 Contributing rules — including the no-abstraction rule — are in [AGENTS.md](AGENTS.md).
