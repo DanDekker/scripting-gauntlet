@@ -1,0 +1,7 @@
+# pattern|subject
+a.b|aXb
+a.b|za.by
+00%|100% done
+x*y|xxy
+a(b|an a(b here
+aa|aaa

@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/perl-literal-match"
+fixture_origin = "Synthetic literal queries authored for this drill"
+
+[[negative]]
+path = "controls/wrong-overlapping.pl"
+defect = "Counts overlapping occurrences by advancing one character, so 'aa' appears twice in 'aaa'"
+expect = "aa/count"

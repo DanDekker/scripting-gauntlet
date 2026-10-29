@@ -1,0 +1,48 @@
+{
+  "calibrated_at": "2026-10-29T22:19:20.050287+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "163-perl-literal-match",
+  "fixture_origin": "Synthetic literal queries authored for this drill",
+  "lineage": "scripting-gauntlet/perl-literal-match",
+  "results": [
+    {
+      "elapsed_ms": 9,
+      "language": "pl",
+      "passed": true,
+      "path": "solutions/solve.pl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 31,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Counts overlapping occurrences by advancing one character, so 'aa' appears twice in 'aaa'",
+      "elapsed_ms": 8,
+      "expected_diagnostic": "aa/count",
+      "language": "pl",
+      "passed": true,
+      "path": "controls/wrong-overlapping.pl",
+      "problems": [
+        "matches.csv row 6 [aa/count]: expected 1, got '2'"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "e81b78b4f2e3f697c9a76f9bf8ff8ecfa90da44025544b723e9d8448469c44d3",
+    "controls/manifest.toml": "656aa368166706156c1f9fb5619bf97c41fc1c07bd4298039cc0579ffaf13047",
+    "controls/wrong-overlapping.pl": "a720174a18674d271c05ccaaae9caaf75f37030452e6f65f17040d1da5fd2b12",
+    "drill.toml": "9b98a2f9ee9670f3c944dddf15d85bd52d50a86efe73d583f5bb3fcde723653a",
+    "fixtures/queries.txt": "1d5a1c1089c8e4c4955ff181038544f5693d38168ba9baa30965e9a0314041b3",
+    "solutions/solve.pl": "32d97f8c70ef1786c14cd89863312f6da4bc4af7fef751bee9b631a2deb59f11",
+    "solutions/solve.py": "a25834e0db5be5bf5e5532fec8b0378b5a499708bba108fa24c9bca1c4a1fd9e",
+    "verify.py": "e83cadac8bc51536614311ffedb7a22d50bffd3e1ded6f41b4cf7fc930d6e32c"
+  },
+  "stage": "reference-calibrated"
+}

@@ -1,0 +1,11 @@
+id = "163-perl-literal-match"
+family = "text-munging"
+title = "Search for literal needles that contain regex metacharacters"
+difficulty = 3
+timebox = 240
+teaches = [
+  "index() is the literal search; a regex needs \\Q...\\E around the needle",
+  "a needle containing '(' makes a naive /$needle/ die with a regex error",
+  "'a.b' must not match 'aXb', and 'x*y' must not match 'xxy'",
+  "count non-overlapping occurrences: 'aa' appears once in 'aaa'",
+]
