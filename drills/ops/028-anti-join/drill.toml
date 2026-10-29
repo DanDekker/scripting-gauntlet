@@ -1,0 +1,11 @@
+id = "028-anti-join"
+family = "data-wrangling"
+title = "Find the customers who ordered nothing this period"
+difficulty = 2
+timebox = 180
+teaches = [
+  "an anti-join is a membership test, not a nested loop",
+  "build the key set from the fact table",
+  "compare dates as text in ISO order",
+  "normalize the key before you test membership",
+]
