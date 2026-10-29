@@ -1,0 +1,8 @@
+version = 1
+lineage = "scriptdeck/csv-rollup"
+fixture_origin = "Synthetic CRM export authored for this drill; no production data"
+
+[[negative]]
+path = "controls/wrong-order.py"
+defect = "Sorts region rows by name instead of revenue"
+expect = "rows must be revenue desc"

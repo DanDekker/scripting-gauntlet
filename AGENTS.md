@@ -31,6 +31,13 @@ Every drill needs, at minimum:
   parsed values, row sets, counts — never a raw byte diff
 - at least one solution in `solutions/`, ideally a second language that makes a
   different trade-off
+- `controls/manifest.toml` with lineage and fixture origin, plus a plausible
+  wrong solution that the verifier rejects for the intended rule
+
+The [authoring contract](docs/authoring-contract.md) defines learner-visible
+requirements and evidence stages. Run `python3 harness/calibrate.py DRILL_ID`
+before calling a drill calibrated. A normal passing solution only proves that
+the grader accepts that one answer.
 
 ## Adding a skill
 

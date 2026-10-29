@@ -6,7 +6,9 @@
 ## Task
 
 `in/orders.csv` is an export with one row per order *event*, not per order. Clean it and
-roll it up.
+roll it up. It is a UTF-8 CSV with the columns `order_id`, `customer`, `region`,
+`status`, `amount`, and `updated_at`. The fixture is synthetic; no external
+data or network access is needed.
 
 ## Rules
 
@@ -28,20 +30,18 @@ Write exactly two files to `$OUT`.
 
 ```
 region,orders,revenue
-North,2,1500.00
+Example,3,1234.50
 ```
 
 Ordered by `revenue` **descending**, ties broken by `region` **ascending**. `revenue` is
-formatted to exactly 2 decimal places.
+formatted to exactly 2 decimal places. The example row illustrates the shape,
+not an expected row from the fixture.
 
-**`out/summary.json`** — totals across paid orders:
-
-```json
-{"orders": 7, "regions": 4, "revenue": 3675.75, "dropped": 1}
-```
-
-`orders` counts deduped paid orders that had a parseable amount. `dropped` counts rows
-that were paid but whose amount did not parse. No keys beyond these four.
+**`out/summary.json`** — one JSON object with exactly four keys:
+`orders` (integer count of deduped paid orders with a parseable amount),
+`regions` (integer count of regions in `regions.csv`), `revenue` (number rounded to
+two decimals), and `dropped` (integer count of paid rows whose amount did not
+parse). No extra keys.
 
 ## Messes to expect
 
@@ -53,5 +53,8 @@ that were paid but whose amount did not parse. No keys beyond these four.
 
 ## Timebox
 
-4 minutes. The version that takes 4 minutes is `awk` with a hash, or a 30-line python
-script — not a pandas notebook and not a class.
+Aim for 4 minutes. Read only from `$IN`, write only under `$OUT`, and leave the
+fixture untouched. Any language supplied for this drill may be used with its
+standard tools; no package install is required. The output should be
+deterministic. The harness's execution timeout is separate from this authoring
+timebox.

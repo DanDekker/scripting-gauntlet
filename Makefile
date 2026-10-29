@@ -1,11 +1,12 @@
 PY ?= python3
 H  := $(PY) harness/run.py
 
-.PHONY: help list check new lint
+.PHONY: help list check calibrate new lint
 
 help:
 	@echo "make list              list drills"
 	@echo "make check             run every drill x every solution"
+	@echo "make calibrate ID=...   check references and semantic controls"
 	@echo "make new ID=007-slug   scaffold a drill"
 	@echo "make lint              compile-check python sources"
 
@@ -14,6 +15,10 @@ list:
 
 check:
 	@$(H) run all
+
+calibrate:
+	@test -n "$(ID)" || (echo "ID=... required" && exit 1)
+	@$(PY) harness/calibrate.py $(ID)
 
 new:
 	@test -n "$(ID)" || (echo "ID=... required" && exit 1)

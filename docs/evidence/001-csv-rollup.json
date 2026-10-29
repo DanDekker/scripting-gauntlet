@@ -1,0 +1,63 @@
+{
+  "calibrated_at": "2026-10-29T19:37:53.549423+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "001-csv-rollup",
+  "fixture_origin": "Synthetic CRM export authored for this drill; no production data",
+  "lineage": "scriptdeck/csv-rollup",
+  "results": [
+    {
+      "elapsed_ms": 43,
+      "language": "bash",
+      "passed": true,
+      "path": "solutions/solve.bash",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 45,
+      "language": "lua",
+      "passed": true,
+      "path": "solutions/solve.lua",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 75,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Sorts region rows by name instead of revenue",
+      "elapsed_ms": 76,
+      "expected_diagnostic": "rows must be revenue desc",
+      "language": "py",
+      "passed": true,
+      "path": "controls/wrong-order.py",
+      "problems": [
+        "regions.csv row 1: expected 'North', got 'East' (rows must be revenue desc, ties by region asc)",
+        "regions.csv row 1 (East): expected 2 orders, got 1",
+        "regions.csv row 1 (East): expected revenue 1500.00, got 1100.00",
+        "regions.csv row 2: expected 'East', got 'North' (rows must be revenue desc, ties by region asc)",
+        "regions.csv row 2 (North): expected 1 orders, got 2",
+        "regions.csv row 2 (North): expected revenue 1100.00, got 1500.00"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "c3f044acb9c87c4bc32af56b85f5b8b526d70bd1955ca4f01778530ab2c161c5",
+    "controls/manifest.toml": "285b5d31dbec27fcbd44a677512e94d427e8d90aa5c0bf80f60759442a4ea14a",
+    "controls/wrong-order.py": "93bd57925108c5d6edaeb6cfb45ed8b3076f4b59880a8eb6c84959b25d07d061",
+    "drill.toml": "4fbdb3ac09ea97a00b57323c690be1cd6f48d27f4088267c0d9380dfdbc44a1c",
+    "fixtures/orders.csv": "86493cfd019735a3e14465025ea1b4adaf3a81b40a093fee6db9a8df8fc31f7a",
+    "solutions/__pycache__/solve.cpython-314.pyc": "a329d8d01e1dca0ddc8469b5be55727fe1a5ca7d3dad4fbc533aab65ada858f8",
+    "solutions/solve.bash": "364191575c56fd31900e0a7c40494c1dc8ba4f2a235d474a9682657d98f23a80",
+    "solutions/solve.lua": "5450d3900d28317e6ad19d934ca4e7c5901151ebf6b7cb0d4e6b21050a48e25a",
+    "solutions/solve.py": "e1059819ab076592fc54db8089ce354201e082ebc434f8dd681c0b5ed0102d02",
+    "verify.py": "ca74bfa9aa9972cc07d31c6a58183329fd0f3d260b4d46ffc67ed97500d8875e"
+  },
+  "stage": "reference-calibrated"
+}

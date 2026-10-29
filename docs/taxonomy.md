@@ -1,6 +1,6 @@
 # The taxonomy of scripting work
 
-Five families. Most real jobs are a blend of two or three, and the blend tells you which
+Seven families. Most real jobs are a blend of two or three, and the blend tells you which
 language to reach for.
 
 ---
@@ -81,6 +81,35 @@ Logs, dumps, configs, and output that no one designed for you.
 **Watch for:** lines that almost match, multi-line records (stack traces), inode rotation
 splitting a record, timestamps without a timezone.
 
+## 6. system-recon
+
+Read host state, identify what matters, and report findings with enough source detail
+for someone else to verify them. This is scripting *about* a system, not a systems
+programming exercise.
+
+| job | canonical move |
+| --- | --- |
+| inventory a host | query OS tools and normalize their output |
+| triage a process | correlate PID, executable, owner, resources, and open files |
+| inspect storage | distinguish device, mount, free space, and deleted-open files |
+
+**Watch for:** platform-specific output, stale process state, permissions, units,
+and claims that outrun the evidence you collected.
+
+## 7. network-recon
+
+Inspect local network and protocol facts with bounded, repeatable probes.
+
+| job | canonical move |
+| --- | --- |
+| inventory listeners | correlate port, protocol, process, and address |
+| inspect a response | retain status, headers, timing, and the exact endpoint |
+| compare paths | report the concrete difference, not an inferred cause |
+
+**Watch for:** ambiguous hostnames, redirects, retries that hide the first failure,
+timeouts mistaken for absence, and accidental calls outside the fixture or
+authorized target.
+
 ---
 
 ## Choosing a language
@@ -131,15 +160,11 @@ spend your whole timebox on a JSON parser.
 
 ---
 
-## Backlog
+## Adding coverage
 
-Drills worth adding, roughly in order of training value:
-
-- **process-glue** — batch N jobs with bounded concurrency and per-job timeout
-- **polling** — wait for an external condition with a deadline, then fail loudly
-- **sqlite** — load a messy CSV into sqlite, answer three questions with SQL
-- **encoding rescue** — latin-1/UTF-16/CRLF/BOM triage without corrupting content
-- **diff triage** — two directory trees, report only meaningful differences
-- **cron-shaped** — a script that is safe to run twice (idempotence as an accident, not a design)
-- **binary probe** — `file`, magic bytes, embedded strings in an unknown blob
-- **gnu vs bsd** — the same file-hygiene drill on both userlands (macOS `stat -f` vs Linux `stat -c`)
+Check `make list` before adding a drill. Name the specific behavior missing
+from existing drills, then write a prompt that fully determines the verifier's
+judgment. A new variant earns its place by a distinct failure mode or tool
+choice, not just a new fixture. See the
+[authoring and admission contract](authoring-contract.md) for semantic controls,
+source lineage, and evidence stages.

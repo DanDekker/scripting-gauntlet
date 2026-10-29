@@ -7,11 +7,11 @@ answer in ten minutes: filter this data, probe that API, scrape the page, clean 
 directory, resort the files, then throw the script away.
 
 ```
-~/Desktop/scriptdeck
+scriptdeck/
 ├── docs/          what scripting is (and what it is not)
 ├── skills/        Agent Skills (SKILL.md) packs — loadable know-how
 ├── drills/        executable exercises: prompt + fixtures + verifier + solutions
-└── harness/       the runner that checks them
+└── harness/       runner and calibration gate
 ```
 
 ## Why this exists
@@ -29,8 +29,9 @@ it is what this deck trains.
 ```bash
 make list                 # what drills exist
 make check                # run every drill against every solution
-python3 harness/run.py run 001-csv-rollup --lang python
+python3 harness/run.py run 001-csv-rollup --lang py
 python3 harness/run.py run all --timeout 30
+make calibrate ID=001-csv-rollup
 ```
 
 No install step. Python 3.11+ stdlib for the harness; the drills themselves need
@@ -48,16 +49,23 @@ drills/001-csv-rollup/
 └── solutions/       solve.bash, solve.py, solve.lua  (one or more languages)
 ```
 
-A solution is any executable that reads `<work>/in/`, writes `<work>/out/`, and exits
-non-zero on failure. The harness maps the file extension to an interpreter and runs it
-in a scratch directory, so drills never touch the repo tree.
+A solution reads `<work>/in/`, writes `<work>/out/`, and exits non-zero on
+failure. The harness maps its file extension to an interpreter and runs it in a
+scratch directory. Some drills also generate fixture files, run a local mock
+server, or probe a service started by the solution.
 
 The **timebox** is part of the spec, not decoration. A drill that takes longer than its
 timebox to solve is a signal you reached for the wrong tool or the wrong approach.
+The runner's timeout is a separate execution limit.
 
-Full contract: [docs/drill-spec.md](docs/drill-spec.md).
+The [runtime contract](docs/drill-spec.md) defines execution. The
+[authoring and admission contract](docs/authoring-contract.md) defines what a
+learner must see and what evidence is needed before a drill can be reused for
+training or evaluation. Calibration runs the reference solutions and a
+plausible wrong candidate against the same verifier, then records source hashes.
+It establishes a local verifier result, not model competence.
 
-## The five families
+## The seven families
 
 | family | the job | typical tools |
 | --- | --- | --- |
@@ -66,6 +74,8 @@ Full contract: [docs/drill-spec.md](docs/drill-spec.md).
 | `web-scraping` | pull structure out of markup that isn't yours | python html.parser, sed/awk, lua gsub |
 | `file-hygiene` | triage, rename, dedupe, resort | bash, powershell, python |
 | `text-munging` | extract, normalize, summarize logs & dumps | awk, perl-style regex, lua |
+| `system-recon` | inspect host state and report bounded findings | shell, python, OS tools |
+| `network-recon` | inspect network configuration and local protocol evidence | shell, python, curl |
 
 ## The language matrix
 
@@ -80,19 +90,16 @@ smells like* — see [docs/taxonomy.md](docs/taxonomy.md) for the full reasoning
 
 ## Status
 
-Five drills, thirteen solutions, all five families. `make check` runs the lot;
-`make lint` syntax-checks every solution and validates the skill frontmatter.
+The deck has expanded to more than 100 drills across seven families, including
+data, files, operations, system and network reconnaissance, and agent workflow
+tasks. `make list` is the current inventory. `make check` runs every available
+solution against its drill; `make lint` checks syntax and skill frontmatter.
+Those checks do not establish that a verifier rejects plausible wrong answers.
+`make calibrate ID=001-csv-rollup` demonstrates that stronger gate on one
+drill. Other drills remain to be calibrated before any farm admission claim.
 
-| drill | family | languages | timebox |
-| --- | --- | --- | --- |
-| [001-csv-rollup](drills/001-csv-rollup) | data-wrangling | bash, python, lua | 4 min |
-| [002-log-triage](drills/002-log-triage) | text-munging | bash, python, lua | 3 min |
-| [003-http-probe](drills/003-http-probe) | api-probing | bash, python, pwsh | 3 min |
-| [004-scrape-table](drills/004-scrape-table) | web-scraping | python, lua | 5 min |
-| [005-dir-hygiene](drills/005-dir-hygiene) | file-hygiene | bash, python | 5 min |
-
-Five matching [skills](skills/) carry the judgement each drill tests. The backlog in
-[docs/taxonomy.md](docs/taxonomy.md#backlog) lists what comes next — process-glue,
-polling, sqlite, encoding rescue, GNU-vs-BSD.
+The [skills](skills/) carry reusable judgment; the drills provide executable
+practice. The [documentation index](docs/README.md) separates the live
+contracts from the older taxonomy and manifesto.
 
 Contributing rules — including the no-abstraction rule — are in [AGENTS.md](AGENTS.md).
