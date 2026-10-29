@@ -43,3 +43,8 @@ Calibration reports with source hashes and negative-control results:
   [literal matching](evidence/163-perl-literal-match.json),
   [hash order](evidence/164-perl-hash-order.json), and
   [epoch conversion](evidence/165-perl-timegm.json)
+- Ruby: [integer division](evidence/166-ruby-integer-division.json),
+  [hash identity](evidence/167-ruby-hash-identity.json),
+  [truthiness](evidence/168-ruby-truthiness.json),
+  [mixed sorting](evidence/169-ruby-sort-mixed.json), and
+  [float formatting](evidence/170-ruby-float-format.json)
