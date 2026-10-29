@@ -1,0 +1,6 @@
+# Source and destination names are separated by one tab.
+alpha.txt	beta.txt
+beta.txt	alpha.txt
+
+Q4 report (final).txt	archive report.txt
+-scratch.txt	scratch 2026.txt

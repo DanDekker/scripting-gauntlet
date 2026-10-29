@@ -1,0 +1,10 @@
+id = "059-safe-renames"
+family = "file-hygiene"
+title = "Rename a batch without clobbering swaps"
+difficulty = 4
+timebox = 300
+teaches = [
+  "validate a rename plan before touching files",
+  "stage every source before installing destinations",
+  "quote paths with spaces and leading dashes",
+]
