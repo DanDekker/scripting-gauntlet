@@ -1,0 +1,11 @@
+id = "108-redact-output"
+family = "text-munging"
+title = "Strip secrets out of tool output before it enters the transcript"
+difficulty = 3
+timebox = 240
+teaches = [
+  "redaction is an ordered pipeline: secrets, then emails, then card numbers",
+  "a placeholder is not a leak: REDACTED, ****, null and a 5-character value stay",
+  "an email address and a card number are leaks even with no key in front of them",
+  "a value runs to the end of its line, so a split secret half-survives and a quoted placeholder is not a placeholder",
+]

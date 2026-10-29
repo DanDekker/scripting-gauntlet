@@ -1,0 +1,19 @@
+  preamble continuation with no parent
+USER: the parser test is failing in CI
+TOOL read_file src/parser.py
+  also check the fixture  
+RESULT read_file: 214 lines
+NOTE: the parser drops trailing whitespace
+
+TOOL grep -n trailing tests/
+RESULT grep: 12 matches
+NOTE: retry after fixing the fixture
+ERROR: TimeoutError after 30s
+USER: also update the docs
+  and the changelog
+TOOL write_file docs/parser.md
+TOOL run_tests
+RESULT run_tests: 3 failed
+ERROR: AssertionError: expected 41 got 42
+TOOL
+RESULT broken line without colon

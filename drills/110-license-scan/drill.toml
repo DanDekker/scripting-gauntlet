@@ -1,0 +1,12 @@
+id = "110-license-scan"
+family = "file-hygiene"
+title = "Check a dependency list against the licences your policy allows"
+difficulty = 3
+timebox = 240
+teaches = [
+  "a licence check has three outcomes, not two: allowed, denied, and unknown",
+  "an unlisted licence is unknown, and only a listed denial blocks a release",
+  "normalise before you join: case, whitespace and a trailing 'License' suffix",
+  "a malformed line is skipped and counted, never guessed at",
+  "two versions of the same dependency is a conflict even when both are allowed",
+]

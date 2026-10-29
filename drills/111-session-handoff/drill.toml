@@ -1,0 +1,11 @@
+id = "111-session-handoff"
+family = "text-munging"
+title = "Write the handoff note that lets the next agent pick up the work"
+difficulty = 3
+timebox = 240
+teaches = [
+  "a transcript is mostly lines that are none of the things you need",
+  "indented lines are continuations of the previous line, not new events",
+  "a handoff is what was asked, what was touched, and what is still broken",
+  "a tool call with no result anywhere is the unresolved work",
+]

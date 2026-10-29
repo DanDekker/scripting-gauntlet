@@ -1,0 +1,11 @@
+id = "109-citation-check"
+family = "data-wrangling"
+title = "Check that every claim in an answer is actually backed by a source"
+difficulty = 4
+timebox = 300
+teaches = [
+  "a citation check is containment after normalising whitespace and case, not fuzzy matching",
+  "a source that only covers the start of a claim does not support it; the same words reordered do not either",
+  "claim numbering falls back to position only when the claim carries no number, and duplicates survive",
+  "an empty claim is still a claim line, but it can never be supported",
+]

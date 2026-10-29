@@ -1,0 +1,7 @@
+the parser drops trailing whitespace from every cell
+the http client retries are capped at three attempts
+
+the  loader   ignores blank lines completely   
+the loop never backs off on a retry
+the cache warms on first read
+   

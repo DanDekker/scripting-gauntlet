@@ -1,0 +1,15 @@
+requests 2.31.0 MIT
+flask 3.0.1 BSD-3-Clause   
+Django 5.0 MIT
+requests 2.28.2 Apache-2.0 License
+urllib3
+numpy 1.26.4 mit
+pandas 2.2.0 PSF-2.0
+requests 2.31.0 MIT
+
+httpx 0.27.0 GPL-3.0
+black 24.3.0 Apache-2.0
+too many fields here indeed
+cryptography 42.0.5 OpenSSL
+loguru 0.7.2 agpl-3.0
+click 8.1.7 BSD-3-Clause License
