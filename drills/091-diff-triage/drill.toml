@@ -1,0 +1,11 @@
+id = "091-diff-triage"
+family = "text-munging"
+title = "Triage a unified diff for risky changes"
+difficulty = 3
+timebox = 240
+teaches = [
+  "parse a unified diff into one record per file",
+  "count added and deleted lines without counting the --- and +++ headers",
+  "flag each file with every reason it is risky, not just the first",
+  "a clean file is still a change and belongs in the report",
+]
