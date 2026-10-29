@@ -1,0 +1,12 @@
+id = "003-http-probe"
+family = "api-probing"
+title = "Probe a paginated API and prove what you got"
+difficulty = 2
+timebox = 180
+teaches = [
+  "check health before trusting anything else",
+  "follow a next link instead of constructing page numbers",
+  "cap the loop so a broken API cannot hang you",
+  "report what you fetched, not just what you wanted",
+]
+mock_server = "mock/server.py"
