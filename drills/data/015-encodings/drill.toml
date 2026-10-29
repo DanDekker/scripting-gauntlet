@@ -1,0 +1,11 @@
+id = "015-encodings"
+family = "data-wrangling"
+title = "Read five encodings and merge them into one clean CSV"
+difficulty = 4
+timebox = 300
+teaches = [
+  "a BOM is not part of the data",
+  "UTF-16 needs an explicit decoder, not a byte shuffle",
+  "invalid UTF-8 means it is not UTF-8",
+  "strip CR before you split on LF",
+]
