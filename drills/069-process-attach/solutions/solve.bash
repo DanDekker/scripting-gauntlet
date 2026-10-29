@@ -33,7 +33,13 @@ done
 ready_pid=$(jq -er '.pid' "$ready")
 port=$(jq -er '.port' "$ready")
 [[ "$ready_pid" == "$pid" ]] || { echo "worker PID mismatch" >&2; exit 1; }
-attached=$(ps -p "$ready_pid" -o pid= | tr -d '[:space:]')
+if command -v ps >/dev/null && ps -p "$ready_pid" >/dev/null 2>&1; then
+  attached=$(ps -p "$ready_pid" -o pid= | tr -d '[:space:]')
+elif kill -0 "$ready_pid" 2>/dev/null; then
+  attached="$ready_pid"
+else
+  attached=""
+fi
 [[ "$attached" == "$pid" ]] || { echo "cannot attach to PID $pid" >&2; exit 1; }
 command -v curl >/dev/null || { echo "curl is required" >&2; exit 1; }
 health=$(curl --fail --silent --show-error --connect-timeout 1 --max-time 2 \
