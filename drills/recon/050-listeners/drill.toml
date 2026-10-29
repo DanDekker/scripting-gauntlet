@@ -1,0 +1,11 @@
+id = "050-listeners"
+family = "network-recon"
+title = "Pull the listeners out of a captured netstat table"
+difficulty = 3
+timebox = 180
+teaches = [
+  "state lives in the last column, not the first",
+  "split ADDRESS.PORT at the last dot, never the first",
+  "a wildcard bind shadows a specific one on the same port",
+  "dedupe sockets before you count them",
+]
