@@ -1,0 +1,11 @@
+id = "159-lua-disk-scan"
+family = "file-hygiene"
+title = "Size a directory tree without a stat call and roll it up by extension"
+difficulty = 4
+timebox = 300
+teaches = [
+  "lua's standard library has no stat and no directory listing: io.popen plus seek('end') is the route",
+  "a leading dot is not an extension: .env has no extension, d.tar.gz has gz",
+  "an excluded directory is skipped whole and counted once",
+  "a symlink is not a regular file: never follow it, never count it twice",
+]
