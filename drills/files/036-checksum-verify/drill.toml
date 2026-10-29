@@ -1,0 +1,10 @@
+id = "036-checksum-verify"
+family = "data-wrangling"
+title = "Verify a signed sha256 manifest and re-sign what drifted"
+difficulty = 2
+timebox = 180
+teaches = [
+  "hash file contents, not metadata",
+  "classify drift as MATCH, MISSING, MODIFIED or EXTRA",
+  "emit a manifest in the same shape you consumed",
+]

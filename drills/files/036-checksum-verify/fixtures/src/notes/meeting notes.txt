@@ -1,0 +1,3 @@
+2026-10-28 standup
+- metrics export is late again
+- rotate the deploy key on friday
