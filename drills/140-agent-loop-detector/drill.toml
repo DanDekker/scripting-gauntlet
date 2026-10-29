@@ -1,0 +1,11 @@
+id = "140-agent-loop-detector"
+family = "system-recon"
+title = "Detect infinite loops and thrashing in agent action traces"
+difficulty = 4
+timebox = 300
+teaches = [
+  "an action's identity is tool plus normalized args, so the same tool on a new path is new",
+  "normalize nested args JSON (sorted keys, no whitespace) or nothing ever compares equal",
+  "period-1, period-2 and period-3 loops are three different patterns with different minimum lengths",
+  "scan greedily left to right and report each maximal run once, never each starting offset",
+]

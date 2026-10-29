@@ -1,0 +1,15 @@
+{"case_id":"rag-3","query":"How do retries work?","context":"Retries use exponential backoff starting at 100ms.","answer":"Retries back off quickly.","ground_truth":"100 milliseconds","context_keywords":["backoff","retries"],"answer_keywords":["exponential","backoff"]}
+{"case_id": "rag-1", "query": "What is the timeout?", "context": "The system timeout is 30 seconds by default.", "answer": "The timeout is 30s.", "ground_truth": "30 seconds", "context_keywords": ["timeout", "30 seconds"], "answer_keywords": ["30s", "timeout"]}
+
+{"case_id":"rag-7","query":"Anything?","context":"Anything.","answer":"Anything you like.","ground_truth":"Anything","context_keywords":[],"answer_keywords":[]}
+{"case_id":"rag-2","query":"How do I deploy to prod?","context":"Our office is in Denver.","answer":"I don't know.","ground_truth":"kubectl apply","context_keywords":["deploy","kubernetes"],"answer_keywords":["deploy"]}
+{"case_id": "rag-x", "query":
+{"case_id":"rag-9","query":"Are backups encrypted?","context":"Backups run nightly.","answer":"They run nightly.","ground_truth":"nightly","context_keywords":["backups","retention","encryption"],"answer_keywords":["nightly"]}
+[1, 2]
+{"case_id":"rag-4","query":"What port does the API listen on?","context":"The API listens on port 8080 by default.","answer":"  The API listens on port 8080.  ","ground_truth":"8080","context_keywords":["port","api"],"answer_keywords":["8080","listens"]}
+{"query":"no case id at all","context":"whatever","answer":"whatever","ground_truth":"whatever"}
+{"case_id":"rag-6","query":"When does the build run?","context":"The build runs on every push to main.","answer":"It runs on every push to main.","context_keywords":["build","push"],"answer_keywords":["push","build"]}
+{"case_id":"rag-10","query":"How do I get JSON output?","context":"The CLI supports --verbose and --json flags.","answer":"Use --json for JSON output.","ground_truth":"--json","context_keywords":["--verbose","--json","--yaml","--quiet"],"answer_keywords":["--json"]}
+{"case_id":"rag-5","query":"What is the cache TTL?","context":"The cache TTL is 300 seconds.","answer":"","ground_truth":"300 seconds","context_keywords":["cache","ttl"],"answer_keywords":["cache","300 seconds"]}
+
+{"case_id":"rag-8","query":"What is the timeout?","context":"The TIMEOUT is 30 SECONDS by default.","answer":"It is 30 seconds.","ground_truth":" 30 Seconds ","context_keywords":[" timeout ","30 seconds"],"answer_keywords":["TIMEOUT"]}

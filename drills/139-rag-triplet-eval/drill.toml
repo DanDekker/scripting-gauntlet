@@ -1,0 +1,12 @@
+id = "139-rag-triplet-eval"
+family = "data-wrangling"
+title = "Grade RAG retrieval and generation quality against relevance and groundedness scores"
+difficulty = 4
+timebox = 300
+teaches = [
+  "split one RAG case into three independent binary checks: retrieve, ground, answer",
+  "groundedness is answer keywords against the context - the answer never grades itself",
+  "half the keywords is a pass, so compare matched*2 against the count instead of dividing",
+  "a missing ground truth fails the case, it does not skip it",
+  "the issue label is decided by precedence: retrieval, then grounding, then answer",
+]

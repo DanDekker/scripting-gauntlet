@@ -1,0 +1,12 @@
+id = "137-sse-parser"
+family = "api-probing"
+title = "Parse an LLM Server-Sent Events (SSE) stream and reconstruct the output"
+difficulty = 3
+timebox = 240
+teaches = [
+  "an SSE event ends at a blank line, not at the end of every data line",
+  "a data field may repeat inside one event: the payload is those lines joined with newlines",
+  "lines starting with a colon are comments - they carry no payload but still frame an event",
+  "[DONE] is a sentinel, not JSON, so it is neither a chunk nor a malformed chunk",
+  "a usage-only chunk carries choices: [] and contributes tokens, not content",
+]

@@ -1,0 +1,26 @@
+: keepalive ping
+
+event: message
+data: {"id":"chatcmpl-1","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"role":"assistant"},"finish_reason":null}]}
+
+data: {"id":"chatcmpl-1","choices":[{"index":0,"delta":{"content":"Thé"},"finish_reason":null}]}
+
+data: {"id":"chatcmpl-1","choices":[{"index":0,"delta":{"content":" system"},"finish_reason":null}]}
+
+data: {"id":"chatcmpl-1","choices":[{"index":0,"delta":{"content":" timeout"},"finish_reason":null}]}   
+
+data: {"id":"chatcmpl-1","choices":[{"index":0,"delta":{"content":"oops"
+
+: keepalive
+id: 7
+
+data: {"id":"chatcmpl-1",
+data:  "choices":[{"index":0,"delta":{"content":" First line.\nSecond line."},"finish_reason":null}]}
+
+data:{"id":"chatcmpl-1","choices":[{"index":0,"delta":{"content":null},"finish_reason":null}]}
+
+data: {"id":"chatcmpl-1","choices":[{"index":0,"delta":{},"finish_reason":"stop"}]}
+
+data: {"id":"chatcmpl-1","choices":[],"usage":{"prompt_tokens":31,"completion_tokens":8,"total_tokens":39}}
+
+data: [DONE]

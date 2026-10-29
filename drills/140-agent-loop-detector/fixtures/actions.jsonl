@@ -1,0 +1,33 @@
+{"step": 21, "tool": "write_file", "args": {"path": "out/report.md", "content": "v1"}}
+
+{"step": 2, "tool": "read_file", "args": {"path": "src/app.py"}}
+{"step": 40, "tool": "read_file", "args": {"path": "src/a.py"}}
+{"step": 41, "tool": "grep",
+{"step": 13, "tool": "grep", "args": {"path": "src", "pattern": "def main"}}
+{"step": 30, "tool": "run_tests", "args": {"suite": ["unit", "lint"], "opts": {"retries": 2, "verbose": true}}}
+{"step": 3, "tool": "read_file", "args": {"path": "src/util.py"}}
+{"step": 44, "tool": "read_file", "args": {"path": "src/a.py"}}
+{"step": 15, "tool": "read_file", "args": {"path": "src/app.py"}}
+[{"step": 1, "tool": "read_file"}]
+{"step": 41, "tool": "grep", "args": {"pattern": "foo"}}
+{"step": 22, "tool": "write_file", "args": {"content": "v2", "path": "out/report.md"}}
+{"step": 6, "tool": "edit_file", "args": {"path": "src/app.py", "line": 42}}
+{"step": 31, "tool": "run_tests", "args": {"opts": {"verbose": true, "retries": 2}, "suite": ["unit", "lint"]}}
+{"step": 4, "tool": "read_file", "args": {"path": "src/config.py"}}
+{"step": 45, "tool": "grep", "args": {"pattern": "foo"}}
+
+{"step": 12, "tool": "read_file", "args": {"path": "src/app.py"}}
+{"step": 47, "tool": "edit_file", "args": {"path": "src/a.py", "line": 9}}
+{"step": 7, "tool": "grep", "args": {"pattern": "def main", "path": "src"}}
+{"step": 24, "tool": "write_file", "args": {"path": "out/report.md", "content": "v1"}}
+{"step": 32, "tool": "run_tests", "args": {"suite": ["unit", "lint"], "opts": {"retries": 2, "verbose": true}}}
+{"step": 16, "tool": "grep", "args": {"path": "src", "pattern": "def main"}}
+{"step": 42, "tool": "edit_file", "args": {"path": "src/a.py", "line": 9}}
+{"step": 25, "tool": "write_file", "args": {"path": "out/report.md", "content": "v2"}}
+{"step": 9, "tool": "edit_file", "args": {"line": 7, "path": "src/util.py"}}
+{"step": 33, "tool": "run_tests", "args": {"suite": ["unit", "lint"], "opts": {"retries": 2, "verbose": true}}}
+{"step": 18, "tool": "read_file", "args": {"path": "src/app.py"}}
+{"step": 27, "tool": "write_file", "args": {"content": "v1", "path": "out/report.md"}}
+{"step": 28, "tool": "write_file", "args": {"path": "out/report.md", "content": "v2"}}
+{"step": 19, "tool": "grep", "args": {"pattern": "def main", "path": "src"}}
+{"step": 50, "args": {"path": "src/app.py"}}

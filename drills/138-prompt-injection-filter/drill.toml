@@ -1,0 +1,11 @@
+id = "138-prompt-injection-filter"
+family = "text-munging"
+title = "Screen user inputs and tool outputs for prompt injection and jailbreak patterns"
+difficulty = 3
+timebox = 240
+teaches = [
+  "normalize obfuscation away (zero-width characters) before you match anything",
+  "collect every flag that fires, not just the first, and emit them in a fixed order",
+  "a marker without enough payload is not a payload: length thresholds matter",
+  "discussing prompt injection is not committing it - only the listed patterns count",
+]
