@@ -1,0 +1,10 @@
+id = "066-benchmark-runner"
+family = "system-recon"
+title = "Run warmups and samples for a small benchmark suite"
+difficulty = 4
+timebox = 300
+teaches = [
+  "separate warmups from measured samples",
+  "time a child process with a monotonic clock",
+  "summarize repeated timings with median and nearest-rank p95",
+]

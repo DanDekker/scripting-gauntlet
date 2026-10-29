@@ -1,0 +1,6 @@
+{
+  "warmups": 1,
+  "samples": 5,
+  "iterations": 30000,
+  "cases": ["loop", "generator"]
+}
