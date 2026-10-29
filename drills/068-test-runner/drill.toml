@@ -1,0 +1,10 @@
+id = "068-test-runner"
+family = "system-recon"
+title = "Run a portable test list and collect per-case results"
+difficulty = 3
+timebox = 240
+teaches = [
+  "run each test case in its own child process",
+  "capture exit status and output without losing later cases",
+  "return a failing suite status after writing the report",
+]
