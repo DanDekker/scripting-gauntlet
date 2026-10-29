@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/bash-assoc-presence"
+fixture_origin = "Synthetic config and query files authored for this drill"
+
+[[negative]]
+path = "controls/wrong-test-nonempty-only.bash"
+defect = "Tests presence with [[ -n ${config[$q]:-} ]], falsely classifying empty keys as missing"
+expect = "DEBUG/status"

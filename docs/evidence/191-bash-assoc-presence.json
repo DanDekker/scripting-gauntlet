@@ -1,0 +1,52 @@
+{
+  "calibrated_at": "2026-10-29T23:32:17.011417+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "191-bash-assoc-presence",
+  "fixture_origin": "Synthetic config and query files authored for this drill",
+  "lineage": "scripting-gauntlet/bash-assoc-presence",
+  "results": [
+    {
+      "elapsed_ms": 20,
+      "language": "bash",
+      "passed": true,
+      "path": "solutions/solve.bash",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 24,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Tests presence with [[ -n ${config[$q]:-} ]], falsely classifying empty keys as missing",
+      "elapsed_ms": 11,
+      "expected_diagnostic": "DEBUG/status",
+      "language": "bash",
+      "passed": true,
+      "path": "controls/wrong-test-nonempty-only.bash",
+      "problems": [
+        "results.csv row 2 [DEBUG/status]: expected 'empty', got 'missing'",
+        "results.csv row 3 [CACHE_DIR/status]: expected 'empty', got 'missing'",
+        "summary.json['empty']: expected 2, got 0",
+        "summary.json['missing']: expected 2, got 4"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "e8cd686379aafa347166443d9e975559e4b842cba1a43013d03d636e78bb640a",
+    "controls/manifest.toml": "c44e2ba534909c39f68fa6053e85fdd9575d9115731b9f11232493ab25b43cfe",
+    "controls/wrong-test-nonempty-only.bash": "0eca591246e3f2aeb2e157133a6ac5bcdd784c93003bff11c52795687baac160",
+    "drill.toml": "a9d80d89d459eccb877e3147d2bbb5c5653e93728c568558360da49b05b43bbe",
+    "fixtures/config.txt": "4493828300e650374d2fde7f0f6cc05eab592dc463b724f90b2c53542c4389f9",
+    "fixtures/queries.txt": "c519af546ca1747508719b8723b00dd4b304234c7b1d0cf5aa650a95f0c85600",
+    "solutions/solve.bash": "ba3d1ec95ba63c484f5407f5e9aac5cab422888fd1fe4a422c5bec371efac4ab",
+    "solutions/solve.py": "4dcf55ad5b044d6c73dc43ceb426ce65932560752fa4b37f17e5bb21ec14b531",
+    "verify.py": "ca40acbcca7a2991515d8296646bee415bfa7be2866be0893d6728d20548e9f9"
+  },
+  "stage": "reference-calibrated"
+}

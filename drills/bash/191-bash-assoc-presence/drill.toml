@@ -1,0 +1,11 @@
+id = "191-bash-assoc-presence"
+family = "data-wrangling"
+title = "Distinguish empty values from missing keys in bash associative arrays"
+difficulty = 4
+timebox = 300
+teaches = [
+  "[[ -v map[$k] ]] checks if a key exists in a bash associative array",
+  "[[ -n ${map[$k]:-} ]] falsely treats keys with empty string values as missing",
+  "empty string configuration values (e.g. DEBUG=) are distinct from missing keys",
+  "properly classifying configuration presence prevents silent default overrides",
+]

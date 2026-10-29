@@ -1,0 +1,6 @@
+# Production service config
+HOST=api.internal
+PORT=8080
+DEBUG=
+TIMEOUT=0
+CACHE_DIR=
