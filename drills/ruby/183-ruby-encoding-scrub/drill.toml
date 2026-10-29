@@ -1,0 +1,11 @@
+id = "183-ruby-encoding-scrub"
+family = "text-munging"
+title = "Detect and repair invalid UTF-8 instead of trusting the bytes"
+difficulty = 4
+timebox = 300
+teaches = [
+  "force_encoding only relabels bytes; it does not validate them",
+  "valid_encoding? is the check; scrub replaces invalid sequences",
+  "length counts characters while bytesize counts bytes, and they differ on valid input",
+  "unpack/downloaded text is bytes until you decide what encoding it claims",
+]
