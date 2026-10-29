@@ -1,0 +1,8 @@
+# Nightly maintenance queue
+steady
+
+flaky
+permanent
+# Finish the rest even after a failure.
+once
+exhausted
