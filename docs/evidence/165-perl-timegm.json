@@ -1,0 +1,56 @@
+{
+  "calibrated_at": "2026-10-29T22:19:20.474984+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "165-perl-timegm",
+  "fixture_origin": "Synthetic UTC stamps with a leap day and an impossible date authored for this drill",
+  "lineage": "scripting-gauntlet/perl-timegm",
+  "results": [
+    {
+      "elapsed_ms": 17,
+      "language": "pl",
+      "passed": true,
+      "path": "solutions/solve.pl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 33,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Passes the 1-based month straight to timegm, so every stamp lands a month late",
+      "elapsed_ms": 13,
+      "expected_diagnostic": "1970-01-01T00:00:00Z/epoch",
+      "language": "pl",
+      "passed": true,
+      "path": "controls/wrong-month-offset.pl",
+      "problems": [
+        "epochs.csv row 1 [1970-01-01T00:00:00Z/epoch]: expected 0, got '2678400'",
+        "epochs.csv row 2 [2024-02-29T00:00:00Z/epoch]: expected 1709164800, got '1711670400'",
+        "epochs.csv row 3 [2026-01-01T00:00:00Z/epoch]: expected 1767225600, got '1769904000'",
+        "epochs.csv row 4 [2026-10-29T12:00:00Z/stamp]: expected '2026-10-29T12:00:00Z', got '2026-02-30T00:00:00Z'",
+        "epochs.csv row 4 [2026-10-29T12:00:00Z/epoch]: expected 1793275200, got '1774828800'",
+        "epochs.csv row 5 [2026-12-31T23:59:59Z/stamp]: expected '2026-12-31T23:59:59Z', got '2026-10-29T12:00:00Z'",
+        "epochs.csv row 5 [2026-12-31T23:59:59Z/epoch]: expected 1798761599, got '1795953600'",
+        "summary.json['first']: expected 0, got 2678400",
+        "summary.json['last']: expected 1798761599, got 1795953600"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "1008e73d3fc0c2a5137d8a0c1d88bcdb8720ddd8fa228fa7fc4fdfc438dab23c",
+    "controls/manifest.toml": "2b55648aec7bb5594064e5cc3ccfd0b966ee42412661954569224a3a682fc618",
+    "controls/wrong-month-offset.pl": "b6f46d684679d66aa41239bd9c701ff754142053086c6c5abde01e0a5db108fa",
+    "drill.toml": "7804658c33599097c98e68120c79b4a13e3c20bc00fa996c825f498dec1a3345",
+    "fixtures/stamps.txt": "474760bb51b0d96566665af68eeaba2b85bbf817509e68ff5d6e8aac5da7fe0f",
+    "solutions/solve.pl": "e791bfc1e241405f287a24c5b408caadaa9fee45842d5c4b13dea83c785d0950",
+    "solutions/solve.py": "30f68c67f6bde544396ec424f574c4b7372c121735fa1f4f4bc14a93441d5f12",
+    "verify.py": "a48f6ee0153fe29b1b6e7fc0915efb23b8f5bb0f544092d84b18908a50291492"
+  },
+  "stage": "reference-calibrated"
+}

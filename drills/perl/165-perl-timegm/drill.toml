@@ -1,0 +1,12 @@
+id = "165-perl-timegm"
+family = "text-munging"
+title = "Convert UTC stamps to epoch seconds with perl's month-zero convention"
+difficulty = 4
+timebox = 300
+teaches = [
+  "timegm months are 0-based, so pass month-1",
+  "a years-since-1900 value in 0..99 means 2000..2099: 1970-1900 silently becomes 2070",
+  "validate the calendar with a round trip: gmtime(epoch) must give back the input fields",
+  "2026-02-30 is not a date, and 2024-02-29 is: leap years are part of the check",
+  "epoch 0 is a valid answer, not a missing value",
+]
