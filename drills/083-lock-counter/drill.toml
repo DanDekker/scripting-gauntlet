@@ -1,0 +1,11 @@
+id = "083-lock-counter"
+family = "system-recon"
+title = "Run four concurrent workers without losing an increment"
+difficulty = 4
+timebox = 300
+teaches = [
+  "read-modify-write across processes is a race without a lock",
+  "an atomic mkdir or flock is the whole mutual-exclusion primitive",
+  "every worker must finish or the run must fail",
+  "count the evidence (events), not just the final number",
+]
