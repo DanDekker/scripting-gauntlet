@@ -1,0 +1,10 @@
+id = "065-disk-pressure"
+family = "system-recon"
+title = "Find low-space volumes across Linux, macOS and Windows"
+difficulty = 4
+timebox = 300
+teaches = [
+  "parse different native disk reports into one schema",
+  "convert Unix 1K blocks to bytes and retain Windows byte counts",
+  "rank only volumes at or below a free-space threshold",
+]
