@@ -1,0 +1,11 @@
+id = "029-set-ops"
+family = "data-wrangling"
+title = "Union, intersection and difference of two id lists"
+difficulty = 2
+timebox = 180
+teaches = [
+  "normalize and sort before you compare sets",
+  "comm needs sorted input and gives all three answers at once",
+  "distinct is a property of the set, not the file",
+  "one input file per side, four output answers",
+]
