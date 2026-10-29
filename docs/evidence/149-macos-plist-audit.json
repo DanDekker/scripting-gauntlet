@@ -1,0 +1,48 @@
+{
+  "calibrated_at": "2026-10-29T20:05:12.715789+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "149-macos-plist-audit",
+  "fixture_origin": "Synthetic macOS app privacy declarations authored for this drill",
+  "lineage": "scripting-gauntlet/macos-plist-audit",
+  "results": [
+    {
+      "elapsed_ms": 130,
+      "language": "jxa",
+      "passed": true,
+      "path": "solutions/solve.jxa",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 64,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Treats camera and microphone as mutually exclusive permissions",
+      "elapsed_ms": 65,
+      "expected_diagnostic": "permissions must match both nonblank declarations",
+      "language": "py",
+      "passed": true,
+      "path": "controls/wrong-exclusive.py",
+      "problems": [
+        "com.example.capture: permissions must match both nonblank declarations"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "4bd17ac2f0cd566fb3ae6d0367764572101637560f133d2d7728599428eb86fd",
+    "controls/manifest.toml": "066e61920060e66ce79aef49a3b691f10ab435258f0c566037bef24f1ca1c911",
+    "controls/wrong-exclusive.py": "d689950a7ddba131e35d95dae98fcd70b77bcc28b36a250c126812fd9154b1f6",
+    "drill.toml": "daafee1ae81197d1aae69d7c1c408254b69e82f1fee8a3c4590862c28a3e271e",
+    "fixtures/apps.plist": "1548559def2cd4c9f84f5ea7fc934cb26d7433074713c8c15fc2f6d8b6fe84b2",
+    "solutions/solve.jxa": "39dd91ed4469e2dbd13ae8b8f2b2bc5a9a1fb91072a727ec498e2c9f885e07d3",
+    "solutions/solve.py": "09d9234a3c023a3bc3035fc03e3826ad7e0a29344839e2a72135608c18c44532",
+    "verify.py": "eb3f58cef63b631865eef90748e8e41d8acf09241e6346bdece3256440657d45"
+  },
+  "stage": "reference-calibrated"
+}

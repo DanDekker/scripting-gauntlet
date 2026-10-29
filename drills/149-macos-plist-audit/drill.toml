@@ -1,0 +1,11 @@
+id = "149-macos-plist-audit"
+family = "system-recon"
+title = "Audit macOS app privacy declarations from a property list"
+difficulty = 2
+timebox = 240
+teaches = [
+  "read a macOS property list with the host's native scripting bridge",
+  "distinguish absent or blank privacy declarations from nonempty ones",
+  "report both permissions when an app declares both",
+  "skip malformed app records without dropping valid ones",
+]

@@ -1,0 +1,41 @@
+#!/usr/bin/env osascript -l JavaScript
+ObjC.import('Foundation');
+
+function requiredEnv(name) {
+  const value = $.NSProcessInfo.processInfo.environment.objectForKey($(name));
+  if (!value) throw new Error(`${name} is missing`);
+  return ObjC.unwrap(value);
+}
+
+const input = requiredEnv('IN');
+const output = requiredEnv('OUT');
+const plist = $.NSDictionary.dictionaryWithContentsOfFile($(input + '/apps.plist'));
+if (!plist) throw new Error('cannot read apps.plist');
+const records = ObjC.deepUnwrap(plist).Apps;
+if (!Array.isArray(records)) throw new Error('Apps must be an array');
+
+const apps = [];
+let skipped = 0;
+for (const record of records) {
+  const rawId = record.CFBundleIdentifier;
+  const rawVersion = record.CFBundleShortVersionString;
+  if (typeof rawId !== 'string' || typeof rawVersion !== 'string' ||
+      !rawId.trim() || !rawVersion.trim()) {
+    skipped++;
+    continue;
+  }
+  const permissions = [];
+  if (typeof record.NSCameraUsageDescription === 'string' &&
+      record.NSCameraUsageDescription.trim()) permissions.push('camera');
+  if (typeof record.NSMicrophoneUsageDescription === 'string' &&
+      record.NSMicrophoneUsageDescription.trim()) permissions.push('microphone');
+  if (permissions.length) {
+    apps.push({ id: rawId.trim(), version: rawVersion.trim(), permissions });
+  }
+}
+apps.sort((a, b) => a.id.localeCompare(b.id));
+
+const report = $(JSON.stringify({ apps, skipped }) + '\n');
+const error = Ref();
+if (!report.writeToFileAtomicallyEncodingError($(output + '/report.json'), true,
+    $.NSUTF8StringEncoding, error)) throw new Error('cannot write report.json');

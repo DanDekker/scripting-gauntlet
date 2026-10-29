@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Apps</key>
+  <array>
+    <dict>
+      <key>CFBundleIdentifier</key><string>com.example.capture</string>
+      <key>CFBundleShortVersionString</key><string>2.4.1</string>
+      <key>NSCameraUsageDescription</key><string>Scan documents</string>
+      <key>NSMicrophoneUsageDescription</key><string>Record notes</string>
+    </dict>
+    <dict>
+      <key>CFBundleIdentifier</key><string>com.example.mic</string>
+      <key>CFBundleShortVersionString</key><string>0.9</string>
+      <key>NSMicrophoneUsageDescription</key><string>Calls</string>
+    </dict>
+    <dict>
+      <key>CFBundleIdentifier</key><string>com.example.readonly</string>
+      <key>CFBundleShortVersionString</key><string>1.0</string>
+    </dict>
+    <dict>
+      <key>CFBundleIdentifier</key><string> com.example.trim </string>
+      <key>CFBundleShortVersionString</key><string> 3.2 </string>
+      <key>NSCameraUsageDescription</key><string> Take photos </string>
+    </dict>
+    <dict>
+      <key>CFBundleShortVersionString</key><string>1.0</string>
+      <key>NSCameraUsageDescription</key><string>Capture</string>
+    </dict>
+    <dict>
+      <key>CFBundleIdentifier</key><string>com.example.empty</string>
+      <key>CFBundleShortVersionString</key><string>4.0</string>
+      <key>NSCameraUsageDescription</key><string>   </string>
+    </dict>
+    <dict>
+      <key>CFBundleIdentifier</key><string>com.example.noversion</string>
+      <key>NSMicrophoneUsageDescription</key><string>Calls</string>
+    </dict>
+  </array>
+</dict>
+</plist>

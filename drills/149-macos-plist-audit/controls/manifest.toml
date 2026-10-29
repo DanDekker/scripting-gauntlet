@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/macos-plist-audit"
+fixture_origin = "Synthetic macOS app privacy declarations authored for this drill"
+
+[[negative]]
+path = "controls/wrong-exclusive.py"
+defect = "Treats camera and microphone as mutually exclusive permissions"
+expect = "permissions must match both nonblank declarations"
