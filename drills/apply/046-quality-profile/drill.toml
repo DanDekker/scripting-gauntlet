@@ -1,0 +1,11 @@
+id = "046-quality-profile"
+family = "data-wrangling"
+title = "Profile a customer export before loading it"
+difficulty = 3
+timebox = 240
+teaches = [
+  "several spellings of nothing are all null",
+  "distinct and top-value need a per-column accumulator",
+  "numeric is a property of every value, not of the first one",
+  "ties need a stated tie-break or the report is not reproducible",
+]

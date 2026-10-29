@@ -1,0 +1,11 @@
+customer_id,email,segment,ltv,signup_date,country,notes
+1,ada@example.com,pro,1250.00,2026-01-04,US,
+2,bob@example.com,free,0.00,2026-01-19,US,churn risk
+3,  cy@example.com ,pro,410.00,2026-02-02,CA,
+4,,free,0.00,2026-02-15,US,   
+5,eve@example.com,NULL,99.50,2026-03-01,,trial
+6,frank@example.com,free,0.00,2026-03-12,US,
+7,grace@example.com,pro,1250.00,2026-03-28,CA,
+8,,-,0.00,2026-04-02,US,
+9,heidi@example.com,pro,220.00,,US,
+10,ivan@example.com,free,0.00,2026-04-19,US,
