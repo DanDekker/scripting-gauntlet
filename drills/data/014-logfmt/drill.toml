@@ -1,0 +1,11 @@
+id = "014-logfmt"
+family = "data-wrangling"
+title = "Parse logfmt records and rank them by duration"
+difficulty = 3
+timebox = 240
+teaches = [
+  "logfmt is key=value pairs, values may be quoted",
+  "a quoted value may contain spaces",
+  "strip a unit suffix before sorting numerically",
+  "sort by one key, break ties by another",
+]
