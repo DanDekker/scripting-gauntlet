@@ -1,0 +1,11 @@
+id = "023-filter-predicate"
+family = "data-wrangling"
+title = "Keep the orders that pass a three-part predicate"
+difficulty = 2
+timebox = 180
+teaches = [
+  "a filter is one boolean expression, not a loop of ifs",
+  "normalize the field before you compare it",
+  "money needs two decimals and a numeric compare",
+  "count what you dropped, not just what you kept",
+]

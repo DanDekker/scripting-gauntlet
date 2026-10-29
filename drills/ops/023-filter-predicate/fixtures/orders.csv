@@ -1,0 +1,16 @@
+order_id,customer,region,status,amount
+1001,ACME,west,paid,1250.00
+1002,Globex,east,PAID,300
+1003,Initech,west,cancelled,900.00
+1004,Umbrella,east, paid ,99.99
+1005,Stark,north,Paid,80.00
+1006,Wayne,west,paid,1200
+
+1007,Oscorp,east,shipped,500.00
+1008,Wonka,west,paid,100.00
+1009,Tyrell,north,paid,250.50
+1010,Lumen,east,paid,   175.00
+1011,Umbrella,west,paid,50
+1012,Cyberdyne,west,refunded,700
+1013,Soylent,south,paid,3000.00
+1014,Hooli,west,Paid,$1000.00
