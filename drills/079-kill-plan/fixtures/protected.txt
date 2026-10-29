@@ -1,0 +1,3 @@
+# never signal these
+nginx
+sshd

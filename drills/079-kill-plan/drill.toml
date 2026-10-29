@@ -1,0 +1,11 @@
+id = "079-kill-plan"
+family = "system-recon"
+title = "Build a kill plan that spares init, protected daemons and zombies"
+difficulty = 5
+timebox = 300
+teaches = [
+  "a candidate is hot by CPU or by memory, not by load average",
+  "never signal init, a protected daemon, or a zombie",
+  "kill descendants before their parents, deepest first",
+  "escalate to KILL only when memory pressure is the problem",
+]
