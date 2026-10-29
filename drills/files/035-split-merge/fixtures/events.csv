@@ -1,0 +1,24 @@
+event_id,actor,action,detail
+1001,ada,login,"web, safari"
+1002,grace,upload,report.csv 42 rows
+1003,linus,logout,session 12m
+1004,ada,upload,"data, raw"
+1005,ken,login,mobile
+1006,ada,download,report.csv
+1007,grace,upload,"media, large"
+1008,linus,login,desktop
+1009,ken,logout,session 3m
+1010,ada,upload,"data, final"
+1011,grace,download,report.csv
+1012,linus,upload,"media, small"
+1013,ken,login,mobile
+1014,ada,logout,session 41m
+1015,grace,upload,"data, raw"
+1016,linus,download,report.csv
+1017,ken,upload,"media, large"
+1018,ada,login,desktop
+1019,grace,logout,session 2m
+1020,linus,upload,"data, final"
+1021,ken,download,report.csv
+1022,ada,upload,"media, small"
+1023,grace,login,mobile

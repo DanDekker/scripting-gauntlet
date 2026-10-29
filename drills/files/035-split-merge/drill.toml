@@ -1,0 +1,10 @@
+id = "035-split-merge"
+family = "data-wrangling"
+title = "Split a CSV into fixed chunks and prove the roundtrip"
+difficulty = 2
+timebox = 180
+teaches = [
+  "chunk with the header repeated, tail chunk included",
+  "prove a reconstruction instead of assuming it",
+  "cmp is the whole test when the contract says byte-identical",
+]
