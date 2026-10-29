@@ -1,0 +1,11 @@
+id = "010-json-flatten"
+family = "data-wrangling"
+title = "Flatten a nested catalog into one row per product"
+difficulty = 2
+timebox = 180
+teaches = [
+  "pull a value out of a nested object by path",
+  "collapse a nested array into one delimited cell",
+  "carry a document-level field into the summary, not the rows",
+  "sort on the key, not on the order the API returned",
+]

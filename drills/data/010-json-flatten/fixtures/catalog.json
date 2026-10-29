@@ -1,0 +1,26 @@
+{
+  "generated": "2026-10-01",
+  "products": [
+    {
+      "sku": "A-1",
+      "name": "Bolt",
+      "price": 0.5,
+      "tags": ["steel", "small"],
+      "specs": {"material": "steel", "weight": 12}
+    },
+    {
+      "sku": "B-2",
+      "name": "Nut",
+      "price": 1.25,
+      "tags": ["steel", "small"],
+      "specs": {"material": "steel", "weight": 8}
+    },
+    {
+      "sku": "C-3",
+      "name": "Screw",
+      "price": 0.75,
+      "tags": ["small"],
+      "specs": {"material": "brass", "weight": 3}
+    }
+  ]
+}
