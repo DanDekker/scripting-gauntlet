@@ -1,0 +1,11 @@
+id = "107-backoff-plan"
+family = "system-recon"
+title = "Turn a failed request log into a retry schedule"
+difficulty = 4
+timebox = 300
+teaches = [
+  "retry logic needs a status taxonomy first: not every failure is worth retrying",
+  "429 is a 4xx that is retried and 404 is a 4xx that is not",
+  "each log line is one attempt: identical request lines get independent schedules",
+  "backoff is base * 2^(attempt-1), and the schedule must be deterministic",
+]

@@ -1,0 +1,11 @@
+id = "104-test-selection"
+family = "data-wrangling"
+title = "Pick the tests to run after a change, using the import graph"
+difficulty = 4
+timebox = 300
+teaches = [
+  "impact travels through imports: a change reaches a test only along the import edges",
+  "the transitive closure is computed from the module a test exercises, not from the changed file",
+  "a module that appears only as an import target is not a key, so a change to it is unknown",
+  "dedupe the change list before counting, and ignore a module that imports itself",
+]

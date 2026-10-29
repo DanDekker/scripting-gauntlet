@@ -1,0 +1,18 @@
+feat(parser): add csv support
+fix: handle empty input
+
+chore: bump deps
+docs: update readme
+refactor!: drop legacy api
+feat(ui)!: new layout
+just some work
+feat: add flag
+perf(cache): memoise lookups
+BREAKING CHANGE: cache keys changed
+test: tighten fixtures
+ci: matrix build
+build: switch to esbuild
+BREAKING CHANGE: drop node 18 support
+fix(ui): repair tooltip   
+Feat: wrong case
+feat(): support windows paths

@@ -1,0 +1,11 @@
+id = "105-repo-map"
+family = "file-hygiene"
+title = "Produce the map an agent reads first when it opens a repo"
+difficulty = 3
+timebox = 240
+teaches = [
+  "a repo map is a filter chain: the skip list runs before anything is counted",
+  "kind comes from the name, and the test suffix outranks the extension",
+  "a hidden file is skipped; a dot-prefixed directory is not, unless it is .git",
+  "a directory with no surviving files is not in the map at all",
+]

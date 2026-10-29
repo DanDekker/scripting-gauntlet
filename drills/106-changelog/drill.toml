@@ -1,0 +1,11 @@
+id = "106-changelog"
+family = "text-munging"
+title = "Turn a pile of commits into a changelog a human will read"
+difficulty = 3
+timebox = 240
+teaches = [
+  "a changelog is a grouping problem over a strict vocabulary: unknown types are dropped, not guessed",
+  "internal types are counted but never printed in a section",
+  "breaking is a property, not a section: a commit can be both internal and breaking",
+  "a BREAKING CHANGE trailer mutates the commit above it instead of being a line of its own",
+]
