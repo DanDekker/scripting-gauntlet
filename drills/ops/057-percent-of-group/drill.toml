@@ -1,0 +1,11 @@
+id = "057-percent-of-group"
+family = "data-wrangling"
+title = "Each row's share of its group, plus the running share"
+difficulty = 2
+timebox = 180
+teaches = [
+  "a share needs the group total before the first row prints",
+  "order decides what cumulative means",
+  "compute from raw amounts, round once at the end",
+  "normalise the group key before you group on it",
+]

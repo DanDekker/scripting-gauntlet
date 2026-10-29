@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/percent-of-group"
+fixture_origin = "Synthetic regional sales export authored for this drill"
+
+[[negative]]
+path = "controls/wrong-rounded-running.py"
+defect = "Adds rounded percentages instead of accumulating raw amounts"
+expect = "shares.csv row 5 col 5"

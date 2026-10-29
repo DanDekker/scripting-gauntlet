@@ -1,0 +1,11 @@
+region,rep,amount
+East,alice,50.00
+east,bob, 30.00
+ east ,cara,20.00
+
+west,dan,100.00
+West,eve,100.00
+west,fay,50.00
+north,gus,10.00
+north,hal,10.00
+north,ivy,10.00

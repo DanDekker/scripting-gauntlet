@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/outer-join"
+fixture_origin = "Synthetic inventory and price exports authored for this drill"
+
+[[negative]]
+path = "controls/wrong-left-join.py"
+defect = "Drops the SKU that exists only in the right-side price file"
+expect = "joined.csv: expected 5 rows"

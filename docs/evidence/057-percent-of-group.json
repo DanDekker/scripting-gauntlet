@@ -1,0 +1,50 @@
+{
+  "calibrated_at": "2026-10-29T20:16:42.877784+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "057-percent-of-group",
+  "fixture_origin": "Synthetic regional sales export authored for this drill",
+  "lineage": "scripting-gauntlet/percent-of-group",
+  "results": [
+    {
+      "elapsed_ms": 81,
+      "language": "bash",
+      "passed": true,
+      "path": "solutions/solve.bash",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 82,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Adds rounded percentages instead of accumulating raw amounts",
+      "elapsed_ms": 88,
+      "expected_diagnostic": "shares.csv row 5 col 5",
+      "language": "py",
+      "passed": true,
+      "path": "controls/wrong-rounded-running.py",
+      "problems": [
+        "shares.csv row 5 col 5: expected 66.67, got '66.66'"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "bd68e3768588b92d7d4f914e456873ccaa0d0f13a1e2b0ba38bee5bce9e81fc4",
+    "controls/manifest.toml": "2f7929f00b1897c1025880c4c4e78201135abd3134a60d7be4a6201c653c13de",
+    "controls/wrong-rounded-running.py": "c7a8a367830dc86ea161f8879eb4b03727ddece55f4a9c1e6ca00faa8be37ec2",
+    "drill.toml": "aae1dbbc74022083fa43fcb3c6a53166f215bd53912f3611e904c75f2a47dfda",
+    "fixtures/sales.csv": "f4d88f412ae3dfd17817cc35224f803a2247f49476670d1fcca78c9c1c408a2f",
+    "solutions/__pycache__/solve.cpython-314.pyc": "7cb7bdc72ac72a37f6551087cc2ac03b70d52872faf7fd599a31c9640ae11dfc",
+    "solutions/__pycache__/solve.cpython-315.pyc": "05a5436ffce3560d329db7ae06046d4f7112724267781c1d982efe58801423b4",
+    "solutions/solve.bash": "733d145b654bd4a7b55312dae9885a6efc2b193160b0cdf9b95ba6d85cc6a28b",
+    "solutions/solve.py": "43b97470b39e12644fa32a85da3928c5066085cac4ea07c26fa2b3207d115328",
+    "verify.py": "f666fd16675bdec2eccd7c593ff8a9d3bce63a2891308af3949d4346fb6a5610"
+  },
+  "stage": "reference-calibrated"
+}

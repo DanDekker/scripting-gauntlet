@@ -1,0 +1,51 @@
+{
+  "calibrated_at": "2026-10-29T20:16:42.931923+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "058-outer-join",
+  "fixture_origin": "Synthetic inventory and price exports authored for this drill",
+  "lineage": "scripting-gauntlet/outer-join",
+  "results": [
+    {
+      "elapsed_ms": 60,
+      "language": "bash",
+      "passed": true,
+      "path": "solutions/solve.bash",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 95,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Drops the SKU that exists only in the right-side price file",
+      "elapsed_ms": 115,
+      "expected_diagnostic": "joined.csv: expected 5 rows",
+      "language": "py",
+      "passed": true,
+      "path": "controls/wrong-left-join.py",
+      "problems": [
+        "joined.csv: expected 5 rows, got 4"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "ec4b51f0c4086faa6ecab979a5bb9f07010e4cf02af7a0487b98787385985881",
+    "controls/manifest.toml": "8fa6903439da5011d453a830ee2ad07b9f32f5e3e294022f1960d3da1c34eba0",
+    "controls/wrong-left-join.py": "46145f62837496f2ae694abdd77dd556549ceb37db6e21e7221a881749c715e0",
+    "drill.toml": "ef2d8fd27dad063319985d457dd67a012d010a3cefb27a2487ff1adf61e2a46d",
+    "fixtures/left.csv": "be79ab1f12d8535f4bdd598e569d289a3f53049d0c924fc442438cc2146ae690",
+    "fixtures/right.csv": "9485ddd4678e4875b927d914307ce5bcbc7c5db510c85d2a5a69949f6422b61a",
+    "solutions/__pycache__/solve.cpython-314.pyc": "c81416b248091a5346cdf7f1b3b8c69c7bfc06e96b9cd72bd9802b59a3796e4a",
+    "solutions/__pycache__/solve.cpython-315.pyc": "b2e0abb6849e4eca13990fb33bb1f85538e757e703039d18d3b1f874e5024dd3",
+    "solutions/solve.bash": "3fb38d41ebe2d399c88e89c119f5a91c3c3ab62ece13e079a9e8b8972795b7b4",
+    "solutions/solve.py": "bed8ce57bdfba6a194765d0ec8505172a944ddc95984e2832e8de0d496e118b4",
+    "verify.py": "3a962a69553b3cc5d98d6c258f997107c025ce89bcfb18502260f8f778033460"
+  },
+  "stage": "reference-calibrated"
+}

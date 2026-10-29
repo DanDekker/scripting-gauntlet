@@ -1,0 +1,11 @@
+id = "058-outer-join"
+family = "data-wrangling"
+title = "Full outer join two inventories on the sku"
+difficulty = 3
+timebox = 180
+teaches = [
+  "a full outer join is a left pass plus a right-only sweep",
+  "the missing side is an empty cell, not a dropped row",
+  "trim and lowercase the key once, on both sides",
+  "duplicates make a join ambiguous, so the fixture forbids them",
+]
