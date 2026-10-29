@@ -1,0 +1,11 @@
+id = "103-ci-triage"
+family = "text-munging"
+title = "Read a CI log and name the tests that actually failed"
+difficulty = 3
+timebox = 240
+teaches = [
+  "strip ANSI colour before matching, or the first token is never a status",
+  "the word FAILED inside a traceback is not a result line; only a result line is",
+  "a test's verdict is the last result reported for it, and the short summary counts as a result",
+  "ERROR is sticky: a test that errored once never counts as passing",
+]

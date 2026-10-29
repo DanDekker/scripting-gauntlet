@@ -1,0 +1,28 @@
+=== test session starts ===
+platform linux -- Python 3.14.0, pytest-8.3.3, pluggy-1.5.0
+rootdir: /home/ci/repo
+
+PASSED tests/test_api.py::test_ping
+FAILED tests/test_api.py::test_timeout
+PASSED tests/test_api.py::test_timeout
+SKIP tests/test_api.py::test_legacy (reason: no fixture)
+PASSED tests/test_db.py::test_seed
+[31mERROR tests/test_db.py::test_setup[0m
+PASSED tests/test_db.py::test_setup
+PASSED tests/test_queue.py::test_ack
+
+--- captured log for tests/test_api.py::test_ping ---
+2026-10-29 10:14:22 WARNING retry 1 FAILED, sleeping 2s
+    assert status != "FAILED"
+Traceback (most recent call last):
+RuntimeError: worker FAILED to start after 3 retries
+
+[31mFAILED tests/test_cache.py::test_evict[0m
+PASSED tests/test_cache.py::test_evict
+[33mSKIP tests/test_render.py::test_html[0m
+[31mERROR tests/test_db.py::test_seed[0m
+
+=== short test summary info ===
+FAILED tests/test_cache.py::test_evict - AssertionError: 3 != 2
+FAILED tests/test_queue.py::test_drain - TimeoutError: no consumer within 30s
+=== 2 failed, 3 passed, 2 errors, 2 skipped in 12.44s ===

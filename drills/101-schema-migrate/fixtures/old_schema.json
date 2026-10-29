@@ -1,0 +1,18 @@
+{
+  "$id": "order.schema.json",
+  "type": "object",
+  "title": "order",
+  "properties": {
+    "id": {"type": "string"},
+    "count": {"type": "integer"},
+    "nickname": {"type": "string"},
+    "legacy_flag": {"type": "boolean"},
+    "email": {"type": "string"},
+    "notes": {"type": "string"},
+    "meta": {
+      "type": "object",
+      "properties": {"owner": {"type": "string"}}
+    }
+  },
+  "required": ["id", "legacy_flag", "meta", "old_ghost"]
+}

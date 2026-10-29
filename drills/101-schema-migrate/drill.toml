@@ -1,0 +1,12 @@
+id = "101-schema-migrate"
+family = "data-wrangling"
+title = "Tell me whether a schema change breaks my clients"
+difficulty = 4
+timebox = 300
+teaches = [
+  "a schema diff is only useful if it says which direction of change breaks a client",
+  "removed, type-changed and now-required break consumers; added and now-optional do not",
+  "one property can carry several codes: compare type and required-ness independently",
+  "required entries naming a property that has no definition are noise, not changes",
+  "nested objects are compared as opaque values: only the top level moves",
+]

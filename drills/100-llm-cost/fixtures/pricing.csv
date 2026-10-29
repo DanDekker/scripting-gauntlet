@@ -1,0 +1,4 @@
+model,input_per_1k,output_per_1k
+small,0.015,0.06
+medium,0.15,0.60
+large,1.50,6.00

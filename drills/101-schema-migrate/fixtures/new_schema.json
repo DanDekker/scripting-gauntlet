@@ -1,0 +1,22 @@
+{
+  "$id": "order.schema.json",
+  "type": "object",
+  "title": "order v2",
+  "properties": {
+    "id": {"type": "string"},
+    "count": {"type": "number"},
+    "nickname": {"type": "string"},
+    "email": {"type": "string"},
+    "notes": {},
+    "meta": {
+      "type": "object",
+      "properties": {
+        "owner": {"type": "string"},
+        "team": {"type": "string"}
+      }
+    },
+    "display_name": {"type": "string"},
+    "tags": {"type": "array"}
+  },
+  "required": ["id", "count", "nickname", "email", "ghost", "display_name"]
+}

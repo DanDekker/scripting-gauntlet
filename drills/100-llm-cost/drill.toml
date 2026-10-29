@@ -1,0 +1,11 @@
+id = "100-llm-cost"
+family = "data-wrangling"
+title = "Cost out a month of model usage from the request log"
+difficulty = 3
+timebox = 240
+teaches = [
+  "usage money needs a rate table joined on the model name, not a guess",
+  "a cached request is the same tokens at 10% of the input rate, not the output rate",
+  "a request whose model is not in the rate table is unpriced: counted, never priced at zero",
+  "round per request first, then sum: the total is the sum of what you billed",
+]

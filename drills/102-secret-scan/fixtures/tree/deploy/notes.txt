@@ -1,0 +1,4 @@
+Deploy notes for the api_key rotation.
+password: "correct horse battery staple"   
+apikey:   
+token=abc1234

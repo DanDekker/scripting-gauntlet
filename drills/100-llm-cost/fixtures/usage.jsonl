@@ -1,0 +1,13 @@
+{"request_id": "r07", "model": "haiku-mini", "input_tokens": 4000, "output_tokens": 800}
+{"request_id": "r02", "model": "medium", "input_tokens": 2000, "output_tokens": 500, "cached": false}
+
+{"request_id": "r03", "model": "large", "input_tokens": 10000, "output_tokens": 1000, "cached": true}
+{this line is not json at all
+{"request_id": "r01", "model": "small", "input_tokens": 1200, "output_tokens": 300}
+{"request_id": "r04", "model": "small", "input_tokens": 500}
+{"request_id": "r06", "model": "small", "input_tokens": 2000, "output_tokens": 100}
+[1, 2, 3]
+{"request_id": "r05", "model": "gpt-x", "input_tokens": 900, "output_tokens": 100}
+{"request_id": "r06", "model": "medium", "input_tokens": 1000, "output_tokens": 0}
+{"request_id": "r09", "input_tokens": 100}
+{"request_id": "r08", "model": "small", "input_tokens": 333, "output_tokens": 77}   

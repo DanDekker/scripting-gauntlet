@@ -1,0 +1,4 @@
+env:
+  # injected by the CI secrets store at run time
+  Secret: ci_9f8f8f8f8f8f
+  GITHUB_TOKEN:  "ghp_0123456789abcdef0123456789abcdef"  

@@ -1,0 +1,12 @@
+id = "102-secret-scan"
+family = "file-hygiene"
+title = "Find hardcoded credentials before they reach the repo"
+difficulty = 3
+timebox = 240
+teaches = [
+  "secret scanning is a filter chain: most hits are candidates, few are secrets",
+  "a key name only counts when an assignment follows it, not when a sentence mentions it",
+  "placeholders and short values must not page anyone",
+  "sample files are scanned for candidates but are never leaks",
+  "the same secret twice is two findings; the summary still counts one unique value",
+]
