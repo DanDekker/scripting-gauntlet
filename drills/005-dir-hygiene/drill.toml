@@ -1,0 +1,11 @@
+id = "005-dir-hygiene"
+family = "file-hygiene"
+title = "Triage, dedupe, and resort a directory full of entropy"
+difficulty = 3
+timebox = 300
+teaches = [
+  "inventory a tree before moving anything",
+  "dedupe by content hash, not by name",
+  "normalize names with an explicit, deterministic rule",
+  "emit a manifest so the move is auditable",
+]

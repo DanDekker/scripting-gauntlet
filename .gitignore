@@ -14,3 +14,5 @@ __pycache__/
 
 # mac
 .DS_Store
+# drill 005 ships .DS_Store as realistic junk
+!drills/**/.DS_Store
