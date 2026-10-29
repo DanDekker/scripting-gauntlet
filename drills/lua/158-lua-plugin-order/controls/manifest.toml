@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/lua-plugin-order"
+fixture_origin = "Synthetic plugin registry with a cycle and a missing dep authored for this drill"
+
+[[negative]]
+path = "controls/wrong-definition-order.lua"
+defect = "Breaks the ready-set tie by definition order instead of alphabetical order"
+expect = "1/name"

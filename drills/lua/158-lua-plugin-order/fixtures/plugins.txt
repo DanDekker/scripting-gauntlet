@@ -1,0 +1,12 @@
+# plugin registry
+auth: store
+store:
+http: auth, log
+log:
+cache: http
+metrics: log, cache
+mail: smtp
+report: mail
+sync: sync2
+sync2: sync
+metrics: log

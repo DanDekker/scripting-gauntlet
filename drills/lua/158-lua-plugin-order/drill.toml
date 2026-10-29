@@ -1,0 +1,11 @@
+id = "158-lua-plugin-order"
+family = "data-wrangling"
+title = "Order plugins by declared dependencies and name the ones that cannot load"
+difficulty = 4
+timebox = 300
+teaches = [
+  "a dependency graph needs a fixpoint loop, not one pass over the file",
+  "a cycle must be detected before the topo sort or the loader spins forever",
+  "pick the alphabetically smallest ready plugin so the order is reproducible",
+  "a plugin whose dep cannot load is blocked, and that verdict cascades",
+]

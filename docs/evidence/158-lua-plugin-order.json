@@ -1,0 +1,50 @@
+{
+  "calibrated_at": "2026-10-29T22:09:13.826569+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "158-lua-plugin-order",
+  "fixture_origin": "Synthetic plugin registry with a cycle and a missing dep authored for this drill",
+  "lineage": "scripting-gauntlet/lua-plugin-order",
+  "results": [
+    {
+      "elapsed_ms": 28,
+      "language": "lua",
+      "passed": true,
+      "path": "solutions/solve.lua",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 55,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Breaks the ready-set tie by definition order instead of alphabetical order",
+      "elapsed_ms": 22,
+      "expected_diagnostic": "1/name",
+      "language": "lua",
+      "passed": true,
+      "path": "controls/wrong-definition-order.lua",
+      "problems": [
+        "order.csv row 1 [1/name]: expected 'log', got 'store'",
+        "order.csv row 2 [2/name]: expected 'store', got 'auth'",
+        "order.csv row 3 [3/name]: expected 'auth', got 'log'"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "d94dc4b9af66a87d70505059e09d4be596a9cc2af24549cd64a5b3101b1877a1",
+    "controls/manifest.toml": "a4fca4f1b5e0e5b14c8c03797516177ea4b96a307e4ddba79db8732feea017be",
+    "controls/wrong-definition-order.lua": "b9a62d386583031c7b66c47b38a76302c652ad94fa37e9b93f6d479cc32a3795",
+    "drill.toml": "2c4cf3e46a5190550d421109563c1fbcaeecf499214779778ad46587021dd430",
+    "fixtures/plugins.txt": "5162a1cd37e41d9a4be7fb4293eb286de402fd0ff4e9d22ea29668d2cc0556c4",
+    "solutions/solve.lua": "9d68cde2a49a2987d18bc82ddb9cb01db4f0e2ea2d6b20690aa2e2a5a97a486f",
+    "solutions/solve.py": "921bf76743dbc35489032476ee2cd44f5bafcbf02c9c842d2a513d248a12db6b",
+    "verify.py": "7c8caee6dcd4e179c80f0b6fc2fcd84dd80795616d0c46814155de520d6a49fd"
+  },
+  "stage": "reference-calibrated"
+}
