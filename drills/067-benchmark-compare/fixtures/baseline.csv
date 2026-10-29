@@ -1,0 +1,13 @@
+platform,case,run,ms
+windows,json,3,28
+linux,json,2,9
+linux,gzip,3,18
+macos,json,2,14
+windows,json,1,30
+linux,gzip,1,20
+macos,json,3,16
+linux,json,3,11
+windows,json,2,32
+linux,gzip,2,22
+macos,json,1,15
+linux,json,1,10

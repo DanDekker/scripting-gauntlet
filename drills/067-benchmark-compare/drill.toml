@@ -1,0 +1,10 @@
+id = "067-benchmark-compare"
+family = "system-recon"
+title = "Compare benchmark medians and flag regressions"
+difficulty = 4
+timebox = 240
+teaches = [
+  "compare repeated timings by platform and benchmark case",
+  "use medians to reduce the effect of one noisy run",
+  "apply a fixed regression threshold and stable output order",
+]
