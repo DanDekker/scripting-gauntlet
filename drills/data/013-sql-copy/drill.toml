@@ -1,0 +1,11 @@
+id = "013-sql-copy"
+family = "data-wrangling"
+title = "Extract one COPY block out of a SQL dump"
+difficulty = 2
+timebox = 180
+teaches = [
+  "a dump is a text file with sections, not one table",
+  "scope to the block you want and ignore the others",
+  "the terminator is data, not a row",
+  "tab-separated payloads inside a COPY block",
+]
