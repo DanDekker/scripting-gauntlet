@@ -1,0 +1,49 @@
+{
+  "calibrated_at": "2026-10-29T22:57:04.165102+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "174-perl-unpack-binary",
+  "fixture_origin": "Generated binary export with a truncated tail authored for this drill",
+  "lineage": "scripting-gauntlet/perl-unpack-binary",
+  "results": [
+    {
+      "elapsed_ms": 19,
+      "language": "pl",
+      "passed": true,
+      "path": "solutions/solve.pl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 37,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Reads the score with the little-endian template v instead of big-endian n, so 100 becomes 25600",
+      "elapsed_ms": 10,
+      "expected_diagnostic": "1/score",
+      "language": "pl",
+      "passed": true,
+      "path": "controls/wrong-endian.pl",
+      "problems": [
+        "records.csv row 1 [1/score]: expected 100, got '25600'",
+        "records.csv row 4 [7/score]: expected 42, got '10752'"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "28646427a21d6eeba45ecccb625cca39fd7e83bf5a4fc0c8e5fc4bf093c6b113",
+    "controls/manifest.toml": "e4567c6cea70510a05a023d08e87f8862b4f1c1899ab1f8b23192a9b1a4ccff7",
+    "controls/wrong-endian.pl": "4022c60a5c08730bc4d7a548e96cb6aeec8208eb09431dace7a52dd4c1ce502d",
+    "drill.toml": "00b5a971625ff195e12216728cf2f2581886d258416fb285c6cce485257e295c",
+    "fixtures/records.bin": "22dbdd984066502f13cc2f39ff4f8fb039e3e619d2dd54c0fbb61699ff08bcb2",
+    "solutions/solve.pl": "a99aeece4095e3992cad4a46b8d72fae3686b5851ed68e7d28890ed147dfc5e6",
+    "solutions/solve.py": "fe5befc346e60b4377c5cc9f0e228b62e767e5458c1f86edf13844990e3c6c4d",
+    "verify.py": "337b5920828c7c01d1d9e51fd7ed730387b748af68b216a6a6c9072274f96896"
+  },
+  "stage": "reference-calibrated"
+}

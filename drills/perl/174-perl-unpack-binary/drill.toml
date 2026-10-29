@@ -1,0 +1,11 @@
+id = "174-perl-unpack-binary"
+family = "data-wrangling"
+title = "Parse length-prefixed binary records with unpack"
+difficulty = 4
+timebox = 300
+teaches = [
+  "unpack takes a template and a byte string: N is big-endian u32, n big-endian u16, C a byte",
+  "walk offsets explicitly when a length prefix makes the record variable-size",
+  "a short buffer is not a record: count the truncated tail instead of guessing its fields",
+  "unpack returns a list; a scalar assignment takes only the first field",
+]

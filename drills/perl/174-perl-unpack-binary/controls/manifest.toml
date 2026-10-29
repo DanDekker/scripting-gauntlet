@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/perl-unpack-binary"
+fixture_origin = "Generated binary export with a truncated tail authored for this drill"
+
+[[negative]]
+path = "controls/wrong-endian.pl"
+defect = "Reads the score with the little-endian template v instead of big-endian n, so 100 becomes 25600"
+expect = "1/score"
