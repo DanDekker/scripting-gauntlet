@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/ps1-datetime"
+fixture_origin = "Synthetic mixed-format stamps authored for this drill"
+
+[[negative]]
+path = "controls/wrong-culture-parse.ps1"
+defect = "Parses with [datetime]::Parse under invariant culture, so 03/04/2026 becomes March 4 instead of 3 April"
+expect = "3/epoch"

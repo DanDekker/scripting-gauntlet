@@ -1,0 +1,11 @@
+id = "185-ps1-datetime"
+family = "text-munging"
+title = "Parse mixed date formats with explicit patterns, not culture guessing"
+difficulty = 4
+timebox = 300
+teaches = [
+  "[datetime]::Parse reads 03/04/2026 as March 4 under invariant culture and April 3 under en-GB",
+  "ParseExact with an explicit pattern removes the ambiguity",
+  "an impossible date (31/02) must be rejected, not rolled forward",
+  "ToUnixTimeSeconds needs the DateTime marked UTC, or the offset shifts the epoch",
+]

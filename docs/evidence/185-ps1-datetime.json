@@ -1,0 +1,48 @@
+{
+  "calibrated_at": "2026-10-29T23:12:19.520979+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "185-ps1-datetime",
+  "fixture_origin": "Synthetic mixed-format stamps authored for this drill",
+  "lineage": "scripting-gauntlet/ps1-datetime",
+  "results": [
+    {
+      "elapsed_ms": 742,
+      "language": "ps1",
+      "passed": true,
+      "path": "solutions/solve.ps1",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 36,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Parses with [datetime]::Parse under invariant culture, so 03/04/2026 becomes March 4 instead of 3 April",
+      "elapsed_ms": 656,
+      "expected_diagnostic": "3/epoch",
+      "language": "ps1",
+      "passed": true,
+      "path": "controls/wrong-culture-parse.ps1",
+      "problems": [
+        "epochs.csv row 3 [3/epoch]: expected 1775174400, got '1772582400'"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "9e83efe9486204a9764fa5ca5585005e9565d55e53268afd40630bc62b61c454",
+    "controls/manifest.toml": "7ce12c663423baa0b0e8a3be1aa5beae12e0f5ca1ff4c8549b57ed4ddbf85720",
+    "controls/wrong-culture-parse.ps1": "8bb927f520c37030267eca1d1b4adc4a3121d03d66fca94f8771f4589481f436",
+    "drill.toml": "d9274b558167eabfb6d8acac0ab2aebe0985906fda90183c7718b62210e15967",
+    "fixtures/stamps.csv": "199e922b35e12ffc7afbc77f04ad873ef947789716b6744e49e77b0ea69ad6d2",
+    "solutions/solve.ps1": "00641cfc0dff93d4383cc1631b3e763e6950cdb604b73069219020d2951dc4fd",
+    "solutions/solve.py": "fddad3ba6e3b5aadcea3eaf3a3baa848a4ca1dbb27ad5d16da81f828249ce645",
+    "verify.py": "080c36f79f777090063d2631f3444c5ce323492afe9bf494742dc29cbbf6e617"
+  },
+  "stage": "reference-calibrated"
+}
