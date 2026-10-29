@@ -1,0 +1,13 @@
+id = "131-port-scan-triage"
+family = "network-recon"
+title = "Turn a raw port scan into the list a human should actually look at"
+difficulty = 3
+timebox = 240
+teaches = [
+  "a scan reports state, not verdicts: open/closed/filtered means nothing without a baseline",
+  "the last probe of a (port, protocol) wins and every earlier one is superseded",
+  "a port range expands to one record per port before anything is deduped",
+  "the service is field 4 — one token, not the rest of the line",
+  "an open port the baseline says should be closed is the finding that matters",
+  "a scanned port with no baseline row is unbaselined: reported, and not a failure",
+]

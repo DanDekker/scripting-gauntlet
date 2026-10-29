@@ -1,0 +1,68 @@
+GET / HTTP/1.1
+HTTP/1.1 200 OK
+Server: nginx/1.24.0
+Strict-Transport-Security: max-age=31536000
+Content-Security-Policy: default-src 'self'
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Referrer-Policy: strict-origin-when-cross-origin
+
+GET /health HTTP/1.1
+Server: nginx/1.24.0
+
+GET /api/v1/items?page=2 HTTP/1.1
+HTTP/1.1 200 OK
+Server: nginx/1.24.0
+Content-Security-Policy: default-src 'self'
+X-Frame-Options: SAMEORIGIN
+
+GET /old?ref=1 HTTP/1.1
+HTTP/1.1 301 Moved Permanently
+Location: /new
+
+GET /boom HTTP/1.1
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/plain
+Strict-Transport-Security: max-age=0
+
+GET /shop HTTP/1.1
+HTTP/1.1 200 OK
+strict-transport-security: max-age=0
+Strict-Transport-Security: max-age=63072000
+content-security-policy: default-src 'self'; img-src https://cdn.example.com
+X-Content-Type-Options: NOSNIFF   
+x-frame-options: deny
+Referrer-Policy: same-origin
+
+GET /admin HTTP/1.1
+HTTP/1.1 200 OK
+Strict-Transport-Security: max-age=0
+Content-Security-Policy: default-src *
+X-Content-Type-Options: none
+X-Frame-Options: ALLOW-FROM https://example.com
+Referrer-Policy: unsafe-url
+
+GET /empty HTTP/1.1
+HTTP/1.1 204 No Content
+
+GET /api/status HTTP/1.1
+HTTP/1.1 200 OK
+Strict-Transport-Security: max-age=abc
+Content-Security-Policy: default-src 'self'
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Referrer-Policy: no-referrer
+
+GET /missing HTTP/1.1
+HTTP/1.1 404 Not Found
+Server: nginx/1.24.0
+
+GET /junk HTTP/1.1
+HTTP/1.1 200 OK
+Server: nginx/1.24.0
+this line: has spaces in the name
+Strict-Transport-Security: MAx-Age=31536000; includeSubDomains
+Content-Security-Policy: default-src 'self'; object-src 'none'
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Referrer-Policy: no-referrer

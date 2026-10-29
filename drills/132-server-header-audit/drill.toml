@@ -1,0 +1,12 @@
+id = "132-server-header-audit"
+family = "network-recon"
+title = "Audit the HTTP headers a server sends back"
+difficulty = 3
+timebox = 240
+teaches = [
+  "five independent header checks, three distinct failure reasons: missing, weak, wrong-value",
+  "a header can be present and still fail — max-age=0 and default-src * are weak, not missing",
+  "header names are case-insensitive and a repeated header is decided by the last value",
+  "a redirect and a server error are not audited for security headers at all",
+  "a block with no status line is skipped, not scored",
+]

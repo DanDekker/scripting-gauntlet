@@ -1,0 +1,18 @@
+22/tcp open ssh 3.14.2
+80/tcp open Microsoft IIS httpd
+443/tcp closed
+8080/tcp filtered
+
+6379/tcp open redis 7.0.11
+8443/tcp open https-alt
+3306/tcp
+5432/tcp OPEN postgres
+9000/tcp open
+8000-8010/tcp open zmq
+22/tcp open ssh
+  80/tcp   OPEN   http  
+8443/tcp closed
+53/udp open domain
+53/tcp filtered
+scan started 09:12:04
+3306/tcp open mysql 8.0.35

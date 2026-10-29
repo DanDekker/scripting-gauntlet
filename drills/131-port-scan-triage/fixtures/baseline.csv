@@ -1,0 +1,12 @@
+port,service,expected
+22,ssh,yes
+80,http,yes
+443,https,yes
+3306,mysql,yes
+ 5432 , postgres , yes 
+6379,redis,no
+8080,http-alt,yes
+8443,https-alt,no
+9000,cslistener,yes
+9100,jetdirect,yes
+
