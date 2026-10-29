@@ -1,0 +1,6 @@
+alice login
+alice view
+bob login
+alice login
+bob view
+carol login

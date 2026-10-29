@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/ruby-hash-default"
+fixture_origin = "Synthetic tagged events authored for this drill"
+
+[[negative]]
+path = "controls/wrong-shared-default.rb"
+defect = "Collects tags with Hash.new([]): every user shares one array and no key is ever stored, so the tag column is empty"
+expect = "alice/tags"

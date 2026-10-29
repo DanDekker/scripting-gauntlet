@@ -1,0 +1,11 @@
+id = "182-ruby-hash-default"
+family = "data-wrangling"
+title = "Build per-key buckets without sharing one default array"
+difficulty = 4
+timebox = 300
+teaches = [
+  "Hash.new([]) stores one array as the default: every missing key returns the same object",
+  "reading a default does not create the key, so keys stays empty and the tally vanishes",
+  "Hash.new { |h, k| h[k] = [] } materialises the key on first read",
+  "Hash.new(0) is safe for counters because 0 is immutable",
+]

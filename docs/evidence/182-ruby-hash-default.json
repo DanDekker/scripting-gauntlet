@@ -1,0 +1,50 @@
+{
+  "calibrated_at": "2026-10-29T23:12:15.483005+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "182-ruby-hash-default",
+  "fixture_origin": "Synthetic tagged events authored for this drill",
+  "lineage": "scripting-gauntlet/ruby-hash-default",
+  "results": [
+    {
+      "elapsed_ms": 44,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 151,
+      "language": "rb",
+      "passed": true,
+      "path": "solutions/solve.rb",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Collects tags with Hash.new([]): every user shares one array and no key is ever stored, so the tag column is empty",
+      "elapsed_ms": 131,
+      "expected_diagnostic": "alice/tags",
+      "language": "rb",
+      "passed": true,
+      "path": "controls/wrong-shared-default.rb",
+      "problems": [
+        "tally.csv row 1 [alice/tags]: expected 'login;login;view', got 'login;login;login;login;view;view'",
+        "tally.csv row 2 [bob/tags]: expected 'login;view', got 'login;login;login;login;view;view'",
+        "tally.csv row 3 [carol/tags]: expected 'login', got 'login;login;login;login;view;view'"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "362e723bed60f19fb253a28060eb8e983c7e347a806c3d64aa84cd86524860ac",
+    "controls/manifest.toml": "777ca375e23154ed9fa70159a361db8e8bbc55e9494c06f310e87a0c5d69f5a3",
+    "controls/wrong-shared-default.rb": "9a9986fe3c2c8a4a6c77161cf5bef2461f1eb2be0b567c5884c27e3c52055491",
+    "drill.toml": "7830981d7dfc106d40cd3dba0e6bbbcc3cbeaeb8640cc768a150794061ca9b60",
+    "fixtures/events.txt": "65411aada7a0109e4ff47c5e273d00fb0da816d0726af8040c15a17af0574a86",
+    "solutions/solve.py": "5ccc4a97010373d47dd0213f4e123b3dfe15885c9f6f9f3c05589b6aae5cb810",
+    "solutions/solve.rb": "a24dc7ceec2359d281bffcaef0f3c1219a74b7ef5894f942592f5bdec4b7feaa",
+    "verify.py": "45ffd96d810904f8852d345cd036ce013b94e903d2bd3e151cfd84e7e9b5d3db"
+  },
+  "stage": "reference-calibrated"
+}
