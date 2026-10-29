@@ -1,0 +1,12 @@
+{
+  "app.title": "Dashboard",
+  "app.welcome": "Welcome back",
+  "button.close": "",
+  "button.save": "Save",
+  "header.tagline": "Built for speed",
+  "legacy.count": 42,
+  "nav.help": "Help",
+  "orphan.key": "Nobody calls me",
+  "ui.brand": "ScriptDeck",
+  "zzz.orphan": "Also unused"
+}

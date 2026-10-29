@@ -1,0 +1,11 @@
+id = "118-mcp-config"
+family = "system-recon"
+title = "Audit an MCP server config before an agent is allowed to launch it"
+difficulty = 3
+timebox = 240
+teaches = [
+  "a duplicate JSON key is silent data loss: the last one wins, so report the collision",
+  "a server config is an attack surface: an undefined env var or an unexpected key is a finding",
+  "a missing args key is not a defect; args that is not a list of strings is",
+  "report every problem per server, in a fixed order, and sort the report by server name",
+]

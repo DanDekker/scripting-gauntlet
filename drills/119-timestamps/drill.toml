@@ -1,0 +1,11 @@
+id = "119-timestamps"
+family = "text-munging"
+title = "Normalise a log full of timestamps into one sortable format"
+difficulty = 3
+timebox = 240
+teaches = [
+  "a timestamp token must be followed by whitespace, or it is part of the message",
+  "six formats, one normal form: convert to epoch seconds first, format last",
+  "an offset means the instant differs from the wall clock it was written with",
+  "sort by the instant, keep input order on ties, and count what you skipped",
+]

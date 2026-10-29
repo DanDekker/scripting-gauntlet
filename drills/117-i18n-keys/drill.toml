@@ -1,0 +1,11 @@
+id = "117-i18n-keys"
+family = "data-wrangling"
+title = "Find the translation keys the code uses but the locale files lost"
+difficulty = 3
+timebox = 240
+teaches = [
+  "a t( inside a comment or inside a quoted string is not a call: lex before you match",
+  "a call can span two lines, and the key is the literal verbatim, with a quote style either way",
+  "a key the code invents and a key the locale file forgot are two different failures",
+  "an empty or non-string translation still exists; it is invalid, not missing",
+]

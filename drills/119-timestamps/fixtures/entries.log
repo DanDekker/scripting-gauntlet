@@ -1,0 +1,18 @@
+2026-10-29T12:00:00Z boot complete
+2026-10-29T14:00:00+02:00 regional cutover
+2026-10-29 09:00:00 naive utc marker
+2026/10/28 23:30:00 slash date
+1767225600 epoch new year
+Oct 29 12:00:00 2026 syslog line
+oct 29 12:00:05 2026 lowercase month
+Oct  9 12:00:00 2026 single-digit day
+0 epoch zero
+-1000000000 negative epoch
+2026-10-29T12:00:00.123Z fractional seconds
+2026-10-29T12:00:00Z+02:00 both a z and an offset
+2026-10-29T12:00:00Zno-space-after
+no timestamp here at all
+
+2026-13-45 99:99:99 nonsense
+2026-10-29T14:00:00+02:00 with comma, in the message
+2026-10-29T10:00:00Z another entry   

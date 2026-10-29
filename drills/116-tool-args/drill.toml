@@ -1,0 +1,11 @@
+id = "116-tool-args"
+family = "data-wrangling"
+title = "Check the arguments a model produced against the tool's own schema"
+difficulty = 4
+timebox = 300
+teaches = [
+  "a tool call is data, not a promise: validate the arguments before you run them",
+  "check missing, unknown, type, enum and minimum in that order and name the property",
+  "a boolean is not an integer and null is only legal where the schema made the property optional",
+  "a call for a different tool is not a schema violation: report wrong-tool and move on",
+]

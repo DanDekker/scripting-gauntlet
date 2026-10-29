@@ -1,0 +1,63 @@
+{
+  "servers": {
+    "docs": {
+      "command": "npx",
+      "args": ["-y", "docs-server"],
+      "env": {"API_KEY": "abc"}
+    },
+    "shell": {
+      "command": "bash",
+      "args": ["-c", "ls"],
+      "env": {},
+      "autostart": true
+    },
+    "ghost": {
+      "args": ["broken"],
+      "env": {}
+    },
+    "Blank": {
+      "command": "   ",
+      "args": []
+    },
+    "noargs": {
+      "command": "python3"
+    },
+    "Bad Args": {
+      "command": "node",
+      "args": "not-a-list"
+    },
+    "numargs": {
+      "command": "node",
+      "args": ["a", 1]
+    },
+    "db": {
+      "command": "python",
+      "args": ["-m", "db"],
+      "env": {"MISSING_VAR": "x", "HOME": "/root", "OTHER_MISSING": "y"}
+    },
+    "dup": {
+      "command": "node",
+      "args": []
+    },
+    "dup": {
+      "command": "python3",
+      "args": ["-m", "dup"]
+    },
+    "empty": {
+      "command": "",
+      "args": []
+    },
+    "ok": {
+      "command": "node",
+      "args": ["server.js"],
+      "env": {}
+    },
+    "extra": {
+      "command": "node",
+      "args": [],
+      "env": {},
+      "autostart": true,
+      "cwd": "/tmp"
+    }
+  }
+}
