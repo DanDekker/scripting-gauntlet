@@ -1,0 +1,11 @@
+id = "081-manifest-drift"
+family = "file-hygiene"
+title = "Diff two release manifests into added, removed and changed files"
+difficulty = 3
+timebox = 180
+teaches = [
+  "join two keyed lists in one pass, both directions",
+  "content hash decides changed, not size",
+  "a missing side is not an empty string, it is added or removed",
+  "count what did not move so the diff can be trusted",
+]

@@ -1,0 +1,7 @@
+[
+  {"path": "api/app.py", "bytes": 2048, "sha256": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"},
+  {"path": "api/routes/users.py", "bytes": 1300, "sha256": "5123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"},
+  {"path": "api/routes/teams.py", "bytes": 640, "sha256": "6123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"},
+  {"path": "static/logo.png", "bytes": 4096, "sha256": "3123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"},
+  {"path": "static/style.css", "bytes": 900, "sha256": "4123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"}
+]
