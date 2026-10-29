@@ -1,0 +1,11 @@
+id = "087-schema-search"
+family = "file-hygiene"
+title = "Find the table whose header has the columns you remember"
+difficulty = 3
+timebox = 240
+teaches = [
+  "match on header names, not file names",
+  "strip a BOM and quotes before comparing columns",
+  "a missing column disqualifies the whole file",
+  "sum by header position, not by fixed column index",
+]
