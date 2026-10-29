@@ -1,0 +1,6 @@
+# Batch item manifest
+101:alpha,beta,gamma
+102:solo
+103:
+104:one,two
+105:isolated

@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/ps1-pipeline-unrolling"
+fixture_origin = "Synthetic batch item logs authored for this drill"
+
+[[negative]]
+path = "controls/wrong-unrolled-return.ps1"
+defect = "Returns arrays without unary comma prefix, causing single-element arrays to unroll into scalar strings"
+expect = "102/is_array"

@@ -1,0 +1,11 @@
+id = "195-ps1-pipeline-unrolling"
+family = "data-wrangling"
+title = "Prevent automatic pipeline unrolling of single-element arrays"
+difficulty = 4
+timebox = 300
+teaches = [
+  "PowerShell pipeline automatically unrolls collections returned from functions",
+  "returning a single-element array @('item') flattens into scalar string 'item'",
+  "returning an empty array @() flattens into $null",
+  "prepending a comma (return ,$arr) preserves the array wrapper through pipeline boundaries",
+]

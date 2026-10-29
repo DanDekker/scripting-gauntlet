@@ -1,0 +1,50 @@
+{
+  "calibrated_at": "2026-10-29T23:36:28.685124+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "195-ps1-pipeline-unrolling",
+  "fixture_origin": "Synthetic batch item logs authored for this drill",
+  "lineage": "scripting-gauntlet/ps1-pipeline-unrolling",
+  "results": [
+    {
+      "elapsed_ms": 421,
+      "language": "ps1",
+      "passed": true,
+      "path": "solutions/solve.ps1",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 33,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Returns arrays without unary comma prefix, causing single-element arrays to unroll into scalar strings",
+      "elapsed_ms": 579,
+      "expected_diagnostic": "102/is_array",
+      "language": "ps1",
+      "passed": true,
+      "path": "controls/wrong-unrolled-return.ps1",
+      "problems": [
+        "batches.csv row 2 [102/is_array]: expected 'true', got 'false'",
+        "batches.csv row 3 [103/is_array]: expected 'true', got 'false'",
+        "batches.csv row 5 [105/is_array]: expected 'true', got 'false'"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "77b3d483279d1f06a4ae98ca5f9599000b40e967533909ec2bb5cd5d3599d99a",
+    "controls/manifest.toml": "4b477462a967869a17a6b938f43811c1425a39626714cb41befb08589b0ef0e2",
+    "controls/wrong-unrolled-return.ps1": "1582db1465773482b3d6f280833b2a4488d8a02819b128119aacc9ff08583e98",
+    "drill.toml": "7b0f2fe5e2f5c641a35b1d301d3c239a4e7daedaaf18fb1f9e9dea2dbaa919c1",
+    "fixtures/batches.txt": "8ee91390822aa503f04d5593e474ac626f365c096e9cb716e3217f0dbe7ee2f4",
+    "solutions/solve.ps1": "ce80629fffc3f50fdf581ca73a0fff32134504d05b1f7dc23f56695b55265925",
+    "solutions/solve.py": "41e6d4dab26b6b605e20918f7b418acfd6c0284bd0f51a47af7461ab7cb431e3",
+    "verify.py": "4cfd3684dad0caad74a4c44fd39aa265974890ccfa48ce1594a0593546ef4243"
+  },
+  "stage": "reference-calibrated"
+}
