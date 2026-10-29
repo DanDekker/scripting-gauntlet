@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/perl-numify"
+fixture_origin = "Synthetic numeric tokens authored for this drill"
+
+[[negative]]
+path = "controls/wrong-numify.pl"
+defect = "Numifies instead of validating, so '0x10' becomes a valid integer 0"
+expect = "0x10/kind"

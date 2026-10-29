@@ -1,0 +1,55 @@
+{
+  "calibrated_at": "2026-10-29T22:19:19.873456+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "162-perl-numify",
+  "fixture_origin": "Synthetic numeric tokens authored for this drill",
+  "lineage": "scripting-gauntlet/perl-numify",
+  "results": [
+    {
+      "elapsed_ms": 10,
+      "language": "pl",
+      "passed": true,
+      "path": "solutions/solve.pl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 31,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Numifies instead of validating, so '0x10' becomes a valid integer 0",
+      "elapsed_ms": 8,
+      "expected_diagnostic": "0x10/kind",
+      "language": "pl",
+      "passed": true,
+      "path": "controls/wrong-numify.pl",
+      "problems": [
+        "values.csv row 4 [0x10/kind]: expected 'invalid', got 'int'",
+        "values.csv row 4 [0x10/int_part]: expected '', got '0'",
+        "values.csv row 5 [1e3/kind]: expected 'invalid', got 'int'",
+        "values.csv row 5 [1e3/int_part]: expected '', got '1000'",
+        "values.csv row 6 [abc/kind]: expected 'invalid', got 'int'",
+        "values.csv row 6 [abc/int_part]: expected '', got '0'",
+        "summary.json['int']: expected 4, got 7",
+        "summary.json['invalid']: expected 3, got 0"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "83410f36e7c909b366bdd8aec604200d20d64ca06e5f0d6e64cbc42f94f931eb",
+    "controls/manifest.toml": "83f164a11985515c1d6049e292f6375aba9797be80e0b4ad85fb6e46ae1ee11b",
+    "controls/wrong-numify.pl": "83eb2f3183ec3c2231ef2883e89dfac64b17899b8d10ebbbf70bad9afa609008",
+    "drill.toml": "493f0192b1953a0d972052bc9c84645ff64a21962f2844669e73d5020bad8892",
+    "fixtures/values.txt": "06d06e44949698cb51e7d089b7b291b5a421a47efd63abc2379f5d29e352c7d5",
+    "solutions/solve.pl": "f6eda66e7d0f0fe06b1124dda1e6adc618058ec71d237cda4f19c5ca8001ad9f",
+    "solutions/solve.py": "65d16c772849af2b7fabad78f080fbb7b07d927ed0100ccf68515fa859a20992",
+    "verify.py": "d4ae00fd3fd41525828cf77306d598e40af754d6863c825e11dfd70406d5dc6a"
+  },
+  "stage": "reference-calibrated"
+}

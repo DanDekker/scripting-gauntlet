@@ -1,0 +1,11 @@
+id = "162-perl-numify"
+family = "data-wrangling"
+title = "Classify numeric text without letting perl numify it for you"
+difficulty = 3
+timebox = 240
+teaches = [
+  "a string numifies silently: 'abc' == 0 is true and '0x10' + 0 is 0, not 16",
+  "validate the text with a pattern first, then convert",
+  "int() truncates toward zero, so int(-3.7) is -3 and not -4",
+  "leading zeros are decimal in a string: '010' is ten",
+]
