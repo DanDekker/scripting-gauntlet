@@ -1,0 +1,11 @@
+id = "141-token-bucket"
+family = "system-recon"
+title = "Simulate a multi-tier rate limiter token bucket for LLM requests"
+difficulty = 4
+timebox = 300
+teaches = [
+  "two buckets, two budgets: a request costs 1 request token and N token tokens",
+  "refill is per elapsed second between requests, capped at capacity, never negative",
+  "a rejection spends nothing but still advances the clock and the refill",
+  "ties on a timestamp are resolved by input line order, not by id",
+]

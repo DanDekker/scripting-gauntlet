@@ -1,0 +1,5 @@
+[
+  {"tier": 1, "model": "primary", "timeout_ms": 2000, "max_retries": 1},
+  {"tier": 2, "model": "secondary", "timeout_ms": 3000, "max_retries": 1},
+  {"tier": 3, "model": "fallback", "timeout_ms": 5000, "max_retries": 0}
+]

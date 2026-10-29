@@ -1,0 +1,11 @@
+id = "142-function-call-repair"
+family = "data-wrangling"
+title = "Repair malformed tool call arguments from an LLM"
+difficulty = 3
+timebox = 240
+teaches = [
+  "a three-rule repair ladder, applied in a fixed order, is what makes a fix reproducible",
+  "wrap before you requote: braces first, then Python literals, then quotes, then commas",
+  "a value no rule covers stays broken; guessing it into valid JSON is the bug",
+  "the report keeps every processed call, so unfixable ones stay visible",
+]

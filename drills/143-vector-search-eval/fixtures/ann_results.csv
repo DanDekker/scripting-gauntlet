@@ -1,0 +1,14 @@
+qid,rank,doc_id
+q1,1,d2
+q1,2,d1
+q1,3,d6
+q2,1,d6
+q2,2,d3
+q3,1,d5
+q3,2,d4
+q4,1,d3
+q4,2,d1  
+qbad,1,d1
+qbad,2,d2
+qbad,3,d3
+

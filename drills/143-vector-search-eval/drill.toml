@@ -1,0 +1,11 @@
+id = "143-vector-search-eval"
+family = "data-wrangling"
+title = "Evaluate vector search retrieval recall against brute-force exact cosine"
+difficulty = 4
+timebox = 300
+teaches = [
+  "normalise before you compare: cosine ignores magnitude, and equal directions tie",
+  "a zero vector scores 0.0 instead of dividing by zero",
+  "ground truth is brute force plus a deterministic tie-break, not the ANN order",
+  "K comes from the ANN result count, so recall is hits/K and MRR uses the first hit's rank",
+]

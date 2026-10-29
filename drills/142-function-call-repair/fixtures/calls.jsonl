@@ -1,0 +1,17 @@
+{"call_id": "c1", "name": "search", "raw_args": "{\"query\": \"hello\", \"limit\": 10}"}
+
+{"call_id": "c2",  "name": "read_file", "raw_args": "  {'path': 'foo.py', 'line': 3}  "}
+{"call_id": "c3", "name": "search", "raw_args": "{\"a\": 1,}"}
+{"call_id": "c4", "name": "cache_set", "raw_args": "{\"deep\": True, \"dry_run\": False, \"cursor\": None}"}
+{"call_id": "c5", "name": "query", "raw_args": "\"query\": \"test\", \"num\": 5"}
+{"call_id": "c6", "name": "flag", "raw_args": "{\"status\": active}"}
+{"call_id": "c7", "name": "batch", "raw_args": "[1, 2, 3]"}
+
+{"call_id": "c8", "name": "broken", "raw_args": "{\"broken\": \"unclosed"}
+{"call_id": "c9", "name": "search", "raw_args": }
+{"name": "no_id", "raw_args": "{\"x\": 1}"}
+{"call_id": "c10", "name": "lookup", "raw_args": "{'key': 'value',}"}
+{"call_id": "c11", "name": "toggle", "raw_args": "{'flag': True, 'n': None,}"}
+{"call_id": "c12", "name": "padded", "raw_args": "   {\"a\": 1}   "}
+{"call_id": "c13", "name": "nested", "raw_args": "{\"items\": [1, 2,]}"}
+[1, 2]

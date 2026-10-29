@@ -1,0 +1,11 @@
+id = "144-model-fallback-chain"
+family = "system-recon"
+title = "Simulate resilient model fallback routing on errors and timeouts"
+difficulty = 4
+timebox = 300
+teaches = [
+  "a timeout is a latency comparison, not a status code: 200 can still fail",
+  "retry budget is 1 + max_retries per tier, and recorded attempts can run out sooner",
+  "fallback only counts when the task actually resolved above tier 1",
+  "total latency sums every attempt made, including the ones that failed",
+]
