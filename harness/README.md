@@ -12,6 +12,8 @@ python3 harness/calibrate.py 001-csv-rollup --out docs/evidence/001-csv-rollup.j
 ```
 
 Exit code is 0 only if everything selected passed, so `make check` is CI-able.
+The browser DOM reference needs Node and `npm ci --ignore-scripts`; the JXA
+reference runs on macOS and is reported as skipped elsewhere.
 Calibration returns 0 only if every reference passes and every declared
 negative is rejected by its intended verifier rule. See the
 [runtime contract](../docs/drill-spec.md) and

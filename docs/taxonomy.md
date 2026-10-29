@@ -158,6 +158,32 @@ choice for tiny footprint config-time transforms where a 200 KB interpreter beat
 Use it when the host is lua-shaped. Do not use it to write a general CLI — you will
 spend your whole timebox on a JSON parser.
 
+### JavaScript — browser DOM work
+
+Use the DOM when the task depends on document structure, selectors, or browser
+behavior. The `004-scrape-table` reference uses standard DOM APIs; local checks
+run them under jsdom so a graphical browser is not needed. Node is the runner,
+not the thing that makes the solution browser-specific.
+
+### Perl — dense text and logs
+
+Perl is useful when the job is mostly regex extraction and reporting. The log
+triage drill shows that it can parse and rank a noisy access log with only core
+modules. Prefer it when Perl is already on the target host.
+
+### Tcl — small host-integrated scripts
+
+Tcl fits tool consoles and embedded interpreters as well as standalone scripts.
+Its dictionaries and regular expressions handle the log triage drill without
+adding a package dependency. Keep the command/evaluation rules in mind when
+building strings from untrusted input.
+
+### JXA — macOS automation
+
+JavaScript for Automation runs through `osascript` and can call macOS Foundation
+directly. The plist audit drill uses that native bridge. JXA solutions are
+macOS-only; the harness skips them on other operating systems.
+
 ---
 
 ## Adding coverage
