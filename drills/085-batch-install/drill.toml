@@ -1,0 +1,11 @@
+id = "085-batch-install"
+family = "file-hygiene"
+title = "Install a batch of config files all-or-nothing"
+difficulty = 4
+timebox = 300
+teaches = [
+  "validate every file in the batch before installing any of them",
+  "stage beside the target and rename, never write in place",
+  "keep a backup so a mid-install failure can roll back",
+  "a rejected batch is a normal outcome; a half-installed one is not",
+]
