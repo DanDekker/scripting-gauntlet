@@ -1,0 +1,11 @@
+id = "042-replace-text"
+family = "data-wrangling"
+title = "Replace a literal string across a whole tree"
+difficulty = 1
+timebox = 90
+teaches = [
+  "a dotted token is not a regex: escape it or the dots match anything",
+  "replace every occurrence, not just the first on a line",
+  "mirror the tree instead of editing the input in place",
+  "count what changed so the report is checkable",
+]
