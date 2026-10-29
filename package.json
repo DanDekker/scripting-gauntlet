@@ -1,6 +1,10 @@
 {
   "name": "scripting-gauntlet",
   "private": true,
+  "scripts": {
+    "test": "make check",
+    "lint": "make lint"
+  },
   "devDependencies": {
     "jsdom": "26.1.0"
   }

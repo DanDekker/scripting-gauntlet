@@ -32,7 +32,8 @@ also needs Node and the locked jsdom dependency.
 make list
 python3 harness/run.py run 001-csv-rollup --lang py
 npm ci --ignore-scripts
-make check
+make check            # every drill x every solution
+npm test              # same thing, for tooling that expects npm test
 make calibrate ID=001-csv-rollup
 ```
 
