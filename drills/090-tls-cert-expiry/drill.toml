@@ -1,0 +1,11 @@
+id = "090-tls-cert-expiry"
+family = "system-recon"
+title = "Audit TLS certificate bundle for expirations and SAN matches"
+difficulty = 3
+timebox = 240
+teaches = [
+  "parse concatenated PEM certificate blocks from a single file",
+  "extract validity dates and Subject Alternative Names (SAN)",
+  "classify certificates into expired, expiring-soon, and valid against a reference date",
+  "match requested domain hostnames against wildcard and exact SAN rules",
+]

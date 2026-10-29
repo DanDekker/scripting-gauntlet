@@ -1,0 +1,6 @@
+api.old.org
+app.example.com
+sub.app.example.com
+example.com
+admin.common.net
+missing.org
