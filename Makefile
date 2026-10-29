@@ -24,3 +24,4 @@ lint:
 	@for f in $$(find drills -name 'solve.bash' -o -name 'solve.sh'); do bash -n "$$f" || exit 1; done; echo "bash: ok"
 	@for f in $$(find drills -name 'solve.zsh'); do zsh -n "$$f" || exit 1; done; echo "zsh: ok"
 	@for f in $$(find drills -name 'solve.lua'); do luac -p "$$f" || exit 1; done; echo "lua: ok"
+	@$(PY) harness/check_skills.py
