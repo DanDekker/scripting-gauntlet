@@ -1,10 +1,14 @@
-# scripting-gauntlet
+<div align="center">
 
-**Write the script. Get the answer. Prove it.**
+<img src="assets/gauntlet-banner.svg" alt="LLM Scripting Gauntlet" width="100%">
 
-A first-party training deck for the work between bigger builds: messy data,
-awkward APIs, file cleanup, logs, host state, and network evidence. The script
-can be disposable. The answer has to be right.
+<p><strong>Scripting challenges for LLM agents. Write the script. Prove the answer.</strong></p>
+
+</div>
+
+A first-party challenge and evaluation deck for LLM agents working through
+messy data, awkward APIs, file cleanup, logs, host state, and network evidence.
+The script can be disposable. The answer has to be right.
 
 ## Languages used
 
@@ -38,7 +42,7 @@ verifier must reject for the intended reason.
 
 | Part | Job |
 | --- | --- |
-| `PROMPT.md` | The learner-visible task and output contract |
+| `PROMPT.md` | The agent-visible task and output contract |
 | `drill.toml` | Stable ID, family, difficulty, timebox, and taught skills |
 | `fixtures/` | Messy but reproducible input |
 | `verify.py` | Independent checks on the result |
