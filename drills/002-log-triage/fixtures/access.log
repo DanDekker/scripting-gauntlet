@@ -1,0 +1,13 @@
+10.0.0.5 - - [29/Oct/2026:10:00:01 +0000] "GET /index.html HTTP/1.1" 200 5120 "-" "Mozilla/5.0"
+10.0.0.6 - - [29/Oct/2026:10:00:02 +0000] "GET /api/users?page=2 HTTP/1.1" 200 340 "-" "curl/8.4.0"
+10.0.0.7 - - [29/Oct/2026:10:00:03 +0000] "POST /api/login HTTP/1.1" 401 120 "-" "python-requests/2.31"
+10.0.0.5 - - [29/Oct/2026:10:00:04 +0000] "GET /index.html HTTP/1.1" 200 5120 "-" "Mozilla/5.0"
+66.249.66.1 - - [29/Oct/2026:10:00:05 +0000] "GET /robots.txt HTTP/1.1" 200 42 "-" "Googlebot/2.1"
+10.0.0.8 - - [29/Oct/2026:10:00:06 +0000] "GET /api/users?page=3 HTTP/1.1" 500 90 "-" "curl/8.4.0"
+10.0.0.9 - - [29/Oct/2026:10:00:07 +0000] "GET /about HTTP/1.1" 404 210 "-" "Mozilla/5.0"
+10.0.0.5 - - [29/Oct/2026:10:00:08 +0000] "GET /api/users?page=1 HTTP/1.1" 200 340 "-" "curl/8.4.0"
+10.0.0.6 - - [29/Oct/2026:10:00:09 +0000] "GET /index.html HTTP/1.1" 304 0 "-" "Mozilla/5.0"
+66.249.66.1 - - [29/Oct/2026:10:00:10 +0000] "GET /robots.txt HTTP/1.1" 200 42 "-" "Googlebot/2.1"
+10.0.0.7 - - [29/Oct/2026:10:00:11 +0000] "GET /api/users?page=2 HTTP/1.1" 200 340 "-" "python-requests/2.31"
+this line is not a log record at all
+10.0.0.9 - - [29/Oct/2026:10:00:12 +0000] "GET /api/users?page=9 HTTP/1.1" 502 0 "-" "curl/8.4.0"

@@ -1,0 +1,11 @@
+id = "002-log-triage"
+family = "text-munging"
+title = "Count statuses and top paths out of an access log"
+difficulty = 2
+timebox = 180
+teaches = [
+  "split a structured line with a quote-aware separator",
+  "strip query strings before grouping",
+  "two-key sort: count desc, key asc",
+  "count the lines that did not parse instead of crashing",
+]
