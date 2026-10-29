@@ -1,0 +1,16 @@
+{
+  "user": {
+    "name": "Ada",
+    "roles": ["admin", "dev"],
+    "a/b": "slash",
+    "weird key~": "tilde"
+  },
+  "items": [
+    {"id": 1, "tags": ["x"]},
+    {"id": 2, "tags": []}
+  ],
+  "empty": {},
+  "num": 3.5,
+  "nil": null,
+  "flag": true
+}

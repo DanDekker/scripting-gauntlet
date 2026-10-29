@@ -1,0 +1,11 @@
+id = "071-json-pointer"
+family = "data-wrangling"
+title = "Resolve a list of JSON Pointers, escapes and all"
+difficulty = 3
+timebox = 180
+teaches = [
+  "split a pointer on / before unescaping ~1 and ~0",
+  "walk dicts and lists with one resolver",
+  "a miss is a blank cell, not a crash",
+  "report scalars only; null and containers stay blank",
+]
