@@ -327,6 +327,28 @@ instead of returning nil; always wrap stream-reading unpacks in `pcall`.
 
 Drill: `187-lua-binary-pack`.
 
+## Sandboxing execution: _ENV and load
+
+```lua
+local env = {
+  math = { abs = math.abs, sqrt = math.sqrt },
+  string = { lower = string.lower, upper = string.upper },
+  x = 10,
+}
+local fn, err = load("return (" .. expr .. ")", "sandbox", "t", env)
+if fn then
+  local ok, res = pcall(fn)
+end
+```
+
+`load(chunk, chunkname, mode, env)` accepts an explicit environment table `env` that binds to
+the chunk's `_ENV` upvalue. Passing mode `"t"` restricts loading to text chunks (rejecting bytecode).
+By omitting `os`, `io`, `package`, and `debug` from `env`, untrusted code cannot execute system commands
+or inspect internal state. Any attempt to index forbidden modules resolves to `nil` and throws a
+catchable runtime error in `pcall`.
+
+Drill: `192-lua-env-sandbox`.
+
 ## The four moves
 
 **1. Extract.** One pattern per shape, tried in order.

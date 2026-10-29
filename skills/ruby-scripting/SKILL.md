@@ -228,6 +228,29 @@ soon as the demanded count is reached.
 
 Drill: `189-ruby-lazy-pipeline`.
 
+## Keyword arguments and explicit nil overrides
+
+```ruby
+def build_endpoint(host:, port: 8080, path: "/", timeout: 30)
+  p = path.nil? ? "" : path
+  url = "http://#{host}:#{port}#{p}"
+  t = timeout.nil? ? "" : timeout.to_s
+  [url, t]
+end
+
+# Forwarding hash parameters requires double-splat:
+kwargs = { host: "api.internal", path: nil }
+build_endpoint(**kwargs)
+```
+
+In Ruby 3+, keyword arguments are separated from positional hashes: forwarding a hash to keyword
+parameters requires `**kwargs`.
+Crucially, default values (`path: "/"`) only apply when the argument is **omitted**.
+Passing `path: nil` explicitly sets `path` to `nil` inside the method!
+Using `path || "/"` wrongly destroys intentional `nil` overrides; check `.nil?` or key presence instead.
+
+Drill: `194-ruby-keyword-arguments`.
+
 ## The four moves
 
 **1. Split.** `line.split(",", -1)` keeps trailing empty fields; a bare `split(",")`

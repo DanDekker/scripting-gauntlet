@@ -277,6 +277,31 @@ parentheses enforce list context.
 
 Drill: `188-perl-context-dispatch`.
 
+## Zero-width lookaround assertions
+
+```perl
+# Negative lookbehind: not preceded by a word character
+while ($text =~ /(?<!\w)(USD|EUR|GBP)(\d+)(?=[,\s\.]|$)/g) {
+    print "Found $1: $2
+";
+}
+
+# Positive lookahead for overlapping occurrences
+while ($seq =~ /(?=(\Q$target\E))/g) {
+    my $motif = $1;
+    my $offset = $-[0] + 1;
+}
+```
+
+Standard global regex matches (`/g`) consume characters as they match, advancing the regex
+engine pointer past the matched segment and skipping overlapping occurrences.
+Lookarounds match positions rather than characters:
+- Positive lookahead `(?=...)` asserts the following pattern matches without consuming it.
+  Wrapping a capture group inside lookahead `(?=(...))` extracts overlapping repeated patterns.
+- Negative lookbehind `(?<!...)` enforces boundaries without consuming the preceding delimiter.
+
+Drill: `193-perl-regex-lookaround`.
+
 ## The four moves
 
 **1. Split.** Choose the limit and the separator deliberately: `split /:/, $line, -1`.

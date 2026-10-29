@@ -188,6 +188,25 @@ exits with an error. Always check `$LASTEXITCODE` immediately after native proce
 
 Drill: `190-ps1-exitcode-trap`.
 
+## Pipeline unrolling and unary comma
+
+```powershell
+function Get-BatchItems($raw) {
+    $items = @($raw -split ',' | Where-Object { $_ -ne '' })
+    # Prepending comma prevents pipeline flattening of 0- or 1-element arrays:
+    return ,$items
+}
+```
+
+PowerShell's pipeline automatically unrolls collections returned from functions or output blocks.
+Returning a single-element array `@("item")` gets flattened into scalar string `"item"`, and returning
+`@()` flattens into `$null`.
+Downstream code checking array types (`$res -is [array]`) will fail on 1-element and 0-element batches.
+The unary comma operator (`,$items`) or `Write-Output -NoEnumerate $items` preserves the collection
+envelope through pipeline boundaries.
+
+Drill: `195-ps1-pipeline-unrolling`.
+
 ## The four moves
 
 **1. Parse.** `Import-Csv` / `ConvertFrom-Json` / `-split` (a regex). Decide case
