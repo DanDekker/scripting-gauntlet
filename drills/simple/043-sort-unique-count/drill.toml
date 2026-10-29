@@ -1,0 +1,10 @@
+id = "043-sort-unique-count"
+family = "data-wrangling"
+title = "Sort, dedupe and count the levels in a log"
+difficulty = 1
+timebox = 60
+teaches = [
+  "normalize before you group, or ERROR and error become two rows",
+  "uniq -c only counts adjacent duplicates, so sort first",
+  "count desc then key asc is the whole top-n idiom",
+]

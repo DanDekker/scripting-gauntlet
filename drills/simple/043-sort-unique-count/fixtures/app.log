@@ -1,0 +1,20 @@
+2026-10-01T08:00:01 INFO  boot ok
+2026-10-01T08:00:02 INFO  config loaded from /etc/app.conf
+2026-10-01T08:00:03 WARN  cache is cold
+2026-10-01T08:00:05 ERROR upstream timeout after 3000ms
+2026-10-01T08:00:06 INFO  retrying request
+2026-10-01T08:00:09 ERROR upstream timeout after 3000ms
+2026-10-01T08:00:11 INFO  request ok
+2026-10-01T08:00:12 DEBUG pool size 8 active 3
+2026-10-01T08:00:15 info  slow query 812ms
+2026-10-01T08:00:16 WARN  queue depth 42
+2026-10-01T08:00:19 Error  disk usage 91%
+
+2026-10-01T08:00:21   error   handler raised ValueError
+2026-10-01T08:00:22 TRACE span start 0x91
+2026-10-01T08:00:23 INFO  span end
+2026-10-01T08:00:25 WARN  retry budget 2 left
+2026-10-01T08:00:26 DEBUG gc pause 12ms
+2026-10-01T08:00:28 error upstream timeout after 3000ms
+2026-10-01T08:00:29 info  request ok
+2026-10-01T08:00:31 INFO  shutting down
