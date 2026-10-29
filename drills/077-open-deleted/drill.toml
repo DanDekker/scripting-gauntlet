@@ -1,0 +1,11 @@
+id = "077-open-deleted"
+family = "system-recon"
+title = "Account for disk held by deleted-but-open files"
+difficulty = 3
+timebox = 180
+teaches = [
+  "a deleted file still costs disk while a process holds it",
+  "parse lsof columns by position, not by eyeballing",
+  "attribute held bytes to the process that can release them",
+  "skip DIR/CHR rows and names that are not actually deleted",
+]

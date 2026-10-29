@@ -1,0 +1,10 @@
+COMMAND     PID     USER   FD   TYPE DEVICE   SIZE/OFF NLINK    NODE NAME
+nginx       412     root    9r   REG    1,4 2147483648     0 1234567 /var/log/nginx/access.log (deleted)
+nginx       412     root  cwd    DIR    1,4       4096     2  987654 /var/www (deleted)
+postgres    902 postgres   12u   REG    1,4  536870912     0 2345678 /var/lib/pg/base/16384/2619 (deleted)
+python3    1337   deploy    5w   REG    1,4 3221225472     0 3456789 /tmp/upload.bin (deleted)
+python3    1337   deploy    6w   REG    1,4 1073741824     0 3456790 /tmp/upload cache.bin (deleted)
+python3    1337   deploy    7w   REG    1,4       8192     0 3456791 /tmp/current.log
+redis      2011    redis    4u   REG    1,4  104857600     0 4567890 /var/lib/redis/dump.rdb (deleted)
+systemd       1     root    7r   REG    1,4    8388608     0 5678901 /var/log/journal/dead.journal (deleted)
+dockerd    2210     root   11r   CHR    1,3       4096     0 5678902 /dev/null (deleted)
