@@ -189,6 +189,36 @@ Slurp with `local $/;` when you want the whole file at once.
 - **Numeric conversion of undef** is 0 with a warning; `warnings` is why you see it.
 - **`sort` in scalar context** is a syntax error; `sort { ... } @list` only.
 
+## Binary data is `unpack` and `pack`
+
+```perl
+my ($id, $score, $flags, $len) = unpack("N n C C", substr($data, $offset, 8));
+my $name = substr($data, $offset + 8, $len);
+my $bin  = pack("N", 256);       # 00 00 01 00
+```
+
+- `N` big-endian u32, `n` big-endian u16, `v` little-endian u16, `C` one byte.
+- `a*` keeps trailing NULs and spaces; `A*` **strips** them. For a length-prefixed field use
+  `substr($data, $off, $len)`, not `A*`.
+- `unpack` on a buffer that is too short returns `undef` for the field. Check the length
+  before slicing, or a truncated tail silently becomes a record with empty fields.
+- Walk **offsets** when a length prefix makes records variable-size; a fixed template only
+  works when every field is fixed-width.
+
+Drill: `174-perl-unpack-binary`.
+
+## Versions are not strings
+
+```perl
+"1.10.2" cmp "1.9.9"                                   # -1  string order
+version->parse("1.10.2") <=> version->parse("1.9.9")   #  1  numeric components
+```
+
+`version` is core. Dotted versions compare component by component, so `1.10.2` is newer
+than `1.9.9` even though it sorts first as text. Sort the parsed objects and give ties a
+second key, or the order falls back to the input.
+Drill: `175-perl-version-sort`.
+
 ## The four moves
 
 **1. Split.** Choose the limit and the separator deliberately: `split /:/, $line, -1`.

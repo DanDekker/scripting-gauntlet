@@ -194,6 +194,84 @@ local ok, err = pcall(check, line)       -- false, "not an integer: three"
 - `string.rep` and `string.format` are how you build a fixed-width report; `string.format`
   is also how you lose a trailing newline.
 
+## Two number types, not one
+
+Since 5.3 an integer and a float are different subtypes:
+
+```lua
+math.type(1)       -- integer
+math.type(1.0)     -- float
+1 / 2              -- 0.5   / is always float
+3 // 2             -- 1     // floors and keeps the subtype
+3.0 // 2           -- 1.0   float in, float out
+-10 // 7           -- -2    floors toward -infinity
+-10 % 7            -- 4     floor modulo
+math.fmod(-10, 7)  -- -3    C fmod: sign of the dividend
+```
+
+- `%` and `math.fmod` are **different remainder rules**. Pick the one the contract means.
+- Integer arithmetic **wraps** at 2^63: `math.maxinteger + 1` is `math.mininteger`, and
+  `string.format("%x", n)` prints the two's-complement value (`8000000000000000`).
+- `tostring(3.0)` is `"3.0"`, so a float announces itself in a report.
+  `string.format("%d", 3.5)` raises `number has no integer representation`.
+- `tonumber("0x10")` is 16; `tonumber("9223372036854775808")` is a **float**, because it
+  does not fit an integer.
+
+Drill: `171-lua-integer-subtype`.
+
+## Coroutines stream without buffering
+
+```lua
+local function stream(path)
+  return coroutine.wrap(function()
+    local fh = assert(io.open(path, "r"))
+    local buf = ""
+    while true do
+      local chunk = fh:read(4096)
+      if not chunk then break end
+      buf = buf .. chunk
+      while true do
+        local nl = buf:find("\n", 1, true)
+        if not nl then break end
+        coroutine.yield(buf:sub(1, nl - 1))
+        buf = buf:sub(nl + 1)
+      end
+    end
+    if buf ~= "" then coroutine.yield(buf) end
+  end)
+end
+```
+
+- A chunked reader must **carry the partial line** across the boundary: `read(4096)` is not
+  a line.
+- `coroutine.wrap` returns a function and lets an error escape into the caller;
+  `coroutine.resume` returns `false, message` instead. Choose deliberately.
+- After an error the coroutine is **dead**: `coroutine.status` reports `dead`, and resuming
+  again raises. If the run must stop, stop; if it must continue, re-create the producer.
+- `pcall` around the consuming loop gives one abort point. `pcall` around each record
+  silently skips failures — that is a different contract, not a safer one.
+
+Drill: `172-lua-coroutine-pipeline`.
+
+## `load()` compiles a chunk, not an expression
+
+```lua
+load("1 + 2")          -- nil: unexpected symbol near '1'
+load("return 1 + 2")   -- a function
+local f, err = load("os.time()", "expr", "t", sandbox)  -- nil on syntax, never raises
+pcall(f)               -- runtime errors come back as false, message
+```
+
+- A chunk is a **block of statements**. To evaluate an expression, prepend `return `.
+- `load` returns `nil, message` on a syntax error; it does not raise. A call error is one
+  `pcall` away.
+- The fourth argument is the environment. Pass a table and the chunk cannot see globals; a
+  metatable `__index` that raises builds a **whitelist**.
+- `error(msg, 0)` drops the `file:line:` prefix; position-prefixed messages keep it.
+  Normalise before comparing messages between runs.
+
+Drill: `173-lua-load-sandbox`.
+
 ## The four moves
 
 **1. Extract.** One pattern per shape, tried in order.

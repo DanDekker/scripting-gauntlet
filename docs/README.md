@@ -48,3 +48,10 @@ Calibration reports with source hashes and negative-control results:
   [truthiness](evidence/168-ruby-truthiness.json),
   [mixed sorting](evidence/169-ruby-sort-mixed.json), and
   [float formatting](evidence/170-ruby-float-format.json)
+- Lua, advanced: [integer subtype](evidence/171-lua-integer-subtype.json),
+  [coroutine pipeline](evidence/172-lua-coroutine-pipeline.json), and
+  [load sandbox](evidence/173-lua-load-sandbox.json)
+- Perl, advanced: [binary unpack](evidence/174-perl-unpack-binary.json) and
+  [version sorting](evidence/175-perl-version-sort.json)
+- PowerShell: [case-folded grouping](evidence/176-ps1-group-folding.json) and
+  [decimal money](evidence/177-ps1-decimal-money.json)
