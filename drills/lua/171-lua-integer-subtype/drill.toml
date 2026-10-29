@@ -1,0 +1,12 @@
+id = "171-lua-integer-subtype"
+family = "data-wrangling"
+title = "Divide and reduce integers and floats with Lua's two number types"
+difficulty = 4
+timebox = 300
+teaches = [
+  "5.3+ has two number subtypes: math.type says integer or float, and / always yields a float",
+  "// floors and keeps the subtype: -10 // 7 is -2, but -10.0 // 7 is -2.0",
+  "% is floor-modulo: -10 % 7 is 4, while math.fmod(-10, 7) is -3",
+  "integer arithmetic wraps at 2^63: math.maxinteger + 1 is math.mininteger",
+  "string.format(\"%x\", n) prints the wrapped two's-complement value",
+]

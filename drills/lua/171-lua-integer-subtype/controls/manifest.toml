@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/lua-integer-subtype"
+fixture_origin = "Synthetic integer and float tokens authored for this drill"
+
+[[negative]]
+path = "controls/wrong-fmod-remainder.lua"
+defect = "Uses math.fmod for the remainder column, so negative values get the truncated remainder (-3) instead of the floor remainder (4)"
+expect = "-10/remainder"

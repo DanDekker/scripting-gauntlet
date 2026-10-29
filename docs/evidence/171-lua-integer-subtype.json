@@ -1,0 +1,51 @@
+{
+  "calibrated_at": "2026-10-29T22:57:11.838794+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "171-lua-integer-subtype",
+  "fixture_origin": "Synthetic integer and float tokens authored for this drill",
+  "lineage": "scripting-gauntlet/lua-integer-subtype",
+  "results": [
+    {
+      "elapsed_ms": 8,
+      "language": "lua",
+      "passed": true,
+      "path": "solutions/solve.lua",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 33,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Uses math.fmod for the remainder column, so negative values get the truncated remainder (-3) instead of the floor remainder (4)",
+      "elapsed_ms": 5,
+      "expected_diagnostic": "-10/remainder",
+      "language": "lua",
+      "passed": true,
+      "path": "controls/wrong-fmod-remainder.lua",
+      "problems": [
+        "values.csv row 2 [-10/remainder]: expected '4', got '-3'",
+        "values.csv row 7 [-0.5/remainder]: expected '6.5', got '-0.5'",
+        "values.csv row 9 [-0x10/remainder]: expected '5', got '-2'"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "a8ebe392415811d95333c747dcd0d87487f445d78fde2c61fd611b5d9f8c87ca",
+    "controls/manifest.toml": "042e1fae4d2e30173bb73c94ab4f283d86c272694651e94f2b34a31e9f8269cc",
+    "controls/wrong-fmod-remainder.lua": "88848b0ee0954f84f7d69b51906753a9ad6079436d92ea6e663d66bd1dd7bdfa",
+    "drill.toml": "4482ad0460965c85d76b660c3882cd39d31e2ba7d72ff2d6b21c76c1e0ccad3e",
+    "fixtures/counters.txt": "7d810bdf53c4ae4241184cc24809305b4cca61d17bdc36302f58fae85498da7f",
+    "fixtures/values.txt": "a26a4ae339d4dbce5af582a816a0f06b62a5f71b3f0b9809ac1b7482e20186c1",
+    "solutions/solve.lua": "788c5ab8b846d1ce99afe2b2250336dc2e20764ae1dbfd974b3d22f568eb63dd",
+    "solutions/solve.py": "38b2d77eab65274ad1fda5bdc765203ea16a75bae3328233ead29eba340b527d",
+    "verify.py": "e2b53ba17b30616ea07f9e23342e722f18a2a7ed8338b915de4f6d10d93aa115"
+  },
+  "stage": "reference-calibrated"
+}
