@@ -1,0 +1,12 @@
+id = "054-listener-setup"
+family = "network-recon"
+title = "Stand up a loopback listener and record its pid"
+difficulty = 3
+timebox = 300
+teaches = [
+  "bind to loopback, never to every interface",
+  "background a service and record its pid",
+  "a backgrounded child must not inherit stdout",
+  "leave a shutdown path the caller can use",
+]
+probe = "probe.py"
