@@ -1,0 +1,11 @@
+id = "004-scrape-table"
+family = "web-scraping"
+title = "Pull a pricing table out of saved markup"
+difficulty = 3
+timebox = 300
+teaches = [
+  "scope a parser to one subtree instead of the whole document",
+  "ignore a hidden duplicate of the same markup",
+  "strip inline tags and decode entities in a cell",
+  "know when markup stops being a text format",
+]
