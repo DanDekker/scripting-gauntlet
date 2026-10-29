@@ -1,0 +1,11 @@
+id = "160-lua-file-hunt"
+family = "file-hygiene"
+title = "Hunt for files by glob and size without letting the glob overreach"
+difficulty = 3
+timebox = 240
+teaches = [
+  "a glob is not a pattern: translate it and escape the dots, or '*.log' matches 'myblog'",
+  "match the base name, not the path, and keep the match case-sensitive",
+  "'?' is exactly one character and '*' crosses no directory boundary here",
+  "an excluded directory is skipped whole, but its files still count as not scanned",
+]

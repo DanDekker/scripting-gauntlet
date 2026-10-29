@@ -1,0 +1,52 @@
+{
+  "calibrated_at": "2026-10-29T22:09:15.341963+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "160-lua-file-hunt",
+  "fixture_origin": "Synthetic file tree with decoy names authored for this drill",
+  "lineage": "scripting-gauntlet/lua-file-hunt",
+  "results": [
+    {
+      "elapsed_ms": 31,
+      "language": "lua",
+      "passed": true,
+      "path": "solutions/solve.lua",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 117,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Translates '*' to '.*' without escaping the literal dot, so '*.log' matches 'myblog'",
+      "elapsed_ms": 43,
+      "expected_diagnostic": "sub/d.log/path",
+      "language": "lua",
+      "passed": true,
+      "path": "controls/wrong-naive-glob.lua",
+      "problems": [
+        "found.csv: expected 2 rows, got 3",
+        "found.csv row 2 [sub/d.log/path]: expected 'sub/d.log', got 'myblog'",
+        "found.csv row 2 [sub/d.log/size]: expected 100, got '120'",
+        "summary.json['matched']: expected 2, got 3",
+        "summary.json['bytes']: expected 240, got 360"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "70683951e81cd49847e30024512c6c7aadde7f5dca3c14a6d34883fa34a2c791",
+    "controls/manifest.toml": "bfdbfb59f593c7c83b607f08b029d51b2d385ed063bf8fa615bdb821e53abdd3",
+    "controls/wrong-naive-glob.lua": "15cde725a5188a2ac53e73494b1889cff5003129238c5798641fabac545b1ce0",
+    "drill.toml": "5d9e84afb2c1b0b84b2fc519571bc24fb01d6b0b7a714971a8aad9aeaf866a1a",
+    "setup.py": "befdce3e079325853b334d3e0cce841059a713f1e3c2704e448ea559e9dde2d2",
+    "solutions/solve.lua": "9e8bed0558328d38e46fc9c1f68f9b65e0fc61d53abdc2e3ed64324f5c21c855",
+    "solutions/solve.py": "c2d942fd158b07edbc5db73e3a1b9ede122bcc24718566a792710280a1957be2",
+    "verify.py": "709a77d608dfe385578c93b68896213b56015e525ffce5bd9bc68b3bab887b65"
+  },
+  "stage": "reference-calibrated"
+}

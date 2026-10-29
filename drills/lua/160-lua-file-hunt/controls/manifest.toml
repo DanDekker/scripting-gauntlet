@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/lua-file-hunt"
+fixture_origin = "Synthetic file tree with decoy names authored for this drill"
+
+[[negative]]
+path = "controls/wrong-naive-glob.lua"
+defect = "Translates '*' to '.*' without escaping the literal dot, so '*.log' matches 'myblog'"
+expect = "sub/d.log/path"
