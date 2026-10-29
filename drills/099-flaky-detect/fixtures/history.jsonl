@@ -1,0 +1,28 @@
+{"test": "test_login", "passed": true, "duration_ms": 120}
+{"test": "test_checkout", "passed": "true", "duration_ms": 88}
+{"test": "test_healthz", "passed": true, "duration_ms": 12}
+
+this line is not json at all
+{"test": "test_login", "passed": false, "duration_ms": 340}
+{"test": "test_migration", "passed": false, "duration_ms": 900}
+{"test": " test_checkout ", "passed": null, "duration_ms": 77}
+["test_login", true]
+{"test": "test_checkout", "passed": " TRUE ", "duration_ms": 90}
+{"test": "test_login", "passed": true, "duration_ms": 131}
+{"test": 42, "passed": true}
+{"test": "test_once", "passed": true, "duration_ms": 5}
+{"test": "test_healthz", "passed": "true", "duration_ms": 11}
+{"test": "   ", "passed": true}
+{"test": "test_migration", "passed": "false", "duration_ms": 1200}
+{"test": "test_checkout", "passed": false, "duration_ms": 310}
+{"test": "test_solo_fail", "passed": "no"}
+{"test": "test_upload", "passed": true, "duration_ms": 64}
+{"test": "test_login", "passed": false, "duration_ms": 452}
+
+{"test": "test_healthz", "passed": true, "duration_ms": 9}
+{"test": "test_checkout", "passed": false, "duration_ms": 260}
+{"test": "test_upload", "passed": true, "duration_ms": 61,}
+{"test": "test_login", "passed": "true", "duration_ms": 143}
+{"test": "test_migration", "passed": null, "duration_ms": 4000}
+{"test": "test_upload", "passed": false, "duration_ms": 700}
+{"test": "test_upload", "passed": "TRUE", "duration_ms": 58}

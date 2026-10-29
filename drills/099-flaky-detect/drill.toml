@@ -1,0 +1,11 @@
+id = "099-flaky-detect"
+family = "data-wrangling"
+title = "Find the flaky tests from a run history"
+difficulty = 3
+timebox = 240
+teaches = [
+  "normalise a passed value before trusting it: booleans, quoted booleans, null and missing",
+  "a test that has only ever failed is not flaky; flakiness needs both outcomes",
+  "skip junk lines loudly by counting only the records that survive",
+  "a rate is a ratio over the runs a test actually had, printed at a fixed width",
+]

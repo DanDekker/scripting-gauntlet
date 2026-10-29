@@ -1,0 +1,11 @@
+id = "097-doc-chunker"
+family = "data-wrangling"
+title = "Chunk documents for retrieval and drop the duplicates"
+difficulty = 4
+timebox = 300
+teaches = [
+  "split on headings, then on blank lines, and keep a stable 1-based chunk index per document",
+  "trim trailing whitespace per line before counting characters, per paragraph before comparing",
+  "a whitespace-only line is content, not a separator, so an empty paragraph is dropped and counted",
+  "a byte-identical copy of a document must not double the index: dedupe keeps the first doc's chunk",
+]

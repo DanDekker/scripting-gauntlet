@@ -1,0 +1,11 @@
+id = "098-todo-harvest"
+family = "text-munging"
+title = "Harvest every TODO in the tree with its owner and age"
+difficulty = 3
+timebox = 240
+teaches = [
+  "a marker is decided by its context: line start or after a comment marker, never mid-string",
+  "one TODO per line even when the line carries a second marker",
+  "the owner is the parenthesised tag, and `-` means nobody owns it",
+  "files with no markers still count as scanned",
+]

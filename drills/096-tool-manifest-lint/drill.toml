@@ -1,0 +1,11 @@
+id = "096-tool-manifest-lint"
+family = "data-wrangling"
+title = "Lint a tool manifest before an agent is allowed to call it"
+difficulty = 3
+timebox = 240
+teaches = [
+  "a manifest that is wrong in six different ways needs six different checks",
+  "report every (tool, code) pair, not just the first problem per tool",
+  "a tool whose parameters are missing cannot also be judged for properties",
+  "a duplicate key in the raw JSON text is invisible after parsing but still an error",
+]
