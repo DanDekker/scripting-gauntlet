@@ -1,0 +1,13 @@
+id = "055-localport-scan"
+family = "network-recon"
+title = "Scan a loopback port range and report what is listening"
+difficulty = 3
+timebox = 240
+teaches = [
+  "a connect that is refused is a closed port",
+  "scan a range, not the whole space",
+  "report only what answered",
+  "count what you scanned, not just what you found",
+]
+mock_server = "mock/server.py"
+mock_port_range = [46000, 46010]
