@@ -1,0 +1,50 @@
+{
+  "calibrated_at": "2026-10-29T23:12:14.630370+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "180-perl-substitution-eval",
+  "fixture_origin": "Synthetic assignment lines authored for this drill",
+  "lineage": "scripting-gauntlet/perl-substitution-eval",
+  "results": [
+    {
+      "elapsed_ms": 28,
+      "language": "pl",
+      "passed": true,
+      "path": "solutions/solve.pl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 39,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Matches the value again inside the replacement block, so $1 is the value's first character instead of the key",
+      "elapsed_ms": 10,
+      "expected_diagnostic": "1/text",
+      "language": "pl",
+      "passed": true,
+      "path": "controls/wrong-clobbered-capture.pl",
+      "problems": [
+        "rewritten.csv row 1 [1/text]: expected 'A:1 B:2 C:3', got '1: 2: 3:'",
+        "rewritten.csv row 2 [2/text]: expected 'X:10', got '1:'",
+        "rewritten.csv row 3 [3/text]: expected 'NAME:ALICE ROLE:ADMIN', got 'A: A:'"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "2c1fd011e5d4fe5866004e55a828f95f9006b735db398c51a96bbcae7d3fe981",
+    "controls/manifest.toml": "83c5d607ced3f8184bf6af37ebec490d39decf3e679e932aaa8c2016b472c481",
+    "controls/wrong-clobbered-capture.pl": "6ccab8b1a53aaf26ade99480fb59c5523e43b989367eea0d82bede2eb20ceaaf",
+    "drill.toml": "0fc63ef1dcaee4dd5d35f8f3e674e411f9dfd3fb4bc1400991736c54595ba970",
+    "fixtures/assignments.txt": "8626d4344e382b067f4737870602a7c8ebec39f0c8f078c073d26e5d80323e71",
+    "solutions/solve.pl": "371998b9b74c1e2ff851f62a04440500eb8688e8e4bc8d61094be572295150d4",
+    "solutions/solve.py": "38d30e358a0ffb616877c143d7af9948e30e97133204c5c61a061195be650af1",
+    "verify.py": "1a34ff39dbe1ea31869af1e8b1e734d7fbb16cbe1ed006c0c96ef85dec99d4e0"
+  },
+  "stage": "reference-calibrated"
+}

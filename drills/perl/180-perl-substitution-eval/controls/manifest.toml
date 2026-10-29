@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/perl-substitution-eval"
+fixture_origin = "Synthetic assignment lines authored for this drill"
+
+[[negative]]
+path = "controls/wrong-clobbered-capture.pl"
+defect = "Matches the value again inside the replacement block, so $1 is the value's first character instead of the key"
+expect = "1/text"

@@ -1,0 +1,11 @@
+id = "180-perl-substitution-eval"
+family = "text-munging"
+title = "Rewrite pairs with s///e without letting a nested match clobber the captures"
+difficulty = 4
+timebox = 300
+teaches = [
+  "s{}{}e runs the replacement as code; s{}{}ee evaluates the result again",
+  "the /g count is the substitution count when assigned in scalar context",
+  "$1 and $2 are package globals: a nested match inside the block overwrites them",
+  "copy captures to lexicals before doing any further matching",
+]
