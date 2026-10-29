@@ -1,0 +1,7 @@
+id,name,city,amount
+1,Alice,Edmonton,100
+2,Bob,Calgary
+3,Cara,Vancouver,300,extra,more
+4,Dave,Red Deer,250
+5,Eve,,175
+6,Frank,Halifax,90,extra

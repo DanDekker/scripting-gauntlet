@@ -1,0 +1,11 @@
+id = "006-ragged-rows"
+family = "data-wrangling"
+title = "Pad short rows and drop surplus fields"
+difficulty = 1
+timebox = 120
+teaches = [
+  "handle a header that defines the column count",
+  "pad missing trailing fields instead of crashing",
+  "truncate surplus fields without losing the row",
+  "count the anomalies you repaired",
+]
