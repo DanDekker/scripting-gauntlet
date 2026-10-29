@@ -1,0 +1,10 @@
+id = "037-binary-inspect"
+family = "data-wrangling"
+title = "Pull strings, NULs and an embedded header out of a binary blob"
+difficulty = 3
+timebox = 180
+teaches = [
+  "walk a file one byte at a time with od",
+  "define 'printable' precisely enough to be reproducible",
+  "find an embedded signature at an arbitrary offset",
+]
