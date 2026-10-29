@@ -1,0 +1,11 @@
+id = "094-agent-trace"
+family = "data-wrangling"
+title = "Summarise an agent run from its tool-call trace"
+difficulty = 3
+timebox = 240
+teaches = [
+  "tolerate junk lines in JSONL: skip what will not parse, never fail the run",
+  "cached tokens are a cost story, not a billing story",
+  "an error turn is 'error present and not null', not 'the tool failed'",
+  "group by tool, then sum billed tokens only",
+]

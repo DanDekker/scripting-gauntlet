@@ -1,0 +1,11 @@
+id = "095-eval-rubric"
+family = "data-wrangling"
+title = "Score model outputs against an eval set with per-case matchers"
+difficulty = 3
+timebox = 240
+teaches = [
+  "a matcher is chosen per case, not per eval set: exact, substring, numeric tolerance",
+  "trim before you compare, but keep exact matching case-sensitive",
+  "a case the rubric cannot judge fails; it never silently passes",
+  "a pass rate is passed/total over the cases that survived parsing",
+]

@@ -1,0 +1,12 @@
+{"id":"c1","kind":"exact","expected":"42","actual":" 42 "}
+{"id":"c2","kind":"exact","expected":"Paris","actual":"paris"}
+
+{"id":"c3","kind":"contains","expected":"timeout","actual":"Error: connection TIMEOUT after 5s"}
+not json, just a log line
+{"id":"c4","kind":"number","expected":"3.14","actual":"3.141"}
+[1,2,3]
+{"id":"c5","kind":"number","expected":"1.0","actual":"1.5"}
+{"id":"c6","kind":"regex","expected":"^a+$","actual":"aaa"}
+{"id":"c7","kind":"number","expected":"n/a","actual":"7"}
+{"id":"c8","kind":"exact","expected":"done","actual":"  done "}   
+{"id":"c9","kind":"contains","expected":"secret","actual":"public output"}

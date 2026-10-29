@@ -1,0 +1,11 @@
+{"turn":1,"tool":"read_file","tokens":1200,"cached":false,"error":null}
+{"turn":2,"tool":"grep","tokens":300,"cached":false,"error":null}   
+
+{"turn":3,"tool":"read_file","tokens":900,"cached":true,"error":null}
+this line is not json at all
+{"turn":4,"tokens":500,"cached":false,"error":null}
+{"turn":5,"tool":"bash","tokens":400,"cached":false,"error":"timeout"}
+{"turn":6,"tool":"grep","tokens":150,"cached":true,"error":null}
+{"turn":7,"tool":"edit_file","tokens":75,"cached":false,"error":"permission denied"}
+{"turn":8,"tool":"bash","tokens":250,"cached":false,"error":null}
+{"turn":9,"tool":"grep","tokens":100,"cached":false,"error":null}   
