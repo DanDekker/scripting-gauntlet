@@ -1,0 +1,10 @@
+id = "034-file-type-sniff"
+family = "data-wrangling"
+title = "Sniff real file types past extensions that lie"
+difficulty = 2
+timebox = 180
+teaches = [
+  "detect type from leading bytes, not from the name",
+  "a magic-number table is the whole trick",
+  "hex-dump only the first 8 bytes with od",
+]
