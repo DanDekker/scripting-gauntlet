@@ -1,0 +1,10 @@
+id = "040-extract-column"
+family = "data-wrangling"
+title = "Pull one column out of a CSV by its header name"
+difficulty = 1
+timebox = 90
+teaches = [
+  "find a column by header name, not by guessing its position",
+  "skip the header, blank lines and hash comments before extracting",
+  "trim the padded field on the way out",
+]

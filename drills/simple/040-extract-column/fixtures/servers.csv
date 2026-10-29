@@ -1,0 +1,9 @@
+id,ip,role,host,env,last_seen
+1,10.0.4.11,web,web-01,prod,2026-09-30
+2, 10.0.4.12 ,web,  web-02 ,prod,2026-09-30
+3,10.0.5.7,db,db-01,prod,2026-10-01
+
+# decommissioned
+4,10.0.4.91,web,web-09,stage,2026-07-02
+5,10.0.6.3,cache,cache-1,prod,2026-10-01
+6,10.0.9.14,edge,edge-02,prod,2026-10-01
