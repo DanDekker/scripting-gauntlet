@@ -1,0 +1,6 @@
+id,action,arg,code
+1,ping,gateway,0
+2,fetch,https://example.com/asset,10
+3,auth,token_alpha,0
+4,sync,database,42
+5,cleanup,temp_cache,0

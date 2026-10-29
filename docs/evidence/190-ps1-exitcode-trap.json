@@ -1,0 +1,53 @@
+{
+  "calibrated_at": "2026-10-29T23:28:31.877269+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "190-ps1-exitcode-trap",
+  "fixture_origin": "Synthetic pipeline execution steps authored for this drill",
+  "lineage": "scripting-gauntlet/ps1-exitcode-trap",
+  "results": [
+    {
+      "elapsed_ms": 723,
+      "language": "ps1",
+      "passed": true,
+      "path": "solutions/solve.ps1",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 131,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Relies purely on try/catch around native command, which never catches non-zero exit codes and reports all steps as success",
+      "elapsed_ms": 706,
+      "expected_diagnostic": "2/status",
+      "language": "ps1",
+      "passed": true,
+      "path": "controls/wrong-try-catch-only.ps1",
+      "problems": [
+        "results.csv row 2 [2/code]: expected 10, got '0'",
+        "results.csv row 2 [2/status]: expected 'failed', got 'success'",
+        "results.csv row 4 [4/code]: expected 42, got '0'",
+        "results.csv row 4 [4/status]: expected 'failed', got 'success'",
+        "summary.json['succeeded']: expected 3, got 5",
+        "summary.json['failed']: expected 2, got 0"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "e1380bb39cda2cffea2dc532af963c29a3f4e5a57bdf089f17f9654ec84af491",
+    "controls/manifest.toml": "69aab3555bbc66e0b161f7966102f992f573ea46f8cb5fe78d64b5f2fde5910e",
+    "controls/wrong-try-catch-only.ps1": "b8760842bc7ff124e8d92c715d08cd85c839b99be92a1bd194cc47a9ad1d5a83",
+    "drill.toml": "25afd1b95290dc1556e16c8ef4414e84a0814f9ea737405a80917507e696f006",
+    "fixtures/steps.csv": "5b2e72381ac3a2595a9369fc8a6cb530a3c4c4612c7751c5c4d69d8c1f86678a",
+    "solutions/solve.ps1": "9bd8503f2c9619bbe8f3eb045a8e771fdffd64c6c0eafc90ee754bcc9b1a9912",
+    "solutions/solve.py": "f7ee01f01afd593213c1f1d265c172f7a2610b68dbe43d0a14655fdc4331615d",
+    "verify.py": "af448be82d6ac16d7db59adf0132caf29f9aa67ed31f3259d4ff82ba425cf9e7"
+  },
+  "stage": "reference-calibrated"
+}

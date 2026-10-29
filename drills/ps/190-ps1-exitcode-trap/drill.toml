@@ -1,0 +1,11 @@
+id = "190-ps1-exitcode-trap"
+family = "system-recon"
+title = "Catch native binary failures without trusting ErrorActionPreference"
+difficulty = 4
+timebox = 300
+teaches = [
+  "ErrorActionPreference = 'Stop' does not throw on non-zero exit codes from native CLI binaries",
+  "wrapping native commands in try/catch silently proceeds on failure unless LASTEXITCODE is checked",
+  "$LASTEXITCODE captures the return code of the last native command execution",
+  "a reliable step runner must check $LASTEXITCODE immediately after each native process call",
+]

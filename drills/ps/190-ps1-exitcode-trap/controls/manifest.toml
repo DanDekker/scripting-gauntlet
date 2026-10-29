@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/ps1-exitcode-trap"
+fixture_origin = "Synthetic pipeline execution steps authored for this drill"
+
+[[negative]]
+path = "controls/wrong-try-catch-only.ps1"
+defect = "Relies purely on try/catch around native command, which never catches non-zero exit codes and reports all steps as success"
+expect = "2/status"
