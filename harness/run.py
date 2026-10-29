@@ -13,6 +13,10 @@ Each solution runs in a throwaway directory with this contract:
     $IN $OUT $WORK  the same paths, absolute
     $API_BASE   set when the drill declares a mock_server
 
+A drill may ship a `setup.py` (or `setup.sh`) that runs first, with $IN pointing at the
+copied fixtures — use it for inputs that cannot be committed as text (UTF-16, gzip,
+binary junk).
+
 Exit status is 0 only when every selected drill/language pair passes.
 """
 
@@ -229,6 +233,27 @@ def run_solution(
 
     env = os.environ.copy()
     env.update({"IN": str(inp), "OUT": str(out), "WORK": str(work), "NO_COLOR": "1"})
+
+    # Optional setup hook: fixtures that cannot be committed as text (UTF-16, gzip,
+    # binary junk) are generated into the work tree before the solution runs.
+    setup = drill.dir / "setup.py"
+    setup_cmd = [sys.executable, str(setup)] if setup.is_file() else None
+    if setup_cmd is None:
+        shell_setup = drill.dir / "setup.sh"
+        if shell_setup.is_file():
+            setup_cmd = ["bash", str(shell_setup)]
+    if setup_cmd is not None:
+        try:
+            proc = subprocess.run(
+                setup_cmd, cwd=work, env=env, capture_output=True, text=True, timeout=timeout
+            )
+        except subprocess.TimeoutExpired:
+            return False, ["setup script timed out"], 0.0, work
+        if proc.returncode != 0:
+            detail = (proc.stderr or proc.stdout).strip().splitlines()[-5:]
+            return False, [f"setup script failed (exit {proc.returncode})"] + [
+                f"  {line}" for line in detail
+            ], 0.0, work
 
     mock = start_mock(drill, env)
     argv = INTERPRETERS[lang] + [str(solution)]
