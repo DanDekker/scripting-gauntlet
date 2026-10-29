@@ -1,0 +1,11 @@
+id = "045-reconciliation"
+family = "data-wrangling"
+title = "Reconcile the ledger against the bank statement"
+difficulty = 3
+timebox = 300
+teaches = [
+  "normalize the key before matching or case splits the join",
+  "group by ref and sum, because one side may carry duplicate rows",
+  "accounting money is signed: parentheses mean negative",
+  "classify by presence first, then by tolerance",
+]
