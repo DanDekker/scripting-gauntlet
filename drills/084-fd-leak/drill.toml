@@ -1,0 +1,11 @@
+id = "084-fd-leak"
+family = "system-recon"
+title = "Spot a descriptor leak growing across samples"
+difficulty = 3
+timebox = 180
+teaches = [
+  "a runaway resource is a slope, not a single reading",
+  "divide the growth by the sample span, not by the row count",
+  "a series that goes down is churn, not a leak",
+  "skip a series you cannot measure, and say so",
+]
