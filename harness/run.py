@@ -308,16 +308,30 @@ def run_solution(
     argv = INTERPRETERS[lang] + [str(solution)]
     started = time.monotonic()
     try:
-        proc = subprocess.run(
-            argv,
-            cwd=work,
-            env=env,
-            capture_output=True,
-            text=True,
-            timeout=timeout,
-        )
+        if probe.is_file():
+            # A backgrounded listener inherits stdout; if that is a pipe, the pipe never
+            # reaches EOF and the run hangs. Capture to files instead.
+            so = work / "solution.stdout"
+            se = work / "solution.stderr"
+            with so.open("w") as sout, se.open("w") as serr:
+                proc = subprocess.run(
+                    argv, cwd=work, env=env, stdout=sout, stderr=serr, text=True, timeout=timeout
+                )
+            out_text = so.read_text(errors="replace")
+            err_text = se.read_text(errors="replace")
+        else:
+            proc = subprocess.run(
+                argv,
+                cwd=work,
+                env=env,
+                capture_output=True,
+                text=True,
+                timeout=timeout,
+            )
+            out_text, err_text = proc.stdout, proc.stderr
     except subprocess.TimeoutExpired:
         elapsed = (time.monotonic() - started) * 1000
+        kill_listener(out)
         return False, [f"timed out after {timeout:.0f}s"], elapsed, work
     finally:
         if mock is not None:
@@ -330,13 +344,13 @@ def run_solution(
     elapsed = (time.monotonic() - started) * 1000
 
     if verbose:
-        if proc.stdout.strip():
-            print(indent(proc.stdout.rstrip(), "      stdout | "))
-        if proc.stderr.strip():
-            print(indent(proc.stderr.rstrip(), "      stderr | "))
+        if out_text.strip():
+            print(indent(out_text.rstrip(), "      stdout | "))
+        if err_text.strip():
+            print(indent(err_text.rstrip(), "      stderr | "))
 
     if proc.returncode != 0:
-        tail = (proc.stderr or proc.stdout).strip().splitlines()[-6:]
+        tail = (err_text or out_text).strip().splitlines()[-6:]
         return False, [f"exit {proc.returncode}"] + [f"  {line}" for line in tail], elapsed, work
 
     io = IO(
