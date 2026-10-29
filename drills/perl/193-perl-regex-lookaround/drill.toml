@@ -1,0 +1,11 @@
+id = "193-perl-regex-lookaround"
+family = "text-munging"
+title = "Capture overlapping tokens and bounded currency with regex lookaround"
+difficulty = 4
+timebox = 300
+teaches = [
+  "positive lookahead (?=...) asserts match without advancing string consumption pointer",
+  "wrapping lookahead around a capture group (?=(PATTERN)) finds overlapping occurrences",
+  "negative lookbehind (?<!\\w) verifies boundary without consuming preceding delimiter",
+  "standard consuming global matches (/g) skip overlapping patterns",
+]

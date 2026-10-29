@@ -1,0 +1,6 @@
+# Audit and telemetry stream
+AUDIT101: approved USD150 and EUR40
+AUDIT102: skip TEST_USD999 and EUR100x and USD
+AUDIT103: approved GBP300 and USD250
+MOTIF104: target=ABA seq=ABABA
+MOTIF105: target=XAX seq=XAXAXAX

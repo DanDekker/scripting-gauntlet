@@ -1,0 +1,54 @@
+{
+  "calibrated_at": "2026-10-29T23:35:09.099457+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "193-perl-regex-lookaround",
+  "fixture_origin": "Synthetic audit and motif logs authored for this drill",
+  "lineage": "scripting-gauntlet/perl-regex-lookaround",
+  "results": [
+    {
+      "elapsed_ms": 7,
+      "language": "pl",
+      "passed": true,
+      "path": "solutions/solve.pl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 26,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Uses consuming match /([A-Z])[A-Z]\\1/g for motifs, missing overlapping pattern occurrences",
+      "elapsed_ms": 7,
+      "expected_diagnostic": "summary.json['motifs']",
+      "language": "pl",
+      "passed": true,
+      "path": "controls/wrong-consuming-motif.pl",
+      "problems": [
+        "extractions.csv: expected 9 rows, got 7",
+        "extractions.csv row 6 [MOTIF104/motif/id]: expected 'MOTIF104', got 'MOTIF105'",
+        "extractions.csv row 6 [MOTIF104/motif/key]: expected 'ABA', got 'XAX'",
+        "extractions.csv row 6 [MOTIF104/motif/val]: expected 3, got '1'",
+        "extractions.csv row 7 [MOTIF105/motif/val]: expected 1, got '5'",
+        "summary.json['records']: expected 9, got 7",
+        "summary.json['motifs']: expected 5, got 3"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "03e0768ade5451795a396faee510226c5fd7ea0b8c4585bc4b0f059673536955",
+    "controls/manifest.toml": "798735cedc32c07875ae4671f5b61b6e755181fa184ada5a32a8a6797b1dc370",
+    "controls/wrong-consuming-motif.pl": "4e87d7e571682e4269efd1ac8967e5660e346702a50b7d78a1d6946315b179a7",
+    "drill.toml": "86307ac49a7460109d82a186eb0609206fcf1203d64c739a7bf41673a97fdc5f",
+    "fixtures/stream.txt": "c7a9bc1feee20bd4c2dc0e2d17366b6a3492a9dba041e11f689bce3752bd6bb2",
+    "solutions/solve.pl": "084e6d57e07f15bada4ca31b29ee348a5a21fd615dcd4bd819ec4f72b3759093",
+    "solutions/solve.py": "63e9465ce7b97ca6371f95276b5b0ac6a594b2d5b879262893d0e79fc0104c7a",
+    "verify.py": "c7bb12c8240b359a15396a110836422a3745a5665b8118d60b48992d2afcd047"
+  },
+  "stage": "reference-calibrated"
+}

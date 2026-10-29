@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/perl-regex-lookaround"
+fixture_origin = "Synthetic audit and motif logs authored for this drill"
+
+[[negative]]
+path = "controls/wrong-consuming-motif.pl"
+defect = "Uses consuming match /([A-Z])[A-Z]\\1/g for motifs, missing overlapping pattern occurrences"
+expect = "summary.json['motifs']"
