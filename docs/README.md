@@ -55,3 +55,11 @@ Calibration reports with source hashes and negative-control results:
   [version sorting](evidence/175-perl-version-sort.json)
 - PowerShell: [case-folded grouping](evidence/176-ps1-group-folding.json) and
   [decimal money](evidence/177-ps1-decimal-money.json)
+- Deeper, Lua: [number printing](evidence/178-lua-number-printing.json) and
+  [metatable layers](evidence/179-lua-metatable-layers.json)
+- Deeper, Perl: [substitution eval](evidence/180-perl-substitution-eval.json) and
+  [substr/index offsets](evidence/181-perl-substr-index.json)
+- Deeper, Ruby: [hash defaults](evidence/182-ruby-hash-default.json) and
+  [encoding scrub](evidence/183-ruby-encoding-scrub.json)
+- Deeper, PowerShell: [JSON depth](evidence/184-ps1-json-depth.json) and
+  [datetime parsing](evidence/185-ps1-datetime.json)
