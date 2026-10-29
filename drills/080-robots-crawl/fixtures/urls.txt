@@ -1,0 +1,8 @@
+https://example.com/private/secret.html
+https://example.com/private/public/index.html
+https://example.com/admin/users
+https://example.com/admin/public/x
+https://example.com/docs/report.pdf
+https://example.com/docs/report.pdf?v=2
+https://example.com/adminish
+https://example.com/about

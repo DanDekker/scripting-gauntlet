@@ -1,0 +1,8 @@
+# crawler rules for docs.example.com
+User-agent: *
+Disallow: /
+
+User-agent: ScriptBot
+Disallow: /admin
+Allow: /admin/public
+Disallow: /*.pdf$

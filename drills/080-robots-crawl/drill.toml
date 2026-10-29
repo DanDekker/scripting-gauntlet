@@ -1,0 +1,11 @@
+id = "080-robots-crawl"
+family = "web-scraping"
+title = "Decide crawl permission with robots.txt longest-match rules"
+difficulty = 4
+timebox = 300
+teaches = [
+  "a specific User-agent group replaces the * group, it does not merge with it",
+  "the longest matching rule wins, and Allow wins a tie",
+  "* and a trailing $ are glob syntax, not regular expressions",
+  "match against path plus query, so a query string can dodge an extension rule",
+]
