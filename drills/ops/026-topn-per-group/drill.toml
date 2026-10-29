@@ -1,0 +1,11 @@
+id = "026-topn-per-group"
+family = "data-wrangling"
+title = "Top two reps per region, with a tie-break that decides"
+difficulty = 2
+timebox = 180
+teaches = [
+  "sort first, then take the first N of each group",
+  "a tie-break is part of the contract, not a detail",
+  "rank resets at every group boundary",
+  "emit a rank column you can check",
+]
