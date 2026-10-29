@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/lua-load-sandbox"
+fixture_origin = "Synthetic expressions including escaped globals authored for this drill"
+
+[[negative]]
+path = "controls/wrong-global-env.lua"
+defect = "Compiles with the global environment instead of the sandbox, so os.time() runs instead of being refused"
+expect = "os.time()/status"

@@ -1,0 +1,11 @@
+id = "173-lua-load-sandbox"
+family = "text-munging"
+title = "Evaluate user expressions in a load() sandbox that refuses unknown names"
+difficulty = 5
+timebox = 360
+teaches = [
+  "load compiles a chunk of statements, so an expression needs \"return \" in front",
+  "load returns nil plus a message on a syntax error; it never raises",
+  "a metatable __index that raises builds a whitelist: unknown names are errors",
+  "error(msg, 0) drops the position prefix; runtime errors from pcall keep it",
+]

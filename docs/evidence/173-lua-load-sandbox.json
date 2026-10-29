@@ -1,0 +1,58 @@
+{
+  "calibrated_at": "2026-10-29T22:57:03.970647+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "173-lua-load-sandbox",
+  "fixture_origin": "Synthetic expressions including escaped globals authored for this drill",
+  "lineage": "scripting-gauntlet/lua-load-sandbox",
+  "results": [
+    {
+      "elapsed_ms": 9,
+      "language": "lua",
+      "passed": true,
+      "path": "solutions/solve.lua",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 34,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Compiles with the global environment instead of the sandbox, so os.time() runs instead of being refused",
+      "elapsed_ms": 5,
+      "expected_diagnostic": "os.time()/status",
+      "language": "lua",
+      "passed": true,
+      "path": "controls/wrong-global-env.lua",
+      "problems": [
+        "results.csv row 2 [abs(-3)/status]: expected 'ok', got 'runtime'",
+        "results.csv row 2 [abs(-3)/detail]: expected '3', got \"attempt to call a nil value (global 'abs')\"",
+        "results.csv row 3 [floor(3.7)/status]: expected 'ok', got 'runtime'",
+        "results.csv row 3 [floor(3.7)/detail]: expected '3', got \"attempt to call a nil value (global 'floor')\"",
+        "results.csv row 4 [max(1, 5, 2)/status]: expected 'ok', got 'runtime'",
+        "results.csv row 4 [max(1, 5, 2)/detail]: expected '5', got \"attempt to call a nil value (global 'max')\"",
+        "results.csv row 5 [os.time()/status]: expected 'runtime', got 'ok'",
+        "results.csv row 5 [os.time()/detail]: expected 'unknown name: os', got '1793314623'",
+        "results.csv row 6 [nope + 1/detail]: expected 'unknown name: nope', got \"attempt to perform arithmetic on a nil value (global 'nope')\"",
+        "summary.json['ok']: expected 5, got 3",
+        "summary.json['runtime']: expected 4, got 6"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "707ecfa86cb22409cce42e6349a4286c11e49e4cbffdf676d87392e63eef4040",
+    "controls/manifest.toml": "33affab74e1d8cde8f1d5f3436cc7a821515253bc62a7d509e6d8206abee6405",
+    "controls/wrong-global-env.lua": "159807923303681d3fdb18a0b4fc8231fbf0f9cbbbc1673d7b2ae7b52b9e4a32",
+    "drill.toml": "dedf93ed8a25491ab2fb24c1f8972681e3612da1bf44791aa0358c1773c91a31",
+    "fixtures/exprs.txt": "4d8727bd5df4991697516504998605943ff441e7e8bd3a0f50f57e7478e25da0",
+    "solutions/solve.lua": "03afc7ae0ab924ec4a128f32d5f3b5414eae13eb946936331f123536bf13d4f8",
+    "solutions/solve.py": "69971c4b1f124d0e888b220e77b10d73f981a722d9ce2513cc993d8dc6c5ab64",
+    "verify.py": "f64f7a93c926de7cc2cf4f53cd6004aa19fc221d299df4ed5f2e9785afa1a05c"
+  },
+  "stage": "reference-calibrated"
+}
