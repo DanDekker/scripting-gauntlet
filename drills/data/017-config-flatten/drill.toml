@@ -1,0 +1,11 @@
+id = "017-config-flatten"
+family = "data-wrangling"
+title = "Flatten a nested config into dotted key/value pairs"
+difficulty = 3
+timebox = 240
+teaches = [
+  "indentation is the structure",
+  "a key with no value opens a section",
+  "a list becomes indexed keys",
+  "flatten to paths, keep the values as they were",
+]

@@ -1,0 +1,8 @@
+name: scriptdeck
+version: 3
+features:
+  - api
+  - scrape
+limits:
+  timeout: 30
+  retries: 2
