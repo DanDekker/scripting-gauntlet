@@ -1,0 +1,11 @@
+id = "016-archives"
+family = "data-wrangling"
+title = "Read a gzip and a tar.gz and roll them up together"
+difficulty = 3
+timebox = 240
+teaches = [
+  "decompress to stdout, never to a temp file you forget to delete",
+  "list archive members before extracting one",
+  "a member can live in a directory inside the archive",
+  "two sources, one schema, one rollup",
+]
