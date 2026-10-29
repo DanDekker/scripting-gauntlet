@@ -1,0 +1,11 @@
+id = "074-jsonl-latest"
+family = "data-wrangling"
+title = "Keep the newest record per id in an append-only event log"
+difficulty = 2
+timebox = 180
+teaches = [
+  "trim before parsing so a padded line still loads",
+  "fixed-width UTC timestamps compare correctly as strings",
+  "on a timestamp tie the later line is newer",
+  "report how many records the dedupe removed",
+]
