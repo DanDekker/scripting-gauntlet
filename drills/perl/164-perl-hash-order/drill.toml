@@ -1,0 +1,11 @@
+id = "164-perl-hash-order"
+family = "data-wrangling"
+title = "Count events per user and emit a stable order from a hash"
+difficulty = 3
+timebox = 240
+teaches = [
+  "hash key order is randomized per process: never iterate keys without sorting",
+  "a two-key sort needs an explicit tie-break, not a lucky hash order",
+  "numeric-looking users are strings here: '10' sorts before '9'",
+  "count what you kept and what you skipped in the same report",
+]

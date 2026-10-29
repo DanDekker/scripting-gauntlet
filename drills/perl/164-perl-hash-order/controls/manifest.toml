@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/perl-hash-order"
+fixture_origin = "Synthetic event log authored for this drill"
+
+[[negative]]
+path = "controls/wrong-desc-tiebreak.pl"
+defect = "Breaks count ties by user descending, so bob leads instead of alice"
+expect = "alice/user"

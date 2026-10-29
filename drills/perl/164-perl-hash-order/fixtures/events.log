@@ -1,0 +1,11 @@
+# service events
+alice login
+bob login
+alice logout
+carol login
+bob logout
+alice login
+bob login
+10 login
+9 login
+lonely

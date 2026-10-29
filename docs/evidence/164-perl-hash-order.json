@@ -1,0 +1,52 @@
+{
+  "calibrated_at": "2026-10-29T22:19:20.270073+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "164-perl-hash-order",
+  "fixture_origin": "Synthetic event log authored for this drill",
+  "lineage": "scripting-gauntlet/perl-hash-order",
+  "results": [
+    {
+      "elapsed_ms": 9,
+      "language": "pl",
+      "passed": true,
+      "path": "solutions/solve.pl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 34,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Breaks count ties by user descending, so bob leads instead of alice",
+      "elapsed_ms": 40,
+      "expected_diagnostic": "alice/user",
+      "language": "pl",
+      "passed": true,
+      "path": "controls/wrong-desc-tiebreak.pl",
+      "problems": [
+        "counts.csv row 1 [alice/user]: expected 'alice', got 'bob'",
+        "counts.csv row 2 [bob/user]: expected 'bob', got 'alice'",
+        "counts.csv row 3 [10/user]: expected '10', got 'carol'",
+        "counts.csv row 5 [carol/user]: expected 'carol', got '10'",
+        "summary.json['top']: expected 'alice', got 'bob'"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "302d84ebd41daff71df3f5734241148e7813a3ee66255091e2d45c38f631c3b4",
+    "controls/manifest.toml": "69802e5691ae5b5219fef86dd6b0e495a5e0e0fda35f8072cb0d5f8d62fe11e6",
+    "controls/wrong-desc-tiebreak.pl": "0c6a89b59657b844db37a12775f1279ea75147f83fa065dc44c234d64b898fa7",
+    "drill.toml": "92851ec7aa1b92667a550c40d2ac9fa27b17e49f186d7f9fe323a0aea83cf4b4",
+    "fixtures/events.log": "9d996463222419b8622a41032251c00e1eabf98c69fe616527d83a58967a7a1c",
+    "solutions/solve.pl": "bc99f215a8cab9d3572ed6a71e71c7702673ce686fbcf43010c8754caad50ec7",
+    "solutions/solve.py": "c95142568a16950b0e9fdf047ab0ebea1f4f79a8b52cf474a32b67eb9cb29870",
+    "verify.py": "66ec2d4e158719ced3c3315464dbc87367fd45e6d54b7c95b04b7f4cad9d984a"
+  },
+  "stage": "reference-calibrated"
+}
