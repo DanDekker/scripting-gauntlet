@@ -1,0 +1,11 @@
+id = "169-ruby-sort-mixed"
+family = "data-wrangling"
+title = "Rank records whose scores are numbers, numeric strings or missing"
+difficulty = 3
+timebox = 240
+teaches = [
+  "sort raises ArgumentError on mixed types and on nil: comparison of Integer with nil failed",
+  "sort_by is not guaranteed stable, so a tie-break needs an explicit index",
+  "numeric text must be converted before comparison: \"10\" sorts before \"9\" as text",
+  "a missing score is ranked last, not as zero",
+]

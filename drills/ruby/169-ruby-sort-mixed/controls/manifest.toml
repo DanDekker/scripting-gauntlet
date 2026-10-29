@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/ruby-sort-mixed"
+fixture_origin = "Synthetic score records with mixed types authored for this drill"
+
+[[negative]]
+path = "controls/wrong-name-tiebreak.rb"
+defect = "Breaks score ties by name instead of input order, so the tenth-place tie comes out a, d, g instead of g, a, d"
+expect = "1/name"

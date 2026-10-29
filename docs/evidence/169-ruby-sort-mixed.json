@@ -1,0 +1,50 @@
+{
+  "calibrated_at": "2026-10-29T22:44:46.905892+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "169-ruby-sort-mixed",
+  "fixture_origin": "Synthetic score records with mixed types authored for this drill",
+  "lineage": "scripting-gauntlet/ruby-sort-mixed",
+  "results": [
+    {
+      "elapsed_ms": 41,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 120,
+      "language": "rb",
+      "passed": true,
+      "path": "solutions/solve.rb",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Breaks score ties by name instead of input order, so the tenth-place tie comes out a, d, g instead of g, a, d",
+      "elapsed_ms": 122,
+      "expected_diagnostic": "1/name",
+      "language": "rb",
+      "passed": true,
+      "path": "controls/wrong-name-tiebreak.rb",
+      "problems": [
+        "ranked.csv row 1 [1/name]: expected 'g', got 'a'",
+        "ranked.csv row 2 [2/name]: expected 'a', got 'd'",
+        "ranked.csv row 3 [3/name]: expected 'd', got 'g'"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "57d33e41fa424b9ebec8893e0f3661daf8d484e0b35251712d4d0e7578b69ed4",
+    "controls/manifest.toml": "ab5ec9398138f8880656814b0483cb63476f10037de6521d42e66cb90482e59f",
+    "controls/wrong-name-tiebreak.rb": "e73bb40861714c7e155b84ca887aa9f2af1a33b82c085a7aaa2f71e248fc9c98",
+    "drill.toml": "cbfffab84e768ce34ab5ad8b499ecd32a333f894e58173112bf375cb50c10f1e",
+    "fixtures/records.jsonl": "3cf4cc931c23e55aa0295e7ce55b52d8f5a63c2fa3645b4409d4746dfdfcf580",
+    "solutions/solve.py": "80058a31d24689e4054bd667eccb4376e4a1ca7ef2a9ccd6d0b66538a4fc4f9e",
+    "solutions/solve.rb": "4face882f8447bdbec7c3f8130a166f1234fc576e85294eae0c6241c2ef9a044",
+    "verify.py": "f53efc9e54697ad31a1810087d49e3f30452774c7170b41c5f0d7824a4555cb8"
+  },
+  "stage": "reference-calibrated"
+}
