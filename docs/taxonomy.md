@@ -158,6 +158,11 @@ choice for tiny footprint config-time transforms where a 200 KB interpreter beat
 Use it when the host is lua-shaped. Do not use it to write a general CLI — you will
 spend your whole timebox on a JSON parser.
 
+The `drills/lua/` track drills the traps that make a lua script wrong where the same
+script in another language would be fine: patterns are not regexes, `#` counts bytes and
+not characters, `table.sort` is not stable, `ipairs` stops at the first hole, and
+`string.format("%q", s)` is Lua escaping rather than JSON.
+
 ### JavaScript — browser DOM work
 
 Use the DOM when the task depends on document structure, selectors, or browser

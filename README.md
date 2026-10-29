@@ -62,8 +62,9 @@ text munging, system reconnaissance, and network reconnaissance. `make list`
 is the current inventory.
 
 Start with [CSV rollup](drills/001-csv-rollup), [browser DOM scraping](drills/004-scrape-table),
-[macOS plist auditing](drills/149-macos-plist-audit), or
-[agent permission boundaries](drills/145-agent-permission-boundary).
+[macOS plist auditing](drills/149-macos-plist-audit),
+[agent permission boundaries](drills/145-agent-permission-boundary), or
+[Lua pattern fields](drills/lua/150-lua-pattern-fields).
 
 [Runtime contract](docs/drill-spec.md) ·
 [Authoring and admission](docs/authoring-contract.md) ·

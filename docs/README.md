@@ -27,3 +27,10 @@ Calibration reports with source hashes and negative-control results:
 - Operations: [percent of group](evidence/057-percent-of-group.json) and
   [outer join](evidence/058-outer-join.json)
 - [macOS plist audit](evidence/149-macos-plist-audit.json)
+- Lua: [pattern fields](evidence/150-lua-pattern-fields.json),
+  [exact decimals](evidence/151-lua-exact-decimals.json),
+  [UTF-8 characters](evidence/152-lua-utf8-chars.json),
+  [sort ties](evidence/153-lua-sort-ties.json),
+  [error levels](evidence/154-lua-error-level.json),
+  [JSON writer](evidence/155-lua-json-writer.json), and
+  [sparse arrays](evidence/156-lua-sparse-array.json)
