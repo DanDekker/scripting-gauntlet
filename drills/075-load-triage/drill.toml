@@ -1,0 +1,11 @@
+id = "075-load-triage"
+family = "system-recon"
+title = "Decide what is actually saturated from vmstat and load"
+difficulty = 4
+timebox = 240
+teaches = [
+  "read the columns of vmstat correctly instead of eyeballing",
+  "swap activity wins over load average when naming a bottleneck",
+  "compare load to CPU count, not to a fixed number",
+  "state one verdict per host and the evidence behind it",
+]
