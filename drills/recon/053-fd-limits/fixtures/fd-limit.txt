@@ -1,0 +1,2 @@
+# cat /proc/4127/limits | grep 'Max open files'
+Max open files            16                   4096                 files

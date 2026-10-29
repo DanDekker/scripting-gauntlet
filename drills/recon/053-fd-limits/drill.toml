@@ -1,0 +1,11 @@
+id = "053-fd-limits"
+family = "system-recon"
+title = "Who is out of file descriptors?"
+difficulty = 3
+timebox = 180
+teaches = [
+  "an fd listing is one row per descriptor, not one row per process",
+  "group rows by pid and count, do not dedupe by target",
+  "read the soft limit out of a /proc limits line before it is prose",
+  "at-or-over means >= limit: the boundary case is the bug report",
+]
