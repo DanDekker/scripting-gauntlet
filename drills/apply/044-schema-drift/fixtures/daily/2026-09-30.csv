@@ -1,0 +1,3 @@
+order_id, customer ,amount,currency,placed_at,region,promo_code
+1006,Wayne,1200,USD,2026-09-29,west,FALL10
+1007,Stark,80,USD,2026-09-30,north,

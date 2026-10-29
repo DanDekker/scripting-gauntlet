@@ -1,0 +1,4 @@
+order_id,customer,amount_usd,currency,placed_at,region
+1008,Lumen,150.75,USD,2026-09-30,west
+1009,Tyrell,220.00,EUR,2026-10-01,east
+1010,Umbrella,64.20,USD,2026-10-01,south

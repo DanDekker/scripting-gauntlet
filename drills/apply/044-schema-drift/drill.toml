@@ -1,0 +1,11 @@
+id = "044-schema-drift"
+family = "data-wrangling"
+title = "Report schema drift across four daily exports"
+difficulty = 3
+timebox = 300
+teaches = [
+  "a header is data: parse it before you parse the rows",
+  "presence drift (added, dropped, transient) is a set difference over days",
+  "infer a column type from its values, then diff the types too",
+  "strip the BOM or the first column name is silently wrong",
+]
