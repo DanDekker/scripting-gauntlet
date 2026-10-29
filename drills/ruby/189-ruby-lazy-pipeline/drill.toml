@@ -1,0 +1,11 @@
+id = "189-ruby-lazy-pipeline"
+family = "data-wrangling"
+title = "Filter unbounded streams without materializing intermediate arrays using lazy enumerators"
+difficulty = 4
+timebox = 300
+teaches = [
+  "Enumerable#lazy defers collection transformations until elements are explicitly demanded",
+  "eager .map and .select allocate arrays for every element in the source stream",
+  ".take(n).force stops upstream consumption as soon as the target count is satisfied",
+  "inspected count reflects short-circuit evaluation rather than reading to EOF",
+]

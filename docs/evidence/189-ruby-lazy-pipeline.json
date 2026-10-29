@@ -1,0 +1,48 @@
+{
+  "calibrated_at": "2026-10-29T23:27:14.644805+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "189-ruby-lazy-pipeline",
+  "fixture_origin": "Synthetic log stream authored for this drill",
+  "lineage": "scripting-gauntlet/ruby-lazy-pipeline",
+  "results": [
+    {
+      "elapsed_ms": 26,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 95,
+      "language": "rb",
+      "passed": true,
+      "path": "solutions/solve.rb",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Uses eager File.readlines instead of lazy enumeration, reading the whole file and inspecting 10 lines instead of 8",
+      "elapsed_ms": 88,
+      "expected_diagnostic": "summary.json['inspected']",
+      "language": "rb",
+      "passed": true,
+      "path": "controls/wrong-eager-read.rb",
+      "problems": [
+        "summary.json['inspected']: expected 8, got 10"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "a0f39ca43e31cbd8b676d749ca92570b2251f283fafbfa6dd70639c293913938",
+    "controls/manifest.toml": "ed763efb5fd34d00e49cd1c22a34386cf8b85acf610152398f7f2ddfcbd486f2",
+    "controls/wrong-eager-read.rb": "d276df4f47598a937599437da55f7cd50a2b356c7d0daece4d201ef2a0204314",
+    "drill.toml": "c9d7acf5ed5d272118971877b43bafb6a76d1a510a20a102d6baa8dd849859a9",
+    "fixtures/stream.log": "258770996980da19bd2c32c7f1c86289ebe3c4f78844ffdee0d3bc937766c3c9",
+    "solutions/solve.py": "92532cb69b1ccfcf99f6cc25fd6de6eefc64e2421bff9d5f7932db16d8d0cea1",
+    "solutions/solve.rb": "a81f1caf674fc4e1f0857463a1fc195b9688d145ef749fc07a6219a9edd86dfc",
+    "verify.py": "91f4a311f24b7db04eac8081e5c1011f7ea7bc64cd99f3cb8c6bf72458e95c1c"
+  },
+  "stage": "reference-calibrated"
+}

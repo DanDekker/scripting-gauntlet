@@ -1,0 +1,10 @@
+10:00:01 INFO [payment] code=200 ok
+10:00:02 WARN [payment] code=404 not found
+10:00:03 DEBUG [auth] ping
+10:00:04 ERROR [payment] code=500 timeout
+10:00:05 WARN [payment] code=429 rate limit
+10:00:06 INFO [payment] code=200 ok
+10:00:07 ERROR [payment] code=503 unavailable
+10:00:08 WARN [payment] code=400 bad request
+10:00:09 ERROR [payment] code=500 boom
+10:00:10 ERROR [payment] code=500 boom

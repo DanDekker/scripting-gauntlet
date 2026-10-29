@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/ruby-lazy-pipeline"
+fixture_origin = "Synthetic log stream authored for this drill"
+
+[[negative]]
+path = "controls/wrong-eager-read.rb"
+defect = "Uses eager File.readlines instead of lazy enumeration, reading the whole file and inspecting 10 lines instead of 8"
+expect = "summary.json['inspected']"
