@@ -1,0 +1,11 @@
+id = "181-perl-substr-index"
+family = "text-munging"
+title = "Slice by offset with substr, index and rindex"
+difficulty = 4
+timebox = 300
+teaches = [
+  "substr takes offset and length; a negative offset counts from the end",
+  "index and rindex return a 0-based position or -1: the +1 is yours to make",
+  "index with a start offset finds the second occurrence",
+  "substr past the end returns undef with a warning, so clamp or check",
+]

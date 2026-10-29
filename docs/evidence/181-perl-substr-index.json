@@ -1,0 +1,49 @@
+{
+  "calibrated_at": "2026-10-29T23:12:28.972097+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "181-perl-substr-index",
+  "fixture_origin": "Synthetic semicolon pair lines authored for this drill",
+  "lineage": "scripting-gauntlet/perl-substr-index",
+  "results": [
+    {
+      "elapsed_ms": 26,
+      "language": "pl",
+      "passed": true,
+      "path": "solutions/solve.pl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 44,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Reports the 0-based index() result directly, so the second = is one column too far left",
+      "elapsed_ms": 17,
+      "expected_diagnostic": "1/second_eq",
+      "language": "pl",
+      "passed": true,
+      "path": "controls/wrong-zero-based.pl",
+      "problems": [
+        "fields.csv row 1 [1/second_eq]: expected 6, got '5'",
+        "fields.csv row 3 [3/second_eq]: expected 15, got '14'"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "9a8566725631e3b45bb2fdf78f3485f3efd253708aa71aec655a28c829c7efd3",
+    "controls/manifest.toml": "d36f7386843cddb2ed3c2c1c546703d1d05c97fabb356582c75a4622112a0cf9",
+    "controls/wrong-zero-based.pl": "b90a54daa3b17f4f325c3a5a66a14bef2e762165789c05ea02fbf497b523c012",
+    "drill.toml": "8c86bedbf3b704c355ec0f86782290a8bf5c4e4d4d2c728872c95fbb2400de97",
+    "fixtures/pairs.txt": "817832d66dae8cf7c0701fdefdc98db2a3551f20ed44e6b45bc1c4515115cce5",
+    "solutions/solve.pl": "f231674f57104e9c6095ce5eb8b9d70aa712f82df95a14e8175547d82db2fa05",
+    "solutions/solve.py": "70e576628b756da5e246815b5132ec3fa765296af463568378daec9b84a7da2a",
+    "verify.py": "f92dd5f65bafe319e815c69e171af95271d9b6aa15cd8aefdfc2d4ecfb4cd0d9"
+  },
+  "stage": "reference-calibrated"
+}

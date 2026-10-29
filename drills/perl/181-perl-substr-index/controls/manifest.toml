@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/perl-substr-index"
+fixture_origin = "Synthetic semicolon pair lines authored for this drill"
+
+[[negative]]
+path = "controls/wrong-zero-based.pl"
+defect = "Reports the 0-based index() result directly, so the second = is one column too far left"
+expect = "1/second_eq"
