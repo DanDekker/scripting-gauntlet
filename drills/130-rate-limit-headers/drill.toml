@@ -1,0 +1,12 @@
+id = "130-rate-limit-headers"
+family = "api-probing"
+title = "Read the rate-limit headers and decide when to back off"
+difficulty = 3
+timebox = 240
+teaches = [
+  "Retry-After beats X-RateLimit-Reset; a numeric Retry-After beats a date one",
+  "header names are case-insensitive and a repeated header is decided by the last value",
+  "an HTTP-date Retry-After is a clock delta against a reference time, clamped at zero",
+  "'I cannot tell how long to wait' is an answer: wait-unknown, never a guessed number",
+  "remaining == 0 on a 200 is exhausted, not blocked — the next call will be refused",
+]

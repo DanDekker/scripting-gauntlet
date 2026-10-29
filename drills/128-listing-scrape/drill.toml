@@ -1,0 +1,12 @@
+id = "128-listing-scrape"
+family = "web-scraping"
+title = "Scrape a product listing into a table a script can use"
+difficulty = 3
+timebox = 240
+teaches = [
+  "an item is a class token, not a class substring: `item` matches, `itemized` does not",
+  "a price is valid only if it matches the money pattern; otherwise the item is unpriced, not free",
+  "decode entities before collapsing whitespace, and collapse the newlines a pretty-printer left behind",
+  "dedupe on (name, price) and keep the first occurrence in document order",
+  "every item block is accounted for: kept, skipped or duplicate",
+]

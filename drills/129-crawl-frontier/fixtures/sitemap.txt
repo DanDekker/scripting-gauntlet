@@ -1,0 +1,54 @@
+http://example.com/
+<a href="http://example.com/a">a</a>
+<a href="http://example.com/b">b</a>
+<a href="http://example.com/missing">missing</a>
+<a href="https://other.example.com/z">offsite</a>
+<a href="http://example.com/#top">home</a>
+<a href="/nope">relative</a>
+<a href="http://example.com/dir">  dir  </a>
+
+  http://example.com/a	
+<a href="http://example.com/deep/c">c</a>
+<a href="http://example.com/b">b again</a>
+<a href="http://example.com/dir/">dir slash</a>
+<a href="http://example.com/a#x">self</a>
+
+http://example.com/b
+<a href="http://example.com/a">a</a>
+<a href="http://example.com/deep/e">e</a>
+
+http://example.com/dir
+<a href="http://example.com/dir/">dir slash</a>
+<a href="http://example.com/x?q=1">query</a>
+
+http://example.com/dir/
+<a href="http://example.com/">home</a>
+<a href="http://example.com/late">late</a>
+
+http://example.com/deep/c
+<a href="http://example.com/deep/e">e</a>
+<a href="http://example.com/deep/f">f</a>
+
+http://example.com/deep/e
+<a href="https://other.example.com/z">offsite</a>
+
+http://example.com/x?q=1
+<a href="http://example.com/dir">dir</a>
+<a href="http://example.com/">home</a>
+
+https://other.example.com/z
+<a href="http://example.com/">home</a>
+
+http://example.com/late
+<a href="http://example.com/a">a</a>
+
+http://example.com/unlinked
+
+http://example.com/deep/f
+<a href="http://example.com/a">a</a>
+<a href="http://example.com/deep/c">c</a>
+
+not a url at all
+
+http://example.com/
+<a href="http://example.com/#frag">home again</a>

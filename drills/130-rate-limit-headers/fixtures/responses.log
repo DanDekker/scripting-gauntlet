@@ -1,0 +1,64 @@
+GET /v1/items HTTP/1.1
+HTTP/1.1 200 OK
+X-RateLimit-Limit: 100
+X-RateLimit-Remaining: 42
+X-RateLimit-Reset: 1767225600
+
+GET /v1/items/2 HTTP/1.1
+HTTP/1.1 429 Too Many Requests
+Retry-After: 30
+X-RateLimit-Limit: 100
+X-RateLimit-Remaining: 0
+X-RateLimit-Reset: 1767225600
+
+GET /v1/items/3 HTTP/1.1
+HTTP/1.1 429 Too Many Requests
+X-RateLimit-Limit: 100
+X-RateLimit-Remaining: 0
+
+GET /v1/items/4 HTTP/1.1
+HTTP/1.1 429 Too Many Requests
+retry-after: 12
+X-RateLimit-Remaining: 0
+
+POST /v1/items HTTP/1.1
+HTTP/1.1 429 Too Many Requests
+Retry-After: Thu, 01 Jan 2026 00:01:00 GMT
+
+GET /v1/items/6 HTTP/1.1
+HTTP/1.1 200 OK
+X-RateLimit-Limit: 100
+X-RateLimit-Remaining: 0
+X-RateLimit-Reset: 1767225900
+
+GET /v1/items/7 HTTP/1.1
+HTTP/1.1 429 Too Many Requests
+X-RateLimit-Limit: 100
+X-RateLimit-Reset: 1767225300
+
+DELETE /v1/items/8 HTTP/1.1
+HTTP/1.1 200 OK
+X-RateLimit-Limit: 100
+X-RateLimit-Limit: 250
+X-RateLimit-Remaining: 7
+X-RateLimit-Remaining: 0
+
+PATCH /v1/items/9 HTTP/1.1
+X-RateLimit-Remaining: 0
+
+GET /v1/items/10 HTTP/1.1
+HTTP/1.1 200 OK
+X-RateLimit-Remaining: n/a
+
+GET /v1/items/11 HTTP/1.1
+HTTP/1.1 429 Too Many Requests
+Retry-After: Wed, 31 Dec 2025 23:00:00 GMT
+X-RateLimit-Remaining: 5
+
+GET /v1/items/12 HTTP/1.1
+
+HTTP/1.1 429 Too Many Requests
+
+RETRY-AFTER: 0
+X-RateLimit-Remaining: 0
+

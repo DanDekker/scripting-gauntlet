@@ -1,0 +1,12 @@
+id = "129-crawl-frontier"
+family = "web-scraping"
+title = "Walk a site the way a crawler would, and stop when the rules say stop"
+difficulty = 4
+timebox = 300
+teaches = [
+  "a page identity rule: strip the fragment, keep the trailing slash, keep the query",
+  "breadth-first with discovery order, so the visit order is reproducible from the sitemap",
+  "follow only what is in the site, unvisited, undiscovered and on the configured host",
+  "depth and page limits are separate brakes, and both must be reported honestly",
+  "inbound links are a property of the whole site graph, not of the pages you happened to visit",
+]
