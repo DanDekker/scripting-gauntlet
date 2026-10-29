@@ -1,0 +1,58 @@
+{
+  "calibrated_at": "2026-10-29T23:44:57.989377+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "200-ps1-regex-groups",
+  "fixture_origin": "Synthetic transaction log stream authored for this drill",
+  "lineage": "scripting-gauntlet/ps1-regex-groups",
+  "results": [
+    {
+      "elapsed_ms": 372,
+      "language": "ps1",
+      "passed": true,
+      "path": "solutions/solve.ps1",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 28,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Reads $Matches unconditionally without checking -match result, leaking stale values into corrupt rows",
+      "elapsed_ms": 377,
+      "expected_diagnostic": "2/valid",
+      "language": "ps1",
+      "passed": true,
+      "path": "controls/wrong-stale-matches.ps1",
+      "problems": [
+        "parsed.csv row 2 [2/id]: expected '', got '101'",
+        "parsed.csv row 2 [2/status]: expected '', got 'SUCCESS'",
+        "parsed.csv row 2 [2/duration]: expected '', got '42'",
+        "parsed.csv row 2 [2/valid]: expected 'false', got 'true'",
+        "parsed.csv row 4 [4/id]: expected '', got '102'",
+        "parsed.csv row 4 [4/status]: expected '', got 'FAILED'",
+        "parsed.csv row 4 [4/duration]: expected '', got '120'",
+        "parsed.csv row 4 [4/valid]: expected 'false', got 'true'",
+        "summary.json['valid_records']: expected 3, got 5",
+        "summary.json['corrupt_lines']: expected 2, got 0",
+        "summary.json['avg_duration']: expected 59, got 68"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "8730068d9ca84c88d7c35d98a05469a96d6e854e2df736593b15deba2eb3d0ee",
+    "controls/manifest.toml": "d98166fd3e1d54e4f8528b32893e574a6521808f7ab58c8be19adbd5cb12bdfd",
+    "controls/wrong-stale-matches.ps1": "9504e38db53153a2ab3b34f64df9238f3217b3ffc1fddd862a6a9e1c957847f0",
+    "drill.toml": "8757ba80df9b4eac4b19fd5b6dffd4160048e9cc391107319997cebea789d330",
+    "fixtures/events.log": "a64cea04acda931b178d7d0d22b34624c6e6a06e5fc486d3526efb443c30be0f",
+    "solutions/solve.ps1": "6d915b52c0c71e269f38466e67ae77606fbdf4387ec4d9d8c9a86361eba4a68a",
+    "solutions/solve.py": "d4bf27b0bd19070823df24ae9c933447cc1a9d79c27265c7fa3916cbef1b39db",
+    "verify.py": "846705a403b75649b3d6258b611f795cec547cad49fc7ff311ffc4db5f50cd86"
+  },
+  "stage": "reference-calibrated"
+}

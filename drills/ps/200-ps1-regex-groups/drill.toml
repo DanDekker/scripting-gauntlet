@@ -1,0 +1,11 @@
+id = "200-ps1-regex-groups"
+family = "text-munging"
+title = "Parse structured logs with PowerShell regex groups without leaking stale state"
+difficulty = 4
+timebox = 300
+teaches = [
+  "-match sets $Matches automatic variable with full match and named/numbered capture groups",
+  "when -match fails, PowerShell does NOT clear $Matches, retaining stale values from prior matches",
+  "unconditionally reading $Matches in loops leaks previous record attributes into corrupt rows",
+  "defensive regex parsing must branch on the boolean return of -match before accessing $Matches",
+]

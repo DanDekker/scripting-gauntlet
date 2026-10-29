@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/ps1-regex-groups"
+fixture_origin = "Synthetic transaction log stream authored for this drill"
+
+[[negative]]
+path = "controls/wrong-stale-matches.ps1"
+defect = "Reads $Matches unconditionally without checking -match result, leaking stale values into corrupt rows"
+expect = "2/valid"
