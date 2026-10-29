@@ -51,6 +51,7 @@ INTERPRETERS: dict[str, list[str]] = {
     "rb": ["ruby"],
     "pl": ["perl"],
     "tcl": ["tclsh"],
+    "jxa": ["osascript", "-l", "JavaScript"],
     "ps1": ["pwsh", "-NoProfile", "-NonInteractive", "-File"],
 }
 
@@ -394,6 +395,9 @@ def cmd_run(args: argparse.Namespace) -> int:
             print(f"{drill.id:<28} {'':>8}  SKIP  (no solution for {sorted(only) or 'any language'})")
             continue
         for lang in langs:
+            if lang == "jxa" and sys.platform != "darwin":
+                print(f"{drill.id:<28} {lang:>8}  SKIP  (JXA requires macOS)")
+                continue
             ok, problems, elapsed, work = run_solution(
                 drill, lang, drill.solutions[lang], args.timeout, args.keep, args.verbose
             )

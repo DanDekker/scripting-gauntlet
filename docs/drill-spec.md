@@ -74,9 +74,10 @@ runner checks the probe's exit status before loading `verify.py`.
 | `.rb` | `ruby` |
 | `.pl` | `perl` |
 | `.tcl` | `tclsh` |
+| `.jxa` | `osascript -l JavaScript` (macOS only) |
 
 Add to `INTERPRETERS` in `harness/run.py` to support more. `make check` runs every drill
-against every solution it ships.
+against every available solution it ships; JXA is skipped outside macOS.
 
 ## Calibration
 
