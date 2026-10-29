@@ -1,0 +1,5 @@
+{"id": 1, "user": {"id": "u1", "country": "CA"}, "amount": 12.5, "tags": ["red", "new"]}
+{"id": 2, "user": {"id": "u2", "country": "US"}, "amount": 30, "tags": ["red"]}
+{"id": 3, "user": {"id": "u3", "country": "CA"}, "amount": 7.25, "tags": ["new", "sale"]}
+{"id": 4, "user": {"id": "u1", "country": "CA"}, "amount": 5, "tags": []}
+{"id": 5, "user": {"id": "u4", "country": "US"}, "amount": 100, "tags": ["sale", "clearance"]}

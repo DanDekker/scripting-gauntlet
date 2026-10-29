@@ -1,0 +1,11 @@
+id = "009-jsonl-stream"
+family = "data-wrangling"
+title = "Fold a JSONL stream into country and tag rollups"
+difficulty = 2
+timebox = 180
+teaches = [
+  "one JSON object per line, folded in a single pass",
+  "jq reduce over inputs instead of slurping the file",
+  "explode a nested array into its own count",
+  "count distinct keys with a set, not a list",
+]
