@@ -1,0 +1,10 @@
+id = "041-find-largest"
+family = "data-wrangling"
+title = "Find the biggest file in a tree"
+difficulty = 1
+timebox = 90
+teaches = [
+  "find the leaves, not the directories",
+  "byte size comes from the filesystem, not from the reading tool",
+  "sort with an explicit tie-break so the answer is reproducible",
+]

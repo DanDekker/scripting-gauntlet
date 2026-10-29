@@ -1,0 +1,3 @@
+disk full on /var again
+move the app logs first
+edge logs are rotated weekly

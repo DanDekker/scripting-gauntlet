@@ -1,0 +1,6 @@
+2026-09-30T00:01:02 INFO  batch 41 starting, queue depth 812, workers 8
+2026-09-30T00:01:19 WARN  shard 3 slow: 2210ms, expected under 500ms
+2026-09-30T00:02:44 ERROR shard 7 unavailable after 5 attempts, skipping
+2026-09-30T00:03:10 INFO  batch 41 finished 798 records in 128s
+2026-09-30T00:03:11 INFO  flush ok, buffer empty, next run 00:30
+2026-09-30T00:03:12 INFO  worker pool idle
