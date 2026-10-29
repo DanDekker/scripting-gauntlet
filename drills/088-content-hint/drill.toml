@@ -1,0 +1,11 @@
+id = "088-content-hint"
+family = "text-munging"
+title = "Find the note that contains a half-remembered line"
+difficulty = 3
+timebox = 240
+teaches = [
+  "normalise case and whitespace on both sides of the comparison",
+  "a matching line is reported with its path and line number",
+  "skip files too large to be the note you meant",
+  "a near miss in another word order is not a match",
+]
