@@ -1,0 +1,11 @@
+id = "089-semver-sort"
+family = "data-wrangling"
+title = "Sort loose semantic versions and resolve candidate releases"
+difficulty = 3
+timebox = 240
+teaches = [
+  "strip build metadata before comparison (+build metadata is ignored in precedence)",
+  "prerelease versions have lower precedence than normal releases",
+  "numeric prerelease identifiers compare numerically; alphabetic compare lexically",
+  "a leading 'v' or 'V' prefix is common in git tags and must be tolerated",
+]
