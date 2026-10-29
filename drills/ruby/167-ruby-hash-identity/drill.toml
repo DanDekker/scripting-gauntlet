@@ -1,0 +1,11 @@
+id = "167-ruby-hash-identity"
+family = "data-wrangling"
+title = "Tally ids that arrive as integers, floats and strings"
+difficulty = 3
+timebox = 240
+teaches = [
+  "Hash keys use eql? and hash: 1 and 1.0 are two different keys",
+  "1 == 1.0 is true, but 1.eql?(1.0) is false, so a hash will not merge them",
+  "a string id and a numeric id are different entities even when they print the same",
+  "Hash#[] returns nil for a missing key; fetch or key? states the intent",
+]

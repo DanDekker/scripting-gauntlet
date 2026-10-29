@@ -1,0 +1,10 @@
+{"id": 1, "action": "login"}
+{"id": 1.0, "action": "view"}
+{"id": "1", "action": "login"}
+{"id": 2, "action": "login"}
+{"id": 1, "action": "view"}
+{"id": "1", "action": "view"}
+{"id": 1.0, "action": "logout"}
+{"id": "2", "action": "login"}
+{"id": null, "action": "login"}
+{"action": "login"}

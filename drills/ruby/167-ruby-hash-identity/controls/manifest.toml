@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/ruby-hash-identity"
+fixture_origin = "Synthetic JSONL events with mixed-type ids authored for this drill"
+
+[[negative]]
+path = "controls/wrong-raw-key.rb"
+defect = "Counts on the raw JSON value, so 1 and 1.0 become separate rows instead of one"
+expect = "1/numeric/events"

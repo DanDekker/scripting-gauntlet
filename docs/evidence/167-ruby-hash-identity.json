@@ -1,0 +1,53 @@
+{
+  "calibrated_at": "2026-10-29T22:44:45.928787+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "167-ruby-hash-identity",
+  "fixture_origin": "Synthetic JSONL events with mixed-type ids authored for this drill",
+  "lineage": "scripting-gauntlet/ruby-hash-identity",
+  "results": [
+    {
+      "elapsed_ms": 49,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 142,
+      "language": "rb",
+      "passed": true,
+      "path": "solutions/solve.rb",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Counts on the raw JSON value, so 1 and 1.0 become separate rows instead of one",
+      "elapsed_ms": 145,
+      "expected_diagnostic": "1/numeric/events",
+      "language": "rb",
+      "passed": true,
+      "path": "controls/wrong-raw-key.rb",
+      "problems": [
+        "tally.csv: expected 4 rows, got 5",
+        "tally.csv row 1 [1/numeric/events]: expected 4, got '2'",
+        "tally.csv row 3 [2/numeric/id]: expected '2', got '1.0'",
+        "tally.csv row 3 [2/numeric/events]: expected 1, got '2'",
+        "tally.csv row 4 [2/string/kind]: expected 'string', got 'numeric'",
+        "summary.json['ids']: expected 4, got 5"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "2fa97eff014c1ccfec2f708a74d0ea695ebabd57c1a1591191731ea3d915d692",
+    "controls/manifest.toml": "d11d0fe675b2fe9db49f28bdef358c617eac3e31ab8cedffa2e6d26891defb72",
+    "controls/wrong-raw-key.rb": "7f2d3b3061248f5a4e39a21b519acfbcf22bd25fecb9a44128bee2c7c44b3f06",
+    "drill.toml": "b437cc4e8f27061835cda2b6101a0bb801dffa93877464ea2c0e387e39ff4092",
+    "fixtures/events.jsonl": "587385aecf4dfb1d475c8d213bcfb36f1b53f32b051c2b38449544469352a703",
+    "solutions/solve.py": "a01c9cc7e52d8c77af76698783f8cd797a0d8729af2604b2f64cb9ec344c7bf7",
+    "solutions/solve.rb": "6f7b7a16b9d986fff0fc5454e43aaa8f3fbdeab843e7cc92307e5ac377403c4e",
+    "verify.py": "45b5adbdefc5ba5dc9d43c9b0d318add3fed6770417b8a4b2f3feb88de8ec122"
+  },
+  "stage": "reference-calibrated"
+}
