@@ -1,0 +1,10 @@
+path,tokens,priority
+docs/api.md, 300 ,1
+src/main.py,250,2
+
+docs/api.md,180,1
+   ,40,2
+tests/test_main.py,120,3
+src/util.py,0,2
+README.md,tbd,1
+assets/logo.png, 90 ,4

@@ -1,0 +1,11 @@
+id = "093-context-budget"
+family = "data-wrangling"
+title = "Pack source files into an agent's context window under a token budget"
+difficulty = 3
+timebox = 240
+teaches = [
+  "dedupe a table last-row-wins before you spend anything",
+  "a deterministic order (priority, then path) is what makes a greedy pack reproducible",
+  "a zero-token file still occupies a slot and must be included",
+  "skip and continue: one file that does not fit must not stop the fill",
+]

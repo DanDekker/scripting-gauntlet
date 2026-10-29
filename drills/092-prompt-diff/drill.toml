@@ -1,0 +1,11 @@
+id = "092-prompt-diff"
+family = "text-munging"
+title = "Diff two versions of an agent prompt and catch a dropped safety rule"
+difficulty = 3
+timebox = 240
+teaches = [
+  "normalize line endings and whitespace before comparing two texts",
+  "a set difference over normalized lines, not a line diff algorithm, answers the question",
+  "a whitespace-only edit is not a change; a dropped 'never' is",
+  "classify removed lines by the guardrail words they contain, case-insensitively",
+]
