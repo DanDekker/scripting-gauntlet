@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/perl-split-limits"
+fixture_origin = "Synthetic service records with empty trailing fields authored for this drill"
+
+[[negative]]
+path = "controls/wrong-no-limit.pl"
+defect = "Splits without the -1 limit, so a trailing empty score becomes a 3-field line and is rejected"
+expect = "bob/name"

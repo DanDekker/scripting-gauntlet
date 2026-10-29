@@ -1,0 +1,8 @@
+# service accounts
+carol:admin:ok:10
+bob:user:ok:
+alice:admin::7
+dave::x:3
+eve:user:ok:5:extra
+frank:user
+:nobody:x:1

@@ -1,0 +1,54 @@
+{
+  "calibrated_at": "2026-10-29T22:19:19.693637+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "161-perl-split-limits",
+  "fixture_origin": "Synthetic service records with empty trailing fields authored for this drill",
+  "lineage": "scripting-gauntlet/perl-split-limits",
+  "results": [
+    {
+      "elapsed_ms": 12,
+      "language": "pl",
+      "passed": true,
+      "path": "solutions/solve.pl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 30,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Splits without the -1 limit, so a trailing empty score becomes a 3-field line and is rejected",
+      "elapsed_ms": 9,
+      "expected_diagnostic": "bob/name",
+      "language": "pl",
+      "passed": true,
+      "path": "controls/wrong-no-limit.pl",
+      "problems": [
+        "rows.csv: expected 3 rows, got 2",
+        "rows.csv row 2 [bob/name]: expected 'bob', got 'carol'",
+        "rows.csv row 2 [bob/role]: expected 'user', got 'admin'",
+        "rows.csv row 2 [bob/score]: expected '', got '10'",
+        "summary.json['rows']: expected 3, got 2",
+        "summary.json['empty_scores']: expected 1, got 0",
+        "summary.json['invalid']: expected 4, got 5"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "fcfce8d5de53b8ab3b68de58b2623ae2b5b4dccdb18b92c27e8b6fb173e64646",
+    "controls/manifest.toml": "3008fd8916734a7410ab1d24f0b6fca3bc2d44b98596d118dd69fc4d3174b9f4",
+    "controls/wrong-no-limit.pl": "926942c2303113bff2b0edc6413c1134d66ec57d5f5d8cabb85c4d7d796c154a",
+    "drill.toml": "857bd82b6e8a9c5c4ac834a81c6aee6b10cc68c5dc9672e0cb077d0ad86c13fd",
+    "fixtures/rows.txt": "2920d89b0b5b63a674dcd2ca775ef3ec8dc8319fd364814200849e279367ac41",
+    "solutions/solve.pl": "99d7bfb42f909293a4b7ce8e08c969160ac13b70cfe7923479fca17ef876aca2",
+    "solutions/solve.py": "10a6d80231c6005079e0f5777d24feeaf5655dee4fff67a1c6bb4d97db6c591c",
+    "verify.py": "718f8edc5172d0d20a27f514f948c45d02513292b6bd5a8d144638d1d160c29d"
+  },
+  "stage": "reference-calibrated"
+}

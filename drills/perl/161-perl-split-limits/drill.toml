@@ -1,0 +1,11 @@
+id = "161-perl-split-limits"
+family = "text-munging"
+title = "Parse colon records where the trailing field is allowed to be empty"
+difficulty = 3
+timebox = 240
+teaches = [
+  "split drops trailing empty fields unless the limit is -1",
+  "split ' ' is awk-style whitespace, split / / is a single literal space",
+  "an empty trailing field is data; a missing field is a malformed line",
+  "count empty notes and empty scores separately from invalid rows",
+]
