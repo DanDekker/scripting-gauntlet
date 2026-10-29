@@ -1,0 +1,6 @@
+Architecture:                         x86_64
+CPU(s):                               8
+Model name:                           AMD EPYC 7313P 16-Core Processor
+Thread(s) per core:                   2
+Core(s) per socket:                  4
+Socket(s):                            1

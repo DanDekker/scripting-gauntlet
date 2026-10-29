@@ -1,0 +1,15 @@
+{
+  "CsSystemType": "x64-based PC",
+  "processors": [
+    {
+      "Name": "AMD EPYC 9374F 32-Core Processor",
+      "NumberOfCores": 4,
+      "NumberOfLogicalProcessors": 8
+    },
+    {
+      "Name": "AMD EPYC 9374F 32-Core Processor",
+      "NumberOfCores": 4,
+      "NumberOfLogicalProcessors": 8
+    }
+  ]
+}

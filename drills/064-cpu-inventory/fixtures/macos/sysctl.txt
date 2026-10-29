@@ -1,0 +1,5 @@
+machdep.cpu.brand_string: Apple M3 Pro
+hw.ncpu: 11
+hw.physicalcpu: 11
+hw.logicalcpu: 11
+hw.optional.arm64: 1
