@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog>
+  <product id="A-1" price="0.50">
+    <name>Bolt</name>
+    <tag>steel</tag>
+    <tag>small</tag>
+  </product>
+  <product id="B-2" price="1.25">
+    <name>Nut</name>
+    <tag>steel</tag>
+  </product>
+  <product id="C-3" price="0.75">
+    <name>Screw</name>
+  </product>
+</catalog>

@@ -1,0 +1,11 @@
+id = "011-xml-attrs"
+family = "data-wrangling"
+title = "Turn XML products into a flat table"
+difficulty = 3
+timebox = 240
+teaches = [
+  "attributes and child elements are different data",
+  "repeated child elements collapse into one cell",
+  "a scoped regex beats a whole-document one",
+  "sort the output, do not trust document order",
+]
