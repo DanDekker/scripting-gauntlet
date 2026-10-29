@@ -1,0 +1,11 @@
+id = "198-perl-state-variables"
+family = "data-wrangling"
+title = "Track consecutive failure streaks with lexical state variables"
+difficulty = 4
+timebox = 300
+teaches = [
+  "state $var creates persistent lexical variables initialized once across subroutine calls",
+  "my $var reinitializes every time subroutine scope is entered",
+  "state variables encapsulate accumulator state without polluting package namespace",
+  "streak tracking alerts trigger when consecutive failure count reaches threshold",
+]

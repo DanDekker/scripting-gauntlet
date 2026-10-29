@@ -1,0 +1,54 @@
+{
+  "calibrated_at": "2026-10-29T23:42:57.448225+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "198-perl-state-variables",
+  "fixture_origin": "Synthetic health check logs authored for this drill",
+  "lineage": "scripting-gauntlet/perl-state-variables",
+  "results": [
+    {
+      "elapsed_ms": 8,
+      "language": "pl",
+      "passed": true,
+      "path": "solutions/solve.pl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 27,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Declares hash with my instead of state, reinitializing streaks on every call and never triggering alerts",
+      "elapsed_ms": 8,
+      "expected_diagnostic": "3/streak",
+      "language": "pl",
+      "passed": true,
+      "path": "controls/wrong-my-variable.pl",
+      "problems": [
+        "streaks.csv row 3 [3/streak]: expected 2, got '1'",
+        "streaks.csv row 5 [5/streak]: expected 3, got '1'",
+        "streaks.csv row 5 [5/alert]: expected 'true', got 'false'",
+        "streaks.csv row 7 [7/streak]: expected 2, got '1'",
+        "streaks.csv row 8 [8/streak]: expected 3, got '1'",
+        "streaks.csv row 8 [8/alert]: expected 'true', got 'false'",
+        "summary.json is not valid JSON: Extra data: line 1 column 39 (char 38)"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "72c5072c73d7c9720156fa69e8f760fd0309ffff7c43fe2127a1f2401da9fcf9",
+    "controls/manifest.toml": "78e188b8596d384a5c95f0b69a396b4b285d9bf8a96bf4e10a089a012e9a5b35",
+    "controls/wrong-my-variable.pl": "9feb0b61f31393d1058e3bd19ba3cbab3bb29ab304eaee6d6e4a373c2d67dc44",
+    "drill.toml": "081c3e0a44f8280c02858f405bc238ffe1fd3dc2a794919f51ce683cf0ea86f3",
+    "fixtures/checks.log": "aecaaaa1f86f68a85345b3412ddb3b7a2b1ccb0cad96e7f3c044f532ff6ff0b5",
+    "solutions/solve.pl": "3c10fda264b97aa9a5a2e6e2542dd2f4432ece79f79e702160c15dd64e62fe15",
+    "solutions/solve.py": "99163a4a12ce6ad89f1785095786c88a569e0bf6dcdba04a910d42ab060150a6",
+    "verify.py": "1c4789eba71b18b92fa91eb7208edc2eac14c74e54448be19eed2ede3291ba09"
+  },
+  "stage": "reference-calibrated"
+}

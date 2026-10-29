@@ -1,0 +1,10 @@
+# Service health checks
+10:00:01 api OK
+10:00:02 auth FAIL
+10:00:03 auth FAIL
+10:00:04 api FAIL
+10:00:05 auth FAIL
+10:00:06 auth OK
+10:00:07 api FAIL
+10:00:08 api FAIL
+10:00:09 auth FAIL

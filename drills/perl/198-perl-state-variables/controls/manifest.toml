@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/perl-state-variables"
+fixture_origin = "Synthetic health check logs authored for this drill"
+
+[[negative]]
+path = "controls/wrong-my-variable.pl"
+defect = "Declares hash with my instead of state, reinitializing streaks on every call and never triggering alerts"
+expect = "3/streak"
