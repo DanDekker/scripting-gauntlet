@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/perl-version-sort"
+fixture_origin = "Synthetic release board with dotted versions authored for this drill"
+
+[[negative]]
+path = "controls/wrong-string-sort.pl"
+defect = "Sorts the version text with cmp, so 1.9.9 outranks 1.10.2"
+expect = "2/name"

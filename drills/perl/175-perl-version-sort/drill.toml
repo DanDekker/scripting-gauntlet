@@ -1,0 +1,11 @@
+id = "175-perl-version-sort"
+family = "data-wrangling"
+title = "Order releases by semantic version, not by string"
+difficulty = 4
+timebox = 240
+teaches = [
+  "string order puts 1.9.9 above 1.10.2; dotted versions compare component by component",
+  "the core version module parses dotted versions and overloads <=>",
+  "descending sort flips the comparator, not the list",
+  "a tie needs a second key or the order depends on the input sequence",
+]

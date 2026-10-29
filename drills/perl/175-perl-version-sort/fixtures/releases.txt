@@ -1,0 +1,8 @@
+# release board
+gamma 2.0.0
+alpha 1.10.2
+beta 1.9.9
+delta 1.10.2
+epsilon 1.2.10
+zeta beta
+eta 1.10.2

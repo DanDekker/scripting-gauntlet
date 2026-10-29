@@ -1,0 +1,56 @@
+{
+  "calibrated_at": "2026-10-29T22:57:04.336522+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "175-perl-version-sort",
+  "fixture_origin": "Synthetic release board with dotted versions authored for this drill",
+  "lineage": "scripting-gauntlet/perl-version-sort",
+  "results": [
+    {
+      "elapsed_ms": 10,
+      "language": "pl",
+      "passed": true,
+      "path": "solutions/solve.pl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 30,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Sorts the version text with cmp, so 1.9.9 outranks 1.10.2",
+      "elapsed_ms": 9,
+      "expected_diagnostic": "2/name",
+      "language": "pl",
+      "passed": true,
+      "path": "controls/wrong-string-sort.pl",
+      "problems": [
+        "ordered.csv row 2 [2/name]: expected 'alpha', got 'beta'",
+        "ordered.csv row 2 [2/version]: expected '1.10.2', got '1.9.9'",
+        "ordered.csv row 3 [3/name]: expected 'delta', got 'epsilon'",
+        "ordered.csv row 3 [3/version]: expected '1.10.2', got '1.2.10'",
+        "ordered.csv row 4 [4/name]: expected 'eta', got 'alpha'",
+        "ordered.csv row 5 [5/name]: expected 'beta', got 'delta'",
+        "ordered.csv row 5 [5/version]: expected '1.9.9', got '1.10.2'",
+        "ordered.csv row 6 [6/name]: expected 'epsilon', got 'eta'",
+        "ordered.csv row 6 [6/version]: expected '1.2.10', got '1.10.2'"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "815dd7fe77eb497437cc378dc338b9e9d70b973b40e997bcd3de34d390fb3083",
+    "controls/manifest.toml": "01bf913893545a1584fc60795d50a21df9e77d692373838d078f027bc304ec9e",
+    "controls/wrong-string-sort.pl": "204816f719bb41298cebbac22ba7c806361495e0f1aa69a65f7beb4dc002d397",
+    "drill.toml": "79f5e40f910e0e417e8bcd97ab677b2ce0fa754ba80bbe46d21d2e335bd99934",
+    "fixtures/releases.txt": "d3970114ab06ee03810b9209be98db915b72f56c3d17051b52a4838ec5338423",
+    "solutions/solve.pl": "b524e0ec85579c5669efaa5baa4e7eb6743db48957cb2a52622816538e6fd82a",
+    "solutions/solve.py": "589eb5b834862dc9cb6f4f07973bbf3ed293cebb8cfd0823bf2e131d2f9cf735",
+    "verify.py": "74916140ec752802947d5e2c19a2e101edd11b2a0d51971dfab79521d28a2503"
+  },
+  "stage": "reference-calibrated"
+}
