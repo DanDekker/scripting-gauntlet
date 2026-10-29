@@ -68,3 +68,8 @@ Calibration reports with source hashes and negative-control results:
   [Perl context dispatch](evidence/188-perl-context-dispatch.json),
   [Ruby lazy pipeline](evidence/189-ruby-lazy-pipeline.json), and
   [PowerShell exitcode trap](evidence/190-ps1-exitcode-trap.json)
+- Language mastery II: [Bash assoc presence](evidence/191-bash-assoc-presence.json),
+  [Lua env sandbox](evidence/192-lua-env-sandbox.json),
+  [Perl regex lookaround](evidence/193-perl-regex-lookaround.json),
+  [Ruby keyword arguments](evidence/194-ruby-keyword-arguments.json), and
+  [PowerShell pipeline unrolling](evidence/195-ps1-pipeline-unrolling.json)
