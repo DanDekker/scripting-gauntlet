@@ -1,0 +1,4 @@
+listen=9090
+timeout=45
+workers=8
+retries=3

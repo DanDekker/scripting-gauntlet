@@ -1,0 +1,3 @@
+listen=9090
+Bad-Key=1
+timeout=30

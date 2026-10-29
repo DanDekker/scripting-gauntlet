@@ -1,0 +1,11 @@
+id = "082-atomic-config"
+family = "file-hygiene"
+title = "Replace a live config atomically and refuse a bad update"
+difficulty = 3
+timebox = 240
+teaches = [
+  "the temp file must live in the target's own directory or rename is a copy",
+  "validate the candidate before the live file is touched",
+  "copy the mode across so the daemon can still read it",
+  "leave no temp files and no half-written config behind",
+]
