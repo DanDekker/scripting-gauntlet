@@ -1,0 +1,15 @@
+System prompt for {{ name }}.
+
+Tone: {{tone}}. Keep every answer {{ tone }}.
+Budget: {{budget}} items, streaming={{streaming}}, cache={{cache}}.
+Tags: {{tags}}
+Config: {{config}}
+Ratio: {{ratio}}
+Owner: {{user.name}}
+Reviewed by {{ owner }}
+Escalate to {{ contact|ops@example.com }} or {{nope|}}.
+Repeat: {{name}} / {{name}}
+Empty braces {{}} and a lone {{ stay literal.
+Split {{split_
+name}} stays literal too.
+Done.

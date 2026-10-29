@@ -1,0 +1,13 @@
+{
+  "name": "Ada",
+  "tone": "terse",
+  "budget": 42,
+  "streaming": true,
+  "cache": null,
+  "tags": ["fast", "small"],
+  "config": {"retries": 3, "mode": "strict"},
+  "ratio": 0.75,
+  "user.name": "Ada Lovelace",
+  "debug": false,
+  "unused_key": "never used"
+}

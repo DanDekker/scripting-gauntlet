@@ -1,0 +1,11 @@
+id = "114-md-links"
+family = "file-hygiene"
+title = "Find the broken links in a set of markdown files"
+difficulty = 3
+timebox = 240
+teaches = [
+  "internal links rot silently: a renamed heading breaks every reference to its anchor",
+  "an anchor is derived, not written: lowercase, non-alphanumerics collapsed to '-', ends trimmed",
+  "resolve a relative target from the file that contains it, then percent-decode it",
+  "a link inside a fenced code block is an example, not a link",
+]

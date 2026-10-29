@@ -1,0 +1,12 @@
+requests 2.31.0
+flask 2.0.1
+urllib3 1.25.11
+numpy 1.26.4
+django 3.2.0
+pkg 1.4.0
+other 0.1.0
+pyyaml 5.4.1
+idna 2.6
+click 8.1.7
+six 1.16
+pip 24.0

@@ -1,0 +1,11 @@
+id = "112-jwt-claims"
+family = "system-recon"
+title = "Decode an auth token and tell me whether it is still good"
+difficulty = 3
+timebox = 240
+teaches = [
+  "a JWT payload is base64url, not encryption: decode it and read the claims",
+  "an expiry claim is data, not a verdict: exp <= now is expired, absent exp never expires",
+  "priority matters: alg=none is worth flagging before expiry, and expired beats not-yet-valid",
+  "a claim of the wrong type is ignored rather than trusted",
+]

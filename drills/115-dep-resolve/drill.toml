@@ -1,0 +1,11 @@
+id = "115-dep-resolve"
+family = "data-wrangling"
+title = "Work out which declared dependencies are actually satisfied"
+difficulty = 4
+timebox = 300
+teaches = [
+  "declared and installed are different worlds: a resolver says exactly where they disagree",
+  "a specifier set is a conjunction, and ~= pins the prefix, not the exact version",
+  "a marker line is not a requirement, and an extras block is not part of the name",
+  "first occurrence wins for a package required twice; whatever is left over is extra",
+]

@@ -1,0 +1,11 @@
+id = "113-template-vars"
+family = "text-munging"
+title = "Fill a prompt template and report every hole in it"
+difficulty = 3
+timebox = 240
+teaches = [
+  "a template with an unresolved hole fails silently in production: enumerate the holes",
+  "a default is a fallback, not a value: it is used only when the key is absent",
+  "never render a raw object into a prompt — objects and arrays need compact JSON text",
+  "placeholder matching is line-scoped: a {{ split over two lines is just text",
+]
