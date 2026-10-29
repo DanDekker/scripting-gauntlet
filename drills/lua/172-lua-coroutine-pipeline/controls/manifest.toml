@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/lua-coroutine-pipeline"
+fixture_origin = "Synthetic stream log with a bad amount authored for this drill"
+
+[[negative]]
+path = "controls/wrong-skip-bad.lua"
+defect = "Catches the bad record per line and keeps going, so the run never aborts and the later line is counted"
+expect = "info/total"

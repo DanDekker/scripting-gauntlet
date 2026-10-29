@@ -1,0 +1,52 @@
+{
+  "calibrated_at": "2026-10-29T22:57:03.805445+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "172-lua-coroutine-pipeline",
+  "fixture_origin": "Synthetic stream log with a bad amount authored for this drill",
+  "lineage": "scripting-gauntlet/lua-coroutine-pipeline",
+  "results": [
+    {
+      "elapsed_ms": 6,
+      "language": "lua",
+      "passed": true,
+      "path": "solutions/solve.lua",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 28,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Catches the bad record per line and keeps going, so the run never aborts and the later line is counted",
+      "elapsed_ms": 5,
+      "expected_diagnostic": "info/total",
+      "language": "lua",
+      "passed": true,
+      "path": "controls/wrong-skip-bad.lua",
+      "problems": [
+        "totals.csv row 2 [info/total]: expected 33, got '132'",
+        "totals.csv row 2 [info/count]: expected 3, got '4'",
+        "summary.json['lines']: expected 6, got 7",
+        "summary.json['processed']: expected 5, got 6",
+        "summary.json['aborted']: expected 6, got None"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "cbb59013fb47122ebf6159eb04ea5d3d1d251c30be5a7d3cae54ec2072297742",
+    "controls/manifest.toml": "76b1c76ee9a9585627f4eecd666956fd5881754221169e8e9bc34c6c322433a0",
+    "controls/wrong-skip-bad.lua": "cf6ad72eaa8d6446831f83c5e43876dad92a6943b6f6f9f01511447b1a371afc",
+    "drill.toml": "1941dffdf24505dc33881c4ca6bcd00ace6908c1658fc57f2dae51d78a975920",
+    "fixtures/stream.log": "80f30bd77fdc341b0c94fa682aed3e32d47ecde97b73682064b811c8425ecf41",
+    "solutions/solve.lua": "9544f53e8c2378c41274ff71cc8a2e5d65360dc3ad365d1299f744ffecc6521a",
+    "solutions/solve.py": "acd406f07c654c43874d27321de1f194e749111ed4a75245c5aec883ff2dc312",
+    "verify.py": "a722b23e152b442a3cda5c6fb358f84a19213a9886b7e15fdc49c2231c530c44"
+  },
+  "stage": "reference-calibrated"
+}

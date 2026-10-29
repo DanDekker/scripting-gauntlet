@@ -1,0 +1,7 @@
+alice info 10
+bob warn 5
+carol info 20
+dave error 7
+eve info 3
+frank warn x
+grace info 99

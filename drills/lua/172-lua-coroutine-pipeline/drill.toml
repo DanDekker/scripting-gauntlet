@@ -1,0 +1,11 @@
+id = "172-lua-coroutine-pipeline"
+family = "text-munging"
+title = "Stream a log through a coroutine producer and abort on the first bad record"
+difficulty = 4
+timebox = 300
+teaches = [
+  "coroutine.wrap returns a function whose errors propagate into the caller",
+  "a chunked reader must carry a partial line across the 4096-byte boundary",
+  "an error inside the producer leaves the coroutine dead; the driver must see it",
+  "a fatal record aborts the run: report the line number and the totals before it",
+]
