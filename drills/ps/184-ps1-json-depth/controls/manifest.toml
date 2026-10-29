@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/ps1-json-depth"
+fixture_origin = "Synthetic nested service config authored for this drill"
+
+[[negative]]
+path = "controls/wrong-default-depth.ps1"
+defect = "Serialises the echo without -Depth, so the default depth of 2 replaces deep objects with a type name"
+expect = "service.limits.cpu"

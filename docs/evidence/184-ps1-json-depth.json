@@ -1,0 +1,48 @@
+{
+  "calibrated_at": "2026-10-29T23:12:17.926720+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "184-ps1-json-depth",
+  "fixture_origin": "Synthetic nested service config authored for this drill",
+  "lineage": "scripting-gauntlet/ps1-json-depth",
+  "results": [
+    {
+      "elapsed_ms": 925,
+      "language": "ps1",
+      "passed": true,
+      "path": "solutions/solve.ps1",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 42,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Serialises the echo without -Depth, so the default depth of 2 replaces deep objects with a type name",
+      "elapsed_ms": 794,
+      "expected_diagnostic": "service.limits.cpu",
+      "language": "ps1",
+      "passed": true,
+      "path": "controls/wrong-default-depth.ps1",
+      "problems": [
+        "echo.json: service.limits.cpu was truncated to '@{max=4; burst=8}'"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "8c0a71e0d9803acaee7326972ab375b14d073129976d6ba7aa2445e13f136a94",
+    "controls/manifest.toml": "a4810ba5c2c38645334a6d8922d5ef69fa9bb968db607d083921b2467214b963",
+    "controls/wrong-default-depth.ps1": "1e1674584a54013119f51c11db2b3ba59ab0cf2f5cfbd1b080d9419fae434eaf",
+    "drill.toml": "51ffaf0e6ff9f6bd49152ca1cd6432e434600939e0ae898d6aa70a3b1337d87f",
+    "fixtures/config.json": "67132734903e447b44fb4af6e8163c6eb450902c2a3173221c49473605f7d4d5",
+    "solutions/solve.ps1": "65623eb2171323d92e9c534b6b5253bc71cccaa4985897c5f0f4e788f4585cc0",
+    "solutions/solve.py": "d67970b1c76885c8d1b743addecf38fea9c1eff9ad58e15da4c7843b801fba05",
+    "verify.py": "737b7ede2ff4a5241263ebb0a8eaca64a16955e1c1aee6ca4d715882a3a3df8d"
+  },
+  "stage": "reference-calibrated"
+}

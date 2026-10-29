@@ -1,0 +1,11 @@
+id = "184-ps1-json-depth"
+family = "data-wrangling"
+title = "Flatten nested JSON without letting serialisation truncate it"
+difficulty = 4
+timebox = 300
+teaches = [
+  "ConvertTo-Json truncates at depth 2 by default and writes System.Collections.Hashtable",
+  "the truncation warns on stream 3, not stream 2, so a silent run hides it",
+  "-Depth N raises the limit; depth is measured on the object graph",
+  "ConvertFrom-Json gives PSCustomObject: null is a value, a missing key is absent",
+]

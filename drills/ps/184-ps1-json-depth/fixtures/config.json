@@ -1,0 +1,1 @@
+{"service":{"name":"api","limits":{"cpu":{"max":4,"burst":8},"mem":{"max_gb":16}},"tags":["a","b"]},"debug":false,"note":null}
