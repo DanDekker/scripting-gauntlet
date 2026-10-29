@@ -1,0 +1,11 @@
+id = "154-lua-error-level"
+family = "text-munging"
+title = "Validate a config file and report each failure without a source prefix"
+difficulty = 3
+timebox = 240
+teaches = [
+  "error(msg) prefixes the message with 'file:line:'; error(msg, 0) does not",
+  "pcall returns false plus the raised value, so one bad line does not end the run",
+  "raise a table when the message has to carry structure, and read it back after pcall",
+  "keep the error text exactly as raised, including the offending value",
+]

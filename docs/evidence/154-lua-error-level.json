@@ -1,0 +1,51 @@
+{
+  "calibrated_at": "2026-10-29T21:47:51.951038+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "154-lua-error-level",
+  "fixture_origin": "Synthetic service config with bad directives authored for this drill",
+  "lineage": "scripting-gauntlet/lua-error-level",
+  "results": [
+    {
+      "elapsed_ms": 46,
+      "language": "lua",
+      "passed": true,
+      "path": "solutions/solve.lua",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 224,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Raises the reason without level 0, so every message carries a file:line: prefix",
+      "elapsed_ms": 21,
+      "expected_diagnostic": "4/reason",
+      "language": "lua",
+      "passed": true,
+      "path": "controls/wrong-prefixed-error.lua",
+      "problems": [
+        "errors.csv row 1 [4/reason]: expected 'not an integer: three', got '...ua/154-lua-error-level/controls/wrong-prefixed-error.lua:26: not an integer: three'",
+        "errors.csv row 3 [9/reason]: expected \"missing '='\", got \"...ua/154-lua-error-level/controls/wrong-prefixed-error.lua:19: missing '='\"",
+        "errors.csv row 4 [10/reason]: expected 'not an integer: -3', got '...ua/154-lua-error-level/controls/wrong-prefixed-error.lua:26: not an integer: -3'",
+        "errors.csv row 5 [11/reason]: expected 'bad key: two words', got '...ua/154-lua-error-level/controls/wrong-prefixed-error.lua:23: bad key: two words'"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "c6a1b4157414339214cd60fefcb9c4bdaa3a2e7b8e19c09446eca2404aeb01da",
+    "controls/manifest.toml": "c65329ecaf48f0e919dd81826ef41a9eae0ea491044fa69dec8f8d16816b163a",
+    "controls/wrong-prefixed-error.lua": "72b36922884c75654add4f95bddd4f7fc9f96e1f372c2b1b66b3b679a9a9057b",
+    "drill.toml": "5036fd4cf28bf771ca76328c67f3af012ce789d791759d09c96197de2c629a3b",
+    "fixtures/records.txt": "15be37143bd2423e7fb9f6408a441eed647566f0b92ec6fe9308e022b481c146",
+    "solutions/solve.lua": "f5afdb03b0f9566d19f1e6b07893d154684dc8f0aec92ae1194b779d882ceb89",
+    "solutions/solve.py": "64ff6f88b4be7e505c70bf5fbcd25dd588a91d9d6b190ffd6b4d888a62eb67a4",
+    "verify.py": "4e19b33b2e56244bdc938116ea770b9f9d92d61ef99d881bf07ca8cf3d2afd12"
+  },
+  "stage": "reference-calibrated"
+}

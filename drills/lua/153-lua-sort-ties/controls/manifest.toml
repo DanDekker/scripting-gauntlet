@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/lua-sort-ties"
+fixture_origin = "Synthetic team scores authored for this drill"
+
+[[negative]]
+path = "controls/wrong-tiebreak.lua"
+defect = "Breaks score ties by name descending instead of keeping the input order"
+expect = "alpha/name"

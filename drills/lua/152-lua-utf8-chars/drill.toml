@@ -1,0 +1,11 @@
+id = "152-lua-utf8-chars"
+family = "text-munging"
+title = "Count characters, not bytes, and reject a line that is not UTF-8"
+difficulty = 3
+timebox = 240
+teaches = [
+  "#s is a byte count; utf8.len(s) is the character count",
+  "utf8.len returns nil plus the position of the first invalid byte",
+  "utf8.offset finds the byte index of the n-th character, so you can slice by characters",
+  "a captured command's output may contain any bytes, valid text or not",
+]

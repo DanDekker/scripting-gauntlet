@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/lua-error-level"
+fixture_origin = "Synthetic service config with bad directives authored for this drill"
+
+[[negative]]
+path = "controls/wrong-prefixed-error.lua"
+defect = "Raises the reason without level 0, so every message carries a file:line: prefix"
+expect = "4/reason"

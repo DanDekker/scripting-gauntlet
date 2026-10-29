@@ -1,0 +1,55 @@
+{
+  "calibrated_at": "2026-10-29T21:47:51.149314+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "153-lua-sort-ties",
+  "fixture_origin": "Synthetic team scores authored for this drill",
+  "lineage": "scripting-gauntlet/lua-sort-ties",
+  "results": [
+    {
+      "elapsed_ms": 47,
+      "language": "lua",
+      "passed": true,
+      "path": "solutions/solve.lua",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 266,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Breaks score ties by name descending instead of keeping the input order",
+      "elapsed_ms": 117,
+      "expected_diagnostic": "alpha/name",
+      "language": "lua",
+      "passed": true,
+      "path": "controls/wrong-tiebreak.lua",
+      "problems": [
+        "sorted.csv row 1 [alpha/name]: expected 'alpha', got 'epsilon'",
+        "sorted.csv row 1 [alpha/index]: expected 1, got '5'",
+        "sorted.csv row 3 [epsilon/name]: expected 'epsilon', got 'alpha'",
+        "sorted.csv row 3 [epsilon/index]: expected 5, got '1'",
+        "sorted.csv row 4 [delta/name]: expected 'delta', got 'eta'",
+        "sorted.csv row 4 [delta/index]: expected 4, got '6'",
+        "sorted.csv row 5 [eta/name]: expected 'eta', got 'delta'",
+        "sorted.csv row 5 [eta/index]: expected 6, got '4'"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "5ed671320ba86b0352a5a8b080d5470e230aedb7af451f130d0d18da76503126",
+    "controls/manifest.toml": "1a81a544deee2112910bd341b1a51e3e58bb6e53eee320d04f13adcfd00023f3",
+    "controls/wrong-tiebreak.lua": "e75713e2c3a2fcb6c045b1df9afef63d154501b114b7d590e04e3d9fd9f9a8e6",
+    "drill.toml": "d2570bb09716a55dc3b5c7055e964a7769ee51c36531be591696e87d902024f6",
+    "fixtures/scores.txt": "be7feb2495cd120987ccbb872f07c96b76b37bfb96836508bf154cba3c14e0eb",
+    "solutions/solve.lua": "e08323f7bbbb1f67fc294b1775f71bbe46ca65ca72b94bff4452a0fd053d4298",
+    "solutions/solve.py": "a0b7f03bcb1833e31ce8dd086f0a6bc0377538bbe624a793e77c86b73a63b804",
+    "verify.py": "f99d399cd44f33aee6b60d8143525020c48ac4aabef705334ed4ab7b282991d7"
+  },
+  "stage": "reference-calibrated"
+}

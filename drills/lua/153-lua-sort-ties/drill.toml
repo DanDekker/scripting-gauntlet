@@ -1,0 +1,11 @@
+id = "153-lua-sort-ties"
+family = "data-wrangling"
+title = "Rank scores by value and keep tied rows in input order"
+difficulty = 3
+timebox = 240
+teaches = [
+  "table.sort is not stable: equal keys can come out in any order",
+  "add the original position to the comparator to make the order deterministic",
+  "compare scores numerically, so 10 outranks 9",
+  "count the records that share a score with another record, not the number of groups",
+]

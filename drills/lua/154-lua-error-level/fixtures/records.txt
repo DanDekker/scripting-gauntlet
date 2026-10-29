@@ -1,0 +1,12 @@
+# service config
+alpha=1
+beta=2
+gamma=three
+delta=4
+eps=5
+zeta=6
+alpha=7
+bad line
+neg=-3
+two words=x
+eta=8

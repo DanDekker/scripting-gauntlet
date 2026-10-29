@@ -1,0 +1,8 @@
+# team scores
+alpha 30
+beta 30
+gamma 9
+delta 10
+epsilon 30
+zeta abc
+eta 10
