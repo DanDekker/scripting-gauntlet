@@ -1,0 +1,51 @@
+{
+  "calibrated_at": "2026-10-29T23:12:14.162891+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "178-lua-number-printing",
+  "fixture_origin": "Synthetic numeric tokens authored for this drill",
+  "lineage": "scripting-gauntlet/lua-number-printing",
+  "results": [
+    {
+      "elapsed_ms": 36,
+      "language": "lua",
+      "passed": true,
+      "path": "solutions/solve.lua",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 34,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Renders the plain column with %.6g instead of tostring, so a float loses its .0",
+      "elapsed_ms": 8,
+      "expected_diagnostic": "1.0/plain",
+      "language": "lua",
+      "passed": true,
+      "path": "controls/wrong-six-digit-plain.lua",
+      "problems": [
+        "numbers.csv row 2 [1.0/plain]: expected '1.0', got '1'",
+        "numbers.csv row 5 [1000000000000000/plain]: expected '1000000000000000', got '1e+15'",
+        "numbers.csv row 8 [9007199254740993/plain]: expected '9007199254740993', got '9.0072e+15'",
+        "summary.json['scientific']: expected 2, got 4"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "143a4610cbdc0f13e8890f234268da2930cbfeaa6cd230df9118b90d9aad70ff",
+    "controls/manifest.toml": "83a958560cf3a8447ae6a06302d3009626b3602d8464d84402e811e0426df0ce",
+    "controls/wrong-six-digit-plain.lua": "79b28b4220f6ce0030d55b899343f0fc5657faa05a69808fdd83810843f9f444",
+    "drill.toml": "f1052033b1122b8101d7f44198576ba2df0069fa4421b9ffa26c5ef194587e66",
+    "fixtures/numbers.txt": "47814a9760f9a144e0ae8b8da50e6b38f225510cf57d6e76c792415192a953a1",
+    "solutions/solve.lua": "18a2805272833a46897d3d20dd2510b86e42145ff44b91dd582329a03f22c559",
+    "solutions/solve.py": "c1feec1379854597b3cf4741719052dcff95f21e2c98bc3d52802f4e40543131",
+    "verify.py": "649c26abfab65cb74a70dc38cd890d206d1914ba40518892900d16441d0d07d4"
+  },
+  "stage": "reference-calibrated"
+}

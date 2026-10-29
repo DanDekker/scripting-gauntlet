@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/lua-number-printing"
+fixture_origin = "Synthetic numeric tokens authored for this drill"
+
+[[negative]]
+path = "controls/wrong-six-digit-plain.lua"
+defect = "Renders the plain column with %.6g instead of tostring, so a float loses its .0"
+expect = "1.0/plain"

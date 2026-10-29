@@ -1,0 +1,11 @@
+id = "178-lua-number-printing"
+family = "data-wrangling"
+title = "Print integers and floats the way Lua prints them"
+difficulty = 4
+timebox = 300
+teaches = [
+  "tostring on a float is shortest-round-trip, not a fixed precision",
+  "1e15 prints as 1e+15 even though it is a whole number; the integer 10^15 does not",
+  "an integer above 2^53 prints exactly, but %.17g routes it through a double and loses the low bit",
+  "tostring(1.0) keeps the .0; string.format(\"%d\", 3.5) raises",
+]
