@@ -5,6 +5,7 @@
 .work/
 work/
 *.tmp
+!drills/files/036-checksum-verify/fixtures/src/data/scratch.tmp
 *.swp
 
 # python

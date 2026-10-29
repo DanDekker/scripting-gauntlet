@@ -43,15 +43,17 @@ function sort_desc(arr, count, other,   i, j, v) {
 }
 END {
   sort_desc(akeys, an, acount)
-  print "action,count" > outdir "/actions.csv"
-  for (i = 1; i <= an; i++) printf "%s,%d\n", akeys[i], acount[akeys[i]] > outdir "/actions.csv"
-  close(outdir "/actions.csv")
+  actions = outdir "/actions.csv"
+  print "action,count" > actions
+  for (i = 1; i <= an; i++) printf "%s,%d\n", akeys[i], acount[akeys[i]] > actions
+  close(actions)
 
   sort_desc(skeys, sn, attempts)
-  print "source,attempts" > outdir "/top_sources.csv"
+  sources = outdir "/top_sources.csv"
+  print "source,attempts" > sources
   for (i = 1; i <= sn && i <= 5; i++)
-    printf "%s,%d\n", skeys[i], attempts[skeys[i]] > outdir "/top_sources.csv"
-  close(outdir "/top_sources.csv")
+    printf "%s,%d\n", skeys[i], attempts[skeys[i]] > sources
+  close(sources)
 
   summary = outdir "/summary.json"
   printf "{\"events\":%d,\"allowed\":%d,\"blocked\":%d,\"skipped\":%d}\n", events, allowed, blocked, skipped > summary
