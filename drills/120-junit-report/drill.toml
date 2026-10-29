@@ -1,0 +1,12 @@
+id = "120-junit-report"
+family = "data-wrangling"
+title = "Turn a JUnit XML report into the numbers a CI dashboard wants"
+difficulty = 3
+timebox = 240
+teaches = [
+  "the summary attributes a test tool wrote lie; recompute everything from the <testcase> leaves",
+  "a case with both <failure> and <skipped> is a failure, not a skip",
+  "an error outranks a failure when a case carries both children",
+  "a missing duration defaults to 0 and every duration prints at a fixed 3 decimals",
+  "the slowest test is the first in document order among ties",
+]

@@ -1,0 +1,63 @@
+diff --git a/src/api/client.js b/src/api/client.js
+index 1a2b3c4..5d6e7f8 100644
+--- a/src/api/client.js
++++ b/src/api/client.js
+@@ -1,4 +1,10 @@
+ import fetch from "node-fetch";
+ 
+-const BASE = "http://localhost:8080";   
++const BASE = "http://localhost:8080";
++const TIMEOUT = 5000;
++// TODO: move the base URL into config
++function call(path) {
++  console.log("calling", path);
++  return fetch(BASE + path);
++}
+ export default call;
+diff --git a/src/api/legacy.js b/src/api/legacy.js
+deleted file mode 100644
+index 3333333..0000000
+--- a/src/api/legacy.js
++++ /dev/null
+@@ -1,3 +0,0 @@
+-console.log("legacy shim");
+-export default function legacy() {}
+-// FIXME: remove me
+diff --git a/src/util/parse.py b/src/util/parse.py
+index 4444444..5555555 100644
+--- a/src/util/parse.py
++++ b/src/util/parse.py
+@@ -1,4 +1,8 @@
+ import json
+ 
+ 
++def parse(raw):
++    print(raw)
++    return json.loads(raw)    
++
+ def dumps(obj):
+diff --git a/scripts/deploy.sh b/scripts/deploy.sh
+new file mode 100755
+index 0000000..6666666
+--- /dev/null
++++ b/scripts/deploy.sh
+@@ -0,0 +1,9 @@
++#!/usr/bin/env bash
++	set -euo pipefail
++curl -s http://10.0.0.12:8080/health
++export DEPLOY_KEY=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
++echo "deploying to prod"   
++timeout 999.300.1.1 ./wait.sh
++	git log --oneline | head -n 5	
++echo "TODO: rotate the key"
++node -e "console.log(1)"
+diff --git a/docs/notes.md b/docs/notes.md
+index 7777777..8888888 100644
+--- a/docs/notes.md
++++ b/docs/notes.md
+@@ -1,3 +1,5 @@
+ # Notes
+ 
++Deploys go through the pipeline.
++See the runbook for details.
+ End of file.

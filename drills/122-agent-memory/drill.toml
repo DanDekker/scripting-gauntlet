@@ -1,0 +1,12 @@
+id = "122-agent-memory"
+family = "data-wrangling"
+title = "Fold what the agent learned into a memory store that stays small"
+difficulty = 4
+timebox = 300
+teaches = [
+  "a memory store is three rules stacked: conflict, expiry, capacity",
+  "ttl 0 expires exactly at as_of, and a missing ttl never expires",
+  "the newest ts wins, but two entries sharing a key and a ts are decided by line order",
+  "capacity eviction is the smallest ts first, and a ts tie is broken by the key that sorts last",
+  "count what you dropped and why: skipped, expired, conflicted, evicted are four different numbers",
+]

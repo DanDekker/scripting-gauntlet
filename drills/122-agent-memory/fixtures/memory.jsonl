@@ -1,0 +1,17 @@
+{"key": "user.name", "value": "Ada", "ts": 1767220000}
+{"key": "user.name", "value": "Ada Lovelace", "ts": 1767225000, "ttl": 86400}
+
+{"key": "user.email", "value": "ada@example.com", "ts": 1767223000, "ttl": 3600}
+{"key": "build.branch", "value": "main", "ts": 1767224000, "ttl": 0}
+not json at all
+{"key": "", "value": "orphan", "ts": 1767225500}
+{"key": "build.branch", "value": "", "ts": 1767225800}
+["not", "an", "object"]
+{"key": "deploy.target", "value": "prod", "ts": 1767225900}
+{"key": "deploy.target", "value": "staging", "ts": 1767225900}
+{"key": "stale.flag", "value": "1", "ts": 1767220000, "ttl": 100}
+{"value": "no-key-here", "ts": 1767220000}
+{"key": "session.id", "value": "s-1"}
+{"key": "log.level", "value": "info", "ts": 1767223000}   
+{"key": "user.name", "value": "Ada L.", "ts": 1767225000}
+   

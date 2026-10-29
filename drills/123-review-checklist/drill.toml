@@ -1,0 +1,12 @@
+id = "123-review-checklist"
+family = "text-munging"
+title = "Run a review checklist over a diff and report what a human must see"
+difficulty = 3
+timebox = 240
+teaches = [
+  "a checklist is a set of independent rules: one line can trip several, so emit one row per code",
+  "only ADDED lines are inspected — a deleted debug statement is a cleanup, not a finding",
+  "line numbers are diff-file line numbers, not positions inside the source file",
+  "a comment that says TODO is still a TODO, and a version string that looks like an IP is not one",
+  "a deleted file has no +++ path, so its name comes from the diff --git header",
+]

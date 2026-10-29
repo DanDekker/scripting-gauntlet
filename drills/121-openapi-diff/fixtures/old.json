@@ -1,0 +1,68 @@
+{
+  "openapi": "3.0.0",
+  "info": { "title": "users api", "version": "1.0.0" },
+  "paths": {
+    "/health": {
+      "get": {
+        "responses": { "200": { "description": "ok" } }
+      }
+    },
+    "/legacy": {
+      "get": {
+        "operationId": "legacyList",
+        "parameters": [],
+        "responses": { "200": { "description": "ok" } }
+      },
+      "x-internal": true
+    },
+    "/metrics": {
+      "get": {
+        "parameters": [ { "name": "window", "in": "query" } ],
+        "responses": { "200": { "description": "ok" } }
+      }
+    },
+    "/reports": {
+      "parameters": [ { "name": "since", "in": "query", "required": false } ],
+      "get": {
+        "operationId": "listReports",
+        "parameters": [
+          { "name": "since", "in": "query", "required": false },
+          { "name": "format", "in": "query" }
+        ],
+        "responses": { "200": { "description": "ok" } }
+      }
+    },
+    "/users": {
+      "get": {
+        "operationId": "listUsers",
+        "parameters": [ { "name": "limit", "in": "query", "required": false } ],
+        "responses": { "200": { "description": "ok" } }
+      },
+      "post": {
+        "operationId": "createUser",
+        "parameters": [ { "name": "body", "in": "body", "required": true } ],
+        "responses": { "201": { "description": "created" } }
+      }
+    },
+    "/users/": {
+      "get": {
+        "operationId": "listUsersSlash",
+        "parameters": [],
+        "responses": { "200": { "description": "ok" } }
+      }
+    },
+    "/users/{id}": {
+      "summary": "one user",
+      "get": {
+        "operationId": "getUser",
+        "parameters": [ { "name": "id", "in": "path", "required": true } ],
+        "responses": { "200": { "description": "ok" } }
+      },
+      "delete": {
+        "operationId": "deleteUser",
+        "parameters": [ { "name": "id", "in": "path", "required": true } ],
+        "responses": { "204": { "description": "gone" } }
+      }
+    }
+  }
+}

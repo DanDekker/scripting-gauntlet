@@ -1,0 +1,12 @@
+id = "121-openapi-diff"
+family = "api-probing"
+title = "Diff two OpenAPI specs and say which endpoints break clients"
+difficulty = 4
+timebox = 300
+teaches = [
+  "an endpoint is a (path, method) pair, and /users is not /users/",
+  "only known HTTP methods count; other keys under a path are documentation, not endpoints",
+  "split the diff into breaking and safe, or the report is not actionable",
+  "a parameter is identified by (name, in) and required means required: true — a missing field is optional",
+  "an operation that gains nothing but loses an optional parameter is a safe change",
+]

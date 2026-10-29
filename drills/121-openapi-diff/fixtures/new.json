@@ -1,0 +1,70 @@
+{
+  "openapi": "3.0.0",
+  "info": { "title": "users api", "version": "2.0.0" },
+  "paths": {
+    "/health": {
+      "get": {
+        "parameters": [ { "name": "X-Api-Key", "in": "header", "required": true } ],
+        "responses": { "200": { "description": "ok" } }
+      }
+    },
+    "/metrics": {
+      "get": {
+        "operationId": "metrics",
+        "parameters": [ { "name": "window", "in": "query", "required": true } ],
+        "responses": { "200": { "description": "ok" } }
+      }
+    },
+    "/reports": {
+      "get": {
+        "operationId": "listReports",
+        "parameters": [
+          { "name": "since", "in": "query", "required": false },
+          { "name": "X-Tenant", "in": "header", "required": true }
+        ],
+        "responses": { "200": { "description": "ok" } }
+      }
+    },
+    "/teams/{id}": {
+      "post": {
+        "operationId": "createTeam",
+        "parameters": [ { "name": "body", "in": "body", "required": true } ],
+        "responses": { "201": { "description": "created" } }
+      }
+    },
+    "/users": {
+      "get": {
+        "operationId": "listUsersV2",
+        "parameters": [
+          { "name": "limit", "in": "query", "required": false },
+          { "name": "cursor", "in": "query", "required": true }
+        ],
+        "responses": { "200": { "description": "ok" } }
+      },
+      "post": {
+        "operationId": "createUser",
+        "parameters": [ { "name": "body", "in": "body", "required": true } ],
+        "responses": { "201": { "description": "created" } }
+      },
+      "put": {
+        "operationId": "replaceUsers",
+        "parameters": [ { "name": "body", "in": "body", "required": true } ],
+        "responses": { "200": { "description": "ok" } }
+      }
+    },
+    "/users/lookup": {
+      "get": {
+        "operationId": "lookupUser",
+        "parameters": [],
+        "responses": { "200": { "description": "ok" } }
+      }
+    },
+    "/users/{id}": {
+      "get": {
+        "operationId": "getUser",
+        "parameters": [ { "name": "id", "in": "path", "required": true } ],
+        "responses": { "200": { "description": "ok" } }
+      }
+    }
+  }
+}
