@@ -302,6 +302,32 @@ Lookarounds match positions rather than characters:
 
 Drill: `193-perl-regex-lookaround`.
 
+## Persistent lexical state with `state`
+
+```perl
+use feature 'state';
+
+sub track_streak {
+    my ($service, $status) = @_;
+    state %streaks;  # initialized once, persists across calls!
+
+    if ($status eq 'FAIL') {
+        $streaks{$service}++;
+    } else {
+        $streaks{$service} = 0;
+    }
+    return ($streaks{$service}, $streaks{$service} >= 3);
+}
+```
+
+`state` variables (available via `use feature 'state'` or `use v5.10+`) create lexical variables
+with static storage duration: they are initialized exactly once when the subroutine is first compiled/entered,
+and retain their values across subsequent invocations.
+Using `my` inside a subroutine reinitializes the variable on every call, erasing running counters
+and streak state. `state` cleanly encapsulates persistent counters without polluting the package namespace.
+
+Drill: `198-perl-state-variables`.
+
 ## The four moves
 
 **1. Split.** Choose the limit and the separator deliberately: `split /:/, $line, -1`.

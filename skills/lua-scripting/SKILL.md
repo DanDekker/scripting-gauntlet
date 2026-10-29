@@ -349,6 +349,35 @@ catchable runtime error in `pcall`.
 
 Drill: `192-lua-env-sandbox`.
 
+## Bidirectional coroutines: yield and resume value passing
+
+```lua
+local function make_meter(threshold)
+  return coroutine.create(function(first_delta)
+    local total = first_delta
+    while true do
+      local delta = coroutine.yield(total >= threshold, total)
+      if not delta then break end
+      total = total + delta
+    end
+    return total >= threshold, total
+  end)
+end
+
+local co = make_meter(50)
+local ok, alert, sum = coroutine.resume(co, 10)  -- first_delta = 10
+ok, alert, sum = coroutine.resume(co, 45)        -- delta = 45; alert = true, sum = 55
+```
+
+Coroutines are not limited to one-way generator pipelines.
+In Lua, arguments passed to `coroutine.resume(co, val)` after the first resume become the
+**return values of `coroutine.yield()`** inside the coroutine body!
+Similarly, arguments passed to `coroutine.yield(...)` are returned by `coroutine.resume()`.
+This two-way communication allows stream processors to encapsulate stateful calculations
+(accumulators, moving averages, token buckets) without global tables or mutable external closures.
+
+Drill: `197-lua-coroutine-filter`.
+
 ## The four moves
 
 **1. Extract.** One pattern per shape, tried in order.

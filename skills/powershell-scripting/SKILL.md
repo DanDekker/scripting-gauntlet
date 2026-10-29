@@ -207,6 +207,31 @@ envelope through pipeline boundaries.
 
 Drill: `195-ps1-pipeline-unrolling`.
 
+## Regex capture groups and stale $Matches state
+
+```powershell
+$pattern = '^LOG (?<id>\d+) status=(?<status>\w+)$'
+
+foreach ($line in $lines) {
+    # Crucial: test match condition before reading $Matches!
+    if ($line -match $pattern) {
+        $id = $Matches['id']
+        $status = $Matches['status']
+    } else {
+        # Do NOT read $Matches! It retains previous line's match values!
+        $id = $null
+    }
+}
+```
+
+The `-match` operator sets the `$Matches` automatic variable with full match and named/numbered groups.
+However, **if `-match` fails, PowerShell does NOT clear `$Matches`**! It retains whatever values were
+matched on the *previous* successful match.
+Unconditionally reading `$Matches` inside loops without testing the return value of `-match` causes
+corrupt or non-matching records to silently inherit data from earlier lines.
+
+Drill: `200-ps1-regex-groups`.
+
 ## The four moves
 
 **1. Parse.** `Import-Csv` / `ConvertFrom-Json` / `-split` (a regex). Decide case

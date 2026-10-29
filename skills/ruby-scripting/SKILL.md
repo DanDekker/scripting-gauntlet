@@ -251,6 +251,37 @@ Using `path || "/"` wrongly destroys intentional `nil` overrides; check `.nil?` 
 
 Drill: `194-ruby-keyword-arguments`.
 
+## Encapsulation via Forwardable delegation
+
+```ruby
+require "forwardable"
+
+class SecureRegistry
+  extend Forwardable
+  # Delegate read-only inspection methods to internal store:
+  def_delegators :@store, :keys, :values, :size
+  def_delegator :@store, :[], :lookup
+
+  def initialize
+    @store = {}
+    @reads = 0
+  end
+
+  def add(k, v)
+    @store[k] = v
+  end
+  # Mutating methods like `delete` or `clear` are NOT delegated!
+end
+```
+
+Inheriting from collection classes (`class MyStore < Hash`) exposes dangerous internal mutating
+methods (`delete`, `clear`, `replace`) that violate encapsulation.
+The standard library `Forwardable` module provides explicit delegation (composition over inheritance).
+Classes use `extend Forwardable` and declare exactly which methods forward to internal objects.
+Any attempt by external code to call un-delegated mutating methods raises `NoMethodError`.
+
+Drill: `199-ruby-forwardable-delegation`.
+
 ## The four moves
 
 **1. Split.** `line.split(",", -1)` keeps trailing empty fields; a bare `split(",")`
