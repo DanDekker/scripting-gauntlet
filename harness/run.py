@@ -26,6 +26,7 @@ import argparse
 import importlib.util
 import os
 import shutil
+import signal
 import socket
 import subprocess
 import sys
@@ -67,6 +68,8 @@ FAMILIES = {
     "web-scraping",
     "file-hygiene",
     "text-munging",
+    "system-recon",
+    "network-recon",
 }
 
 
@@ -156,6 +159,39 @@ def free_port() -> int:
         return int(s.getsockname()[1])
 
 
+def free_port_in_range(low: int, high: int) -> int:
+    for port in range(low, high + 1):
+        with socket.socket() as s:
+            s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+            try:
+                s.bind(("127.0.0.1", port))
+            except OSError:
+                continue
+            return port
+    raise SystemExit(f"no free port in range {low}-{high}")
+
+
+def kill_listener(out: Path) -> None:
+    """Stop a service the solution started, using the pid file it wrote."""
+    pid_file = out / "listener.pid"
+    if not pid_file.is_file():
+        return
+    try:
+        pid = int(pid_file.read_text(encoding="utf-8").strip())
+    except (ValueError, OSError):
+        return
+    for sig in (signal.SIGTERM, signal.SIGKILL):
+        try:
+            os.kill(pid, sig)
+        except (ProcessLookupError, PermissionError):
+            return
+        time.sleep(0.2)
+        try:
+            os.kill(pid, 0)
+        except ProcessLookupError:
+            return
+
+
 def wait_port(port: int, deadline: float = 5.0) -> bool:
     start = time.monotonic()
     while time.monotonic() - start < deadline:
@@ -175,6 +211,9 @@ def start_mock(drill: Drill, env: dict[str, str]) -> subprocess.Popen | None:
     if not script.is_file():
         raise SystemExit(f"{drill.id}: mock_server not found: {rel}")
     port = free_port()
+    rng = drill.meta.get("mock_port_range")
+    if rng:
+        port = free_port_in_range(int(rng[0]), int(rng[1]))
     env["PORT"] = str(port)
     env["API_BASE"] = f"http://127.0.0.1:{port}"
     proc = subprocess.Popen(
@@ -255,6 +294,14 @@ def run_solution(
                 f"  {line}" for line in detail
             ], 0.0, work
 
+    # Optional probe: the solution may start a service (a listener) that the probe
+    # then talks to. The port is allocated up front so the solution knows where to bind.
+    probe = drill.dir / "probe.py"
+    if probe.is_file():
+        probe_port = free_port()
+        env["PORT"] = str(probe_port)
+        env["API_BASE"] = f"http://127.0.0.1:{probe_port}"
+
     mock = start_mock(drill, env)
     argv = INTERPRETERS[lang] + [str(solution)]
     started = time.monotonic()
@@ -293,6 +340,27 @@ def run_solution(
     io = IO(
         work=work, inp=inp, out=out, fixtures=fixtures, drill=drill.dir, lang=lang, meta=drill.meta
     )
+    if probe.is_file():
+        try:
+            probe_proc = subprocess.run(
+                [sys.executable, str(probe)],
+                cwd=work,
+                env=env,
+                capture_output=True,
+                text=True,
+                timeout=timeout,
+            )
+        except subprocess.TimeoutExpired:
+            probe_proc = None
+        finally:
+            kill_listener(out)
+        if probe_proc is None:
+            return False, ["probe timed out"], elapsed, work
+        if probe_proc.returncode != 0:
+            detail = (probe_proc.stderr or probe_proc.stdout).strip().splitlines()[-5:]
+            return False, [f"probe failed (exit {probe_proc.returncode})"] + [
+                f"  {line}" for line in detail
+            ], elapsed, work
     try:
         failures = load_verifier(drill)(io)
     except Exception as exc:  # a broken grader is a failure, not a crash
