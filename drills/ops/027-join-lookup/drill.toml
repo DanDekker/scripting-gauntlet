@@ -1,0 +1,11 @@
+id = "027-join-lookup"
+family = "data-wrangling"
+title = "Enrich orders with a customer lookup table"
+difficulty = 2
+timebox = 180
+teaches = [
+  "load the small file into an array first",
+  "a left join keeps every order",
+  "normalize the join key on both sides",
+  "a missing lookup row is data, not an error",
+]
