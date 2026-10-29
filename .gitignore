@@ -1,0 +1,16 @@
+# tool state
+.orka/
+
+# scratch
+.work/
+work/
+*.tmp
+*.swp
+
+# python
+__pycache__/
+*.pyc
+.venv/
+
+# mac
+.DS_Store
