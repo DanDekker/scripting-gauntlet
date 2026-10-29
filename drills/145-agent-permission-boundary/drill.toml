@@ -1,0 +1,12 @@
+id = "145-agent-permission-boundary"
+family = "file-hygiene"
+title = "Audit agent tool invocations against capability security boundaries"
+difficulty = 3
+timebox = 240
+teaches = [
+  "a call can break several rules at once: report every violation, not the first",
+  "an unlisted tool is denied even when its arguments look harmless",
+  "a path is only traversal when it is absolute or has a '..' segment",
+  "the domain is what survives basic auth, port and case: strip '@', strip ':port', lowercase",
+  "junk lines and id-less records are not invocations and must not be counted",
+]

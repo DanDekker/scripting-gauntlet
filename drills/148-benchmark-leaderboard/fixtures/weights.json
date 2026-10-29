@@ -1,0 +1,5 @@
+{
+  "coding": {"weight": 0.6, "higher_is_better": true},
+  "speed": {"weight": 0.4, "higher_is_better": false},
+  "safety": {"weight": 0.2, "higher_is_better": true}
+}

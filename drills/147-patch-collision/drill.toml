@@ -1,0 +1,12 @@
+id = "147-patch-collision"
+family = "file-hygiene"
+title = "Detect conflicting edits across parallel multi-agent file leases"
+difficulty = 3
+timebox = 240
+teaches = [
+  "overlap is inclusive on both ends: leases touching at a line collide",
+  "an agent never collides with itself, so its own overlapping leases are fine",
+  "greedy first-fit batching turns a conflict graph into a schedule",
+  "invalid leases are dropped before anything is counted, but the raw rows still count",
+  "dedupe a repeated lease or the schedule quietly runs the same edit twice",
+]

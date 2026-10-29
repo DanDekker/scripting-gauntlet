@@ -1,0 +1,12 @@
+id = "146-context-compression"
+family = "text-munging"
+title = "Compress long chat histories into structured memory summaries"
+difficulty = 4
+timebox = 300
+teaches = [
+  "compress per message kind: a tool transcript and a human turn survive differently",
+  "read_file keeps shape, not text: line count and char count replace content",
+  "truncation keeps both ends for bash and only the head for an unknown tool",
+  "chars saved is the point, so count the originals before you rewrite them",
+  "idx is the clock: file order is noise, sorted order is the conversation",
+]

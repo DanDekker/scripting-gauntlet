@@ -1,0 +1,5 @@
+{
+  "allowed_tools": ["read_file", "write_file", "bash", "http_get"],
+  "allowed_domains": ["api.github.com", "pypi.org"],
+  "banned_commands": ["rm -rf", "chmod 777", "mkfs", "dd if="]
+}

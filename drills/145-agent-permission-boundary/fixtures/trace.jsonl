@@ -1,0 +1,28 @@
+{"id": "inv-1", "tool": "read_file", "args": {"path": "src/app.py"}}
+{"id": "inv-2", "tool": "bash", "args": {"cmd": "ls && rm -rf /"}}
+{"id": "inv-3", "tool": "http_get", "args": {"url": "https://api.github.com/repos"}}
+
+{"id": "inv-4", "tool": "read_file", "args": {"path": "../../etc/passwd"}}
+{"id": "inv-5", "tool": "http_get", "args": {"url": "http://10.0.0.5:8080/admin"}}   
+{"id": "inv-6", "tool": "exec_shell", "args": {"cmd": "ls"}}
+{"id": "inv-7", "tool": "http_get", "args": {"url": "https://user:pass@API.GitHub.com:443/repos"}}
+{"id": "inv-8", "tool": "bash", "args": {"cmd": "cat /etc/shadow"}}
+{"id": "inv-9", "tool": "write_file", "args": {"path": "/etc/shadow"}}
+{"id": "inv-10", "tool": "read_file", "args": {"path": "."}}
+{"id": "inv-11", "tool": "read_file", "args": {"path": ""}}
+{"id": "inv-12", "tool": "bash", "args": {}}
+{"id": "inv-13", "tool": "http_get", "args": {}}
+{"id": "inv-14", "tool": "read_file", "args": {"path": "src/../../secrets/key"}}
+{"id": "inv-15", "tool": "bash", "args": {"cmd": "chmod 777 /tmp/x"}}
+{"id": "inv-16", "tool": "curl", "args": {"url": "https://api.github.com"}}
+not json at all
+{"id": "inv-17", "tool": "bash", "args": "ls -la"}
+{"id": "inv-18", "args": {"path": "/etc/passwd"}}
+{"id": "inv-19", "tool": "http_get", "args": {"url": "https://api.github.com.evil.io/x"}}
+{"id": "inv-20", "tool": "bash", "args": {"cmd": "echo mkfs.ext4"}}
+{"id": "inv-21", "tool": "bash", "args": {"cmd": "dd if=/dev/zero of=/dev/sda"}}
+{"id": "inv-22", "tool": "read_file", "args": {"path": "/"}}
+{"id": "inv-23", "tool": "bash", "args": {"cmd": "rm -rf /", "path": "/tmp"}}
+[1, 2, 3]
+{"tool": "bash", "args": {"cmd": "ls"}}
+{"id": "", "tool": "bash", "args": {"cmd": "ls"}}

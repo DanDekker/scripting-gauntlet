@@ -1,0 +1,12 @@
+id = "148-benchmark-leaderboard"
+family = "data-wrangling"
+title = "Rank models across benchmark suites with weighted normalization"
+difficulty = 3
+timebox = 240
+teaches = [
+  "normalize per suite before weighting: raw accuracy and raw latency are not comparable",
+  "lower-is-better suites invert the scale, so the slowest model scores 0 not 1",
+  "a degenerate suite (max == min) gives everyone 1.0 instead of dividing by zero",
+  "completeness is per model over the weighted suites only; ignored suites do not count",
+  "duplicate rows are last-wins, even when the last row is the broken one",
+]
