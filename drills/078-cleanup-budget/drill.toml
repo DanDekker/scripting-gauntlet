@@ -1,0 +1,11 @@
+id = "078-cleanup-budget"
+family = "file-hygiene"
+title = "Free a required amount of disk with the safest deletions first"
+difficulty = 3
+timebox = 180
+teaches = [
+  "order candidates by risk before size, not the other way round",
+  "stop as soon as the target is met instead of cleaning everything",
+  "overshooting the target is acceptable; missing it must be reported",
+  "separate the plan from the execution",
+]

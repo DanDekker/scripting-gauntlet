@@ -1,0 +1,8 @@
+path,size_mb,risk
+/srv/data,12000,5
+/srv/backups,5000,4
+/tmp/uploads,3000,2
+/var/cache/apt,1500,1
+/var/log/journal,900,1
+/var/cache/pip,800,1
+/home/pp/.cache,400,1
