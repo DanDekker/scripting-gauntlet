@@ -1,0 +1,4 @@
+2026-10-01T08:00:01 INFO  login ok user=41
+2026-10-01T08:00:44 WARN  bad password user=7
+2026-10-01T08:01:02 INFO  login ok user=12
+2026-10-01T08:02:30 ERROR locked out user=7

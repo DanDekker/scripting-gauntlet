@@ -1,0 +1,6 @@
+queue worker starting pid=41
+picked up job 8812
+
+finished job 8812 in 41ms
+draining queue
+queue worker stopped

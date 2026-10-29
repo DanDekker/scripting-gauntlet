@@ -1,0 +1,10 @@
+id = "039-count-lines"
+family = "data-wrangling"
+title = "Count the lines in every log file"
+difficulty = 1
+timebox = 90
+teaches = [
+  "a line is a record, not a newline: wc -l undercounts the last one",
+  "awk END{print NR} counts records, empty files included",
+  "count per file, then total, in one pass each",
+]

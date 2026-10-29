@@ -1,0 +1,6 @@
+2026-10-01T08:00:01 INFO  boot ok
+2026-10-01T08:00:02 WARN  cache is cold
+2026-10-01T08:00:05 INFO  config loaded
+2026-10-01T08:01:11 ERROR upstream timeout after 3000ms
+2026-10-01T08:01:12 INFO  retrying request
+2026-10-01T08:01:19 INFO  request ok
