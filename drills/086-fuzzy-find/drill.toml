@@ -1,0 +1,11 @@
+id = "086-fuzzy-find"
+family = "file-hygiene"
+title = "Turn a vague human description into a ranked file search"
+difficulty = 4
+timebox = 300
+teaches = [
+  "translate a remembered description into explicit predicates",
+  "score candidates instead of demanding an exact name",
+  "break score ties with modification time, then path",
+  "read the winner and report what is actually inside it",
+]

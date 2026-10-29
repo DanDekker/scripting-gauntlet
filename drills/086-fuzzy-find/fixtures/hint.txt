@@ -1,0 +1,5 @@
+# what the human remembers
+keywords: budget, march, spreadsheet
+extension: csv
+max_size: 10240
+roots: Desktop Downloads
