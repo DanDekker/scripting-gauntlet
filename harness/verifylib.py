@@ -87,6 +87,46 @@ def table(path: Path, header: list[str], rows: list[tuple], label: str | None = 
     return failures
 
 
+def keyed_table(
+    path: Path,
+    header: list[str],
+    rows: list[tuple],
+    key_count: int = 1,
+    label: str | None = None,
+) -> list[str]:
+    """Compare a CSV against expected rows, naming each row by its first `key_count` fields.
+
+    A mismatch is reported against the row label and the offending column:
+    "out/regions.csv row 2 [North/total]: expected '116.01', got '116.00'".
+    Use this when the row label is the useful handle on a defect.
+    """
+    label = label or path.name
+    if not path.is_file():
+        return [f"missing {label}"]
+
+    got_header, got_rows = read_csv(path)
+    failures: list[str] = []
+    if got_header != header:
+        return [f"{label} header: expected {header}, got {got_header}"]
+
+    if len(got_rows) != len(rows):
+        failures.append(f"{label}: expected {len(rows)} rows, got {len(got_rows)}")
+
+    for index, (want, got) in enumerate(zip(rows, got_rows), start=1):
+        if len(got) != len(want):
+            failures.append(f"{label} row {index}: expected {len(want)} fields, got {len(got)}: {got!r}")
+            continue
+        row_label = "/".join(str(cell) for cell in want[:key_count])
+        for column, (expected_cell, actual_cell) in enumerate(zip(want, got), start=1):
+            coerced = _coerce(actual_cell, expected_cell)
+            if not _same(coerced, expected_cell):
+                failures.append(
+                    f"{label} row {index} [{row_label}/{header[column - 1]}]: "
+                    f"expected {expected_cell!r}, got {actual_cell!r}"
+                )
+    return failures
+
+
 def json_eq(path: Path, expected, label: str | None = None) -> list[str]:
     """Compare a JSON file against an expected object (key sets and values must match)."""
     label = label or path.name
