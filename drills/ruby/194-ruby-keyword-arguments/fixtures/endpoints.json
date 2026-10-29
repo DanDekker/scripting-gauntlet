@@ -1,0 +1,7 @@
+[
+  { "id": 1, "host": "api.internal", "port": 9000, "path": "/v1", "timeout": 15 },
+  { "id": 2, "host": "auth.internal" },
+  { "id": 3, "host": "metrics.internal", "path": null, "timeout": null },
+  { "id": 4, "host": "db.internal", "port": 5432, "timeout": 60 },
+  { "id": 5, "port": 80 }
+]

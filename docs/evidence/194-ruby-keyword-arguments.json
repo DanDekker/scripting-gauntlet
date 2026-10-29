@@ -1,0 +1,49 @@
+{
+  "calibrated_at": "2026-10-29T23:35:51.812385+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "194-ruby-keyword-arguments",
+  "fixture_origin": "Synthetic endpoint configurations authored for this drill",
+  "lineage": "scripting-gauntlet/ruby-keyword-arguments",
+  "results": [
+    {
+      "elapsed_ms": 26,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 75,
+      "language": "rb",
+      "passed": true,
+      "path": "solutions/solve.rb",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Uses || default fallback inside build_endpoint, overriding explicit nil path with '/'",
+      "elapsed_ms": 76,
+      "expected_diagnostic": "3/url",
+      "language": "rb",
+      "passed": true,
+      "path": "controls/wrong-nil-fallback.rb",
+      "problems": [
+        "endpoints.csv row 3 [3/url]: expected 'http://metrics.internal:8080', got 'http://metrics.internal:8080/'",
+        "endpoints.csv row 3 [3/timeout]: expected '', got '30'"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "61d3c0288caae3268cdfd7d8f9abbe7be58ecdeca010702fec828e4eeb9d327b",
+    "controls/manifest.toml": "6d564ba4d12c72fa09ea6782afb7c64d4d3d2e3c7a490ebae20799898c0ffc9b",
+    "controls/wrong-nil-fallback.rb": "cbf541ac6c41868fc82b4b3136d09748f5e663c080a7097942d786fe11bbaf1f",
+    "drill.toml": "2b4269290fa9eedaef0ed7f43939d8d8ba5b97ef3d985f47e395516c32306485",
+    "fixtures/endpoints.json": "449fb8f57d5b789ca7f9b2d731b2d8068f2ed294aa464c4f5d69347c066503d6",
+    "solutions/solve.py": "2551b841426aa1fb4d79999a18d1c957ce5b23125a43e986f36f7a974a929322",
+    "solutions/solve.rb": "c253b76ef5637ff2f76fcfb07ae11442dbefb47143b8bf18f4354c62c047afcc",
+    "verify.py": "772ad53950ab5c30097d6cc333b36c0d18d2ff74aa118c97fd421cfa49531f65"
+  },
+  "stage": "reference-calibrated"
+}

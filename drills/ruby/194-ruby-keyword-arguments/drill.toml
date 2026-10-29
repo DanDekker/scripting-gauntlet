@@ -1,0 +1,11 @@
+id = "194-ruby-keyword-arguments"
+family = "data-wrangling"
+title = "Handle Ruby 3 keyword arguments, default values, and explicit nil overrides"
+difficulty = 4
+timebox = 300
+teaches = [
+  "in Ruby 3+, keyword arguments must be passed with double-splat **kwargs when forwarding from a hash",
+  "default values (kw: 'default') only apply when the keyword is omitted; passing kw: nil sets the parameter to nil",
+  "missing required keywords (host:) raise ArgumentError: missing keyword",
+  "using || default fallbacks wrongly obliterates explicit nil overrides",
+]

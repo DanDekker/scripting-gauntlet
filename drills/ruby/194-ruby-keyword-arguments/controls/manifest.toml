@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/ruby-keyword-arguments"
+fixture_origin = "Synthetic endpoint configurations authored for this drill"
+
+[[negative]]
+path = "controls/wrong-nil-fallback.rb"
+defect = "Uses || default fallback inside build_endpoint, overriding explicit nil path with '/'"
+expect = "3/url"
