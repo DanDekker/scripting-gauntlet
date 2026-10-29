@@ -1,0 +1,11 @@
+id = "177-ps1-decimal-money"
+family = "data-wrangling"
+title = "Sum money in decimal and round half away from zero"
+difficulty = 4
+timebox = 300
+teaches = [
+  "Measure-Object -Sum accumulates in double: 0.1 + 0.2 comes back 0.30000000000000004",
+  "[decimal] is exact for the amounts people write down",
+  "[math]::Round is banker's rounding: 2.5 rounds to 2, and 1.005 to 1.00",
+  "[decimal]::Round with MidpointRounding::AwayFromZero and ToString('F2') is the money route",
+]

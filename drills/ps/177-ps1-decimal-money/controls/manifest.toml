@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/ps1-decimal-money"
+fixture_origin = "Synthetic charges with half-cent totals authored for this drill"
+
+[[negative]]
+path = "controls/wrong-bankers.ps1"
+defect = "Rounds with the default MidpointRounding (banker's), so 1.005 becomes 1.00 instead of 1.01"
+expect = "carol/total"

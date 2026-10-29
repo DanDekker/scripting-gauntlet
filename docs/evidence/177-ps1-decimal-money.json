@@ -1,0 +1,50 @@
+{
+  "calibrated_at": "2026-10-29T22:57:06.272949+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "177-ps1-decimal-money",
+  "fixture_origin": "Synthetic charges with half-cent totals authored for this drill",
+  "lineage": "scripting-gauntlet/ps1-decimal-money",
+  "results": [
+    {
+      "elapsed_ms": 380,
+      "language": "ps1",
+      "passed": true,
+      "path": "solutions/solve.ps1",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 38,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Rounds with the default MidpointRounding (banker's), so 1.005 becomes 1.00 instead of 1.01",
+      "elapsed_ms": 397,
+      "expected_diagnostic": "carol/total",
+      "language": "ps1",
+      "passed": true,
+      "path": "controls/wrong-bankers.ps1",
+      "problems": [
+        "totals.csv row 3 [carol/total]: expected '1.01', got '1.00'",
+        "totals.csv row 6 [frank/total]: expected '1.01', got '1.00'",
+        "summary.json['total']: expected '15.35', got '15.33'"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "980ba3ac9c6f22248294fdd329ca35c3fb35992cf51152dfd1ba02940b80f5a9",
+    "controls/manifest.toml": "fc6aebcfd8d96ae10767c51ce06fe14c6104103334f68925b3b8fca39c4e05a6",
+    "controls/wrong-bankers.ps1": "3a5c5c8949801cf3a6677a9d2f1cc1ff67eb89f80958d2d5b98f347c04802927",
+    "drill.toml": "a2cc7b62b5cd95b9ab64a7d4d0618016cc94194a37b3db7ebaad01d4607a9eae",
+    "fixtures/amounts.csv": "14154bb4caee87f4eeee035979e53a60d2177abf2848578e6e24cbc8b2a1d302",
+    "solutions/solve.ps1": "c2968542579b549815850c7abc7ae16bd6df7d2a2975735f172c3ec741de35a9",
+    "solutions/solve.py": "292641bbaa029875fb7a549fe3e190703f9ec994a33df6f550c370d1129998eb",
+    "verify.py": "812df3944cefc955770c2cc3543ff275ca17672ba5de7ae20b1a1e9a29b2eff0"
+  },
+  "stage": "reference-calibrated"
+}
