@@ -1,0 +1,11 @@
+id = "062-http-retries"
+family = "api-probing"
+title = "Retry temporary HTTP failures and stop on permanent ones"
+difficulty = 4
+timebox = 240
+teaches = [
+  "separate curl transport failures from HTTP status codes",
+  "retry 503 with a fixed ceiling, but not 404",
+  "parse only successful response bodies",
+]
+mock_server = "mock/server.py"
