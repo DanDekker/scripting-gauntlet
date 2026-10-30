@@ -1,0 +1,11 @@
+id = "217-perl-reverse-context"
+family = "data-wrangling"
+title = "Reverse a list of records without turning it into one string"
+difficulty = 3
+timebox = 300
+teaches = [
+  "reverse in list context reverses the list; in scalar context it reverses the joined text",
+  "my $x = reverse @list joins the elements and reverses the characters, so the records are lost",
+  "my @x = reverse @list keeps the list, one element per record",
+  "a scalar assignment is the tell: the element count collapses to one"
+]

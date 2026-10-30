@@ -1,0 +1,51 @@
+{
+  "calibrated_at": "2026-10-30T04:13:57.250348+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "217-perl-reverse-context",
+  "fixture_origin": "Synthetic record list authored for this drill",
+  "lineage": "scripting-gauntlet/perl-reverse-context",
+  "results": [
+    {
+      "elapsed_ms": 34,
+      "language": "pl",
+      "passed": true,
+      "path": "solutions/solve.pl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 52,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Assigns the reversal to a scalar, so reverse runs in scalar context and reverses the joined text instead of the list of records",
+      "elapsed_ms": 23,
+      "expected_diagnostic": "1/record",
+      "language": "pl",
+      "passed": true,
+      "path": "controls/wrong-scalar-reverse.pl",
+      "problems": [
+        "records.csv: expected 3 rows, got 1",
+        "records.csv row 1 [1/record]: expected 'charlie three', got 'eerht eilrahcowt ovarbeno ahpla'",
+        "summary.json['first']: expected 'charlie three', got 'eerht eilrahcowt ovarbeno ahpla'",
+        "summary.json['last']: expected 'alpha one', got 'eerht eilrahcowt ovarbeno ahpla'"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "200bdcf7729d69c3c0d35542e0f249b8f361e9d2279df11eb7e5f99bce6e5570",
+    "controls/manifest.toml": "dd048230bbbd1836f5bc8c42e3f8815ee2947600cdc606de35dbd2273fab9872",
+    "controls/wrong-scalar-reverse.pl": "8f6a1050933e12bfddfc21ef4c2b82fe96271891d7cabb848e5756f205e2e263",
+    "drill.toml": "43f3f860845f90a93837f8cbc85828a5399c63af95300a58e55b68d63c2b2f2f",
+    "fixtures/records.txt": "bbd84765604988bf84d67508dd7184c6746a0ac9a7c79e784af517562ae8ae2a",
+    "solutions/solve.pl": "e1e9f080dc2c0917eb890fbfbb71931c7ae6ad24f596335cdf7074259119f160",
+    "solutions/solve.py": "366f4bb01246ef237fc6c3d7d32d3f253a415b2fa6e881a9f0afcf3f143da391",
+    "verify.py": "4593e3705f46931749958dca130a77a46cdeee9c163616bf2b6edebec443c516"
+  },
+  "stage": "reference-calibrated"
+}

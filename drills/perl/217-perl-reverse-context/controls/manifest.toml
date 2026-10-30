@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/perl-reverse-context"
+fixture_origin = "Synthetic record list authored for this drill"
+
+[[negative]]
+path = "controls/wrong-scalar-reverse.pl"
+defect = "Assigns the reversal to a scalar, so reverse runs in scalar context and reverses the joined text instead of the list of records"
+expect = "1/record"
