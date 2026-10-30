@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/tcl-dict-presence"
+fixture_origin = "Synthetic tab-separated settings authored for Tcl dict presence semantics"
+
+[[negative]]
+path = "controls/wrong-truthy-get.tcl"
+defect = "Uses a truthiness test after dict get, misclassifying zero and empty values and mishandling the missing key"
+expect = "settings.csv"

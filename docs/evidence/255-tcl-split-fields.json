@@ -1,0 +1,62 @@
+{
+  "calibrated_at": "2026-10-30T07:55:16.945371+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "255-tcl-split-fields",
+  "fixture_origin": "Synthetic pipe feed authored with empty middle and trailing fields",
+  "lineage": "scripting-gauntlet/tcl-split-fields",
+  "results": [
+    {
+      "elapsed_ms": 35,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 19,
+      "language": "tcl",
+      "passed": true,
+      "path": "solutions/solve.tcl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Uses a .+ regex capture for the last field, dropping the valid trailing-empty record",
+      "elapsed_ms": 15,
+      "expected_diagnostic": "records.csv",
+      "language": "tcl",
+      "passed": true,
+      "path": "controls/wrong-regex-required-field.tcl",
+      "problems": [
+        "records.csv: expected 4 rows, got 3",
+        "records.csv row 1 col 1: expected '1', got '2'",
+        "records.csv row 1 col 2: expected 'Alpha', got 'Beta'",
+        "records.csv row 1 col 3: expected '', got 'x'",
+        "records.csv row 1 col 4: expected 'empty', got 'value'",
+        "records.csv row 2 col 1: expected '2', got '3'",
+        "records.csv row 2 col 2: expected 'Beta', got ''",
+        "records.csv row 2 col 3: expected 'x', got 'y'",
+        "records.csv row 3 col 1: expected '3', got '4'",
+        "records.csv row 3 col 2: expected '', got 'Gamma'",
+        "records.csv row 3 col 3: expected 'y', got ''",
+        "records.csv row 3 col 4: expected 'value', got 'empty'",
+        "summary.json['records']: expected 4, got 3",
+        "summary.json['empty_tag']: expected 2, got 0",
+        "summary.json['blank_name']: expected 1, got 0"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "2cdae8eb1916834a7dcf94cfeed014c4e77e7234a2f5739b39a8cc0e81c114a5",
+    "controls/manifest.toml": "5cfbe36735460727fadeee18385c3e6d818b82ac8e95e6d668300dff87b5dcdb",
+    "controls/wrong-regex-required-field.tcl": "863b55da5fd64a487f30e2259c71182b3076fe05f16f3f00ceff5154e0108a99",
+    "drill.toml": "d0d7cb7bb1d3a48551a227424fd81a345e220a2f7f9d2af32397e404583e4e93",
+    "fixtures/records.psv": "d6b9dee6b74d96fccd45cd138e7148c2b99fa113cb6c9465a1c13d6bad5e037d",
+    "solutions/solve.py": "b74773b79ffbe3520e34a30ce46908e8859bee5ee1c0a984e5e91a340ddf102e",
+    "solutions/solve.tcl": "de1c6c6605c2e68b94a2f3777e26deaed3c06e155cfd0c8bc799f14afce5ee0f",
+    "verify.py": "28c651de6c85ea67c02980a9da03ac44681d1db4c87fbf6615cf845eb23cec78"
+  },
+  "stage": "reference-calibrated"
+}

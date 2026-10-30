@@ -1,0 +1,11 @@
+id = "256-tcl-dict-presence"
+family = "data-wrangling"
+title = "Distinguish Tcl dict presence, empty text, zero, and false"
+difficulty = 3
+timebox = 300
+teaches = [
+  "dict exists distinguishes an absent key before dict get is attempted",
+  "Tcl boolean expressions treat 0 and empty text as false",
+  "string equality preserves a textual value such as false",
+  "explicit key order makes a dict report reproducible",
+]

@@ -1,0 +1,11 @@
+id = "255-tcl-split-fields"
+family = "text-munging"
+title = "Preserve empty fields with Tcl split"
+difficulty = 2
+timebox = 240
+teaches = [
+  "Tcl split preserves empty middle and trailing list elements",
+  "lassign maps a parsed Tcl list to fields without losing empty strings",
+  "trim fields after splitting while retaining the record",
+  "a regex quantifier such as .+ is the wrong way to require a field when empty is valid",
+]

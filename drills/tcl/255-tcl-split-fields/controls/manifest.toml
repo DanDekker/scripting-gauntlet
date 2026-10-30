@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/tcl-split-fields"
+fixture_origin = "Synthetic pipe feed authored with empty middle and trailing fields"
+
+[[negative]]
+path = "controls/wrong-regex-required-field.tcl"
+defect = "Uses a .+ regex capture for the last field, dropping the valid trailing-empty record"
+expect = "records.csv"

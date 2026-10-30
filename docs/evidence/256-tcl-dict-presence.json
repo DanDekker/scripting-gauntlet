@@ -1,0 +1,50 @@
+{
+  "calibrated_at": "2026-10-30T07:55:16.945217+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "256-tcl-dict-presence",
+  "fixture_origin": "Synthetic tab-separated settings authored for Tcl dict presence semantics",
+  "lineage": "scripting-gauntlet/tcl-dict-presence",
+  "results": [
+    {
+      "elapsed_ms": 35,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 19,
+      "language": "tcl",
+      "passed": true,
+      "path": "solutions/solve.tcl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Uses a truthiness test after dict get, misclassifying zero and empty values and mishandling the missing key",
+      "elapsed_ms": 15,
+      "expected_diagnostic": "settings.csv",
+      "language": "tcl",
+      "passed": true,
+      "path": "controls/wrong-truthy-get.tcl",
+      "problems": [
+        "settings.csv row 1 col 2: expected 'zero', got 'empty'",
+        "settings.csv row 3 col 2: expected 'value', got 'empty'",
+        "summary.json['zero']: expected 1, got 0"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "d10df09c32790a2665c61007ce945e9213e0891d5b78061a14e5f10cb0cd552c",
+    "controls/manifest.toml": "9bf9e8dda59df675fd7594865d6ce2e77dc4246675ba18759838f5de9cadd639",
+    "controls/wrong-truthy-get.tcl": "ca756cc5246e99406aa88fef46847208b8ca53382aa8f9608f6c351f933c3aa6",
+    "drill.toml": "270f9a59298f5719e6d35773df08eb53b21faecd773c45cea3665576a7444c48",
+    "fixtures/settings.tsv": "84dcda293c7b4b4e2a0df9a104b122783b47f4705106d8822aaadc6b1d500b51",
+    "solutions/solve.py": "ccdb2aafc9277c49011c5ea14dc2e49d4c1af9ed03708153eb71b394b90d177a",
+    "solutions/solve.tcl": "d25a693ba06a064dc77c24ca71f17df57e9d23e2f2a678d09e6cc1ab7191aac5",
+    "verify.py": "90cd71f181f7b69bde67730d47e139f8a6326e60d67e5dbfdae9176b171e3330"
+  },
+  "stage": "reference-calibrated"
+}
