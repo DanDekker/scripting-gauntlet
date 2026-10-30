@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/perl-truthy-zero"
+fixture_origin = "Synthetic feature settings authored for this drill"
+
+[[negative]]
+path = "controls/wrong-regex-falsey.pl"
+defect = "Uses a hand-rolled regex to decide falsiness, so the values false, no and 0.0 are treated as off when perl calls them true"
+expect = "settings.csv row 5"

@@ -1,0 +1,51 @@
+{
+  "calibrated_at": "2026-10-30T03:49:52.623214+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "213-perl-truthy-zero",
+  "fixture_origin": "Synthetic feature settings authored for this drill",
+  "lineage": "scripting-gauntlet/perl-truthy-zero",
+  "results": [
+    {
+      "elapsed_ms": 29,
+      "language": "pl",
+      "passed": true,
+      "path": "solutions/solve.pl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 136,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Uses a hand-rolled regex to decide falsiness, so the values false, no and 0.0 are treated as off when perl calls them true",
+      "elapsed_ms": 60,
+      "expected_diagnostic": "settings.csv row 5",
+      "language": "pl",
+      "passed": true,
+      "path": "controls/wrong-regex-falsey.pl",
+      "problems": [
+        "settings.csv row 5 [5/state]: expected 'on', got 'off'",
+        "settings.csv row 6 [6/state]: expected 'on', got 'off'",
+        "summary.json['on']: expected 5, got 3",
+        "summary.json['off']: expected 2, got 4"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "15599d2e15558bd5d0c934f36013e16e7248691098ade051fd5bea898113841a",
+    "controls/manifest.toml": "278fcf6f879dbd0472f33e49b9f12f33c380dd76cf0082a82e9c42ba4209bf47",
+    "controls/wrong-regex-falsey.pl": "36e526b0a06b0689fd429c4632542e3e27e69f4173c75ce18e3b6f1f41eafcc9",
+    "drill.toml": "6dd8b2408b0b8ec09f5ef327a71c221eb9ea4110083d7f1f9f970490a96f0ed1",
+    "fixtures/settings.txt": "bd73d3626ca81c2b3a33cfa8bd44f8d8b250b419bfecf49360f6033155da5e22",
+    "solutions/solve.pl": "f00ac4fdce28b40b52457767f7afea1e99ced1cbea5a30c1f8d4fb0d6094ee80",
+    "solutions/solve.py": "59d9e09ad52a61b10f4856a17ac334e3271a77d5b66b7b1661fa35151691d7aa",
+    "verify.py": "c15d09e18f8b2031b672b8ad2cc1a59520cb96f7d5022040d928f78b8f32b145"
+  },
+  "stage": "reference-calibrated"
+}

@@ -1,0 +1,11 @@
+id = "213-perl-truthy-zero"
+family = "text-munging"
+title = "Decide which settings are enabled using perl's own truth rules"
+difficulty = 3
+timebox = 300
+teaches = [
+  "only the empty string and the exact string '0' are false in perl",
+  "'0.0' and '00' are true: only the exact text '0' is falsy",
+  "'false' and 'no' are ordinary non-empty strings, so they are true",
+  "a hand-rolled check like /^(0|false|no)$/i is a different rule from perl's",
+]

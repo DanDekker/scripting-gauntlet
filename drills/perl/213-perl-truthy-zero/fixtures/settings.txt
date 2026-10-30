@@ -1,0 +1,7 @@
+feature_a 1
+feature_b 0
+feature_c 0.0
+feature_d 00
+feature_e false
+feature_f no
+feature_g 
