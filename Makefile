@@ -30,4 +30,5 @@ lint:
 	@for f in $$(find drills -name 'solve.zsh'); do zsh -n "$$f" || exit 1; done; echo "zsh: ok"
 	@for f in $$(find drills -name 'solve.lua'); do luac -p "$$f" || exit 1; done; echo "lua: ok"
 	@for f in $$(find drills -name '*.rb'); do ruby -c "$$f" >/dev/null || exit 1; done; echo "ruby: ok"
+	@for f in $$(find drills -name '*.pl'); do perl -c "$$f" >/dev/null 2>&1 || { echo "perl: syntax error in $$f" >&2; exit 1; }; done; echo "perl: ok"
 	@$(PY) harness/check_skills.py
