@@ -1,0 +1,60 @@
+{
+  "calibrated_at": "2026-10-30T07:43:13.243346+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "246-ps1-literal-path",
+  "fixture_origin": "Synthetic handoff tree authored with wildcard-looking literal names",
+  "lineage": "scripting-gauntlet/ps1-literal-path",
+  "results": [
+    {
+      "elapsed_ms": 507,
+      "language": "ps1",
+      "passed": true,
+      "path": "solutions/solve.ps1",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 37,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Uses wildcard-aware Get-Item and Get-Content, so bracket and star filenames are not addressed literally",
+      "elapsed_ms": 629,
+      "expected_diagnostic": "inventory.csv",
+      "language": "ps1",
+      "passed": true,
+      "path": "controls/wrong-wildcard-path.ps1",
+      "problems": [
+        "inventory.csv: expected 4 rows, got 3",
+        "inventory.csv row 2 col 1: expected '[plan].txt', got '*.log'",
+        "inventory.csv row 2 col 2: expected 11, got '13'",
+        "inventory.csv row 2 col 3: expected 'draft plan', got 'literal star'",
+        "inventory.csv row 3 col 1: expected '*.log', got 'nested/notes.txt'",
+        "inventory.csv row 3 col 2: expected 13, got '12'",
+        "inventory.csv row 3 col 3: expected 'literal star', got 'nested note'",
+        "summary.json['files']: expected 4, got 3",
+        "summary.json['bytes']: expected 49, got 38"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "4528d1c3170cc143e5f377114075f7ac3b35e60b01065e57fb202f25f9a5f05d",
+    "controls/manifest.toml": "4bc75ba5a1f39cb44c9768e362b5d1b8f7e076f18fd278408e03e572ef7b36ce",
+    "controls/wrong-wildcard-path.ps1": "fe003938539d7d9b5480efa5b335d55b265c827fa2ed2e3ecf1165868e16d776",
+    "drill.toml": "23621a1fc38e3f11eb2accdd085a631056108bf774868c15ade1de018375414d",
+    "fixtures/manifest.csv": "b6ae24a78720af2ab9cedb55ed96eff072bbfe3d2be686a89dfb17c77284b435",
+    "fixtures/tree/*.log": "5bc49ecf9806aa0d6ee086f1bef622780386f417442b7c3f22c2815ec9b79cfd",
+    "fixtures/tree/-dash.txt": "f07d52f1e56413ad4d2368f152561daf2fd2d9bf939988aac776b147dbcf9ee9",
+    "fixtures/tree/[plan].txt": "8495684ed65884466fcfae14d244f802e16bf579e7cf93324294ce414367a159",
+    "fixtures/tree/nested/notes.txt": "d4e764ba0524f5851c374c37e8667eb79bf7ed4dcbb3298c6db56addd8745126",
+    "solutions/solve.ps1": "dbf50644c29eb39e3d944d680b918c66fb92f2ad65ecad4558398a57c496f249",
+    "solutions/solve.py": "76e0c542f04494ee9dafcc7029a1dea183496ed586c13de55badf640d6b8825b",
+    "verify.py": "667e6a65000216dce46abd12ad06f74ff944104142dc6ae7384b0fe419cfbe75"
+  },
+  "stage": "reference-calibrated"
+}

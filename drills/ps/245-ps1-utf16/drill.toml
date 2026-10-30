@@ -1,0 +1,11 @@
+id = "245-ps1-utf16"
+family = "text-munging"
+title = "Read a BOM-less UTF-16LE event log explicitly"
+difficulty = 3
+timebox = 240
+teaches = [
+  "PowerShell 7's default text encoding is not UTF-16LE",
+  "Get-Content -Encoding Unicode selects little-endian UTF-16",
+  "BOM-less input needs an explicit encoding instead of auto-detection",
+  "decode before splitting and preserve non-ASCII text",
+]

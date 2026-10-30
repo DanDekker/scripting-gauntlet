@@ -1,0 +1,11 @@
+id = "246-ps1-literal-path"
+family = "file-hygiene"
+title = "Inventory wildcard-looking filenames with LiteralPath"
+difficulty = 3
+timebox = 240
+teaches = [
+  "Get-Item and Get-Content interpret wildcard paths unless -LiteralPath is selected",
+  "bracket and star characters can be ordinary filename bytes",
+  "manifest-driven file work should preserve explicit input order",
+  "file Length counts bytes, not decoded characters",
+]

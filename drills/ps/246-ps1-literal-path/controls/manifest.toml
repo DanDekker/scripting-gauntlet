@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/ps1-literal-path"
+fixture_origin = "Synthetic handoff tree authored with wildcard-looking literal names"
+
+[[negative]]
+path = "controls/wrong-wildcard-path.ps1"
+defect = "Uses wildcard-aware Get-Item and Get-Content, so bracket and star filenames are not addressed literally"
+expect = "inventory.csv"

@@ -1,0 +1,5 @@
+path
+-dash.txt
+[plan].txt
+*.log
+nested/notes.txt
