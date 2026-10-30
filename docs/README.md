@@ -8,6 +8,37 @@ Start with the live contracts:
    requirements, independent controls, source lineage, and evidence stages.
 3. [Harness guide](../harness/README.md) — commands for running drills.
 
+The current language-depth expansions are [PowerShell 240-247](../drills/ps/240-ps1-split-regex),
+[JXA 248-254](../drills/jxa/248-jxa-json-bridge), and
+[Tcl 255-262](../drills/tcl/255-tcl-split-fields). Each drill has a reference solution,
+a portable twin where useful, and a calibration report under evidence/.
+
+## Recent language-depth evidence
+
+- PowerShell: [240 regex splitting](evidence/240-ps1-split-regex.json),
+  [241 JSON presence](evidence/241-ps1-json-presence.json),
+  [242 TryParse](evidence/242-ps1-tryparse.json),
+  [243 quoted CSV](evidence/243-ps1-csv-quoted.json),
+  [244 literal patterns](evidence/244-ps1-literal-pattern.json),
+  [245 UTF-16](evidence/245-ps1-utf16.json),
+  [246 LiteralPath](evidence/246-ps1-literal-path.json), and
+  [247 object export](evidence/247-ps1-format-object.json)
+- JXA: [248 JSON bridge](evidence/248-jxa-json-bridge.json),
+  [249 Unicode file I/O](evidence/249-jxa-file-io.json),
+  [250 path inventory](evidence/250-jxa-path-inventory.json),
+  [251 timezone parsing](evidence/251-jxa-date-timezone.json),
+  [252 plist writing](evidence/252-jxa-plist-write.json),
+  [253 NSError handling](evidence/253-jxa-objc-errors.json), and
+  [254 URL components](evidence/254-jxa-url-components.json)
+- Tcl: [255 split fields](evidence/255-tcl-split-fields.json),
+  [256 dict presence](evidence/256-tcl-dict-presence.json),
+  [257 regexp records](evidence/257-tcl-regexp-records.json),
+  [258 literal files](evidence/258-tcl-file-literal.json),
+  [259 safe subst](evidence/259-tcl-safe-subst.json),
+  [260 catch and expr](evidence/260-tcl-catch-expr.json),
+  [261 deterministic dict sort](evidence/261-tcl-dict-sort.json), and
+  [262 list quoting](evidence/262-tcl-list-quoting.json)
+
 The [taxonomy](taxonomy.md) explains the seven scripting families and language
 choices. The [manifesto](manifesto.md) states the deck's scope and style; it is
 not an executable contract.

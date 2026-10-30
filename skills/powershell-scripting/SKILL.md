@@ -232,6 +232,88 @@ corrupt or non-matching records to silently inherit data from earlier lines.
 
 Drill: `200-ps1-regex-groups`.
 
+## Presence is not truthiness
+
+ConvertFrom-Json returns PSCustomObject properties, and a property can be present with
+a null value. Test the property collection before reading its value:
+
+~~~powershell
+$prop = @($record.PSObject.Properties | Where-Object { $_.Name -ceq 'owner' })
+if ($prop.Count -eq 0) {
+    $state = 'missing'
+} elseif ($null -eq $prop[0].Value) {
+    $state = 'null'
+} elseif ($prop[0].Value -is [string] -and ([string]$prop[0].Value).Trim() -eq '') {
+    $state = 'empty'
+} else {
+    $state = 'value'
+}
+~~~
+
+Do not write a truthiness test on the property: it collapses absent, null, empty string,
+and numeric zero. A string 0 is a value too. Drill: 241-ps1-json-presence.
+
+## TryParse has two outputs
+
+The Boolean returned by TryParse answers whether parsing succeeded; the [ref] argument
+receives the parsed value. Keep them separate so a valid zero does not look like a
+failure:
+
+~~~powershell
+$value = 0
+$ok = [int]::TryParse(
+    $text.Trim(),
+    [Globalization.NumberStyles]::Integer,
+    [Globalization.CultureInfo]::InvariantCulture,
+    [ref]$value
+)
+if ($ok) { ... } else { ... }
+~~~
+
+Direct casts are terminating errors for some bad values, but they are not a validation
+contract and they make blank/fallback handling easy to get wrong. Drill: 242-ps1-tryparse.
+
+## Let Import-Csv own record boundaries
+
+Import-Csv handles quoted commas, doubled quotes, and a quoted field that spans physical
+lines. Get-Content plus split sees physical lines, not CSV records, and will turn one
+logical row into two. Keep the imported objects and use Export-Csv for the output.
+Drill: 243-ps1-csv-quoted.
+
+## Regex operators are not literal matching
+
+The right side of -match is a regular expression and -match is case-insensitive by
+default. If a user rule is literal, escape it and anchor it:
+
+~~~powershell
+$pattern = '^{0}$' -f [regex]::Escape($rule.Trim())
+$isMatch = $name.Trim() -cmatch $pattern
+~~~
+
+String.Equals with StringComparison::Ordinal is another clear choice. Drill:
+244-ps1-literal-pattern.
+
+## Encoding and paths are input contracts
+
+PowerShell cannot infer a BOM-less UTF-16LE file. Specify Encoding Unicode when the
+source contract says little-endian UTF-16, and specify LiteralPath when a filename can
+contain wildcard characters:
+
+~~~powershell
+$lines = Get-Content -Encoding Unicode $logPath
+$item = Get-Item -LiteralPath $path -Force
+$first = Get-Content -LiteralPath $path | Select-Object -First 1
+~~~
+
+Encoding is about bytes; LiteralPath is about treating path text as data. Drills:
+245-ps1-utf16 and 246-ps1-literal-path.
+
+## Formatting is not serialization
+
+Format-Table and Format-List create display-oriented formatting records. They are not
+CSV data and should not be piped into a report file. Build PSCustomObject values with
+the exact property order and send those to Export-Csv. Drill: 247-ps1-format-object.
+
 ## The four moves
 
 **1. Parse.** `Import-Csv` / `ConvertFrom-Json` / `-split` (a regex). Decide case

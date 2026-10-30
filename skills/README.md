@@ -1,6 +1,7 @@
 # skills
 
-Loadable know-how, one pack per family, plus a pack for the Lua language track.
+Loadable know-how, one pack per family, plus language packs for the deeper Lua, Perl,
+Ruby, PowerShell, JXA, and Tcl tracks.
 These follow the
 [Agent Skills spec](https://agentskills.io/specification): a directory containing
 `SKILL.md` with YAML frontmatter, optionally `references/` for detail an agent pulls in
@@ -19,6 +20,14 @@ only when it needs it.
 | [`perl-scripting`](perl-scripting/SKILL.md) | writing standard-library Perl on a Perl-shaped host | 161-165, 174-175, 180-181, 188, 193, 198 |
 | [`ruby-scripting`](ruby-scripting/SKILL.md) | writing standard-library Ruby on a Ruby-shaped host | 166-170, 182-183, 189, 194, 199 |
 | [`powershell-scripting`](powershell-scripting/SKILL.md) | writing standard-library PowerShell on a PowerShell-shaped host | 176-177, 184-185, 190, 195, 200 |
+
+## Expanded language packs
+
+The deeper tracks are deliberately separate from the family packs:
+
+- [powershell-scripting](powershell-scripting/SKILL.md): drills 176-177, 184-185, 190, 195, 200, and 240-247.
+- [jxa-scripting](jxa-scripting/SKILL.md): macOS Foundation drills 149 and 248-254.
+- [tcl-scripting](tcl-scripting/SKILL.md): core Tcl drills 002 and 255-262.
 
 A skill is judgement; a drill is proof. If a rule here is worth teaching, there should be
 a `verify.py` that fails without it.

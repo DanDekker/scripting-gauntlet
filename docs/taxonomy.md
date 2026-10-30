@@ -141,6 +141,11 @@ wanted 4.
 
 ### powershell — objects, and Windows
 
+The PowerShell language track now covers object-shape and host-I/O boundaries as well as
+the original grouping, money, JSON-depth, datetime, exit-code, pipeline, and regex
+lessons. Drills 240-247 cover regex splitting, JSON presence, TryParse, quoted CSV,
+literal matching, UTF-16 input, literal paths, and object export.
+
 On Windows it is not optional: registry, WMI/CIM, services, AD, Exchange, Azure. Its
 real idea — a pipeline of *objects* rather than text — is genuinely better than text
 pipes when the data is structured, and that advantage holds on macOS and Linux too.
@@ -178,12 +183,20 @@ modules. Prefer it when Perl is already on the target host.
 
 ### Tcl — small host-integrated scripts
 
+The Tcl track now proves list and dict semantics, regexp gating, safe subst, catch and
+decimal expr handling, deterministic dict sorting, and literal file paths in drills
+255-262.
+
 Tcl fits tool consoles and embedded interpreters as well as standalone scripts.
 Its dictionaries and regular expressions handle the log triage drill without
 adding a package dependency. Keep the command/evaluation rules in mind when
 building strings from untrusted input.
 
 ### JXA — macOS automation
+
+The JXA track goes beyond the original plist audit: Foundation JSON bridging, Unicode
+byte counts, path attributes, explicit timezone parsing, plist serialization, NSError
+handling, and NSURLComponents are covered in drills 248-254.
 
 JavaScript for Automation runs through `osascript` and can call macOS Foundation
 directly. The plist audit drill uses that native bridge. JXA solutions are

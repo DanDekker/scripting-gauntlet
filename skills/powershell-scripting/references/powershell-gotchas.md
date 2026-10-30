@@ -81,6 +81,18 @@
 | `"$($obj.prop)"` | the property value |
 | `-join`, `Join-String` | join an array |
 
+## New track checks
+
+| drill | trap | reliable move |
+| --- | --- | --- |
+| 241 | missing JSON property, JSON null, empty text, and zero collapse under truthiness | inspect PSObject.Properties, then classify the value |
+| 242 | direct casts or fallback zero hide failed integer parsing | use Int32.TryParse(..., [ref]$value) and branch on the Boolean |
+| 243 | physical line/comma splitting corrupts quoted CSV | Import-Csv and Export-Csv |
+| 244 | -match treats a literal rule as regex and ignores case by default | regex escape, anchors, and -cmatch, or ordinal String.Equals |
+| 245 | BOM-less UTF-16LE decodes as NUL-filled text under the default | Get-Content -Encoding Unicode |
+| 246 | wildcard characters in a manifest path are reinterpreted | -LiteralPath |
+| 247 | Format-Table emits display records, not CSV data | construct objects and Export-Csv |
+
 ## Errors
 
 | stream | number |
