@@ -1,0 +1,11 @@
+id = "223-perl-list-repetition"
+family = "data-wrangling"
+title = "Repeat a template once per row without collapsing it into one long string"
+difficulty = 3
+timebox = 300
+teaches = [
+  "x repeats its left operand: with a scalar it repeats the string, with a list it repeats the list",
+  "my @rows = $text x $count makes ONE element with the text concatenated, not $count rows",
+  "my @rows = ($text) x $count makes $count elements",
+  "the string form is what you want for a run of dashes, the list form for a run of rows",
+]

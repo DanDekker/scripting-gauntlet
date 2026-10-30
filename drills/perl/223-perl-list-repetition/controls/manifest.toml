@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/perl-list-repetition"
+fixture_origin = "Synthetic export spec authored for this drill"
+
+[[negative]]
+path = "controls/wrong-scalar-repeat.pl"
+defect = "Repeats a scalar with x, which concatenates the template into one element, so the export holds a single line instead of three rows"
+expect = "report.txt"

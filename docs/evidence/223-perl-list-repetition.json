@@ -1,0 +1,49 @@
+{
+  "calibrated_at": "2026-10-30T04:32:48.909118+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "223-perl-list-repetition",
+  "fixture_origin": "Synthetic export spec authored for this drill",
+  "lineage": "scripting-gauntlet/perl-list-repetition",
+  "results": [
+    {
+      "elapsed_ms": 57,
+      "language": "pl",
+      "passed": true,
+      "path": "solutions/solve.pl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 92,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Repeats a scalar with x, which concatenates the template into one element, so the export holds a single line instead of three rows",
+      "elapsed_ms": 50,
+      "expected_diagnostic": "report.txt",
+      "language": "pl",
+      "passed": true,
+      "path": "controls/wrong-scalar-repeat.pl",
+      "problems": [
+        "report.txt: expected ['alpha beta', 'alpha beta', 'alpha beta'], got ['alpha betaalpha betaalpha beta']",
+        "summary.json['lines']: expected 3, got 1"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "3503fa1b1743cea89f736964ddddc9aae4b597ca57c64834cc58f5379e7a6685",
+    "controls/manifest.toml": "250d0a10e3e7817f210729b0d62faea19f08216e9266d529379d142d4d3cfae5",
+    "controls/wrong-scalar-repeat.pl": "65d9a63757f6caa5e2cf5ad83f3a1ce75e7e8cee189bf766fe8e30b3596c75e4",
+    "drill.toml": "72f1d752c25900ae7f5a791deee6e88c7504ef2ef8ef440961cdeef497c9dee1",
+    "fixtures/spec.txt": "b9073fb15a01cc6438336f085cb3fe7ccb063462b46d190d2e16b428aad08868",
+    "solutions/solve.pl": "d2aa135458a952d8ffd93e447ff7a291051e28c9e95f16235607b314639ac1b5",
+    "solutions/solve.py": "98d0f39af8bbd7480ca72e00fcf8a05ee1e0eba098ef0c398101b566178ef145",
+    "verify.py": "3286705694d4845ede4c2d3f70aca7f22e4d4c13a5c802ec3145e42964682223"
+  },
+  "stage": "reference-calibrated"
+}
