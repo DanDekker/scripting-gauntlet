@@ -1,0 +1,12 @@
+id = "231-perl-access-log-triage"
+family = "data-wrangling"
+title = "Parse web server access logs and summarize traffic by client IP"
+difficulty = 3
+timebox = 300
+teaches = [
+  "parse Nginx combined access log format with regular expressions",
+  "the body bytes sent field is '-' when no response body was sent (e.g. 304 or 401)",
+  "under warnings, adding '-' to a number warns and numifies to 0; handle '-' explicitly",
+  "group HTTP status codes into 2xx, 3xx, 4xx, 5xx families with integer division int($status / 100)",
+  "sort hash records by multiple keys: requests descending, bytes descending, IP ascending"
+]

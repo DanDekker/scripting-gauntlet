@@ -1,0 +1,9 @@
+192.168.1.10 - frank [30/Oct/2026:10:00:01 +0000] "GET /api/v1/health HTTP/1.1" 200 42 "-" "curl/7.88.1"
+192.168.1.20 - - [30/Oct/2026:10:00:02 +0000] "POST /api/v1/login HTTP/1.1" 401 - "-" "python-requests/2.31"
+192.168.1.10 - frank [30/Oct/2026:10:00:03 +0000] "GET /assets/app.js HTTP/1.1" 304 - "https://app.example.com" "Mozilla/5.0"
+10.0.0.5 - - [30/Oct/2026:10:00:04 +0000] "GET /api/v1/data HTTP/1.1" 500 128 "-" "Go-http-client/1.1"
+192.168.1.10 - - [30/Oct/2026:10:00:05 +0000] "GET /bad HTTP/1.1" 404 15 "-" "curl/7.88.1"
+10.0.0.5 - - [30/Oct/2026:10:00:06 +0000] "POST /api/v1/data HTTP/1.1" 201 512 "-" "Go-http-client/1.1"
+192.168.1.20 - - [30/Oct/2026:10:00:07 +0000] "GET /api/v1/health HTTP/1.1" 200 42 "-" "curl/7.88.1"
+# Comment line
+10.0.0.5 - - [30/Oct/2026:10:00:08 +0000] "GET /robots.txt HTTP/1.1" 200 24 "-" "Googlebot/2.1"

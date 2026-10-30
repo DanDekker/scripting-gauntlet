@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/perl-access-log-triage"
+fixture_origin = "Synthetic access log authored for this drill"
+
+[[negative]]
+path = "controls/wrong-dash-bytes.pl"
+defect = "Uses a regex expecting digits for body bytes (\\d+), silently dropping lines with '-' (status 304 and 401)"
+expect = "summary.json['requests']"

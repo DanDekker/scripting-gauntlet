@@ -1,0 +1,52 @@
+{
+  "calibrated_at": "2026-10-30T06:35:57.106725+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "231-perl-access-log-triage",
+  "fixture_origin": "Synthetic access log authored for this drill",
+  "lineage": "scripting-gauntlet/perl-access-log-triage",
+  "results": [
+    {
+      "elapsed_ms": 33,
+      "language": "pl",
+      "passed": true,
+      "path": "solutions/solve.pl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 86,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Uses a regex expecting digits for body bytes (\\d+), silently dropping lines with '-' (status 304 and 401)",
+      "elapsed_ms": 19,
+      "expected_diagnostic": "summary.json['requests']",
+      "language": "pl",
+      "passed": true,
+      "path": "controls/wrong-dash-bytes.pl",
+      "problems": [
+        "clients.csv row 2 [192.168.1.10/requests]: expected 3, got '2'",
+        "clients.csv row 3 [192.168.1.20/requests]: expected 2, got '1'",
+        "summary.json['requests']: expected 8, got 6",
+        "summary.json['s3xx']: expected 1, got 0",
+        "summary.json['s4xx']: expected 2, got 1"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "676f9ff55dee05bac5e9b26aad919c91bbcea8f5a24de3f444c008dbd57523d4",
+    "controls/manifest.toml": "8e4ac8839e2b35952ec64255aa3f22f47404470d62f394aa9416e3a025f607db",
+    "controls/wrong-dash-bytes.pl": "b08ba9b7f36fef1b5d43a2b134d5f0676c782bf9b3feaf3add6d0d35c156b985",
+    "drill.toml": "8eaf9e403f4c8d93cb602da705500dd7fd763d671c39158f6580479974bbabbc",
+    "fixtures/access.log": "352d5395136a3095e58552bf225489f574179788fb7805a3e418968112438dc3",
+    "solutions/solve.pl": "d4d1ef6d8ae42304e5e83320ac70bd8577a02dbd968fbe4aca849700d66413e4",
+    "solutions/solve.py": "87d3b163923a73196d0474c3042203f84c696d9d7c2adddab0c526d40c848744",
+    "verify.py": "b685ed8c2aff0338ba32a002ffc723b65b37afab9b6d99bc8f91b7cc8468dfcd"
+  },
+  "stage": "reference-calibrated"
+}
