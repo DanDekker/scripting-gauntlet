@@ -1,0 +1,4 @@
+name,status,latency_ms,owner
+api,up,12,platform
+worker,down,0,jobs
+web,up,120,frontend

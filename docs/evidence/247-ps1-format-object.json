@@ -1,0 +1,48 @@
+{
+  "calibrated_at": "2026-10-30T07:44:29.725546+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "247-ps1-format-object",
+  "fixture_origin": "Synthetic service health table authored to separate data from display formatting",
+  "lineage": "scripting-gauntlet/ps1-format-object",
+  "results": [
+    {
+      "elapsed_ms": 1104,
+      "language": "ps1",
+      "passed": true,
+      "path": "solutions/solve.ps1",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 52,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Pipes Format-Table into a file, producing display text rather than CSV fields",
+      "elapsed_ms": 559,
+      "expected_diagnostic": "report.csv",
+      "language": "ps1",
+      "passed": true,
+      "path": "controls/wrong-format-table.ps1",
+      "problems": [
+        "report.csv header: expected ['name', 'status', 'latency_ms', 'owner', 'healthy'], got ['name   status latency_ms owner    healthy']"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "926d8620cbafd01c38df00d24ac3306c8f83fbc8affc7db47626ac6891e220a8",
+    "controls/manifest.toml": "b2ab02adc5b307ffdac2156a89134714364b75e71df64eb06b5a98c5ab023d25",
+    "controls/wrong-format-table.ps1": "0234fff3fbc1a4d328538cc7e5858e014a4cf71fe7ffdcceb03e7d35064f3247",
+    "drill.toml": "27397158502c88dda67e8b3a95e4a460a2f673478155713c2ff62cca4bed725a",
+    "fixtures/services.csv": "7ed3b7b3dedd511dfda2f429b64f7694dc2e25e053c2e06d723bd76fae02763f",
+    "solutions/solve.ps1": "e845c72ba127ebb9a5dd801492dfc8df1fc872d5e8730c2e76917233f29239a7",
+    "solutions/solve.py": "fa12ce7a6184d01dd997f0cf32b7281cc799ef5c68381ca293563dd1e6006fcf",
+    "verify.py": "54f4b8753affa8e64179f4a7088c350b019d1c827b44e4076a3bb2e11a1ccf1e"
+  },
+  "stage": "reference-calibrated"
+}

@@ -1,0 +1,11 @@
+id = "247-ps1-format-object"
+family = "data-wrangling"
+title = "Export objects instead of formatting a console table"
+difficulty = 2
+timebox = 240
+teaches = [
+  "Format-Table is a presentation layer and does not produce tabular data",
+  "Export-Csv serializes object properties and needs an explicit output shape",
+  "health rules may depend on both status and a numeric threshold",
+  "zero latency does not make a down service healthy",
+]

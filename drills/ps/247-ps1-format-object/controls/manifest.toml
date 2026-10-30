@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/ps1-format-object"
+fixture_origin = "Synthetic service health table authored to separate data from display formatting"
+
+[[negative]]
+path = "controls/wrong-format-table.ps1"
+defect = "Pipes Format-Table into a file, producing display text rather than CSV fields"
+expect = "report.csv"
