@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/jxa-url-components"
+fixture_origin = "Synthetic URL table authored for Foundation component parsing"
+
+[[negative]]
+path = "controls/wrong-hand-split.jxa"
+defect = "Hand-splits URL strings and leaves the percent-encoded path instead of using NSURLComponents"
+expect = "Application%20Support"

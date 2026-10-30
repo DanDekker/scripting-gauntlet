@@ -1,0 +1,11 @@
+id = "254-jxa-url-components"
+family = "api-probing"
+title = "Parse URL structure with NSURLComponents without making requests"
+difficulty = 3
+timebox = 300
+teaches = [
+  "NSURLComponents parses URL structure without network access",
+  "queryItems is structural data separate from percent-encoded query text",
+  "file URLs can be valid with an empty host and port",
+  "invalid URL rows should be skipped and counted",
+]

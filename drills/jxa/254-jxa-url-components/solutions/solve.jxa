@@ -1,0 +1,65 @@
+#!/usr/bin/env osascript -l JavaScript
+ObjC.import('Foundation');
+
+function env(name) {
+  const value = $.NSProcessInfo.processInfo.environment.objectForKey($(name));
+  if (!value) throw new Error(name + ' is missing');
+  return ObjC.unwrap(value);
+}
+
+function readText(path) {
+  const error = Ref();
+  const text = $.NSString.stringWithContentsOfFileEncodingError(
+    $(path), $.NSUTF8StringEncoding, error,
+  );
+  if (!text) throw new Error('cannot read ' + path);
+  return ObjC.unwrap(text);
+}
+
+function writeText(path, text) {
+  const error = Ref();
+  if (!$(text).writeToFileAtomicallyEncodingError($(path), true, $.NSUTF8StringEncoding, error)) {
+    throw new Error('cannot write ' + path);
+  }
+}
+
+function valueOrEmpty(value) {
+  const unwrapped = ObjC.unwrap(value);
+  return unwrapped == null ? '' : unwrapped;
+}
+
+function csvCell(value) {
+  return '"' + String(value).replace(/"/g, '""') + '"';
+}
+
+const input = env('IN');
+const output = env('OUT');
+const rows = [];
+let skipped = 0;
+let queryParams = 0;
+for (const line of readText(input + '/urls.csv').split(/\r\n|\r|\n/).slice(1)) {
+  if (!line.trim()) continue;
+  const comma = line.indexOf(',');
+  const id = line.slice(0, comma).trim();
+  const raw = line.slice(comma + 1).trim();
+  const components = $.NSURLComponents.componentsWithString($(raw));
+  const scheme = components ? valueOrEmpty(components.scheme) : '';
+  const host = components ? valueOrEmpty(components.host) : '';
+  if (!components || !scheme || (!host && scheme !== 'file')) {
+    skipped++;
+    continue;
+  }
+  const query = valueOrEmpty(components.query);
+  const count = query ? Number(components.queryItems.count) : 0;
+  const port = valueOrEmpty(components.port);
+  const path = valueOrEmpty(components.path);
+  queryParams += count;
+  rows.push([id, scheme, host, port, path, count]);
+}
+
+const csv = ['id,scheme,host,port,path,query_items']
+  .concat(rows.map((row) => row.map(csvCell).join(','))).join('\n') + '\n';
+writeText(output + '/urls.csv', csv);
+writeText(output + '/summary.json', JSON.stringify({
+  urls: rows.length, skipped, query_params: queryParams,
+}) + '\n');

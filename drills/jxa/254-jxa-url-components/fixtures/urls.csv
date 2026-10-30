@@ -1,0 +1,5 @@
+id,url
+search,https://example.test:8443/api/search?q=mac%20tools&tag=jxa
+file,file:///Users/dd/Library/Application%20Support/app/data.json
+health,https://example.test/health
+bad,not a url

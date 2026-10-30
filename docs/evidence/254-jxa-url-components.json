@@ -1,0 +1,48 @@
+{
+  "calibrated_at": "2026-10-30T07:53:17.217489+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "254-jxa-url-components",
+  "fixture_origin": "Synthetic URL table authored for Foundation component parsing",
+  "lineage": "scripting-gauntlet/jxa-url-components",
+  "results": [
+    {
+      "elapsed_ms": 226,
+      "language": "jxa",
+      "passed": true,
+      "path": "solutions/solve.jxa",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 39,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Hand-splits URL strings and leaves the percent-encoded path instead of using NSURLComponents",
+      "elapsed_ms": 244,
+      "expected_diagnostic": "Application%20Support",
+      "language": "jxa",
+      "passed": true,
+      "path": "controls/wrong-hand-split.jxa",
+      "problems": [
+        "urls.csv row 2 col 5: expected '/Users/dd/Library/Application Support/app/data.json', got '/Users/dd/Library/Application%20Support/app/data.json'"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "c61116641ad36a27db3b5ced20e29fab6d2d33db3838ea6bee187a452e726c44",
+    "controls/manifest.toml": "5610e98a687c40d6177ed783eb10ec465fd656d7ffe6438dfe7d4292a52b22bb",
+    "controls/wrong-hand-split.jxa": "20ae31d057fe96b98ae33c3aeec9b1b0a1ec3b01588f2d05eb567802962bee20",
+    "drill.toml": "89386fe20f2e727d7bec104d3a2166b641794b9941f5639824f2709174ac748a",
+    "fixtures/urls.csv": "65e804f1d48316a745e9a8ad9a0e171e3d9e96762f7cbc9d9f5c0c517e3cd658",
+    "solutions/solve.jxa": "87503a9bbc0c2410825cdf1161cc6670bd8b8cb37cad2444ab3827bd8c67d552",
+    "solutions/solve.py": "934b6c6d5a3b482dfa8670390be32867e342bccab7b7434da383853ba523eb2d",
+    "verify.py": "270a1343b118c4276f73fc28989f38f7652a2b2e444176a9054cfe7236a1b7ab"
+  },
+  "stage": "reference-calibrated"
+}
