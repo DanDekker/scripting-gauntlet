@@ -1,0 +1,50 @@
+{
+  "calibrated_at": "2026-10-30T02:56:51.101705+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "207-perl-error-taxonomy",
+  "fixture_origin": "Synthetic probe list authored for this drill",
+  "lineage": "scripting-gauntlet/perl-error-taxonomy",
+  "results": [
+    {
+      "elapsed_ms": 75,
+      "language": "pl",
+      "passed": true,
+      "path": "solutions/solve.pl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 109,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Reports the raw wait status returned by system() as the exit code, so a child that exited 3 is reported as 768",
+      "elapsed_ms": 78,
+      "expected_diagnostic": "1/detail",
+      "language": "pl",
+      "passed": true,
+      "path": "controls/wrong-wait-status.pl",
+      "problems": [
+        "results.csv row 1 [1/detail]: expected 3, got '768'",
+        "results.csv row 5 [5/detail]: expected 42, got '10752'"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "131a3abdb3469036c8ac95a80be6002d8af44c19861f312c0226db572802ecc9",
+    "controls/manifest.toml": "5dd9f4cabb469f73d558ae6f53aff3cc2920231c2f0de790b47362719ab7c20e",
+    "controls/wrong-wait-status.pl": "c208ee6a20b367bbcdafa442491aa93c40de6e0a31257fe22c46d5b603dd7913",
+    "drill.toml": "73bcb74161203d4dd5790593c59a6ff82da3bf39046cb54ed5d836dbe22602e1",
+    "fixtures/present.txt": "14bca160a84ec9e8e5b25cb86ec8b0945f870b8781c8e94ef883b58d27b508db",
+    "fixtures/probes.csv": "7c094cccb340e85241650405377512643b06528f6715acbd31aafad8a554035a",
+    "solutions/solve.pl": "68838ab41209993e6553f679701788cd344f1a2f849ffacb934d3583ad976ca5",
+    "solutions/solve.py": "9e934b07880d56595ee94700ae1a4a538560b897d91155906ca26c2d982a2333",
+    "verify.py": "eee8e9609f0ac05ff448bcbebde6151d09a9d47eff7b3e1f303ba157394f71e9"
+  },
+  "stage": "reference-calibrated"
+}

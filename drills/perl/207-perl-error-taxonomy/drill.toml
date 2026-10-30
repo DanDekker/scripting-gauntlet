@@ -1,0 +1,11 @@
+id = "207-perl-error-taxonomy"
+family = "system-recon"
+title = "Read each failure from the variable that actually holds it"
+difficulty = 4
+timebox = 300
+teaches = [
+  "$? holds the wait status of the last child process; the exit code is $? >> 8 and the signal is $? & 127",
+  "system() returns the raw wait status, so a child that exits 3 comes back as 768",
+  "$! holds the errno of the last failed system call and is only meaningful right after the failure",
+  "$@ holds the message from the last eval that died, and is cleared by the next successful eval",
+]

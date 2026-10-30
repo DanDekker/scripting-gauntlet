@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/perl-error-taxonomy"
+fixture_origin = "Synthetic probe list authored for this drill"
+
+[[negative]]
+path = "controls/wrong-wait-status.pl"
+defect = "Reports the raw wait status returned by system() as the exit code, so a child that exited 3 is reported as 768"
+expect = "1/detail"
