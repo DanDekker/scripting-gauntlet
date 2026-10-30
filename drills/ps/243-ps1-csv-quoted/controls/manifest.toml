@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/ps1-csv-quoted"
+fixture_origin = "Synthetic invoice export authored with quoted commas, quotes, and newlines"
+
+[[negative]]
+path = "controls/wrong-line-split.ps1"
+defect = "Splits physical lines and commas manually, so quoted commas and the multiline note corrupt record boundaries"
+expect = "invoices.csv"

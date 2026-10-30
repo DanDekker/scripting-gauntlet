@@ -1,0 +1,11 @@
+name,rule
+api.v2,api.v2
+apiXv2,api.v2
+worker+,worker+
+worker,worker+
+cache[1],cache[1]
+cache1,cache[1]
+proxy?,proxy?
+proxyX,proxy?
+API.V2,api.v2
+  web  , web 

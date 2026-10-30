@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/ps1-literal-pattern"
+fixture_origin = "Synthetic service-rule table authored with regex punctuation"
+
+[[negative]]
+path = "controls/wrong-raw-match.ps1"
+defect = "Uses unescaped, case-insensitive -match, so punctuation and case are interpreted as regex rules"
+expect = "match"

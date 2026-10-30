@@ -1,0 +1,6 @@
+order_id,customer,note,units,unit_price
+A-100,"Acme, Inc.","ship to ""lab""",2,1.25
+A-101,North Star,"line one
+line two",1,10.00
+A-102,Solo,,0,99.99
+A-103,Edge,"comma, and ""quote""",3,0.10

@@ -1,0 +1,56 @@
+{
+  "calibrated_at": "2026-10-30T07:41:36.191683+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "244-ps1-literal-pattern",
+  "fixture_origin": "Synthetic service-rule table authored with regex punctuation",
+  "lineage": "scripting-gauntlet/ps1-literal-pattern",
+  "results": [
+    {
+      "elapsed_ms": 826,
+      "language": "ps1",
+      "passed": true,
+      "path": "solutions/solve.ps1",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 99,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Uses unescaped, case-insensitive -match, so punctuation and case are interpreted as regex rules",
+      "elapsed_ms": 546,
+      "expected_diagnostic": "match",
+      "language": "ps1",
+      "passed": true,
+      "path": "controls/wrong-raw-match.ps1",
+      "problems": [
+        "matches.csv row 2 [apiXv2/match]: expected 'no', got 'yes'",
+        "matches.csv row 3 [worker+/match]: expected 'yes', got 'no'",
+        "matches.csv row 4 [worker/match]: expected 'no', got 'yes'",
+        "matches.csv row 5 [cache[1]/match]: expected 'yes', got 'no'",
+        "matches.csv row 6 [cache1/match]: expected 'no', got 'yes'",
+        "matches.csv row 7 [proxy?/match]: expected 'yes', got 'no'",
+        "matches.csv row 9 [API.V2/match]: expected 'no', got 'yes'",
+        "summary.json['matched']: expected 5, got 6",
+        "summary.json['unmatched']: expected 5, got 4"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "9a7f822430410bf25e44c356776fb0098fdf94d1187aed588ae62b9fdf5d3ae6",
+    "controls/manifest.toml": "aee8843b7cb5e4537297d129ac2e737aea6f980c5b82bc0aec26197d457086af",
+    "controls/wrong-raw-match.ps1": "c4371f737b306e949c77f1b641aa27b738ff5a613f0e5de589c9b6f5b058dc89",
+    "drill.toml": "d93d32ff9a39edd3645ae146f043be38f245543dcd998c3162e1b9574918ed00",
+    "fixtures/services.csv": "ff4733a231e9d8aad7724ab898841b357c4adb563c66e985afe67dd0d2f804fd",
+    "solutions/solve.ps1": "1a2fd32a5fd9693a868089f49afbb940a207810d9e050cc0859323db1a907863",
+    "solutions/solve.py": "eda0facd44f892e0310c6482e4e2fb920283199a14c17f06bbfa7ff2616b464a",
+    "verify.py": "a0a77e01490a1f34195d1555e518f4b04b29ecd3064bd1364356065439fc0f28"
+  },
+  "stage": "reference-calibrated"
+}

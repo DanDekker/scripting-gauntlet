@@ -1,0 +1,11 @@
+id = "243-ps1-csv-quoted"
+family = "data-wrangling"
+title = "Parse quoted CSV before calculating invoice totals"
+difficulty = 3
+timebox = 300
+teaches = [
+  "Import-Csv handles commas and doubled quotes inside quoted fields",
+  "CSV records may span physical lines when a quoted field contains a newline",
+  "decimal arithmetic and invariant F2 formatting keep invoice totals stable",
+  "a zero-quantity record must be kept instead of filtered as falsy",
+]

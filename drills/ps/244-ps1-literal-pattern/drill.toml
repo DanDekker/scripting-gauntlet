@@ -1,0 +1,11 @@
+id = "244-ps1-literal-pattern"
+family = "text-munging"
+title = "Match literal service names without regex surprises"
+difficulty = 4
+timebox = 240
+teaches = [
+  "PowerShell -match treats the right side as a regex",
+  "regex metacharacters must be escaped when the input is meant to be literal",
+  "-match is case-insensitive by default; -cmatch makes the case rule explicit",
+  "anchors or String.Equals prevent substring matches",
+]

@@ -1,0 +1,65 @@
+{
+  "calibrated_at": "2026-10-30T07:41:36.222837+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "243-ps1-csv-quoted",
+  "fixture_origin": "Synthetic invoice export authored with quoted commas, quotes, and newlines",
+  "lineage": "scripting-gauntlet/ps1-csv-quoted",
+  "results": [
+    {
+      "elapsed_ms": 835,
+      "language": "ps1",
+      "passed": true,
+      "path": "solutions/solve.ps1",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 109,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Splits physical lines and commas manually, so quoted commas and the multiline note corrupt record boundaries",
+      "elapsed_ms": 561,
+      "expected_diagnostic": "invoices.csv",
+      "language": "ps1",
+      "passed": true,
+      "path": "controls/wrong-line-split.ps1",
+      "problems": [
+        "invoices.csv: expected 4 rows, got 3",
+        "invoices.csv row 1 [A-100/customer]: expected 'Acme, Inc.', got 'Acme'",
+        "invoices.csv row 1 [A-100/units]: expected 2, got '\"ship to \"\"lab\"\"\"'",
+        "invoices.csv row 1 [A-100/unit_price]: expected 1.25, got '2'",
+        "invoices.csv row 1 [A-100/total]: expected 2.5, got '\"ship to \"\"lab\"\"\"'",
+        "invoices.csv row 2 [A-101/order_id]: expected 'A-101', got 'A-102'",
+        "invoices.csv row 2 [A-101/customer]: expected 'North Star', got 'Solo'",
+        "invoices.csv row 2 [A-101/units]: expected 1, got '0'",
+        "invoices.csv row 2 [A-101/unit_price]: expected 10.0, got '99.99'",
+        "invoices.csv row 2 [A-101/total]: expected 10.0, got '0'",
+        "invoices.csv row 3 [A-102/order_id]: expected 'A-102', got 'A-103'",
+        "invoices.csv row 3 [A-102/customer]: expected 'Solo', got 'Edge'",
+        "invoices.csv row 3 [A-102/units]: expected 0, got 'and \"\"quote\"\"\"'",
+        "invoices.csv row 3 [A-102/unit_price]: expected 99.99, got '3'",
+        "invoices.csv row 3 [A-102/total]: expected 0.0, got 'and \"\"quote\"\"\"'",
+        "summary.json['orders']: expected 4, got 3",
+        "summary.json['grand_total']: expected 12.8, got 0",
+        "summary.json['zero_quantity']: expected 1, got 0"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "4a0f0c68bc27cf92bd7d06d64270c3d5b2cf0ee79e05cf903cb50771238c52ba",
+    "controls/manifest.toml": "209b198c46caca70c1d910137326af754a68be017856add222c56129b8884dff",
+    "controls/wrong-line-split.ps1": "beafa5bb5cd2972c51b6d13ee0ec4ddfab8617f228db5316777eaf20414769b0",
+    "drill.toml": "ca0e5c58b5a038ccf48b98ee4c5c3d4b40c0a85add2351ef18873d524c4236e5",
+    "fixtures/invoices.csv": "6acb39dec7547223c16c7e7458f1124746cd89de5f01b15259d2a903114f03d7",
+    "solutions/solve.ps1": "a7596490f00c08e869284d2845c2fac43efbe362b70dc62229702383019f5d17",
+    "solutions/solve.py": "81a0d1235e5d34318d77182e2e7dfee98a267e1977426ba3b28451020bb1a988",
+    "verify.py": "c51c15091e2937926b5c57d586c00f3408d43127a8db7cc497edc983dbaa0955"
+  },
+  "stage": "reference-calibrated"
+}
