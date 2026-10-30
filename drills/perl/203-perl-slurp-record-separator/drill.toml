@@ -1,0 +1,11 @@
+id = "203-perl-slurp-record-separator"
+family = "text-munging"
+title = "Read a file whole and a file by paragraphs without leaking the input record separator"
+difficulty = 3
+timebox = 300
+teaches = [
+  "$/ is a global variable: setting it without local changes every later readline in the program",
+  "local $/ = undef slurps the whole file into one string",
+  "local $/ = \"\" reads paragraphs, where records are separated by a blank line",
+  "chomp removes $/, so under a paragraph separator it strips the blank line, not just one newline",
+]

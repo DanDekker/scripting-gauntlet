@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/perl-slurp-record-separator"
+fixture_origin = "Synthetic config and note files authored for this drill"
+
+[[negative]]
+path = "controls/wrong-leaked-separator.pl"
+defect = "Slurps the config with a global $/ = undef that is never restored, so the notes file is read as one giant record"
+expect = "records.csv row 1"

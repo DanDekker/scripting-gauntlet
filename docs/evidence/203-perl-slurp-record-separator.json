@@ -1,0 +1,52 @@
+{
+  "calibrated_at": "2026-10-30T02:36:24.831713+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "203-perl-slurp-record-separator",
+  "fixture_origin": "Synthetic config and note files authored for this drill",
+  "lineage": "scripting-gauntlet/perl-slurp-record-separator",
+  "results": [
+    {
+      "elapsed_ms": 9,
+      "language": "pl",
+      "passed": true,
+      "path": "solutions/solve.pl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 27,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Slurps the config with a global $/ = undef that is never restored, so the notes file is read as one giant record",
+      "elapsed_ms": 8,
+      "expected_diagnostic": "records.csv row 1",
+      "language": "pl",
+      "passed": true,
+      "path": "controls/wrong-leaked-separator.pl",
+      "problems": [
+        "records.csv: expected 3 rows, got 1",
+        "records.csv row 1 [1/lines]: expected 2, got '8'",
+        "summary.json['records']: expected 3, got 1",
+        "summary.json['total_lines']: expected 5, got 8"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "b7334e8ac11a9d4d169aa7a95a64b771ad0a3fe0adda9fe74152510c73cc73c5",
+    "controls/manifest.toml": "87239a93889efb767517230c4c458e1f193bcfb7809ed9f50828504ba8cc9c71",
+    "controls/wrong-leaked-separator.pl": "7612093bb0a8467f7af7c0debe2451b9d365f14041fc9f3a5bcbf05e42fbf7ae",
+    "drill.toml": "1b7350626a3f73ed22a7c5a4f8d39917207b66eb68088f78b16ec30f22008aac",
+    "fixtures/config.ini": "6754ab0f849efd67e66b5ffefc9228ea2038b0cef3a8772744aa5eb25eeafc1b",
+    "fixtures/notes.txt": "582c9f18afc325e0881fd8cb5187c78073fd75dcecb6920a44f494dd59e70995",
+    "solutions/solve.pl": "1888e99749a3a5fafac359b78f8b429029e5505af201e8023cf7853a55ec4242",
+    "solutions/solve.py": "2eb3d2c2d2801a5d5a34015019e98eadca66a9102ae91eb98653d3b81ea1b178",
+    "verify.py": "7d882517bc20b857010c3dfd240d2d52f3e83c7dc69c14e92a977fbd2df4b51e"
+  },
+  "stage": "reference-calibrated"
+}
