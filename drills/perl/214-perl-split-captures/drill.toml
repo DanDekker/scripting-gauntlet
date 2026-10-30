@@ -1,0 +1,11 @@
+id = "214-perl-split-captures"
+family = "data-wrangling"
+title = "Split an access log into columns without letting a capture group shift them"
+difficulty = 3
+timebox = 300
+teaches = [
+  "split with a capture group in the pattern returns the captured text as well as the pieces around it",
+  "every capture adds a field, so the fields shift and the first one comes out empty",
+  "captures are how you keep the separators; plain fields need a pattern with no capture",
+  "split ' ' is awk mode and splits on runs of whitespace, while split /\\s+/ keeps a leading empty field",
+]

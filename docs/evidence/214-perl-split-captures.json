@@ -1,0 +1,65 @@
+{
+  "calibrated_at": "2026-10-30T04:08:34.794055+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "214-perl-split-captures",
+  "fixture_origin": "Synthetic access log authored for this drill",
+  "lineage": "scripting-gauntlet/perl-split-captures",
+  "results": [
+    {
+      "elapsed_ms": 25,
+      "language": "pl",
+      "passed": true,
+      "path": "solutions/solve.pl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 56,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Splits on a pattern with a capture group, so the captured text comes back as extra fields and every value lands in the wrong column",
+      "elapsed_ms": 21,
+      "expected_diagnostic": "1/timestamp",
+      "language": "pl",
+      "passed": true,
+      "path": "controls/wrong-capture-shift.pl",
+      "problems": [
+        "access.csv row 1 [1/timestamp]: expected '2026-10-29T10:00:00', got ''",
+        "access.csv row 1 [1/method]: expected 'GET', got '2026-10-29T10:00:00'",
+        "access.csv row 1 [1/path]: expected '/health', got ''",
+        "access.csv row 1 [1/status]: expected '200', got 'GET'",
+        "access.csv row 2 [2/timestamp]: expected '2026-10-29T10:00:05', got ''",
+        "access.csv row 2 [2/method]: expected 'POST', got '2026-10-29T10:00:05'",
+        "access.csv row 2 [2/path]: expected '/api/v1/orders', got ''",
+        "access.csv row 2 [2/status]: expected '201', got 'POST'",
+        "access.csv row 3 [3/timestamp]: expected '2026-10-29T10:00:09', got ''",
+        "access.csv row 3 [3/method]: expected 'GET', got '2026-10-29T10:00:09'",
+        "access.csv row 3 [3/path]: expected '/missing', got ''",
+        "access.csv row 3 [3/status]: expected '404', got 'GET'",
+        "access.csv row 4 [4/timestamp]: expected '2026-10-29T10:00:14', got ''",
+        "access.csv row 4 [4/method]: expected 'DELETE', got '2026-10-29T10:00:14'",
+        "access.csv row 4 [4/path]: expected '/api/v1/orders/7', got ''",
+        "access.csv row 4 [4/status]: expected '204', got 'DELETE'",
+        "summary.json['ok']: expected 3, got 0",
+        "summary.json['errors']: expected 1, got 4"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "986770dcaf6b6987faf7ab1aa8658ed072fa2608711a5613b843a11822e7fab1",
+    "controls/manifest.toml": "55ef9f7db20684c279ab0f2c14f1655f0a9e024d966a18a7207020c1db873daf",
+    "controls/wrong-capture-shift.pl": "ebd69b8375112ce273775fb050456daeab4cd72953f2483ed566158b5f671cdf",
+    "drill.toml": "514b2a1011097d6a6cfe3f703a493c919173c09b6fefc6bb531a940068dce241",
+    "fixtures/access.log": "b04addb297df6feeaf748a5746b011f720e9ca92bb2bf84cfa07dcf996e3cdec",
+    "solutions/solve.pl": "68032c845d72f5cbd38688baa84d712ad63facb86eec9784c180ae0fa53c2501",
+    "solutions/solve.py": "c89608ed239aabf96a145d3323befe24e950643170c9a8a4e1ac67e0318baf14",
+    "verify.py": "e2800a4b5cdaee5400d694ecc1e8ead0a72037962fc0b4813c0ed55bb56f0877"
+  },
+  "stage": "reference-calibrated"
+}

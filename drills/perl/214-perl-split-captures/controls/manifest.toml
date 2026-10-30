@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/perl-split-captures"
+fixture_origin = "Synthetic access log authored for this drill"
+
+[[negative]]
+path = "controls/wrong-capture-shift.pl"
+defect = "Splits on a pattern with a capture group, so the captured text comes back as extra fields and every value lands in the wrong column"
+expect = "1/timestamp"
