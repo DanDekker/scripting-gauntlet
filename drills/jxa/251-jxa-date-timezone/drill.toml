@@ -1,0 +1,11 @@
+id = "251-jxa-date-timezone"
+family = "text-munging"
+title = "Parse explicit offsets and reject impossible dates in JXA"
+difficulty = 4
+timebox = 300
+teaches = [
+  "NSDateFormatter needs an en_US_POSIX locale for machine timestamps",
+  "dateFormat XXXXX parses an ISO numeric timezone offset",
+  "lenient=false rejects a date such as February 29 in a non-leap year",
+  "NSDate timeIntervalSince1970 preserves the valid epoch-zero result",
+]

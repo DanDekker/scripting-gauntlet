@@ -1,0 +1,21 @@
+#!/usr/bin/env osascript -l JavaScript
+ObjC.import('Foundation');
+function env(name) {
+  const value = $.NSProcessInfo.processInfo.environment.objectForKey($(name));
+  if (!value) throw new Error(name + ' is missing');
+  return ObjC.unwrap(value);
+}
+function write(path, text) {
+  const error = Ref();
+  $(text).writeToFileAtomicallyEncodingError($(path), true, $.NSUTF8StringEncoding, error);
+}
+const root = env('IN') + '/tree';
+const names = ObjC.deepUnwrap($.NSFileManager.defaultManager.contentsOfDirectoryAtPathError($(root), null));
+const rows = [];
+for (const name of names) {
+  const path = root + '/' + name;
+  const attrs = $.NSFileManager.defaultManager.attributesOfItemAtPathError($(path), null);
+  if (attrs) rows.push([name, Number(ObjC.unwrap(attrs.objectForKey($.NSFileSize))), 'file']);
+}
+write(env('OUT') + '/inventory.csv', ['path,bytes,kind'].concat(rows.map((row) => row.join(','))).join('\n') + '\n');
+write(env('OUT') + '/summary.json', JSON.stringify({files:rows.length,bytes:rows.reduce((n,row)=>n+row[1],0)}) + '\n');

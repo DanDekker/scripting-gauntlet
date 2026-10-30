@@ -1,0 +1,4 @@
+-dash.txt
+.hidden
+reports/one.txt
+reports/two file.txt

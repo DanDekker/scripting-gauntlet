@@ -1,0 +1,59 @@
+{
+  "calibrated_at": "2026-10-30T07:49:10.121936+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "250-jxa-path-inventory",
+  "fixture_origin": "Synthetic macOS handoff tree authored with hidden, nested, and spaced names",
+  "lineage": "scripting-gauntlet/jxa-path-inventory",
+  "results": [
+    {
+      "elapsed_ms": 745,
+      "language": "jxa",
+      "passed": true,
+      "path": "solutions/solve.jxa",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 34,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Enumerates only the top-level directory instead of following every manifest path",
+      "elapsed_ms": 247,
+      "expected_diagnostic": "inventory.csv",
+      "language": "jxa",
+      "passed": true,
+      "path": "controls/wrong-flat-enumeration.jxa",
+      "problems": [
+        "inventory.csv: expected 4 rows, got 3",
+        "inventory.csv row 1 col 1: expected '-dash.txt', got '.hidden'",
+        "inventory.csv row 1 col 2: expected 5, got '7'",
+        "inventory.csv row 2 col 1: expected '.hidden', got '-dash.txt'",
+        "inventory.csv row 2 col 2: expected 7, got '5'",
+        "inventory.csv row 3 col 1: expected 'reports/one.txt', got 'reports'",
+        "inventory.csv row 3 col 2: expected 4, got '128'",
+        "summary.json['files']: expected 4, got 3",
+        "summary.json['bytes']: expected 25, got 140"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "a6ef5e83ba0e70d59391ce61e65dae4ba3803a6c1e6c7da0f7147ce244bc3e9e",
+    "controls/manifest.toml": "673d0f4e377e06b4a76a33dca5b715ae70a441dbc6c376a59e996f2144f87b81",
+    "controls/wrong-flat-enumeration.jxa": "40488e51a799255f15d492e2e009c968a26fa7fa9d72a66c6400e00a88e45174",
+    "drill.toml": "2505201dddc0855d21de265db802cb889a887c49715c6151265008cb83d12892",
+    "fixtures/manifest.txt": "7f1887df1ac3228e0d51d7ce5462250170168a40ba1cec6d30f5e27faa1b1a92",
+    "fixtures/tree/-dash.txt": "f8359416cedbf4b44bd1cab71b791b4121e3b33748187c530e70207af87c3f39",
+    "fixtures/tree/reports/one.txt": "2c8b08da5ce60398e1f19af0e5dccc744df274b826abe585eaba68c525434806",
+    "fixtures/tree/reports/two file.txt": "f6e5a47fcc077ec2c8d6af52e7fe138216495e16fd0443e252af36ac9a341ca2",
+    "solutions/solve.jxa": "1078748248fcd4a0f1b0f8c8067293a7d5c58c358d1db78b09ebdd9b9762b1be",
+    "solutions/solve.py": "df5d69b3577a810b02fdf767b8a7a10453fec0a141c03f83af233eb0737b1c25",
+    "verify.py": "577f419e2ed13edf848466f7672b0c39bce08cb641b6bbab1eb55dfc3f489c66"
+  },
+  "stage": "reference-calibrated"
+}

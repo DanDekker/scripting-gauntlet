@@ -1,0 +1,53 @@
+{
+  "calibrated_at": "2026-10-30T07:49:31.502671+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "251-jxa-date-timezone",
+  "fixture_origin": "Synthetic timestamp CSV authored with explicit offsets, epoch zero, and an invalid date",
+  "lineage": "scripting-gauntlet/jxa-date-timezone",
+  "results": [
+    {
+      "elapsed_ms": 304,
+      "language": "jxa",
+      "passed": true,
+      "path": "solutions/solve.jxa",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 44,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Uses JavaScript Date parsing, which normalizes the impossible calendar date instead of rejecting it",
+      "elapsed_ms": 231,
+      "expected_diagnostic": "stamps.csv",
+      "language": "jxa",
+      "passed": true,
+      "path": "controls/wrong-js-date.jxa",
+      "problems": [
+        "stamps.csv: expected 4 rows, got 5",
+        "stamps.csv row 4 col 1: expected 'offset', got 'bad'",
+        "stamps.csv row 4 col 2: expected '2026-10-30T12:15:00Z', got ''",
+        "stamps.csv row 4 col 3: expected 1793362500, got 'NaN'",
+        "summary.json['accepted']: expected 4, got 5",
+        "summary.json['rejected']: expected 1, got 0"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "c8f0176bdaeb5f8ea0d44ca0489644fd3058cbc6520b0bc79da755a73fef35f0",
+    "controls/manifest.toml": "17e7708704eac5dcf1c3a7f61b93088888db29b11f2456769dbd5cf5bd9632a3",
+    "controls/wrong-js-date.jxa": "2e10927ad8cef433fd0fc502ed9c4cd44d28b2264287c27c5d3651459db078d6",
+    "drill.toml": "b1445df9bc89dfdab400c107d346ddf08eeac50e1c53162b710fa2aaae009f65",
+    "fixtures/stamps.csv": "2a0a887bb4ce18dcec500cd867b93b2753a818827f07cbdcb765247ef481cbf1",
+    "solutions/solve.jxa": "76c0b73cdc0ae1bb762f5410472a50b45fe2be538947c4fb937b543f0c1f444a",
+    "solutions/solve.py": "413c52c45e27d7be585b54eee3ecc8edbd9e6ae2aabcfb446cf5792220188dc2",
+    "verify.py": "bec5791faa85c2c66e27041fc8865f0d17c907deae8eb2e6e7517443b77404bf"
+  },
+  "stage": "reference-calibrated"
+}

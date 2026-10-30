@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/jxa-date-timezone"
+fixture_origin = "Synthetic timestamp CSV authored with explicit offsets, epoch zero, and an invalid date"
+
+[[negative]]
+path = "controls/wrong-js-date.jxa"
+defect = "Uses JavaScript Date parsing, which normalizes the impossible calendar date instead of rejecting it"
+expect = "stamps.csv"

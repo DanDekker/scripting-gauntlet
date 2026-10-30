@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/jxa-path-inventory"
+fixture_origin = "Synthetic macOS handoff tree authored with hidden, nested, and spaced names"
+
+[[negative]]
+path = "controls/wrong-flat-enumeration.jxa"
+defect = "Enumerates only the top-level directory instead of following every manifest path"
+expect = "inventory.csv"

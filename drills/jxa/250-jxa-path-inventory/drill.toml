@@ -1,0 +1,11 @@
+id = "250-jxa-path-inventory"
+family = "file-hygiene"
+title = "Inventory manifest paths with Foundation file attributes"
+difficulty = 3
+timebox = 240
+teaches = [
+  "NSString path composition avoids ad-hoc separator handling",
+  "NSFileManager attributesOfItemAtPathError exposes NSFileSize",
+  "manifest-driven work preserves explicit order",
+  "directory enumeration can silently omit nested or hidden manifest entries",
+]

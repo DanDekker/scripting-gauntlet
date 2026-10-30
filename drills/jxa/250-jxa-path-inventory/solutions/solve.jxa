@@ -1,0 +1,51 @@
+#!/usr/bin/env osascript -l JavaScript
+ObjC.import('Foundation');
+
+function env(name) {
+  const value = $.NSProcessInfo.processInfo.environment.objectForKey($(name));
+  if (!value) throw new Error(name + ' is missing');
+  return ObjC.unwrap(value);
+}
+
+function readText(path) {
+  const error = Ref();
+  const text = $.NSString.stringWithContentsOfFileEncodingError(
+    $(path), $.NSUTF8StringEncoding, error,
+  );
+  if (!text) throw new Error('cannot read ' + path);
+  return ObjC.unwrap(text);
+}
+
+function writeText(path, text) {
+  const error = Ref();
+  if (!$(text).writeToFileAtomicallyEncodingError($(path), true, $.NSUTF8StringEncoding, error)) {
+    throw new Error('cannot write ' + path);
+  }
+}
+
+function csvCell(value) {
+  return '"' + String(value).replace(/"/g, '""') + '"';
+}
+
+const input = env('IN');
+const output = env('OUT');
+const root = $(input + '/tree');
+const manager = $.NSFileManager.defaultManager;
+const rows = [];
+let totalBytes = 0;
+for (const raw of readText(input + '/manifest.txt').split(/\r\n|\r|\n/)) {
+  const relative = raw.trim();
+  if (!relative) continue;
+  const fullPath = root.stringByAppendingPathComponent($(relative));
+  const error = Ref();
+  const attrs = manager.attributesOfItemAtPathError(fullPath, error);
+  if (!attrs) throw new Error('cannot stat ' + relative);
+  const bytes = Number(ObjC.unwrap(attrs.objectForKey($.NSFileSize)));
+  totalBytes += bytes;
+  rows.push([relative, bytes, 'file']);
+}
+
+const csv = ['path,bytes,kind']
+  .concat(rows.map((row) => row.map(csvCell).join(','))).join('\n') + '\n';
+writeText(output + '/inventory.csv', csv);
+writeText(output + '/summary.json', JSON.stringify({files: rows.length, bytes: totalBytes}) + '\n');
