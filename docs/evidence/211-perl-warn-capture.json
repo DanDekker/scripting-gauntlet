@@ -1,0 +1,50 @@
+{
+  "calibrated_at": "2026-10-30T03:21:52.632166+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "211-perl-warn-capture",
+  "fixture_origin": "Synthetic warning message list authored for this drill",
+  "lineage": "scripting-gauntlet/perl-warn-capture",
+  "results": [
+    {
+      "elapsed_ms": 45,
+      "language": "pl",
+      "passed": true,
+      "path": "solutions/solve.pl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 50,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Installs the warning handler with a global assignment, so it outlives the watched phase and captures the final warning as well",
+      "elapsed_ms": 19,
+      "expected_diagnostic": "final_captured",
+      "language": "pl",
+      "passed": true,
+      "path": "controls/wrong-global-handler.pl",
+      "problems": [
+        "warnings.csv: expected 3 rows, got 4",
+        "summary.json['captured']: expected 3, got 4",
+        "summary.json['final_captured']: expected 'false', got 'true'"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "c535fb1643c0b2ed5b8f345444d3bca528775a2912eddc6aa4b70d73beda9d22",
+    "controls/manifest.toml": "35b249992e49518cf135af41e224dc4af0000617f32d2cb5a553c9ce9c3fad04",
+    "controls/wrong-global-handler.pl": "eea7d8d8d17e9ff37f18463347b9149bfa60e4d1f05169fa1f179904166f2595",
+    "drill.toml": "74c8ba64ad6761a7e2f21f81c18b2738489bb928133080a4077ffd107457b298",
+    "fixtures/warnings.txt": "3d2cc10f086d34b2be53707b41d52fdbcfd01c2c8ba544a1d2d86589d5bf4bb6",
+    "solutions/solve.pl": "c0b7ae00df33fe12c137ec81fe5aad94842ecc9a89e56e76774caf61fd97fdb5",
+    "solutions/solve.py": "db64924cdd54caea0e748d11d8c911e8a5a43290cd41948daf6eee2545e5ad82",
+    "verify.py": "a4750969377422ee93ccb0784f03379912787627a505a3b65a51cc0d4fb5add3"
+  },
+  "stage": "reference-calibrated"
+}

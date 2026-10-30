@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/perl-warn-capture"
+fixture_origin = "Synthetic warning message list authored for this drill"
+
+[[negative]]
+path = "controls/wrong-global-handler.pl"
+defect = "Installs the warning handler with a global assignment, so it outlives the watched phase and captures the final warning as well"
+expect = "final_captured"

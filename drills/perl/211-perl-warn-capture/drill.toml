@@ -1,0 +1,11 @@
+id = "211-perl-warn-capture"
+family = "text-munging"
+title = "Capture warnings with a handler that does not outlive its scope"
+difficulty = 4
+timebox = 300
+teaches = [
+  "warn appends ' at FILE line N.' unless the message already ends with a newline",
+  "a warning handler is a global, so install it with local $SIG{__WARN__} to restore the previous one",
+  "an installed-without-local handler keeps swallowing warnings long after the block ends",
+  "the message the handler receives is the message plus the location suffix",
+]
