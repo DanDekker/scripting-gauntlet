@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/perl-passwd-audit"
+fixture_origin = "Synthetic UNIX passwd and group account databases authored for this drill"
+
+[[negative]]
+path = "controls/wrong-naive-split.pl"
+defect = "Uses split /:/ without limit -1, dropping empty trailing member lists and missing group entries"
+expect = "expected total_groups=10"

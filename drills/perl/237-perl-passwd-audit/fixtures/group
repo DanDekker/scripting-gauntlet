@@ -1,0 +1,13 @@
+# Standard groups
+root:x:0:
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+nogroup:x:65534:
+
+# User groups
+alice:x:1001:
+bob:x:1002:
+charlie:x:1004:
+wheel:x:10:root,alice,dave
+docker:x:999:charlie,mallory

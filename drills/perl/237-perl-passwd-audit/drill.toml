@@ -1,0 +1,13 @@
+id = "237-perl-passwd-audit"
+family = "system-recon"
+title = "Audit /etc/passwd and /etc/group files for duplicate UIDs, orphaned GIDs, and root privileges"
+difficulty = 3
+timebox = 300
+teaches = [
+  "parse colon-delimited account files using split with limit -1 to preserve empty trailing fields",
+  "detect duplicate UIDs and root-equivalent non-root accounts (UID 0)",
+  "detect orphaned primary GIDs missing from group database",
+  "detect dangling secondary group member usernames missing from passwd database",
+  "sort multi-field anomaly records for deterministic security reporting"
+]
+

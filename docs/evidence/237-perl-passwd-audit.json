@@ -1,0 +1,52 @@
+{
+  "calibrated_at": "2026-10-30T06:58:46.587422+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "237-perl-passwd-audit",
+  "fixture_origin": "Synthetic UNIX passwd and group account databases authored for this drill",
+  "lineage": "scripting-gauntlet/perl-passwd-audit",
+  "results": [
+    {
+      "elapsed_ms": 58,
+      "language": "pl",
+      "passed": true,
+      "path": "solutions/solve.pl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 29,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Uses split /:/ without limit -1, dropping empty trailing member lists and missing group entries",
+      "elapsed_ms": 21,
+      "expected_diagnostic": "expected total_groups=10",
+      "language": "pl",
+      "passed": true,
+      "path": "controls/wrong-naive-split.pl",
+      "problems": [
+        "expected 9 lines in out/anomalies.tsv, got 18",
+        "expected total_groups=10, got 2",
+        "expected total_anomalies=8, got 17",
+        "expected orphan_gid_users=1, got 10"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "b3fd3eebcd847c9819d3f9030ef41cb0b00eaf0639173b48375d2855a0fff906",
+    "controls/manifest.toml": "551db35ce118060b0e85b2165a60ee952a00346012478fd2dfae6436ae9d3abf",
+    "controls/wrong-naive-split.pl": "213ae0a223698c8e4fa245fcc53f50ba88daae81537a7f027946d0bdf309b053",
+    "drill.toml": "dfca081f1cc05ea6c5adaddfb0075c6ed1ffbcd2b4f7d0b460f8f0266dc816ea",
+    "fixtures/group": "08a0fcb93aee57acd1bf2564ead06edfad24226b95169877e45a52573432f15a",
+    "fixtures/passwd": "108bd43df044e2c7d9c800eb61979f1b6a19e695b8e3bfb069446aedd95999ff",
+    "solutions/solve.pl": "1da3e73d25f2bf2f71800e645bab9d5750a20fde8404397817aafc95e5953ddc",
+    "solutions/solve.py": "540eb9c66bf57348e7b9a37657a21e87a46a6d61bfc59679085c8ebc67a2315a",
+    "verify.py": "773c6c8afeeb19882f27cb0d67a9a9a678ea92b66f30eb851b92a12806ccb338"
+  },
+  "stage": "reference-calibrated"
+}
