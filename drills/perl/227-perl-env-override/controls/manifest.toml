@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/perl-env-override"
+fixture_origin = "Synthetic step list authored for this drill"
+
+[[negative]]
+path = "controls/wrong-global-env.pl"
+defect = "Assigns $ENV{...} globally instead of scoping it with local, so the override leaks into later steps and later children"
+expect = "2/seen"

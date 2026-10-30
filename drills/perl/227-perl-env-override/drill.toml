@@ -1,0 +1,11 @@
+id = "227-perl-env-override"
+family = "system-recon"
+title = "Give each helper its own environment and leak nothing to the next"
+difficulty = 3
+timebox = 300
+teaches = [
+  "local $ENV{NAME} = $value scopes the override to the enclosing block and restores the old state",
+  "a plain $ENV{NAME} = $value is global: every later step and every later child inherits it",
+  "local on a name that was not set before leaves it absent afterwards, not set to the empty string",
+  "an empty value is still a value: the child sees the variable, empty",
+]

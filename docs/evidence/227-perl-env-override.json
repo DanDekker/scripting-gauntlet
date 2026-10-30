@@ -1,0 +1,55 @@
+{
+  "calibrated_at": "2026-10-30T06:20:04.958681+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "227-perl-env-override",
+  "fixture_origin": "Synthetic step list authored for this drill",
+  "lineage": "scripting-gauntlet/perl-env-override",
+  "results": [
+    {
+      "elapsed_ms": 150,
+      "language": "pl",
+      "passed": true,
+      "path": "solutions/solve.pl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 537,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Assigns $ENV{...} globally instead of scoping it with local, so the override leaks into later steps and later children",
+      "elapsed_ms": 117,
+      "expected_diagnostic": "2/seen",
+      "language": "pl",
+      "passed": true,
+      "path": "controls/wrong-global-env.pl",
+      "problems": [
+        "steps.csv row 1 [1/after]: expected 'unset', got '=alpha'",
+        "steps.csv row 2 [2/seen]: expected 'unset', got '=alpha'",
+        "steps.csv row 2 [2/after]: expected 'unset', got '=beta'",
+        "steps.csv row 3 [3/seen]: expected 'unset', got '=beta'",
+        "steps.csv row 3 [3/after]: expected 'unset', got '=gamma'",
+        "steps.csv row 4 [4/after]: expected 'unset', got '='",
+        "summary.json['seen_set']: expected 2, got 4",
+        "summary.json['leaked']: expected 0, got 4"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "b0af5bea172dd192b114c5bc0300d74bb47d7893189ed8837c917dcbcbfa6a63",
+    "controls/manifest.toml": "acfd54badfef7fdb5e6247a00c9a717e4aa001915849506f0b0abf90e3efa98d",
+    "controls/wrong-global-env.pl": "f300c5b68e858dc7fd298f590bf73a324090b9b80ece59ac91184eaac9575912",
+    "drill.toml": "e64f18416857658334023be2c24cf8f442b6cbf72c68fee2f245bd5c737feb0a",
+    "fixtures/steps.csv": "d9987694c40d76e8285a6a5e289aa4efacdf35e5c864696fc57c974432323be6",
+    "solutions/solve.pl": "b899ebf2c3edcfc0b2802f77e5e30bddeb700b42354c4a2faa81b73da2f7bde5",
+    "solutions/solve.py": "6eb56f60d5fa6c4ca54f5bb56f037dfdfcc7f7113a8e9dc58c42cc4a9147d739",
+    "verify.py": "a24aca2e88ba8707418464150f39d7e7954c0898114a27802416a400edfd580c"
+  },
+  "stage": "reference-calibrated"
+}

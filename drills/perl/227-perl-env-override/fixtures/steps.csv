@@ -1,0 +1,5 @@
+id,set_var,value,watch_var
+1,DRILL_ONE,alpha,DRILL_ONE
+2,DRILL_TWO,beta,DRILL_ONE
+3,DRILL_ONE,gamma,DRILL_TWO
+4,DRILL_THREE,,DRILL_THREE
