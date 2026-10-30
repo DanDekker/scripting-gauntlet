@@ -1,0 +1,9 @@
+version = 1
+lineage = "scripting-gauntlet/perl-auth-fail2ban"
+fixture_origin = "Synthetic SSH authentication logs authored for this drill"
+
+[[negative]]
+path = "controls/wrong-invalid-user.pl"
+defect = "Captures the first word after 'for' as username, recording 'invalid' instead of the actual user"
+expect = "expected ['10.0.0.25', '3', '2', 'oracle,postgres']"
+

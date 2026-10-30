@@ -1,0 +1,26 @@
+# auth.log - rotated 2026-10-30
+Oct 30 08:12:00 host sshd[100]: Server listening on 0.0.0.0 port 22.
+Oct 30 08:12:05 host sshd[102]: Accepted publickey for alice from 192.168.1.100 port 50201 ssh2
+Oct 30 08:12:06 host sshd[103]: pam_unix(sshd:session): session opened for user alice
+Oct 30 08:12:10 host sshd[104]: Connection closed by 192.168.1.101 port 44321 [preauth]
+Oct 30 08:12:12 host sshd[105]: Received disconnect from 192.168.1.102 port 49120:11: Bye Bye [preauth]
+
+Oct 30 08:12:20 host sshd[106]: Failed password for root from 192.168.1.50 port 38100 ssh2
+Oct 30 08:12:22 host sshd[107]: Failed password for admin from 192.168.1.50 port 38101 ssh2
+Oct 30 08:12:24 host sshd[108]: Failed password for invalid user deployer from 192.168.1.50 port 38102 ssh2
+Oct 30 08:12:26 host sshd[109]: Failed password for root from 192.168.1.50 port 38103 ssh2
+
+Oct 30 08:12:30 host sshd[110]: Failed password for invalid user oracle from 10.0.0.25 port 41001 ssh2
+Oct 30 08:12:32 host sshd[111]: Failed password for invalid user postgres from 10.0.0.25 port 41002 ssh2
+Oct 30 08:12:34 host sshd[112]: Failed password for invalid user oracle from 10.0.0.25 port 41003 ssh2
+
+Oct 30 08:12:40 host sshd[113]: Failed password for bob from 172.16.0.8 port 59001 ssh2
+Oct 30 08:12:42 host sshd[114]: Failed password for bob from 172.16.0.8 port 59002 ssh2
+
+Oct 30 08:12:50 host sshd[115]: Failed password for invalid user test from 192.168.1.99 port 60120 ssh2
+
+Oct 30 08:13:01 host sshd[116]: Failed password for invalid user guest from 192.168.2.200 port 33001 ssh2
+Oct 30 08:13:02 host sshd[117]: Failed password for invalid user test from 192.168.2.200 port 33002 ssh2
+Oct 30 08:13:03 host sshd[118]: Failed password for root from 192.168.2.200 port 33003 ssh2
+Oct 30 08:13:04 host sshd[119]: Failed password for admin from 192.168.2.200 port 33004 ssh2
+Oct 30 08:13:05 host sshd[120]: Failed password for root from 192.168.2.200 port 33005 ssh2

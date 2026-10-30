@@ -1,0 +1,13 @@
+id = "236-perl-auth-fail2ban"
+family = "data-wrangling"
+title = "Parse SSH auth logs to aggregate failed logins and generate ban lists"
+difficulty = 3
+timebox = 300
+teaches = [
+  "parse SSH authentication log lines matching failed password attempts",
+  "distinguish invalid user prefixes without corrupting username extraction",
+  "autovivify nested hashes to track unique target accounts per client IP",
+  "apply multi-key sorting: failure count descending then IP ascending",
+  "tally account targets across all failed authentication events"
+]
+

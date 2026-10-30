@@ -1,0 +1,51 @@
+{
+  "calibrated_at": "2026-10-30T06:53:28.597361+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "236-perl-auth-fail2ban",
+  "fixture_origin": "Synthetic SSH authentication logs authored for this drill",
+  "lineage": "scripting-gauntlet/perl-auth-fail2ban",
+  "results": [
+    {
+      "elapsed_ms": 78,
+      "language": "pl",
+      "passed": true,
+      "path": "solutions/solve.pl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 66,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Captures the first word after 'for' as username, recording 'invalid' instead of the actual user",
+      "elapsed_ms": 87,
+      "expected_diagnostic": "expected ['10.0.0.25', '3', '2', 'oracle,postgres']",
+      "language": "pl",
+      "passed": true,
+      "path": "controls/wrong-invalid-user.pl",
+      "problems": [
+        "row 1: expected ['192.168.2.200', '5', '4', 'admin,guest,root,test'], got ['192.168.2.200', '5', '3', 'admin,invalid,root']",
+        "row 2: expected ['192.168.1.50', '4', '3', 'admin,deployer,root'], got ['192.168.1.50', '4', '3', 'admin,invalid,root']",
+        "row 3: expected ['10.0.0.25', '3', '2', 'oracle,postgres'], got ['10.0.0.25', '3', '1', 'invalid']",
+        "expected top_target_user='root', got 'invalid'"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "4a791c26b8df79dd62fd8a01c1a99796e12cb5977a640ba60b62eec4df24867d",
+    "controls/manifest.toml": "fb2ff046e00dd4dde90dc27146c0be5e43094e92efb03120ae35e607814b4582",
+    "controls/wrong-invalid-user.pl": "cf0f43d5ca0c8af69bae6e1bfafb3a8783afec3d55abfcee161f8ab58c89561f",
+    "drill.toml": "5de193c7c463ec31699ec993a4ad8d538aa417c1fb7d756e5b56488476a365e2",
+    "fixtures/auth.log": "0058c4f2fa9a367a4407242156384748078f7e6f06bbcd41bfa236e272328410",
+    "solutions/solve.pl": "54ff6a7ef8f54de24bff8d64f3c8cb77adc6cc2cd99acd39da9a58848be61c7a",
+    "solutions/solve.py": "f597f6497c111d0b9ba969bdb8b208c6b6552dba6b4d4358df1468e61ddc4350",
+    "verify.py": "a44bb533405bebf21f698110146958ab14b5af377a288ad2d135b38e8bf754d4"
+  },
+  "stage": "reference-calibrated"
+}
