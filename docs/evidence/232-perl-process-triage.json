@@ -1,0 +1,52 @@
+{
+  "calibrated_at": "2026-10-30T06:37:44.973677+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "232-perl-process-triage",
+  "fixture_origin": "Synthetic process table authored for this drill",
+  "lineage": "scripting-gauntlet/perl-process-triage",
+  "results": [
+    {
+      "elapsed_ms": 18,
+      "language": "pl",
+      "passed": true,
+      "path": "solutions/solve.pl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 33,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Splits line without a limit, truncating the command column to only the binary name",
+      "elapsed_ms": 10,
+      "expected_diagnostic": "1150/command",
+      "language": "pl",
+      "passed": true,
+      "path": "controls/wrong-split-command.pl",
+      "problems": [
+        "runaways.csv row 1 [1150/command]: expected '/usr/bin/perl /opt/worker/job.pl --queue high', got '/usr/bin/perl'",
+        "runaways.csv row 2 [1042/command]: expected 'postgres: writer process', got 'postgres:'",
+        "runaways.csv row 3 [1200/command]: expected '/usr/bin/tar -czf /backup/data.tar.gz /var/data', got '/usr/bin/tar'",
+        "runaways.csv row 4 [1160/command]: expected '/usr/bin/redis-server 127.0.0.1:6379', got '/usr/bin/redis-server'"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "d8a2ef9acdb8c7462b96c6ae7723a1f56c72cbcb6dc6768b977e032079478b18",
+    "controls/manifest.toml": "c22375b88660b78f1109798ca9755969eb857ae78872a7c7debab544a5d1e5b4",
+    "controls/wrong-split-command.pl": "5af39b545d5ac10eebff73f1461660a438f1990a5c27188a4677c37cb66eb865",
+    "drill.toml": "fe54f40ce737205708e7df4609d1f3a4b20bde4ff269354184e5fc37bf0b6165",
+    "fixtures/processes.txt": "f4a56bb281448e58a2a30c72ca33f9767608ba765a0f50ad21c5aab0af20a433",
+    "fixtures/thresholds.ini": "c6400fbe2d4fe833af49b873354f85f2e7c9f0525089aab65c0a17d581be07af",
+    "solutions/solve.pl": "e8be6d6f6b263684b679915e7ae992174e32ac3518cfa2ce8bd9496fba87b09a",
+    "solutions/solve.py": "e4c9cd1e90cb6fa35ad0b666c1a37b382c34dfa711ef93e358e2f083cd376249",
+    "verify.py": "945b3db33657bd58003c65290b649acd5c72f6c053620729e5f2796fbfef6226"
+  },
+  "stage": "reference-calibrated"
+}

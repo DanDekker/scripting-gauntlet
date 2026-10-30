@@ -1,0 +1,11 @@
+id = "232-perl-process-triage"
+family = "system-recon"
+title = "Parse process listings and identify runaway CPU and memory consumers"
+difficulty = 3
+timebox = 300
+teaches = [
+  "parse ps-style tabular output where the final command column contains arbitrary spaces and arguments",
+  "use split /\\s+/, $line, 11 with a limit to avoid splitting arguments within the command string",
+  "compare numeric thresholds with floats and integers",
+  "sort by multiple columns: CPU descending, RSS descending, PID ascending"
+]

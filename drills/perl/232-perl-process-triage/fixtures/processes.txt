@@ -1,0 +1,8 @@
+USER PID %CPU %MEM VSZ RSS TTY STAT START TIME COMMAND
+root 1 0.0 0.1 168920 12400 ? Ss Oct28 0:03 /sbin/init splash
+www-data 1024 12.5 4.2 892400 345000 ? S 09:15 1:22 /usr/bin/node /app/server.js --port 8080
+postgres 1042 85.0 18.0 2450000 1480000 ? Sl 08:30 45:10 postgres: writer process
+app 1150 95.2 3.1 520000 256000 ? R 10:00 15:44 /usr/bin/perl /opt/worker/job.pl --queue high
+redis 1160 2.1 14.5 1800000 1200000 ? S 08:00 2:10 /usr/bin/redis-server 127.0.0.1:6379
+www-data 1180 0.2 1.0 210000 82000 ? S 10:12 0:02 nginx: worker process
+backup 1200 82.0 15.0 2100000 1100000 ? R 10:20 5:00 /usr/bin/tar -czf /backup/data.tar.gz /var/data

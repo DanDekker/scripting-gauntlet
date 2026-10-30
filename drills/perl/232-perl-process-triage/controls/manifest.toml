@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/perl-process-triage"
+fixture_origin = "Synthetic process table authored for this drill"
+
+[[negative]]
+path = "controls/wrong-split-command.pl"
+defect = "Splits line without a limit, truncating the command column to only the binary name"
+expect = "1150/command"
