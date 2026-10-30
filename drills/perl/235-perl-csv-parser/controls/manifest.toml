@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/perl-csv-parser"
+fixture_origin = "Synthetic RFC 4180 CSV orders authored for this drill"
+
+[[negative]]
+path = "controls/wrong-naive-split.pl"
+defect = "Performs a naive split on commas, breaking quoted strings with embedded commas into separate fields"
+expect = "clean.tsv: expected 5 rows"

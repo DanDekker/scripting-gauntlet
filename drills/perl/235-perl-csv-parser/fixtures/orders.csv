@@ -1,0 +1,7 @@
+order_id,customer,product,amount,notes
+101,Acme Corp,"Widget, Deluxe",199.99,"rush order"
+102,"Smith, John","Standard Bolt",4.50,"pickup at ""Warehouse A"""
+103,Beta LLC,Anchor,45.00,
+104,"Doe, Jane","Cable, 10ft",25.50,"handle with care"
+105,Corrupt,Row,Missing,Fields,Extra
+106,"O'Reilly, Tim","Manual, ""Perl Tips""",50.00,"gift wrapped"

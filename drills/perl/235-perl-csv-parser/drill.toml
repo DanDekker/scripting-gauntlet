@@ -1,0 +1,11 @@
+id = "235-perl-csv-parser"
+family = "data-wrangling"
+title = "Parse RFC 4180 CSV records with embedded commas and escaped quotes"
+difficulty = 3
+timebox = 300
+teaches = [
+  "parse RFC 4180 CSV lines with regular expressions matching quoted and unquoted fields",
+  "embedded commas inside quoted fields must not split field boundaries",
+  "unescape doubled double-quotes (\"\") into single quotes (\")",
+  "validate row field counts and reject malformed records"
+]

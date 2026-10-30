@@ -1,0 +1,51 @@
+{
+  "calibrated_at": "2026-10-30T06:47:40.766070+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "235-perl-csv-parser",
+  "fixture_origin": "Synthetic RFC 4180 CSV orders authored for this drill",
+  "lineage": "scripting-gauntlet/perl-csv-parser",
+  "results": [
+    {
+      "elapsed_ms": 25,
+      "language": "pl",
+      "passed": true,
+      "path": "solutions/solve.pl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 33,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Performs a naive split on commas, breaking quoted strings with embedded commas into separate fields",
+      "elapsed_ms": 10,
+      "expected_diagnostic": "clean.tsv: expected 5 rows",
+      "language": "pl",
+      "passed": true,
+      "path": "controls/wrong-naive-split.pl",
+      "problems": [
+        "clean.tsv: expected 5 rows, got 0",
+        "summary.json['valid']: expected 5, got 0",
+        "summary.json['malformed']: expected 1, got 6",
+        "summary.json['total_amount']: expected 324.99, got 0.0"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "ab1f7d4b9c46366e942090be95e036ea08fbb01301fd92c3d71ac05db4053156",
+    "controls/manifest.toml": "9162e35360e8f5e35ef7abf9f9e83e38622f9a17df221ddb382dcbb3168b580a",
+    "controls/wrong-naive-split.pl": "515b9be8b6875619c34ac881d32644b7d70dc283d041bf89f52367b16ea8d053",
+    "drill.toml": "7d052da6d5a064c7518f0ac7a788175cb6c480267b9de33a1abb15c0483f8894",
+    "fixtures/orders.csv": "8af3a56c42732474b9b0c1866c91e4e7819d9e5b33663e048521b24b51044b54",
+    "solutions/solve.pl": "269818b7096d1994d3ae1cc91e6eab859887a896627040a1f24b613f7717b592",
+    "solutions/solve.py": "812e26e95389551613a96152f3289a31e00d859dc5518534c4bb06421f02771a",
+    "verify.py": "16587c43891c07e3650f5967df54fa51da1b813640bf73f1a2520a16c02982ff"
+  },
+  "stage": "reference-calibrated"
+}
