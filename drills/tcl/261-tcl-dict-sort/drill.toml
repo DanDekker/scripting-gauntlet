@@ -1,0 +1,11 @@
+id = "261-tcl-dict-sort"
+family = "data-wrangling"
+title = "Aggregate Tcl dicts and sort ties deterministically"
+difficulty = 3
+timebox = 300
+teaches = [
+  "dict incr accumulates repeated keys",
+  "dict iteration order is not a ranking",
+  "lsort -command can express descending numeric and ascending string tie-breaks",
+  "a total comparator makes a report reproducible",
+]

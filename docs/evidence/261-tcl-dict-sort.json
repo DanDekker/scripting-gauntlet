@@ -1,0 +1,49 @@
+{
+  "calibrated_at": "2026-10-30T07:59:59.629753+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "261-tcl-dict-sort",
+  "fixture_origin": "Synthetic repeated counter table authored with a ranking tie",
+  "lineage": "scripting-gauntlet/tcl-dict-sort",
+  "results": [
+    {
+      "elapsed_ms": 113,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 57,
+      "language": "tcl",
+      "passed": true,
+      "path": "solutions/solve.tcl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Emits dict iteration order instead of the required numeric ranking and string tie-break",
+      "elapsed_ms": 58,
+      "expected_diagnostic": "counts.csv",
+      "language": "tcl",
+      "passed": true,
+      "path": "controls/wrong-dict-order.tcl",
+      "problems": [
+        "counts.csv row 2 col 1: expected 'cache', got 'web'",
+        "counts.csv row 3 col 1: expected 'web', got 'cache'"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "3a029439f11265432892a6b382bd8294dfac1fd5a35b61ecf7b41ec1726e3dac",
+    "controls/manifest.toml": "ab3b0904411cd2a53c66d2e3e2bd21d2f87ea8d1f9e19ace99c2afa0f1c7a2d4",
+    "controls/wrong-dict-order.tcl": "e79f021d9dadbfa16fed2dbff3f2e28685720bd2b5f00a96f57737caf473e1f3",
+    "drill.toml": "7aebee2db6da440468c3ad6ff402f5744ebafdb417041ce2f6b7c45ea9ec1d24",
+    "fixtures/counts.tsv": "8eff1aa5e8a2cbd137142d6d11efea5f40ef51b0264f48885c73540d9da04bbf",
+    "solutions/solve.py": "daec2fad29929ae53174f1f394f73b0bf9f8bc194f5c06c2670b7ce52a34370f",
+    "solutions/solve.tcl": "b56f0d80b621df1c7515424f44525f6bb5a9f575c072f071970fdce170683739",
+    "verify.py": "695060f7ae036465cb00ce0149c7d4fb685b74f7c296828672e69b6fdeb5585d"
+  },
+  "stage": "reference-calibrated"
+}

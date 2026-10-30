@@ -1,0 +1,3 @@
+deploy {web app} --env prod
+backup "/tmp/My File" --full
+rotate logs --keep 7

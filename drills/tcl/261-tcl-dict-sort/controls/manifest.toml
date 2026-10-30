@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/tcl-dict-sort"
+fixture_origin = "Synthetic repeated counter table authored with a ranking tie"
+
+[[negative]]
+path = "controls/wrong-dict-order.tcl"
+defect = "Emits dict iteration order instead of the required numeric ranking and string tie-break"
+expect = "counts.csv"

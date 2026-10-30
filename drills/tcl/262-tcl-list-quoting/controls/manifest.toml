@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/tcl-list-quoting"
+fixture_origin = "Synthetic Tcl command-list text authored with grouped targets"
+
+[[negative]]
+path = "controls/wrong-space-split.tcl"
+defect = "Splits each command on spaces, leaving braces and quotes in the target and losing grouped words"
+expect = "commands.csv"

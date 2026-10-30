@@ -1,0 +1,52 @@
+{
+  "calibrated_at": "2026-10-30T07:59:59.684543+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "262-tcl-list-quoting",
+  "fixture_origin": "Synthetic Tcl command-list text authored with grouped targets",
+  "lineage": "scripting-gauntlet/tcl-list-quoting",
+  "results": [
+    {
+      "elapsed_ms": 132,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 68,
+      "language": "tcl",
+      "passed": true,
+      "path": "solutions/solve.tcl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Splits each command on spaces, leaving braces and quotes in the target and losing grouped words",
+      "elapsed_ms": 94,
+      "expected_diagnostic": "commands.csv",
+      "language": "tcl",
+      "passed": true,
+      "path": "controls/wrong-space-split.tcl",
+      "problems": [
+        "commands.csv row 1 col 2: expected 'web app', got '{web'",
+        "commands.csv row 1 col 3: expected 3, got '4'",
+        "commands.csv row 2 col 2: expected '/tmp/My File', got '\"/tmp/My'",
+        "commands.csv row 2 col 3: expected 2, got '3'",
+        "summary.json['with_spaces']: expected 2, got 0"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "2c317fd5a7f9551a5f28cd42b3cdca5a7d8639db2c609b4f4893d1f66d797450",
+    "controls/manifest.toml": "18efa1bc8c0ab7b3f3b62be6dfb5995e5ce3ff672fcff68522c2d504b326d4c9",
+    "controls/wrong-space-split.tcl": "9272c92170e5962b7f10dce1aa41af1d9a4e39cc0db208b474a0ae270bfee8e1",
+    "drill.toml": "f796c94b98e49207c2151d0ba54607fdd57afc4ea66ab2d3f7714bb6b6d3cf91",
+    "fixtures/commands.txt": "e319429420e44b2f3e57ecac360dff6753b70de44bf071df6dbc3b7ea7e49dc1",
+    "solutions/solve.py": "f33c292458d532c1191c4eb1fc716fe40f2822d39a2bbd5e0acf98d8d13c5833",
+    "solutions/solve.tcl": "4281231380b4419c70799e570844fa1ab96ef35fc42eb4258464fd5c1e8b91c9",
+    "verify.py": "70825f0d67e65b833a1172da493f143ac3542e473aee74142e379593a70f8769"
+  },
+  "stage": "reference-calibrated"
+}

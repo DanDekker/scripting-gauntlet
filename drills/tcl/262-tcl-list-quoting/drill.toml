@@ -1,0 +1,11 @@
+id = "262-tcl-list-quoting"
+family = "text-munging"
+title = "Parse Tcl list quoting without evaluating commands"
+difficulty = 3
+timebox = 240
+teaches = [
+  "Tcl lists preserve grouped words in braces and quotes",
+  "lindex and llength parse list structure without command evaluation",
+  "string splitting on spaces loses targets containing spaces",
+  "treat command lines as data unless execution is explicitly required",
+]
