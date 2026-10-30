@@ -1,0 +1,11 @@
+id = "228-perl-float-format"
+family = "text-munging"
+title = "Print amounts the way perl prints numbers, not the way the text looked"
+difficulty = 3
+timebox = 240
+teaches = [
+  "perl prints a number in string context with 15 significant digits, so 3.0 prints as 3 and 0.1+0.2 prints as 0.3",
+  "sprintf(\"%.2f\") formats the binary double: 2.675 is really 2.67499... and prints 2.67, and 1.005 prints 1.00",
+  "sprintf(\"%.0f\") rounds a midpoint to the even digit: 2.5 is 2, 3.5 is 4, 0.5 is 0, -2.5 is -2",
+  "int() and %d truncate toward zero, so 3.9 becomes 3 where rounding gives 4",
+]

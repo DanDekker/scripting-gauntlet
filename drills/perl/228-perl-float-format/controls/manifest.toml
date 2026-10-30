@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/perl-float-format"
+fixture_origin = "Synthetic amount list authored for this drill"
+
+[[negative]]
+path = "controls/wrong-truncate-whole.pl"
+defect = "Truncates with int() instead of rounding for the whole column, so 3.9 becomes 3 where rounding gives 4"
+expect = "alpha/whole"

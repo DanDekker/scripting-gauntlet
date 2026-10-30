@@ -1,0 +1,17 @@
+# name amount
+alpha 2.675
+bravo 0.125
+charlie 1.005
+delta 3.0
+echo -2.5
+foxtrot 3.5
+golf 2.5
+hotel +1.25
+india .5
+juliet 10.0
+kilo 0.145
+lima 4.5
+mike -4.5
+nina 0.1234567890123456789
+oscar 3.9
+peggy -3.9

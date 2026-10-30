@@ -1,0 +1,51 @@
+{
+  "calibrated_at": "2026-10-30T06:21:50.276395+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "228-perl-float-format",
+  "fixture_origin": "Synthetic amount list authored for this drill",
+  "lineage": "scripting-gauntlet/perl-float-format",
+  "results": [
+    {
+      "elapsed_ms": 65,
+      "language": "pl",
+      "passed": true,
+      "path": "solutions/solve.pl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 90,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Truncates with int() instead of rounding for the whole column, so 3.9 becomes 3 where rounding gives 4",
+      "elapsed_ms": 25,
+      "expected_diagnostic": "alpha/whole",
+      "language": "pl",
+      "passed": true,
+      "path": "controls/wrong-truncate-whole.pl",
+      "problems": [
+        "amounts.csv row 1 [alpha/whole]: expected '3', got '2'",
+        "amounts.csv row 6 [foxtrot/whole]: expected '4', got '3'",
+        "amounts.csv row 15 [oscar/whole]: expected '4', got '3'",
+        "amounts.csv row 16 [peggy/whole]: expected '-4', got '-3'"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "a59262961441a65a8feb3ca1b6108d13885100e6c14e6bf2096da58634a36e31",
+    "controls/manifest.toml": "7f2ad9fe7d35c513a50e7d4095b525daaa8073097bfe4e38d04775b3090ce50b",
+    "controls/wrong-truncate-whole.pl": "b79fb6f40687e98b9e03d30fa08db764577494e6865f2ef4dc8480658201909c",
+    "drill.toml": "733edd991b68bb4b86316521422c47b06b8c80e5031fb26d286c8a4a41e2aa4e",
+    "fixtures/amounts.txt": "e6d4b04d61c18ea0f86d7e935f935b7f81a71a7d1d529c25bf73b027b7b4d758",
+    "solutions/solve.pl": "04fd524e068f9fec9529c2604cf552c41134cb696eb43ea3ad0858bb892d7e36",
+    "solutions/solve.py": "93b725319f01e7c35a943fa6de7b73958bc2a3598b196832f6da8c6b8d208142",
+    "verify.py": "1fe8c77899f45ea453a51d222cbeccbf4be7a19f49809fc484f31e536a43d4c3"
+  },
+  "stage": "reference-calibrated"
+}
