@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/tcl-file-literal"
+fixture_origin = "Synthetic file tree authored with glob-looking literal names"
+
+[[negative]]
+path = "controls/wrong-glob.tcl"
+defect = "Uses glob on each manifest value, so star and bracket names are treated as patterns"
+expect = "files.csv"

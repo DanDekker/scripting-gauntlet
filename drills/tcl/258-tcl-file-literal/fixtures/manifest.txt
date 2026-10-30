@@ -1,0 +1,3 @@
+*.cfg
+[draft].txt
+nested/notes file.txt

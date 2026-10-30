@@ -1,0 +1,11 @@
+id = "258-tcl-file-literal"
+family = "file-hygiene"
+title = "Read literal Tcl paths instead of glob patterns"
+difficulty = 2
+timebox = 240
+teaches = [
+  "file join constructs a path without turning filename characters into patterns",
+  "open and file size address literal paths",
+  "glob interprets brackets and stars as wildcard syntax",
+  "manifest order is independent of directory enumeration",
+]

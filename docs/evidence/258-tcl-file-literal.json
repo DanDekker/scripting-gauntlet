@@ -1,0 +1,56 @@
+{
+  "calibrated_at": "2026-10-30T07:56:45.057238+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "258-tcl-file-literal",
+  "fixture_origin": "Synthetic file tree authored with glob-looking literal names",
+  "lineage": "scripting-gauntlet/tcl-file-literal",
+  "results": [
+    {
+      "elapsed_ms": 38,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 14,
+      "language": "tcl",
+      "passed": true,
+      "path": "solutions/solve.tcl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Uses glob on each manifest value, so star and bracket names are treated as patterns",
+      "elapsed_ms": 13,
+      "expected_diagnostic": "files.csv",
+      "language": "tcl",
+      "passed": true,
+      "path": "controls/wrong-glob.tcl",
+      "problems": [
+        "files.csv: expected 3 rows, got 2",
+        "files.csv row 2 col 1: expected '[draft].txt', got 'nested/notes file.txt'",
+        "files.csv row 2 col 2: expected 6, got '5'",
+        "files.csv row 2 col 3: expected 'draft', got 'note'",
+        "summary.json['files']: expected 3, got 2",
+        "summary.json['bytes']: expected 15, got 9"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "4e869d3369f178e4ee05f981bcb27611640b4baebf4fd4b2766df7a1dcc2951d",
+    "controls/manifest.toml": "9f52f537a3ebbc8fa05c950a15b32f446590a11ac1a5069705a22720276b7261",
+    "controls/wrong-glob.tcl": "18ef9bd4d15191638bb17508d24c9d9d437a1c57cb4f3914a123187871fa00d9",
+    "drill.toml": "1be5e41e498d6b621e62fa350594d443a210ef675957f7c306a148403015e7de",
+    "fixtures/manifest.txt": "cbe8fd37eca26a6a1e0dc64336d575176b7347ef46f122cadee5915c4fb697f8",
+    "fixtures/tree/*.cfg": "4d523dee6bc8c17a3e283570526d8d6ed3d1edda07c53e94c55e491bbf780337",
+    "fixtures/tree/[draft].txt": "7eb2ca55b87a4d45d66a63f76db11f9b4aa9106472a62b5865060f9fd8eadaaa",
+    "fixtures/tree/nested/notes file.txt": "389ed6887e49a315f706f6c2b931b1dcf0d797c91437124f32eb98555c669758",
+    "solutions/solve.py": "7ad1e458768f8ed6573efd8c45998774783bab33c915e1d797e5548ba65da056",
+    "solutions/solve.tcl": "fc2400d5134f7efbc9a591151f25e38f19a2baa166de2f799114c28252f3fcfd",
+    "verify.py": "536a794c27fb962f052f04780bf47ac8035b3c45acaaf93dd233000c3d513975"
+  },
+  "stage": "reference-calibrated"
+}

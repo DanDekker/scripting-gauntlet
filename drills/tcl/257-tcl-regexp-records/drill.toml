@@ -1,0 +1,11 @@
+id = "257-tcl-regexp-records"
+family = "text-munging"
+title = "Gate Tcl regexp captures on a successful match"
+difficulty = 3
+timebox = 300
+teaches = [
+  "Tcl regexp returns a Boolean result before populating captures",
+  "anchored patterns prevent partial event records",
+  "zero is a valid numeric capture",
+  "malformed lines should be counted and skipped rather than reported with stale fields",
+]

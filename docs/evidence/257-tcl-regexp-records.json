@@ -1,0 +1,55 @@
+{
+  "calibrated_at": "2026-10-30T07:56:45.056833+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "257-tcl-regexp-records",
+  "fixture_origin": "Synthetic structured event log authored with one malformed noise line",
+  "lineage": "scripting-gauntlet/tcl-regexp-records",
+  "results": [
+    {
+      "elapsed_ms": 39,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 15,
+      "language": "tcl",
+      "passed": true,
+      "path": "solutions/solve.tcl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Reads capture variables even when regexp returns false, emitting an extra stale or empty event for the noise line",
+      "elapsed_ms": 15,
+      "expected_diagnostic": "events.csv",
+      "language": "tcl",
+      "passed": true,
+      "path": "controls/wrong-unguarded-capture.tcl",
+      "problems": [
+        "events.csv: expected 3 rows, got 4",
+        "events.csv row 3 col 1: expected 'ERROR', got 'WARN'",
+        "events.csv row 3 col 2: expected 'db', got 'web'",
+        "events.csv row 3 col 3: expected 305, got '0'",
+        "events.csv row 3 col 4: expected 'yes', got 'no'",
+        "summary.json['records']: expected 3, got 4",
+        "summary.json['skipped']: expected 1, got 0",
+        "summary.json['slow']: expected 1, got 0"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "af6de29e81e7162b0fb609fc99e43ac77fd2b3e338b8370fa87a463f7a8cdae0",
+    "controls/manifest.toml": "f15db43938177e32eb7a9ec8c971eef66c47c52cb7803989a105c12fac86d57b",
+    "controls/wrong-unguarded-capture.tcl": "f141ebe5ef11563656e282b78f61cf43177c2a50cd64b304f8e56aa9c7d2c971",
+    "drill.toml": "3c55697303ff0ff0c2873fa6373a9a774d630cf150c8db7ee2e8e14ff97106d3",
+    "fixtures/events.log": "8b4cf9d06767afbf6adb34c4d0b9c2683a752335dd84364d3f4018e2490a44c6",
+    "solutions/solve.py": "6cce13ae8d44fb081fa9c7c256abef5bd23cbc3515305401448f06bb9461aea6",
+    "solutions/solve.tcl": "7d6be8bd029c033d0932f0640ff1055e6afb4ec9db6f526bf6da14e5e3c0c71f",
+    "verify.py": "98ad22ecb062abcc21325031f9288e4cccc882f6ce3ddeb17903f2723d9f8f0d"
+  },
+  "stage": "reference-calibrated"
+}

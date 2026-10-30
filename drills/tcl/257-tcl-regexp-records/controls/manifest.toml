@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/tcl-regexp-records"
+fixture_origin = "Synthetic structured event log authored with one malformed noise line"
+
+[[negative]]
+path = "controls/wrong-unguarded-capture.tcl"
+defect = "Reads capture variables even when regexp returns false, emitting an extra stale or empty event for the noise line"
+expect = "events.csv"

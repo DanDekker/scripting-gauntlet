@@ -1,0 +1,4 @@
+[INFO] worker=api.v2 duration=12ms
+[WARN] worker=web duration=0ms
+noise line
+[ERROR] worker=db duration=305ms
