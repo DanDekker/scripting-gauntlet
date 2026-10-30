@@ -1,0 +1,11 @@
+id = "202-bash-filename-inventory"
+family = "file-hygiene"
+title = "Walk a directory tree without breaking on names that contain spaces"
+difficulty = 3
+timebox = 300
+teaches = [
+  "unquoted command substitution word-splits: $(find ...) turns 'My Report.txt' into two names",
+  "find -print0 with 'read -r -d ''' is the safe way to walk a tree",
+  "read without -r eats backslashes; read -r keeps them",
+  "a symlink is not a regular file and must not be listed",
+]
