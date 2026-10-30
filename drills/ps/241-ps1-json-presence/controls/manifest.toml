@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/ps1-json-presence"
+fixture_origin = "Synthetic JSON quota feed authored to exercise PowerShell property presence"
+
+[[negative]]
+path = "controls/wrong-truthy-state.ps1"
+defect = "Uses PowerShell truthiness for owner and quota, collapsing null, empty, and zero into the same branch"
+expect = "owner_state"

@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/ps1-tryparse"
+fixture_origin = "Synthetic measurement CSV authored for conversion and zero handling"
+
+[[negative]]
+path = "controls/wrong-cast-fallback.ps1"
+defect = "Casts directly to Int32 inside try/catch and treats a failed or blank conversion as zero"
+expect = "accepted"

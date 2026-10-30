@@ -1,0 +1,7 @@
+[
+  {"id":"alpha","owner":null,"quota":0},
+  {"id":"beta","quota":5},
+  {"id":"gamma","owner":"","quota":null},
+  {"id":"delta","owner":"  Ada  ","quota":12},
+  {"id":"epsilon","owner":"0","quota":-2}
+]

@@ -1,0 +1,51 @@
+{
+  "calibrated_at": "2026-10-30T07:39:22.992432+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "242-ps1-tryparse",
+  "fixture_origin": "Synthetic measurement CSV authored for conversion and zero handling",
+  "lineage": "scripting-gauntlet/ps1-tryparse",
+  "results": [
+    {
+      "elapsed_ms": 702,
+      "language": "ps1",
+      "passed": true,
+      "path": "solutions/solve.ps1",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 36,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Casts directly to Int32 inside try/catch and treats a failed or blank conversion as zero",
+      "elapsed_ms": 581,
+      "expected_diagnostic": "accepted",
+      "language": "ps1",
+      "passed": true,
+      "path": "controls/wrong-cast-fallback.ps1",
+      "problems": [
+        "readings.csv: expected 4 rows, got 8",
+        "summary.json['accepted']: expected 4, got 8",
+        "summary.json['rejected']: expected 4, got 0",
+        "summary.json['total']: expected 19, got 21"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "d298406ea7968822b7ccd45b318343b7d962a4812a87ac769be22ca301141136",
+    "controls/manifest.toml": "667f166e4c01cbca06ea6a196bf0c930053d56b3d8e631fb17f51561cb694a36",
+    "controls/wrong-cast-fallback.ps1": "a51abec51724c66fe7d3d5021a54570a2d237769c609ef7246b22959dd8abeb0",
+    "drill.toml": "ea9bf89ac28d1471dadceb0f68a1e0c82e24e272631d993c3263c97f4c41eb40",
+    "fixtures/measurements.csv": "dbe7d52e2a56005c6a2cec8ebbc752771ff013bc24efc40f3de0315653e5de1f",
+    "solutions/solve.ps1": "2cb8b47a45011aec39e521ed217983fa3e0ac937c03e5ca9b7eb73602ad76fe2",
+    "solutions/solve.py": "8a37e8684c245872b83b38d916934ff551048f0a83d557fa33b79de94c97abeb",
+    "verify.py": "1ee9a0c6cbf6411fe6ce4d4323b7db20a01d51170fb81ed7617f3523e16a56d3"
+  },
+  "stage": "reference-calibrated"
+}

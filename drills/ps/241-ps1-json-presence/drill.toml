@@ -1,0 +1,11 @@
+id = "241-ps1-json-presence"
+family = "data-wrangling"
+title = "Keep absent, null, empty, and zero JSON values distinct"
+difficulty = 4
+timebox = 300
+teaches = [
+  "ConvertFrom-Json exposes present null properties through PSObject.Properties",
+  "an absent property and a present property with $null are different states",
+  "PowerShell truthiness collapses empty strings and numeric zero, so do not use it for presence",
+  "trim string values while preserving the distinction between the string '0' and number 0",
+]

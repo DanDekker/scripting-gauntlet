@@ -1,0 +1,11 @@
+id = "242-ps1-tryparse"
+family = "data-wrangling"
+title = "Use TryParse without losing valid zeroes"
+difficulty = 3
+timebox = 300
+teaches = [
+  "Int32.TryParse returns success separately from the parsed value",
+  "PowerShell passes TryParse out parameters with [ref]",
+  "InvariantCulture and NumberStyles.Integer make whitespace handling explicit",
+  "zero is a successful parsed value, not a rejection signal",
+]

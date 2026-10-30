@@ -1,0 +1,55 @@
+{
+  "calibrated_at": "2026-10-30T07:39:22.959988+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "241-ps1-json-presence",
+  "fixture_origin": "Synthetic JSON quota feed authored to exercise PowerShell property presence",
+  "lineage": "scripting-gauntlet/ps1-json-presence",
+  "results": [
+    {
+      "elapsed_ms": 668,
+      "language": "ps1",
+      "passed": true,
+      "path": "solutions/solve.ps1",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 42,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Uses PowerShell truthiness for owner and quota, collapsing null, empty, and zero into the same branch",
+      "elapsed_ms": 599,
+      "expected_diagnostic": "owner_state",
+      "language": "ps1",
+      "passed": true,
+      "path": "controls/wrong-truthy-state.ps1",
+      "problems": [
+        "report.csv row 1 [alpha/owner_state]: expected 'null', got 'empty'",
+        "report.csv row 1 [alpha/quota_value]: expected 0, got ''",
+        "report.csv row 2 [beta/owner_state]: expected 'missing', got 'empty'",
+        "report.csv row 3 [gamma/quota_state]: expected 'null', got 'zero'",
+        "summary.json['owner_missing']: expected 1, got 0",
+        "summary.json['owner_null']: expected 1, got 0",
+        "summary.json['owner_empty']: expected 1, got 0",
+        "summary.json['quota_null']: expected 1, got 0"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "a278ce8c5966a5b841a4bd3365df7e5e08e10dcc53027e08907483d37a2259ff",
+    "controls/manifest.toml": "4a351ad09a1c85627c8024b4d4a8da7e04d35b49160195931676b142e022c994",
+    "controls/wrong-truthy-state.ps1": "376ee2cfd21b3b3078837344fb61b61a56ceeb76df179773183fbc83e90e2097",
+    "drill.toml": "725f52eb7ff854556b20cee41e69b643df2fcf08ce7bffa31218ed5a4b5ed31c",
+    "fixtures/records.json": "066f02717387b49d0af8c990bcdc07b49076e28183feb9081672dabcc99435c7",
+    "solutions/solve.ps1": "30558ce03371ae16ecfae8b7763b210a6e46daa87b2ab03aad78d9f6f0493386",
+    "solutions/solve.py": "53c65eb7da994f12ca435648cbbaa1aa73b7601c0c753710f1582ee803361855",
+    "verify.py": "dceb359823d9812b59966de3692dc5958cd6907bd056255e4720e3067dbfec51"
+  },
+  "stage": "reference-calibrated"
+}

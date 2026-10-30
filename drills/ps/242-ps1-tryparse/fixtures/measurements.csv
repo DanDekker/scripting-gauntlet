@@ -1,0 +1,9 @@
+name,raw
+zero,0
+spaced,  17  
+negative,-3
+padded,0005
+bad-decimal,1.5
+blank,
+word,unknown
+huge,99999999999999999999
