@@ -1,0 +1,52 @@
+{
+  "calibrated_at": "2026-10-30T04:38:29.248213+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "225-perl-die-message",
+  "fixture_origin": "Synthetic check list authored for this drill",
+  "lineage": "scripting-gauntlet/perl-die-message",
+  "results": [
+    {
+      "elapsed_ms": 25,
+      "language": "pl",
+      "passed": true,
+      "path": "solutions/solve.pl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 72,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Dies without a trailing newline, so perl appends ' at FILE line N.' to the message and the report carries the location",
+      "elapsed_ms": 161,
+      "expected_diagnostic": "1/message",
+      "language": "pl",
+      "passed": true,
+      "path": "controls/wrong-die-with-location.pl",
+      "problems": [
+        "checks.csv row 1 [1/message]: expected 'disk full', got 'disk full at /Users/dd/Desktop/scriptdeck/drills/perl/225-perl-die-message/controls/wrong-die-with-location.pl line 28.'",
+        "checks.csv row 2 [2/message]: expected 'network unreachable', got 'network unreachable at /Users/dd/Desktop/scriptdeck/drills/perl/225-perl-die-message/controls/wrong-die-with-location.pl line 28.'",
+        "checks.csv row 3 [3/message]: expected 'out of memory', got 'out of memory at /Users/dd/Desktop/scriptdeck/drills/perl/225-perl-die-message/controls/wrong-die-with-location.pl line 28.'",
+        "summary.json['longest']: expected 19, got 129",
+        "summary.json['first']: expected 'disk full', got 'disk full at /Users/dd/Desktop/scriptdeck/drills/perl/225-perl-die-message/controls/wrong-die-with-location.pl line 28.'"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "b2f7d47e41fc65529234369f5a7eef8f177e39a813e59307740d84118b69eb93",
+    "controls/manifest.toml": "3fa943bdae37e79c09fc5444e5367542d8fd3abc64d9041905c32de98aa46ad1",
+    "controls/wrong-die-with-location.pl": "1028fd71d4ef69eb7a6b77c807d7098332a711a08cf8d0c91270a624c5c6231e",
+    "drill.toml": "7f153c1402934ef3443aad62e68073357237d67bfed8df420269e769516e032a",
+    "fixtures/checks.txt": "85df2717cab483ba52ce8c76bdf4f0b1f1ced92b17f7f5a1677c6c782ce555af",
+    "solutions/solve.pl": "1996166781aa67d09e35fa6785c1c7ff5adb4256f8a29d2b51b1419e15638848",
+    "solutions/solve.py": "f4e6c4709d42937dadca0a5b37177b910ac5e22019b5326585ac89e1f1610d4d",
+    "verify.py": "1702fbc4e7fe0e51c26b19fa6bd4f0e18d41f7a0cb084ed022c29343240618db"
+  },
+  "stage": "reference-calibrated"
+}

@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/perl-die-message"
+fixture_origin = "Synthetic check list authored for this drill"
+
+[[negative]]
+path = "controls/wrong-die-with-location.pl"
+defect = "Dies without a trailing newline, so perl appends ' at FILE line N.' to the message and the report carries the location"
+expect = "1/message"

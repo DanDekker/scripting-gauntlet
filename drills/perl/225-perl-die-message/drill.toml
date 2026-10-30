@@ -1,0 +1,11 @@
+id = "225-perl-die-message"
+family = "system-recon"
+title = "Report a caught error without the file and line perl bolts on"
+difficulty = 3
+timebox = 300
+teaches = [
+  "die \"text\" appends \" at FILE line N.\" unless the message already ends with a newline",
+  "the caught message is in $@, and it carries that location suffix",
+  "a message ending in \\n has no location appended",
+  "compare an error message as text, not against the raw $@"
+]
