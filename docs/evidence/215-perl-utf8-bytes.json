@@ -1,0 +1,54 @@
+{
+  "calibrated_at": "2026-10-30T04:08:35.500746+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "215-perl-utf8-bytes",
+  "fixture_origin": "Synthetic UTF-8 name list authored for this drill",
+  "lineage": "scripting-gauntlet/perl-utf8-bytes",
+  "results": [
+    {
+      "elapsed_ms": 104,
+      "language": "pl",
+      "passed": true,
+      "path": "solutions/solve.pl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 76,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Reads the file as raw bytes, so length() counts bytes (caf\u00e9 is 5) and uc only uppercases the ASCII letters",
+      "elapsed_ms": 52,
+      "expected_diagnostic": "2/chars",
+      "language": "pl",
+      "passed": true,
+      "path": "controls/wrong-byte-strings.pl",
+      "problems": [
+        "names.csv row 2 [2/name]: expected 'CAF\u00c9', got 'CAF\u00c3\u00a9'",
+        "names.csv row 2 [2/chars]: expected 4, got '5'",
+        "names.csv row 3 [3/name]: expected 'J\u00d6RG', got 'J\u00c3\u00b6RG'",
+        "names.csv row 3 [3/chars]: expected 4, got '5'",
+        "names.csv row 4 [4/name]: expected 'ZO\u00cb', got 'ZO\u00c3\u00ab'",
+        "names.csv row 4 [4/chars]: expected 3, got '4'",
+        "summary.json['chars']: expected 24, got 27"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "39c2b87a2f3bf66ff9c393a306cde41a22ed0c7b8e2804f5fbeb1a85fd24441f",
+    "controls/manifest.toml": "d4410e6e54c85e2b75d1e0b857fbd33f381377d56ad050f5f509cce503f0a295",
+    "controls/wrong-byte-strings.pl": "d2d30edf74e219fa7d18b25849f7ec77ffd71a82a4dc37cca627703d511be616",
+    "drill.toml": "b038556d90c63246f09d3b6047d3ae038356be80ac327959bb5efafe158f67bd",
+    "fixtures/names.txt": "332146a6e088c7a9d5e19b56e8e4b74b36230557eed8f86bc62467c38d235ffc",
+    "solutions/solve.pl": "e4cf12fd3e47b57420af4fad77963c68421d8931b45b41414df666e32a99578f",
+    "solutions/solve.py": "96e620e4d3b785767c2c1aa555082c0a0d2ce3f151046e0cea35ac577adee7ed",
+    "verify.py": "cc276095bdfa57a1944daf81d3983ee554d4cf3f133d1d41ffd16bdc61a9d542"
+  },
+  "stage": "reference-calibrated"
+}

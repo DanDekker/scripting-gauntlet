@@ -1,0 +1,11 @@
+id = "215-perl-utf8-bytes"
+family = "text-munging"
+title = "Uppercase and count names as characters, not bytes"
+difficulty = 4
+timebox = 300
+teaches = [
+  "a perl string is a byte string until it is decoded, so length() counts bytes",
+  "café is 4 characters but 5 bytes, and uc on undecoded bytes only uppercases ASCII",
+  "open the file with an :encoding(UTF-8) layer, or decode with Encode::decode",
+  "write the report with an :encoding(UTF-8) layer so the characters are encoded back to UTF-8",
+]

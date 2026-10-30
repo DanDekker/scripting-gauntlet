@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/perl-utf8-bytes"
+fixture_origin = "Synthetic UTF-8 name list authored for this drill"
+
+[[negative]]
+path = "controls/wrong-byte-strings.pl"
+defect = "Reads the file as raw bytes, so length() counts bytes (café is 5) and uc only uppercases the ASCII letters"
+expect = "2/chars"
