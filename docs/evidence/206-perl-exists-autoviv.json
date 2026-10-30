@@ -1,0 +1,54 @@
+{
+  "calibrated_at": "2026-10-30T02:48:18.832019+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "206-perl-exists-autoviv",
+  "fixture_origin": "Synthetic base and wanted config files authored for this drill",
+  "lineage": "scripting-gauntlet/perl-exists-autoviv",
+  "results": [
+    {
+      "elapsed_ms": 75,
+      "language": "pl",
+      "passed": true,
+      "path": "solutions/solve.pl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 40,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Tests for a key with a nested exists, which autovivifies the intermediate section hash and leaves an empty cache section in the config",
+      "elapsed_ms": 9,
+      "expected_diagnostic": "dump.csv row 1",
+      "language": "pl",
+      "passed": true,
+      "path": "controls/wrong-nested-exists.pl",
+      "problems": [
+        "dump.csv: expected 2 rows, got 3",
+        "dump.csv row 1 [core/section]: expected 'core', got 'cache'",
+        "dump.csv row 1 [core/keys]: expected 2, got '0'",
+        "dump.csv row 2 [limits/section]: expected 'limits', got 'core'",
+        "dump.csv row 2 [limits/keys]: expected 1, got '2'",
+        "summary.json['sections']: expected 2, got 3"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "8e73f230b4876a1c5e742f3753f2a47a866031c23cf129169b714f49c9615284",
+    "controls/manifest.toml": "01e11699f9b4630d9b97a6c31ad5f4ce5784150a912cc1f1b8a19a8147b8c736",
+    "controls/wrong-nested-exists.pl": "50d4064e7e5464236ddcd68fa6d0446ca5216d8daf33132c50093b9b111c55c2",
+    "drill.toml": "11bfe58d935cfabbed74f4353c45b36522fe8caf573ca96c5244ada517fd7031",
+    "fixtures/base.conf": "da63e49827727e17c2a715101c908a32bc075e6c4b6a7e5990946e2ccec512b1",
+    "fixtures/wanted.conf": "4db06ed85030189a43873cd300edf465a3e4e147b564f6f94f42864cb9352aed",
+    "solutions/solve.pl": "5d0bc61475b37d7cc4f8c56b004e9145eb1355e24ef47e7fef5315dae608c2da",
+    "solutions/solve.py": "01579ad9e0d57f63c4fb37d72fb43e5344cc8285f04373a3a60cd79c7bb3ca18",
+    "verify.py": "e254bd1b965fb0c1a8b2a19dec1e9329231b2b38a84b1768c2fd90a662a2d5d0"
+  },
+  "stage": "reference-calibrated"
+}

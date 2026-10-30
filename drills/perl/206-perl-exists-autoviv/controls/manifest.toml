@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/perl-exists-autoviv"
+fixture_origin = "Synthetic base and wanted config files authored for this drill"
+
+[[negative]]
+path = "controls/wrong-nested-exists.pl"
+defect = "Tests for a key with a nested exists, which autovivifies the intermediate section hash and leaves an empty cache section in the config"
+expect = "dump.csv row 1"

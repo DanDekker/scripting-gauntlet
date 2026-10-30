@@ -1,0 +1,11 @@
+id = "206-perl-exists-autoviv"
+family = "data-wrangling"
+title = "Check for missing config keys without creating them"
+difficulty = 4
+timebox = 300
+teaches = [
+  "exists $h{$a}{$b} autovivifies the intermediate $h{$a}, creating an empty hash for a section that was never in the file",
+  "a nested exists is not a read: the config hash changes under you",
+  "guard with exists $h{$a} && exists $h{$a}{$b} to keep the check side-effect free",
+  "an empty section that was never configured shows up in the dumped config",
+]
