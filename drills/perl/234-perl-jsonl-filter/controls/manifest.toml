@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/perl-jsonl-filter"
+fixture_origin = "Synthetic JSON Lines event log authored for this drill"
+
+[[negative]]
+path = "controls/wrong-sort-order.pl"
+defect = "Sorts services by total duration rather than by error count descending"
+expect = "payment/service"

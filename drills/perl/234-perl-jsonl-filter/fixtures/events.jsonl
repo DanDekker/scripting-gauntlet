@@ -1,0 +1,8 @@
+{"timestamp":"2026-10-30T10:00:01Z","service":"auth","level":"INFO","duration_ms":12,"status":200}
+{"timestamp":"2026-10-30T10:00:02Z","service":"payment","level":"ERROR","duration_ms":250,"status":500,"error":"gateway timeout"}
+{"timestamp":"2026-10-30T10:00:03Z","service":"auth","level":"WARN","duration_ms":150,"status":429}
+{"timestamp":"2026-10-30T10:00:04Z","service":"catalog","level":"INFO","duration_ms":35,"status":200}
+{"timestamp":"2026-10-30T10:00:05Z","service":"payment","level":"INFO","duration_ms":80,"status":200}
+{"timestamp":"2026-10-30T10:00:06Z","service":"auth","level":"ERROR","duration_ms":18,"status":401,"error":"invalid credentials"}
+{"timestamp":"2026-10-30T10:00:07Z","service":"catalog","level":"ERROR","duration_ms":450,"status":503,"error":"backend unavailable"}
+{"timestamp":"2026-10-30T10:00:08Z","service":"payment","level":"ERROR","duration_ms":120,"status":500,"error":"connection reset"}

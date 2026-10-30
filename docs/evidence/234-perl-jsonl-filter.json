@@ -1,0 +1,60 @@
+{
+  "calibrated_at": "2026-10-30T06:45:34.728293+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "234-perl-jsonl-filter",
+  "fixture_origin": "Synthetic JSON Lines event log authored for this drill",
+  "lineage": "scripting-gauntlet/perl-jsonl-filter",
+  "results": [
+    {
+      "elapsed_ms": 27,
+      "language": "pl",
+      "passed": true,
+      "path": "solutions/solve.pl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 37,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Sorts services by total duration rather than by error count descending",
+      "elapsed_ms": 20,
+      "expected_diagnostic": "payment/service",
+      "language": "pl",
+      "passed": true,
+      "path": "controls/wrong-sort-order.pl",
+      "problems": [
+        "services.csv row 1 [payment/service]: expected 'payment', got 'catalog'",
+        "services.csv row 1 [payment/events]: expected 3, got '2'",
+        "services.csv row 1 [payment/errors]: expected 2, got '1'",
+        "services.csv row 1 [payment/total_duration_ms]: expected 450, got '485'",
+        "services.csv row 1 [payment/avg_duration_ms]: expected 150.0, got '242.5'",
+        "services.csv row 2 [auth/service]: expected 'auth', got 'payment'",
+        "services.csv row 2 [auth/errors]: expected 1, got '2'",
+        "services.csv row 2 [auth/total_duration_ms]: expected 180, got '450'",
+        "services.csv row 2 [auth/avg_duration_ms]: expected 60.0, got '150.0'",
+        "services.csv row 3 [catalog/service]: expected 'catalog', got 'auth'",
+        "services.csv row 3 [catalog/events]: expected 2, got '3'",
+        "services.csv row 3 [catalog/total_duration_ms]: expected 485, got '180'",
+        "services.csv row 3 [catalog/avg_duration_ms]: expected 242.5, got '60.0'"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "973a5afcf2932c01487baa6d7bb5fb6a3f0edf072a964716c46a521c6fe048cc",
+    "controls/manifest.toml": "e8aff9967df4a9fc5db33190d820df38f3af584480047fc82cccd6253f2a7b5e",
+    "controls/wrong-sort-order.pl": "88bdbca881f90808a6c0dfa36420c35fce510584ff2455a6997b92f33fa6bb1c",
+    "drill.toml": "fea30a7f25f0163e3a2a2b708f0b0633231c84c5b10d7bc94b23d2f511399c18",
+    "fixtures/events.jsonl": "48866e532f40d5e8d061777f964b2705502d959233120ce002fee30bb26541e8",
+    "solutions/solve.pl": "98e1d2cf76bfa9b1207a1ce6c0ba86a7964a935036d43e2b95d16695544eee83",
+    "solutions/solve.py": "11e8f0f9ad9aa87915a2e6674a9a38ef3d0b3200a8a4920f5e398ab38aac96b8",
+    "verify.py": "eebdd29c490fda39a6948a8d5df8d6b62b6a14c033298c7dc1e0f4d033482f03"
+  },
+  "stage": "reference-calibrated"
+}

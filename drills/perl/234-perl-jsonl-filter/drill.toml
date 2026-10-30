@@ -1,0 +1,11 @@
+id = "234-perl-jsonl-filter"
+family = "data-wrangling"
+title = "Aggregate streaming JSON Lines application events by service"
+difficulty = 3
+timebox = 300
+teaches = [
+  "parse streaming JSON Lines line by line with standard library JSON::PP without loading the whole file into memory",
+  "accumulate event counts, error counts, and duration totals per service",
+  "calculate and format floating-point average duration with sprintf('%.1f', ...)",
+  "sort aggregated service records by errors descending, events descending, service name ascending"
+]
