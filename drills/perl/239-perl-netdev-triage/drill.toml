@@ -1,0 +1,13 @@
+id = "239-perl-netdev-triage"
+family = "system-recon"
+title = "Parse /proc/net/dev network statistics to triage degraded interfaces"
+difficulty = 3
+timebox = 300
+teaches = [
+  "parse /proc/net/dev lines by splitting interface names on colon before column extraction",
+  "handle leading whitespace and variable spacing in Linux kernel pseudo-files",
+  "extract receive and transmit packet, error, and drop metrics",
+  "classify interface health as HEALTHY, DEGRADED, or DOWN",
+  "sort interface records by total traffic descending then interface name ascending"
+]
+

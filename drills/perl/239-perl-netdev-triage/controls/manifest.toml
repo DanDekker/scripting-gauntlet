@@ -1,0 +1,9 @@
+version = 1
+lineage = "scripting-gauntlet/perl-netdev-triage"
+fixture_origin = "Synthetic /proc/net/dev network statistics authored for this drill"
+
+[[negative]]
+path = "controls/wrong-naive-whitespace-split.pl"
+defect = "Uses split /\\s+/ on lines with variable leading spaces, causing lines without leading spaces to misalign columns"
+expect = "expected ['docker0', 'DEGRADED', '3145728', '4500', '5', '0']"
+

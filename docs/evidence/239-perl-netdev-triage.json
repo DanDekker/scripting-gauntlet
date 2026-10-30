@@ -1,0 +1,51 @@
+{
+  "calibrated_at": "2026-10-30T07:10:13.579094+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "239-perl-netdev-triage",
+  "fixture_origin": "Synthetic /proc/net/dev network statistics authored for this drill",
+  "lineage": "scripting-gauntlet/perl-netdev-triage",
+  "results": [
+    {
+      "elapsed_ms": 23,
+      "language": "pl",
+      "passed": true,
+      "path": "solutions/solve.pl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 27,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Uses split /\\s+/ on lines with variable leading spaces, causing lines without leading spaces to misalign columns",
+      "elapsed_ms": 24,
+      "expected_diagnostic": "expected ['docker0', 'DEGRADED', '3145728', '4500', '5', '0']",
+      "language": "pl",
+      "passed": true,
+      "path": "controls/wrong-naive-whitespace-split.pl",
+      "problems": [
+        "row 4: expected ['docker0', 'DEGRADED', '3145728', '4500', '5', '0'], got ['2097152', 'HEALTHY', '4500', '5', '0', '0']",
+        "expected healthy_count=2, got 3",
+        "expected degraded_count=2, got 1",
+        "expected total_traffic_bytes=123731968, got 120590740"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "d23fce1fbe529a515bfc8eaf56df58653f93d5fc3fe39b59537d553bb08f0647",
+    "controls/manifest.toml": "4666a8b17075a8b59256610fac66daa9435d1e4f8f580688d468095b3422160a",
+    "controls/wrong-naive-whitespace-split.pl": "d035536e9ed5615c3f4dd939bef036bed41a008ea3847051ee25c0ce9c8c2be9",
+    "drill.toml": "27b2947abb4db105ae81655142979d6957ca42f0937b9bc0df853709f9675c15",
+    "fixtures/net_dev.txt": "de983f47207e6848cf3e7101a14b39803636563da93f7299e26ad635a7741915",
+    "solutions/solve.pl": "21bb78c867c3a2a0d36085588405e95548e04fccb0a638fde4c887c8113cadd0",
+    "solutions/solve.py": "e74dc8ff363897610035b25f7463f2b473262f1d00515ffa339b15518ab20cca",
+    "verify.py": "d8f3b735bd53ac7516af5a1b66203d7494384f453841ba5f56fa616c75800b0f"
+  },
+  "stage": "reference-calibrated"
+}
