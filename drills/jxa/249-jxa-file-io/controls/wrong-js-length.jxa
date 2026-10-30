@@ -1,0 +1,30 @@
+#!/usr/bin/env osascript -l JavaScript
+ObjC.import('Foundation');
+function env(name) {
+  const value = $.NSProcessInfo.processInfo.environment.objectForKey($(name));
+  if (!value) throw new Error(name + ' is missing');
+  return ObjC.unwrap(value);
+}
+function write(path, text) {
+  const error = Ref();
+  $(text).writeToFileAtomicallyEncodingError($(path), true, $.NSUTF8StringEncoding, error);
+}
+const rows = [];
+let chars = 0;
+let bytes = 0;
+const source = $.NSString.stringWithContentsOfFileEncodingError(
+  $(env('IN') + '/notes.txt'), $.NSUTF8StringEncoding, Ref(),
+);
+for (const raw of ObjC.unwrap(source).split(/\r\n|\r|\n/)) {
+  const text = raw.trim();
+  if (!text) continue;
+  const count = text.length;
+  const size = $.NSString.stringWithString($(text)).dataUsingEncoding($.NSUTF8StringEncoding).length;
+  chars += count;
+  bytes += size;
+  rows.push([rows.length + 1, text, count, size]);
+}
+const csv = ['index,text,chars,bytes']
+  .concat(rows.map((row) => row.join(','))).join('\n') + '\n';
+write(env('OUT') + '/lines.csv', csv);
+write(env('OUT') + '/summary.json', JSON.stringify({records:rows.length,chars,bytes}) + '\n');

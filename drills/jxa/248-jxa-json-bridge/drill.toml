@@ -1,0 +1,11 @@
+id = "248-jxa-json-bridge"
+family = "data-wrangling"
+title = "Bridge nested JSON and preserve null versus missing keys in JXA"
+difficulty = 3
+timebox = 300
+teaches = [
+  "NSJSONSerialization parses JSON data without a third-party package",
+  "ObjC.deepUnwrap converts nested Foundation containers for JavaScript use",
+  "NSNull and an absent dictionary key need separate tests",
+  "JXA can use JavaScript JSON output after the Foundation bridge step",
+]

@@ -1,0 +1,20 @@
+#!/usr/bin/env osascript -l JavaScript
+ObjC.import('Foundation');
+function env(name) {
+  const value = $.NSProcessInfo.processInfo.environment.objectForKey($(name));
+  if (!value) throw new Error(name + ' is missing');
+  return ObjC.unwrap(value);
+}
+const data = $.NSData.dataWithContentsOfFile($(env('IN') + '/records.json'));
+const native = $.NSJSONSerialization.JSONObjectWithDataOptionsError(data, 0, null);
+const source = ObjC.deepUnwrap(native);
+const records = source.map((record) => ({
+  id: record.id,
+  owner_state: record.owner ? 'value' : 'empty',
+  owner: record.owner ? String(record.owner).trim() : '',
+  tags: record.tags,
+  enabled: record.enabled,
+}));
+const text = $(JSON.stringify({records, summary:{records:records.length,null_owner:0,missing_owner:0,tagged:2}}) + '\n');
+const error = Ref();
+text.writeToFileAtomicallyEncodingError($(env('OUT') + '/report.json'), true, $.NSUTF8StringEncoding, error);

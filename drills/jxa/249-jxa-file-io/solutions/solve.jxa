@@ -1,0 +1,52 @@
+#!/usr/bin/env osascript -l JavaScript
+ObjC.import('Foundation');
+
+function env(name) {
+  const value = $.NSProcessInfo.processInfo.environment.objectForKey($(name));
+  if (!value) throw new Error(name + ' is missing');
+  return ObjC.unwrap(value);
+}
+
+function readText(path) {
+  const error = Ref();
+  const text = $.NSString.stringWithContentsOfFileEncodingError(
+    $(path), $.NSUTF8StringEncoding, error,
+  );
+  if (!text) throw new Error('cannot read ' + path + ': ' + ObjC.unwrap(error[0].localizedDescription));
+  return ObjC.unwrap(text);
+}
+
+function writeText(path, text) {
+  const value = $(text);
+  const error = Ref();
+  if (!value.writeToFileAtomicallyEncodingError($(path), true, $.NSUTF8StringEncoding, error)) {
+    throw new Error('cannot write ' + path + ': ' + ObjC.unwrap(error[0].localizedDescription));
+  }
+}
+
+function csvCell(value) {
+  return '"' + String(value).replace(/"/g, '""') + '"';
+}
+
+const input = env('IN');
+const output = env('OUT');
+const lines = [];
+let totalChars = 0;
+let totalBytes = 0;
+for (const raw of readText(input + '/notes.txt').split(/\r\n|\r|\n/)) {
+  const text = raw.trim();
+  if (!text) continue;
+  const chars = Array.from(text).length;
+  const bytes = Number(ObjC.unwrap($.NSString.stringWithString($(text))
+    .dataUsingEncoding($.NSUTF8StringEncoding).length));
+  totalChars += chars;
+  totalBytes += bytes;
+  lines.push([lines.length + 1, text, chars, bytes]);
+}
+
+const csv = ['index,text,chars,bytes']
+  .concat(lines.map((row) => row.map(csvCell).join(','))).join('\n') + '\n';
+writeText(output + '/lines.csv', csv);
+writeText(output + '/summary.json', JSON.stringify({
+  records: lines.length, chars: totalChars, bytes: totalBytes,
+}) + '\n');

@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/jxa-file-io"
+fixture_origin = "Synthetic UTF-8 note authored with multibyte characters and an emoji"
+
+[[negative]]
+path = "controls/wrong-js-length.jxa"
+defect = "Uses JavaScript UTF-16 code-unit length for chars, counting the emoji as two characters"
+expect = "chars"

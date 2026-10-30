@@ -1,0 +1,11 @@
+id = "249-jxa-file-io"
+family = "text-munging"
+title = "Read UTF-8 in JXA and count characters separately from bytes"
+difficulty = 3
+timebox = 300
+teaches = [
+  "NSString.stringWithContentsOfFileEncodingError performs explicit text decoding",
+  "JXA JavaScript length counts UTF-16 code units rather than Unicode code points",
+  "NSData length reports bytes for a chosen encoding",
+  "Ref() carries NSError out parameters in Foundation calls",
+]

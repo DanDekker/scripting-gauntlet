@@ -1,0 +1,62 @@
+#!/usr/bin/env osascript -l JavaScript
+ObjC.import('Foundation');
+
+function env(name) {
+  const value = $.NSProcessInfo.processInfo.environment.objectForKey($(name));
+  if (!value) throw new Error(name + ' is missing');
+  return ObjC.unwrap(value);
+}
+
+function readJSON(path) {
+  const data = $.NSData.dataWithContentsOfFile($(path));
+  if (!data) throw new Error('cannot read ' + path);
+  const error = Ref();
+  const native = $.NSJSONSerialization.JSONObjectWithDataOptionsError(data, 0, error);
+  if (!native) throw new Error('invalid JSON: ' + ObjC.unwrap(error[0].localizedDescription));
+  return ObjC.deepUnwrap(native);
+}
+
+function writeJSON(path, value) {
+  const text = $(JSON.stringify(value) + '\n');
+  const error = Ref();
+  if (!text.writeToFileAtomicallyEncodingError($(path), true, $.NSUTF8StringEncoding, error)) {
+    throw new Error('cannot write ' + path + ': ' + ObjC.unwrap(error[0].localizedDescription));
+  }
+}
+
+const input = env('IN');
+const output = env('OUT');
+const source = readJSON(input + '/records.json');
+if (!Array.isArray(source)) throw new Error('records must be an array');
+
+let nullOwner = 0;
+let missingOwner = 0;
+let tagged = 0;
+const records = source.map((record) => {
+  const hasOwner = Object.prototype.hasOwnProperty.call(record, 'owner');
+  let ownerState;
+  let owner = '';
+  if (!hasOwner) {
+    ownerState = 'missing';
+    missingOwner++;
+  } else if (record.owner === null) {
+    ownerState = 'null';
+    nullOwner++;
+  } else {
+    ownerState = 'value';
+    owner = String(record.owner).trim();
+  }
+  if (record.tags.length > 0) tagged++;
+  return {
+    id: String(record.id),
+    owner_state: ownerState,
+    owner,
+    tags: record.tags,
+    enabled: record.enabled,
+  };
+});
+
+writeJSON(output + '/report.json', {
+  records,
+  summary: {records: records.length, null_owner: nullOwner, missing_owner: missingOwner, tagged},
+});

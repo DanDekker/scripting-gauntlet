@@ -1,0 +1,49 @@
+{
+  "calibrated_at": "2026-10-30T07:47:14.687527+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "248-jxa-json-bridge",
+  "fixture_origin": "Synthetic JSON export authored for Foundation bridge and null handling",
+  "lineage": "scripting-gauntlet/jxa-json-bridge",
+  "results": [
+    {
+      "elapsed_ms": 273,
+      "language": "jxa",
+      "passed": true,
+      "path": "solutions/solve.jxa",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 35,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Uses JavaScript truthiness, collapsing missing and null owners into one empty state",
+      "elapsed_ms": 267,
+      "expected_diagnostic": "owner_state",
+      "language": "jxa",
+      "passed": true,
+      "path": "controls/wrong-truthy-owner.jxa",
+      "problems": [
+        "report.json['records']: expected [{'id': 'a', 'owner_state': 'null', 'owner': '', 'tags': ['mac', 'prod'], 'enabled': True}, {'id': 'b', 'owner_state': 'value', 'owner': 'Lee', 'tags': [], 'enabled': False}, {'id': 'c', 'owner_state': 'missing', 'owner': '', 'tags': ['mac'], 'enabled': True}], got [{'id': 'a', 'owner_state': 'empty', 'owner': '', 'tags': ['mac', 'prod'], 'enabled': True}, {'id': 'b', 'owner_state': 'value', 'owner': 'Lee', 'tags': [], 'enabled': False}, {'id': 'c', 'owner_state': 'empty', 'owner': '', 'tags': ['mac'], 'enabled': True}]",
+        "report.json['summary']: expected {'records': 3, 'null_owner': 1, 'missing_owner': 1, 'tagged': 2}, got {'records': 3, 'null_owner': 0, 'missing_owner': 0, 'tagged': 2}"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "fdb783d1385fe5f953f1fcd119076045df7481c50687b43dc957af9a5f17a40e",
+    "controls/manifest.toml": "4fcb5ed216aef4cd55473290ebe1af2d5657d7bd6998c1df8d35cd8a70e2e825",
+    "controls/wrong-truthy-owner.jxa": "b0f956e2bba64cb4c3944b4b8af83eb04a98335b1e9e3d1cbd13db3d1217898a",
+    "drill.toml": "e6a9be6779357dc241a22de0238f7058de613d6c817ac5b1a7d630990b3b0a55",
+    "fixtures/records.json": "292845c2e494db224a70a3800461c38a5b36bfbedb845460a9e39052a9960838",
+    "solutions/solve.jxa": "ee47d978e3358608da5baa373a753dac5ac4798564df076da9d28f31083357d4",
+    "solutions/solve.py": "345b9e8ca0afbb801058471ac2573eb559a9dd1c8b26309c0984f83f7b871709",
+    "verify.py": "453e447357f4edbdf7c26b05615793c20c8b5d20f6675ee5204a3041fb6ea0fd"
+  },
+  "stage": "reference-calibrated"
+}

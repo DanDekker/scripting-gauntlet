@@ -1,0 +1,50 @@
+{
+  "calibrated_at": "2026-10-30T07:47:14.691442+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "249-jxa-file-io",
+  "fixture_origin": "Synthetic UTF-8 note authored with multibyte characters and an emoji",
+  "lineage": "scripting-gauntlet/jxa-file-io",
+  "results": [
+    {
+      "elapsed_ms": 274,
+      "language": "jxa",
+      "passed": true,
+      "path": "solutions/solve.jxa",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 33,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Uses JavaScript UTF-16 code-unit length for chars, counting the emoji as two characters",
+      "elapsed_ms": 268,
+      "expected_diagnostic": "chars",
+      "language": "jxa",
+      "passed": true,
+      "path": "controls/wrong-js-length.jxa",
+      "problems": [
+        "lines.csv row 3 col 3: expected 6, got '7'",
+        "summary.json['chars']: expected 15, got 16",
+        "summary.json['bytes']: expected 20, got '05510'"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "8a7e0b1ff2c9903bceb1fd6c112b04f24681e79f04fff10ab909f85e83b1e799",
+    "controls/manifest.toml": "e5fa1d90f53512ba625672f7bbe87f4360fe00f4521208878a7267527ec26b75",
+    "controls/wrong-js-length.jxa": "d341349038b69b0ecfc039032984eafb51a13a8e8335e481eb2b281d780af550",
+    "drill.toml": "32121cce88f6d008dcecad2e96596dea0d828b37bd6db48c8ec768f78155b6f5",
+    "fixtures/notes.txt": "2e1c3561ec2d2a98f34570c9a7ed9f6f41280bb9bb21e713c50f0824e12e35fa",
+    "solutions/solve.jxa": "3a50ab78ff80c8d02eda9058d38417ca5392b26132a756e2b9d038cc2ecc4379",
+    "solutions/solve.py": "b520cef7c3890fb6e43908fbdadb994c546be17e415696520f1be934b4824d24",
+    "verify.py": "f7d55bcdeeb6044083fc66de8987dfbe99e894eedb66dda7f4d722b111ffef1b"
+  },
+  "stage": "reference-calibrated"
+}

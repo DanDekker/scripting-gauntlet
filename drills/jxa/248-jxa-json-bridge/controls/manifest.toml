@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/jxa-json-bridge"
+fixture_origin = "Synthetic JSON export authored for Foundation bridge and null handling"
+
+[[negative]]
+path = "controls/wrong-truthy-owner.jxa"
+defect = "Uses JavaScript truthiness, collapsing missing and null owners into one empty state"
+expect = "owner_state"
