@@ -1,0 +1,58 @@
+{
+  "calibrated_at": "2026-10-30T06:28:51.995249+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "226-perl-child-status",
+  "fixture_origin": "Synthetic probe list authored for this drill",
+  "lineage": "scripting-gauntlet/perl-child-status",
+  "results": [
+    {
+      "elapsed_ms": 455,
+      "language": "pl",
+      "passed": true,
+      "path": "solutions/solve.pl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 386,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Reads only the exit code out of $? with a shift, so a child killed by a signal looks like it exited 0 and a program that never ran yields a huge shifted number",
+      "elapsed_ms": 310,
+      "expected_diagnostic": "4/status",
+      "language": "pl",
+      "passed": true,
+      "path": "controls/wrong-status-shift.pl",
+      "problems": [
+        "results.csv row 4 [4/status]: expected 'signalled', got 'ok'",
+        "results.csv row 4 [4/detail]: expected 9, got '0'",
+        "results.csv row 5 [5/status]: expected 'signalled', got 'ok'",
+        "results.csv row 5 [5/detail]: expected 15, got '0'",
+        "results.csv row 6 [6/status]: expected 'notfound', got 'failed'",
+        "results.csv row 6 [6/detail]: expected -1, got '72057594037927935'",
+        "summary.json['ok']: expected 1, got 3",
+        "summary.json['failed']: expected 2, got 3",
+        "summary.json['signalled']: expected 2, got 0",
+        "summary.json['notfound']: expected 1, got 0"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "9fc44cfcd009c22c066aa1699992b41e6872a5d29bd8da0bec72c302d73c7525",
+    "controls/manifest.toml": "d1bcf60639a08ea11f0f730aba6100d30008135526aea7fe4376a7f658508eae",
+    "controls/wrong-status-shift.pl": "e4683f7b4fd211fe22751a3ca31616fb46f090e8c57002dea54b8775dd03a97a",
+    "drill.toml": "5961a8726feea2a894ac1a891f0ad0169d53208f171fd11693fd9f89b3ff8682",
+    "fixtures/probes.csv": "f5f28e937231ee8676a6ef49b9d3b061fb529f60c822c1818177063b7d3e3041",
+    "solutions/__pycache__/solve.cpython-314.pyc": "939c23d36aa7a2d27b4b12bbd73873612ba3cb26c059b2fb4b2931dfcb0ab6ea",
+    "solutions/solve.pl": "1269af034619a067c6c1dbd1438096925b37fdf538f7575961425d03fc998bc1",
+    "solutions/solve.py": "20754269376f9ff7a6d3db73ba43eec22e77737969416ca43692563d9faed6c2",
+    "verify.py": "8d42ac75c143090a51aaada651f14d65e25af070e1bf54cf3ef77594052b0d24"
+  },
+  "stage": "reference-calibrated"
+}

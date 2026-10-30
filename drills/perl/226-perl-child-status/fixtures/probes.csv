@@ -1,0 +1,7 @@
+id,kind,arg
+1,exit,0
+2,exit,3
+3,exit,42
+4,signal,9
+5,signal,15
+6,missing,no-such-command-xyz

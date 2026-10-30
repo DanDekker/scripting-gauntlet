@@ -1,0 +1,11 @@
+id = "226-perl-child-status"
+family = "system-recon"
+title = "Run each health-check command and report how it actually ended"
+difficulty = 3
+timebox = 300
+teaches = [
+  "system() returns the raw wait status, not the exit code: exit 3 comes back as 768",
+  "the exit code is $? >> 8 and the signal number is $? & 127",
+  "a child killed by a signal has exit code 0, so $? >> 8 alone reports success",
+  "a program that could not be executed makes system() return -1; $? is then -1, not a status",
+]

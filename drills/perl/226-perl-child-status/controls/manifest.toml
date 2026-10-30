@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/perl-child-status"
+fixture_origin = "Synthetic probe list authored for this drill"
+
+[[negative]]
+path = "controls/wrong-status-shift.pl"
+defect = "Reads only the exit code out of $? with a shift, so a child killed by a signal looks like it exited 0 and a program that never ran yields a huge shifted number"
+expect = "4/status"
