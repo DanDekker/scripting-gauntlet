@@ -1,0 +1,11 @@
+id = "210-perl-print-byte-count"
+family = "text-munging"
+title = "Report the size of a file you wrote without trusting print's return value"
+difficulty = 3
+timebox = 300
+teaches = [
+  "print returns 1 on success, not the number of characters written",
+  "printf returns 1 as well, so summing the return value counts calls, not bytes",
+  "the size of what you wrote comes from length() of the text, or from the file on disk",
+  "length() of text read without decoding counts bytes, so a 4-character word can be 5 bytes",
+]

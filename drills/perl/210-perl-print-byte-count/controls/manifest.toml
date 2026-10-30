@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/perl-print-byte-count"
+fixture_origin = "Synthetic item list authored for this drill"
+
+[[negative]]
+path = "controls/wrong-sum-print-return.pl"
+defect = "Adds up print's return value, which is 1 per successful call, so the reported size is the number of items (4) instead of the byte count (26)"
+expect = "expected 26, got 4"

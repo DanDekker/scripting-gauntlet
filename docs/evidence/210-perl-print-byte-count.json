@@ -1,0 +1,48 @@
+{
+  "calibrated_at": "2026-10-30T03:21:52.214313+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "210-perl-print-byte-count",
+  "fixture_origin": "Synthetic item list authored for this drill",
+  "lineage": "scripting-gauntlet/perl-print-byte-count",
+  "results": [
+    {
+      "elapsed_ms": 18,
+      "language": "pl",
+      "passed": true,
+      "path": "solutions/solve.pl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 72,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Adds up print's return value, which is 1 per successful call, so the reported size is the number of items (4) instead of the byte count (26)",
+      "elapsed_ms": 36,
+      "expected_diagnostic": "expected 26, got 4",
+      "language": "pl",
+      "passed": true,
+      "path": "controls/wrong-sum-print-return.pl",
+      "problems": [
+        "summary.json['bytes']: expected 26, got 4"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "9943697c488f6e1cca2f4dc765e79637fbf93f351a201a649ade861b68e26aa0",
+    "controls/manifest.toml": "4cc8de49720faae63be33237aa3e1b5a9d82adfb8b5bf34626770e41433fd48b",
+    "controls/wrong-sum-print-return.pl": "9a6643629149052088020d0c222a94fbeb84f5defcbfdbc59af34e82f9572b68",
+    "drill.toml": "e73b602352593548aa19b5b0657e5f24b6864ee3d63bc4d0ff4bfa2005893072",
+    "fixtures/items.txt": "16844be2ae0bdcdefbe551de5c34f85a6eca7ba2fedca3d6445a61f351362368",
+    "solutions/solve.pl": "89cd3820932422c6205b1b8bb20ed86437fd4b070cad78debf6751ac84354a2f",
+    "solutions/solve.py": "69aec4400727f1a47bb5b967a818ff31ed5209e18e602d1d424462366286d61e",
+    "verify.py": "dbf431e0159b7fde462eb0fd2f475f24f54885aefc84459e5ceb9c23be96b741"
+  },
+  "stage": "reference-calibrated"
+}
