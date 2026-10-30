@@ -1,0 +1,11 @@
+id = "220-perl-chomp-chop"
+family = "text-munging"
+title = "Keep the last character of a file whose final line has no newline"
+difficulty = 3
+timebox = 300
+teaches = [
+  "chomp removes the input record separator, so it removes nothing when the line has no newline",
+  "chop removes the last character whatever it is, so it eats a real character on the last line",
+  "a file that does not end with a newline gives its last line no terminator to remove",
+  "the last line of a file is the one that can lose a character"
+]
