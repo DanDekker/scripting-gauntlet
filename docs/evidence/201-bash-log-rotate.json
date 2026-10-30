@@ -1,0 +1,74 @@
+{
+  "calibrated_at": "2026-10-30T00:00:09.273064+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "201-bash-log-rotate",
+  "fixture_origin": "Synthetic service logs and a rotation policy authored for this drill",
+  "lineage": "scripting-gauntlet/bash-log-rotate",
+  "results": [
+    {
+      "elapsed_ms": 57,
+      "language": "bash",
+      "passed": true,
+      "path": "solutions/solve.bash",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 35,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Computes age by subtracting the day-of-month, so logs from earlier months or years look days old instead of months old",
+      "elapsed_ms": 62,
+      "expected_diagnostic": "svc-2026-09-29.log/action",
+      "language": "bash",
+      "passed": true,
+      "path": "controls/wrong-day-subtraction.bash",
+      "problems": [
+        "rotation.csv row 1 [svc-2026-01-15.log/age_days]: expected 287, got '14'",
+        "rotation.csv row 1 [svc-2026-01-15.log/action]: expected 'delete', got 'compress'",
+        "rotation.csv row 2 [svc-2026-03-01.log/age_days]: expected 242, got '28'",
+        "rotation.csv row 2 [svc-2026-03-01.log/action]: expected 'delete', got 'compress'",
+        "rotation.csv row 3 [svc-2026-08-30.log/age_days]: expected 60, got '-1'",
+        "rotation.csv row 3 [svc-2026-08-30.log/action]: expected 'delete', got 'keep'",
+        "rotation.csv row 4 [svc-2026-09-29.log/age_days]: expected 30, got '0'",
+        "rotation.csv row 4 [svc-2026-09-29.log/action]: expected 'delete', got 'keep'",
+        "rotation.csv row 11 [svc-2026-11-05.log/age_days]: expected -7, got '24'",
+        "rotation.csv row 11 [svc-2026-11-05.log/action]: expected 'keep', got 'compress'",
+        "summary.json['kept']: expected 4, got 5",
+        "summary.json['compressed']: expected 3, got 6",
+        "summary.json['deleted']: expected 4, got 0",
+        "out/logs: missing ['svc-2026-11-05.log']",
+        "out/logs: unexpected ['svc-2026-01-15.log.gz', 'svc-2026-03-01.log.gz', 'svc-2026-08-30.log', 'svc-2026-09-29.log', 'svc-2026-11-05.log.gz']"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "fec330a379e4e0df31bcc2813b9fe0d7f4b642d84bb612399b472c7462bab105",
+    "controls/manifest.toml": "6c4efc975478f6617466be962c470adee487cc636a4dee25f18c9e444f03ff8d",
+    "controls/wrong-day-subtraction.bash": "adc0017be3152ee565f45d63e8911f6eb1d46ef89a8a620450d16ea653e5c5b8",
+    "drill.toml": "9b4001d94c4d0761df86dda4f8b5e6093ca4e96f248505374e56c8e1f45b6e09",
+    "fixtures/logs/svc-2026-01-15.log": "2b00d2b226d4ab8206969870b1c479066d1892a6ef4dcf2dca0aca98a537be3d",
+    "fixtures/logs/svc-2026-03-01.log": "5e4484cce61110b0ce9b5e45a0fe01f8f89ca6b9e7df9b208ca7bc790d911c91",
+    "fixtures/logs/svc-2026-08-30.log": "c5ac9fff3b2051f7f74e10bf87bbc8ccb4a19a99278f4e9ccda6b7ec1739d946",
+    "fixtures/logs/svc-2026-09-29.log": "ce246b5a0418ff8f9ee5fec5f6635c020d666c5c33a2fc8b5d01d78d7b43331f",
+    "fixtures/logs/svc-2026-09-30.log.1": "1b7cf0e869ae0482def7b29fafc112998a4e7970fae091d8898e844f2acb8029",
+    "fixtures/logs/svc-2026-10-16.log": "e37b4ae04b96ecd8c6233ca985a63fb2c682fc3e452b814d36ae7133a0eafcf8",
+    "fixtures/logs/svc-2026-10-20.log": "c9548be3f507b4fe0685c9c6241ad7bbb8b842718ac3fea9123a94069d00e289",
+    "fixtures/logs/svc-2026-10-22.log": "f2fe457fc13e398861ef1fec670c4c539ca43098a3e6cc9e53974da11a1710c9",
+    "fixtures/logs/svc-2026-10-23.log": "10b335021a80ad739b826b397ec59a07f8d1b5dc483866839088678bb8af4516",
+    "fixtures/logs/svc-2026-10-28.log": "d0419bf4bd8741b5d329733ab60cb1ed3f89a50d73f3e2a686e88648cbaf67a1",
+    "fixtures/logs/svc-2026-10-29.log": "dc7bfeed4bf4a1ff14f5c44f76e1c55796deea1120c2b7faf35680c8c72ea0fd",
+    "fixtures/logs/svc-2026-11-05.log": "3250a9a6065360cd23a4726313fd2115f91ecdf74d2a25437732ed09a18403b5",
+    "fixtures/policy.txt": "765a5e102e02ca239421b9cb48a71ee244d762ab3684ac9ab212e5a00041eb1e",
+    "solutions/solve.bash": "d4f7523954d1c6ca4918206d4d3803acb3dbc0c3766a82113fbc9b5233acb074",
+    "solutions/solve.py": "fb9a030c3ba073153cfe9aba82c34d5ce6b291aab673e852f14c90586ab4ff6d",
+    "verify.py": "842084e61d9d927e6bed177564f80fdd73ccadaab9310b6d74dfaefac8154286"
+  },
+  "stage": "reference-calibrated"
+}

@@ -1,0 +1,11 @@
+id = "201-bash-log-rotate"
+family = "file-hygiene"
+title = "Rotate logs by age without breaking on month boundaries"
+difficulty = 3
+timebox = 300
+teaches = [
+  "age in days needs a real day count; subtracting day-of-month numbers breaks on every month boundary",
+  "thresholds are inclusive: a log exactly 7 days old is compressed, exactly 30 days old is deleted",
+  "a log dated after today has a negative age and is kept, not deleted",
+  "gzip output is named <name>.gz and must decompress to the original bytes",
+]

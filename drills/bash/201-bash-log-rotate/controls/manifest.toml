@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/bash-log-rotate"
+fixture_origin = "Synthetic service logs and a rotation policy authored for this drill"
+
+[[negative]]
+path = "controls/wrong-day-subtraction.bash"
+defect = "Computes age by subtracting the day-of-month, so logs from earlier months or years look days old instead of months old"
+expect = "svc-2026-09-29.log/action"

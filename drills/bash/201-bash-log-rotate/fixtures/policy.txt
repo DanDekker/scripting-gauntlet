@@ -1,0 +1,3 @@
+today=2026-10-29
+compress_after_days=7
+delete_after_days=30
