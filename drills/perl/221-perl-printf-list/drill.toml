@@ -1,0 +1,11 @@
+id = "221-perl-printf-list"
+family = "text-munging"
+title = "Write one report line per record instead of letting printf swallow the list"
+difficulty = 3
+timebox = 300
+teaches = [
+  "printf applies its format once, so the extra arguments are redundant and are dropped",
+  "printf FORMAT, LIST passes every element of LIST as an argument, not as a set of records",
+  "printf '%s\\n', $_ for @records is the form that writes one line per record",
+  "a redundant-argument warning on stdout is the program telling you it wrote one line"
+]

@@ -1,0 +1,49 @@
+{
+  "calibrated_at": "2026-10-30T04:25:06.635513+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "221-perl-printf-list",
+  "fixture_origin": "Synthetic record list authored for this drill",
+  "lineage": "scripting-gauntlet/perl-printf-list",
+  "results": [
+    {
+      "elapsed_ms": 10,
+      "language": "pl",
+      "passed": true,
+      "path": "solutions/solve.pl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 155,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Passes the whole list to printf, which applies the format once and drops the rest as redundant, so the report holds one line instead of three",
+      "elapsed_ms": 52,
+      "expected_diagnostic": "report.txt",
+      "language": "pl",
+      "passed": true,
+      "path": "controls/wrong-printf-whole-list.pl",
+      "problems": [
+        "report.txt: expected ['alpha', 'bravo', 'charlie'], got ['alpha']",
+        "summary.json['lines']: expected 3, got 1"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "4044eb01fa145ae34563e3ee6a2290b8c65938fb2e5fc99ea479230b36cc4332",
+    "controls/manifest.toml": "75342ea9acd49a0880bb4594bc0eaaf83f609c5279e38145b47b915c4da1b925",
+    "controls/wrong-printf-whole-list.pl": "b5e0bd01e8cf6c57e1a9a4d748162b661b92449e9a49b042a718fb783d1e2bfc",
+    "drill.toml": "df56733440f9c87081f63b167d589460e9e03552b42d0ab0344091f0259261b4",
+    "fixtures/records.txt": "3eca7ea48b0da0ad30bee679c92c7b68d487547068b6914d10a64e8cedb03f51",
+    "solutions/solve.pl": "77eb2b9a4907a1ad1daabe392f396ee026f0593fecfc445095e0256a567800e0",
+    "solutions/solve.py": "abb4c362bd486f4e0ff45038ac4d0760b77b2aa6f95edad62bdfe7cc5a1aac72",
+    "verify.py": "3a1c68cad7d07ce1df50ce1e6fd5585b7386314ac81f3574568ef1b6544fccab"
+  },
+  "stage": "reference-calibrated"
+}

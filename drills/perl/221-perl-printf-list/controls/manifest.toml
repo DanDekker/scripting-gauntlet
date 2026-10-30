@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/perl-printf-list"
+fixture_origin = "Synthetic record list authored for this drill"
+
+[[negative]]
+path = "controls/wrong-printf-whole-list.pl"
+defect = "Passes the whole list to printf, which applies the format once and drops the rest as redundant, so the report holds one line instead of three"
+expect = "report.txt"
