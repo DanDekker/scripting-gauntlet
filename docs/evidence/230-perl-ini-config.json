@@ -1,0 +1,51 @@
+{
+  "calibrated_at": "2026-10-30T06:33:47.634906+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "230-perl-ini-config",
+  "fixture_origin": "Synthetic INI configuration and query list authored for this drill",
+  "lineage": "scripting-gauntlet/perl-ini-config",
+  "results": [
+    {
+      "elapsed_ms": 31,
+      "language": "pl",
+      "passed": true,
+      "path": "solutions/solve.pl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 86,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Fails to strip inline comments, preserving '; pager alerts' in value",
+      "elapsed_ms": 25,
+      "expected_diagnostic": "production/notify/value",
+      "language": "pl",
+      "passed": true,
+      "path": "controls/wrong-inline-comment.pl",
+      "problems": [
+        "answers.csv row 6 [production/timeout/value]: expected '30', got '30 ; default socket timeout'",
+        "answers.csv row 7 [production/notify/value]: expected 'oncall@example.com', got 'oncall@example.com ; pager alerts'",
+        "answers.csv row 9 [qa/timeout/value]: expected '30', got '30 ; default socket timeout'"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "6b36ca415dd9e1fc44580f8ba7861601e56cfbda69a1a7947f9e708fb9421a96",
+    "controls/manifest.toml": "7cccd2ebf2c865da3567ae49fe5aadb59d5768de60794cc34fc13cc45e79babe",
+    "controls/wrong-inline-comment.pl": "d92a6741f381acafa05b69d9cc4426f01b87fd4c8d5912ad6b16ca3e9209fc21",
+    "drill.toml": "1d2fb313f75324ffa28c56433b691c47de83b309f7b9eb9bf61f475f83a72c1d",
+    "fixtures/config.ini": "5b02d0340895453bb9aebddb70f215f4f488e6f93cbfadb1081b0c9172f877f5",
+    "fixtures/queries.csv": "1515a4407a6e30aa7ea7c8457a7a9147d8e7412ca1961a4a41db265ef0890c81",
+    "solutions/solve.pl": "63be24e22e585fd64ac12d568d9a9a42bc5d901797ccde061df5f35010c061f3",
+    "solutions/solve.py": "b774b93813a5626e1f621469ffc680ba17578de447156543b1f869bdbb205ee7",
+    "verify.py": "29f6412103b21ef38017f4c0c0e83048aa82ee177b5a7cd17d4de2eeacc1049c"
+  },
+  "stage": "reference-calibrated"
+}

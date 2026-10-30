@@ -1,0 +1,11 @@
+id = "230-perl-ini-config"
+family = "text-munging"
+title = "Parse sectioned INI configurations with inline comments and default fallback"
+difficulty = 3
+timebox = 300
+teaches = [
+  "strip comments starting with # or ; including whitespace before inline comments",
+  "parse section headers [section] and key = value lines into a hash of hashes",
+  "use the defined-or operator // to fall back to the [default] section when a section leaves a key unset",
+  "handle autovivification safely when querying sections that do not exist in the file"
+]

@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/perl-ini-config"
+fixture_origin = "Synthetic INI configuration and query list authored for this drill"
+
+[[negative]]
+path = "controls/wrong-inline-comment.pl"
+defect = "Fails to strip inline comments, preserving '; pager alerts' in value"
+expect = "production/notify/value"

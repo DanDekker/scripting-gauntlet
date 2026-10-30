@@ -1,0 +1,11 @@
+section,key
+staging,timeout
+staging,retries
+staging,log_level
+staging,buffer_kb
+production,retries
+production,timeout
+production,notify
+production,missing_key
+qa,timeout
+default,notify
