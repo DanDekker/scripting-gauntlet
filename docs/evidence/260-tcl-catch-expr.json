@@ -1,0 +1,52 @@
+{
+  "calibrated_at": "2026-10-30T07:58:19.143548+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "260-tcl-catch-expr",
+  "fixture_origin": "Synthetic ratio CSV authored with zero denominator, text, and negative division",
+  "lineage": "scripting-gauntlet/tcl-catch-expr",
+  "results": [
+    {
+      "elapsed_ms": 32,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 10,
+      "language": "tcl",
+      "passed": true,
+      "path": "solutions/solve.tcl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Uses integer division and emits a zero fallback for expression errors instead of rejecting rows",
+      "elapsed_ms": 11,
+      "expected_diagnostic": "ratios.csv",
+      "language": "tcl",
+      "passed": true,
+      "path": "controls/wrong-integer-fallback.tcl",
+      "problems": [
+        "ratios.csv: expected 2 rows, got 4",
+        "ratios.csv row 2 col 1: expected 'negative', got 'zero'",
+        "ratios.csv row 2 col 2: expected '-3.50', got '0.00'",
+        "summary.json['accepted']: expected 2, got 4",
+        "summary.json['rejected']: expected 2, got 0"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "97d0b1fa5b1e88364115943654f067bfc332cf8b9494f2b27aedbac18afcd254",
+    "controls/manifest.toml": "a83e35d2ef33ee62137d03d957116db3a35c612553c0f2adf0d020d8bfd8a4be",
+    "controls/wrong-integer-fallback.tcl": "fc13a6eb853b554f6a58aea3f485b277466b9bc953b1299951a6c77dbd79eac1",
+    "drill.toml": "155f099abb1e05c3993cb5fedf94e6fd0b894af78637115830357740ac4f5660",
+    "fixtures/ratios.csv": "771f7c96f2f70f21b37d7eaa9090d5bf668928ff938faef00f91121b49f4ad1f",
+    "solutions/solve.py": "c9a5c6889313aa66203c76812561c2f732b4ba052cd0f4db84424bcf685a76f0",
+    "solutions/solve.tcl": "6ec9db91e0329039b587e02d276a9914d8e50e5fa7173ac8a826abc9c7a0cd70",
+    "verify.py": "61f4df7bb237a6dcd34c2786d80bb244b34c031494b2dcbd647f84c36fb8754f"
+  },
+  "stage": "reference-calibrated"
+}

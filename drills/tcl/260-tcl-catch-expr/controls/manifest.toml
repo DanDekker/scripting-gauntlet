@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/tcl-catch-expr"
+fixture_origin = "Synthetic ratio CSV authored with zero denominator, text, and negative division"
+
+[[negative]]
+path = "controls/wrong-integer-fallback.tcl"
+defect = "Uses integer division and emits a zero fallback for expression errors instead of rejecting rows"
+expect = "ratios.csv"

@@ -1,0 +1,3 @@
+Name: $name
+Path: $path
+Command: [clock seconds]

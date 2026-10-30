@@ -1,0 +1,5 @@
+id,numerator,denominator
+whole,10,2
+zero,10,0
+bad,foo,3
+negative,7,-2

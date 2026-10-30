@@ -1,0 +1,11 @@
+id = "259-tcl-safe-subst"
+family = "text-munging"
+title = "Substitute Tcl variables without executing template commands"
+difficulty = 3
+timebox = 240
+teaches = [
+  "subst performs three different substitution classes by default",
+  "subst -nocommands preserves bracketed command text",
+  "subst -nobackslashes keeps template backslashes literal",
+  "template text must be treated as data when commands are not part of the contract",
+]

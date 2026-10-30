@@ -1,0 +1,49 @@
+{
+  "calibrated_at": "2026-10-30T07:58:19.141512+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "259-tcl-safe-subst",
+  "fixture_origin": "Synthetic Tcl template authored with inert command-looking text",
+  "lineage": "scripting-gauntlet/tcl-safe-subst",
+  "results": [
+    {
+      "elapsed_ms": 29,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 12,
+      "language": "tcl",
+      "passed": true,
+      "path": "solutions/solve.tcl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Uses default subst, executing the bracketed clock command instead of leaving template text inert",
+      "elapsed_ms": 12,
+      "expected_diagnostic": "rendered.txt",
+      "language": "tcl",
+      "passed": true,
+      "path": "controls/wrong-command-subst.tcl",
+      "problems": [
+        "rendered.txt: expected inert command text, got 'Name: Ada\\nPath: /tmp/demo\\nCommand: 1793347099\\n'"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "1fdb1fe9eb1975627bbf80ff9edf4e8709adffee34c2354af29d6184caec08aa",
+    "controls/manifest.toml": "7027070fb519dc128f8c5d427b6675d1c8f71aba25f976a2c72a3812509c2988",
+    "controls/wrong-command-subst.tcl": "f4d6ecd76d492c2d518261d36197ea342d5991274a7f938f3198fea5cd269723",
+    "drill.toml": "c1fbfb592e79ce465b2aa08c2cff348bf28257df88419785e93686937e560176",
+    "fixtures/template.txt": "9c03042451c27cb26a0578168240d9960d643eaae38c50acecef190fd8bb6fd8",
+    "fixtures/values.tsv": "a2ca956001d3bc5a0ee8eec766a01accac0e38c04eeac7fff64c038daf5e4edb",
+    "solutions/solve.py": "0bfa6e2d32338cf71cf62ba3def0c1dd2faa89a7770f3ecffbfba1e5a8b075d5",
+    "solutions/solve.tcl": "1d590aab779287a02ccc0aa3e0daa081fb0159cf83ecdda498e96656513a26c7",
+    "verify.py": "de4309c6ddde3fb3d43153fe43ab01464e5e1f36a274355df4301555d0492e9a"
+  },
+  "stage": "reference-calibrated"
+}

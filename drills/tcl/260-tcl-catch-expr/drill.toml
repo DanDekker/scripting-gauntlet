@@ -1,0 +1,11 @@
+id = "260-tcl-catch-expr"
+family = "data-wrangling"
+title = "Catch Tcl expression errors and keep decimal division"
+difficulty = 3
+timebox = 300
+teaches = [
+  "catch converts Tcl expression errors into a branchable result",
+  "double() forces floating-point division instead of integer truncation",
+  "zero denominators and invalid numerals are rejected independently",
+  "failed rows should not be represented as a fallback zero",
+]

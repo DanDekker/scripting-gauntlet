@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/tcl-safe-subst"
+fixture_origin = "Synthetic Tcl template authored with inert command-looking text"
+
+[[negative]]
+path = "controls/wrong-command-subst.tcl"
+defect = "Uses default subst, executing the bracketed clock command instead of leaving template text inert"
+expect = "rendered.txt"
