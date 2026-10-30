@@ -1,0 +1,26 @@
+#!/usr/bin/env osascript -l JavaScript
+ObjC.import('Foundation');
+
+function env(name) {
+  const value = $.NSProcessInfo.processInfo.environment.objectForKey($(name));
+  if (!value) throw new Error(name + ' is missing');
+  return ObjC.unwrap(value);
+}
+
+const input = env('IN');
+const output = env('OUT');
+const inputData = $.NSData.dataWithContentsOfFile($(input + '/settings.json'));
+if (!inputData) throw new Error('cannot read settings.json');
+const parseError = Ref();
+const native = $.NSJSONSerialization.JSONObjectWithDataOptionsError(inputData, 0, parseError);
+if (!native) throw new Error('invalid JSON');
+
+const plistError = Ref();
+const data = $.NSPropertyListSerialization.dataWithPropertyListFormatOptionsError(
+  native, $.NSPropertyListXMLFormat_v1_0, 0, plistError,
+);
+if (!data) throw new Error('cannot serialize plist: ' + ObjC.unwrap(plistError[0].localizedDescription));
+const writeError = Ref();
+if (!data.writeToFileAtomically($(output + '/report.plist'), true)) {
+  throw new Error('cannot write report.plist');
+}

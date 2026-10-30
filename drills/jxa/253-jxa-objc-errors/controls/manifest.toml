@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/jxa-objc-errors"
+fixture_origin = "Synthetic file-check manifest authored with an empty and missing path"
+
+[[negative]]
+path = "controls/wrong-nil-is-ok.jxa"
+defect = "Treats a nil attribute result as a successful zero-byte file instead of reporting the missing path"
+expect = "checks.csv"

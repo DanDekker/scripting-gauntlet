@@ -1,0 +1,53 @@
+{
+  "calibrated_at": "2026-10-30T07:51:28.185351+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "253-jxa-objc-errors",
+  "fixture_origin": "Synthetic file-check manifest authored with an empty and missing path",
+  "lineage": "scripting-gauntlet/jxa-objc-errors",
+  "results": [
+    {
+      "elapsed_ms": 243,
+      "language": "jxa",
+      "passed": true,
+      "path": "solutions/solve.jxa",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 32,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Treats a nil attribute result as a successful zero-byte file instead of reporting the missing path",
+      "elapsed_ms": 262,
+      "expected_diagnostic": "checks.csv",
+      "language": "jxa",
+      "passed": true,
+      "path": "controls/wrong-nil-is-ok.jxa",
+      "problems": [
+        "checks.csv row 3 col 2: expected 'missing', got 'ok'",
+        "checks.csv row 3 col 4: expected 'not found', got ''",
+        "summary.json['ok']: expected 2, got 3",
+        "summary.json['missing']: expected 1, got 0"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "fb53d130b0e8c939e68f12d79dd39082b85cae2c59688feaa2e68a99cd6d924a",
+    "controls/manifest.toml": "8086c2b41893e8e9fa248eb81283fc3e4a20a424f68b378ea008499c5326a3dd",
+    "controls/wrong-nil-is-ok.jxa": "efad922c61ed2db651a7c34537714370b8b4a42ba5320f5a9e77df2a53e7485c",
+    "drill.toml": "695019cf901c0c571f214302fcd0654389f805d2ca48e3f9c1f84dd5853fbd07",
+    "fixtures/files/empty.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "fixtures/files/one.txt": "f33ae3bc9a22cd7564990a794789954409977013966fb1a8f43c35776b833a95",
+    "fixtures/jobs.csv": "c6f07643cbce7fbc507dfef4c84d739e74a88d6b7fbee15271536c113fedfb0f",
+    "solutions/solve.jxa": "acbe04d08e901559909857c8daa7d9569c489743d76773a2ea02ca77b292d07d",
+    "solutions/solve.py": "da4c7972c703839741fbd67d5f685f520d4093c56a1cc519a5b6368b21cc22a9",
+    "verify.py": "ad1abcffa6520063cdd0df8bf14e0729442c619e34309593c12bc0bb6d53d647"
+  },
+  "stage": "reference-calibrated"
+}

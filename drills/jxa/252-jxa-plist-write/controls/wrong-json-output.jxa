@@ -1,0 +1,15 @@
+#!/usr/bin/env osascript -l JavaScript
+ObjC.import('Foundation');
+function env(name) {
+  const value = $.NSProcessInfo.processInfo.environment.objectForKey($(name));
+  if (!value) throw new Error(name + ' is missing');
+  return ObjC.unwrap(value);
+}
+const input = env('IN');
+const output = env('OUT');
+const data = $.NSData.dataWithContentsOfFile($(input + '/settings.json'));
+const source = ObjC.deepUnwrap($.NSJSONSerialization.JSONObjectWithDataOptionsError(data, 0, null));
+const error = Ref();
+$(JSON.stringify(source) + '\n').writeToFileAtomicallyEncodingError(
+  $(output + '/report.plist'), true, $.NSUTF8StringEncoding, error,
+);

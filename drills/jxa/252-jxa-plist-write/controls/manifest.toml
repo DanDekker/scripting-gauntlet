@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/jxa-plist-write"
+fixture_origin = "Synthetic macOS settings JSON authored for typed plist serialization"
+
+[[negative]]
+path = "controls/wrong-json-output.jxa"
+defect = "Writes JSON text to a file named report.plist instead of serializing a property list"
+expect = "report.plist"

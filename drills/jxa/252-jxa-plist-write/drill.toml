@@ -1,0 +1,11 @@
+id = "252-jxa-plist-write"
+family = "system-recon"
+title = "Write a typed XML property list through Foundation"
+difficulty = 3
+timebox = 240
+teaches = [
+  "NSPropertyListSerialization writes Foundation containers as native plist types",
+  "NSPropertyListXMLFormat_v1_0 creates a readable macOS property list",
+  "a JSON-looking filename does not make JSON valid plist data",
+  "Foundation bridges Unicode and nested dictionaries without a package",
+]

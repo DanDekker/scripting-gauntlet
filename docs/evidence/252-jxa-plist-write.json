@@ -1,0 +1,48 @@
+{
+  "calibrated_at": "2026-10-30T07:51:28.179658+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "252-jxa-plist-write",
+  "fixture_origin": "Synthetic macOS settings JSON authored for typed plist serialization",
+  "lineage": "scripting-gauntlet/jxa-plist-write",
+  "results": [
+    {
+      "elapsed_ms": 238,
+      "language": "jxa",
+      "passed": true,
+      "path": "solutions/solve.jxa",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 37,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Writes JSON text to a file named report.plist instead of serializing a property list",
+      "elapsed_ms": 257,
+      "expected_diagnostic": "report.plist",
+      "language": "jxa",
+      "passed": true,
+      "path": "controls/wrong-json-output.jxa",
+      "problems": [
+        "report.plist is not a valid property list: Invalid file"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "77763fe3c785e67a866a1e10e72defc2093e1adbdc19016564b41a17a10d07bc",
+    "controls/manifest.toml": "1ec60c997503f1ba50155eba2db0f42034fb7192f6a41309e383c5daede9df15",
+    "controls/wrong-json-output.jxa": "07ad4e9b90398acb6d05baf6fb2b5e8ed68af462063ebc4dac8d15b36851056e",
+    "drill.toml": "a0ffbd5c153b225b9db6ba7fdcab46c9e73f29ca29dfd41a8ad789ff38f69c4d",
+    "fixtures/settings.json": "08225a2a7530fc0891f58e7b0f656ad1809ae26fe780da7e1e7b822969c55f06",
+    "solutions/solve.jxa": "38134f6fcc830538024e97201a8ea2aff18fbbc931f2e65474b7d66c6324b692",
+    "solutions/solve.py": "66a87809004fe570090be813a97a6c47e20f89cc6aeaffe6a7560297ff9b721a",
+    "verify.py": "62fda786f33348256a5f7c16a0ad818330c86af7c1b3b729832198fc685f77c2"
+  },
+  "stage": "reference-calibrated"
+}

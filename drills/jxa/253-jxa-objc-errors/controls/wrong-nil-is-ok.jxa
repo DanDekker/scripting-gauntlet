@@ -1,0 +1,28 @@
+#!/usr/bin/env osascript -l JavaScript
+ObjC.import('Foundation');
+function env(name) {
+  const value = $.NSProcessInfo.processInfo.environment.objectForKey($(name));
+  if (!value) throw new Error(name + ' is missing');
+  return ObjC.unwrap(value);
+}
+function write(path, text) {
+  const error = Ref();
+  $(text).writeToFileAtomicallyEncodingError($(path), true, $.NSUTF8StringEncoding, error);
+}
+const input = env('IN');
+const manager = $.NSFileManager.defaultManager;
+const rows = [];
+let bytes = 0;
+for (const line of ObjC.unwrap($.NSString.stringWithContentsOfFileEncodingError(
+  $(input + '/jobs.csv'), $.NSUTF8StringEncoding, Ref(),
+)).split(/\r\n|\r|\n/).slice(1)) {
+  if (!line.trim()) continue;
+  const parts = line.split(',');
+  const attrs = manager.attributesOfItemAtPathError($(input + '/' + parts[1].trim()), null);
+  const size = attrs && typeof attrs.objectForKey === 'function'
+    ? Number(ObjC.unwrap(attrs.objectForKey($.NSFileSize))) : 0;
+  bytes += size;
+  rows.push([parts[0], 'ok', size, '']);
+}
+write(env('OUT') + '/checks.csv', ['id,status,bytes,message'].concat(rows.map((row) => row.join(','))).join('\n') + '\n');
+write(env('OUT') + '/summary.json', JSON.stringify({jobs:rows.length,ok:rows.length,missing:0,bytes}) + '\n');

@@ -1,0 +1,11 @@
+id = "253-jxa-objc-errors"
+family = "file-hygiene"
+title = "Handle Foundation NSError results without aborting a scan"
+difficulty = 4
+timebox = 300
+teaches = [
+  "Objective-C out-parameters use Ref() in JXA",
+  "nil plus NSError is a normal Foundation failure result, not a thrown JavaScript exception",
+  "zero-byte files must stay successful",
+  "per-row error handling can continue while producing a stable report",
+]

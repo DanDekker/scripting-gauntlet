@@ -1,0 +1,56 @@
+#!/usr/bin/env osascript -l JavaScript
+ObjC.import('Foundation');
+
+function env(name) {
+  const value = $.NSProcessInfo.processInfo.environment.objectForKey($(name));
+  if (!value) throw new Error(name + ' is missing');
+  return ObjC.unwrap(value);
+}
+
+function readText(path) {
+  const error = Ref();
+  const text = $.NSString.stringWithContentsOfFileEncodingError(
+    $(path), $.NSUTF8StringEncoding, error,
+  );
+  if (!text) throw new Error('cannot read ' + path);
+  return ObjC.unwrap(text);
+}
+
+function writeText(path, text) {
+  const error = Ref();
+  if (!$(text).writeToFileAtomicallyEncodingError($(path), true, $.NSUTF8StringEncoding, error)) {
+    throw new Error('cannot write ' + path);
+  }
+}
+
+function csvCell(value) {
+  return '"' + String(value).replace(/"/g, '""') + '"';
+}
+
+const input = env('IN');
+const output = env('OUT');
+const manager = $.NSFileManager.defaultManager;
+const rows = [];
+let ok = 0;
+let missing = 0;
+let bytes = 0;
+for (const line of readText(input + '/jobs.csv').split(/\r\n|\r|\n/).slice(1)) {
+  if (!line.trim()) continue;
+  const [id, relative] = line.split(',');
+  const error = Ref();
+  const attrs = manager.attributesOfItemAtPathError($(input + '/' + relative.trim()), error);
+  if (!attrs || typeof attrs.objectForKey !== 'function') {
+    missing++;
+    rows.push([id.trim(), 'missing', 0, 'not found']);
+    continue;
+  }
+  const size = Number(ObjC.unwrap(attrs.objectForKey($.NSFileSize)));
+  ok++;
+  bytes += size;
+  rows.push([id.trim(), 'ok', size, '']);
+}
+
+const csv = ['id,status,bytes,message']
+  .concat(rows.map((row) => row.map(csvCell).join(','))).join('\n') + '\n';
+writeText(output + '/checks.csv', csv);
+writeText(output + '/summary.json', JSON.stringify({jobs: rows.length, ok, missing, bytes}) + '\n');

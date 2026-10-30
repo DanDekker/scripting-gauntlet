@@ -1,0 +1,4 @@
+id,path
+one,files/one.txt
+empty,files/empty.txt
+missing,files/nope.txt
