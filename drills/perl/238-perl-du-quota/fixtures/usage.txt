@@ -1,0 +1,8 @@
+# du report generated 2026-10-30
+450M	/home/alice
+1.5G	/home/bob
+512K	/home/charlie
+12000B	/home/dave
+2.5G	/home/eve
+800m	/home/frank
+100M	/home/grace

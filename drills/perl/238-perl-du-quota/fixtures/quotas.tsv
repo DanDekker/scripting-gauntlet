@@ -1,0 +1,7 @@
+path	quota
+/home/alice	500M
+/home/bob	1G
+/home/charlie	1G
+/home/eve	2G
+/home/frank	500M
+DEFAULT	1G

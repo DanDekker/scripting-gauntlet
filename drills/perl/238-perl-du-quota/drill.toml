@@ -1,0 +1,13 @@
+id = "238-perl-du-quota"
+family = "system-recon"
+title = "Parse directory disk usage reports and evaluate filesystem quotas"
+difficulty = 3
+timebox = 300
+teaches = [
+  "parse human-readable disk usage units (B, K, M, G, T) into byte counts using powers of 1024",
+  "handle uppercase and lowercase size suffixes without dropping valid measurements",
+  "map directory paths to user quotas from a quota table with a default fallback",
+  "calculate integer overage bytes and percentage used rounded to 1 decimal place",
+  "filter and sort quota violations by overage descending, then directory ascending"
+]
+

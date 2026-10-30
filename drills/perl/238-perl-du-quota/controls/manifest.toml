@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/perl-du-quota"
+fixture_origin = "Synthetic disk usage reports and quota definitions authored for this drill"
+
+[[negative]]
+path = "controls/wrong-case-multiplier.pl"
+defect = "Regex only matches uppercase suffixes, treating lowercase units like '800m' as 800 bytes"
+expect = "expected 4 lines in out/alerts.tsv, got 3"

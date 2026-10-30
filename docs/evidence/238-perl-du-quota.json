@@ -1,0 +1,51 @@
+{
+  "calibrated_at": "2026-10-30T07:02:45.770963+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "238-perl-du-quota",
+  "fixture_origin": "Synthetic disk usage reports and quota definitions authored for this drill",
+  "lineage": "scripting-gauntlet/perl-du-quota",
+  "results": [
+    {
+      "elapsed_ms": 51,
+      "language": "pl",
+      "passed": true,
+      "path": "solutions/solve.pl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 29,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Regex only matches uppercase suffixes, treating lowercase units like '800m' as 800 bytes",
+      "elapsed_ms": 21,
+      "expected_diagnostic": "expected 4 lines in out/alerts.tsv, got 3",
+      "language": "pl",
+      "passed": true,
+      "path": "controls/wrong-case-multiplier.pl",
+      "problems": [
+        "expected 4 lines in out/alerts.tsv, got 3",
+        "expected over_quota_count=3, got 2",
+        "expected total_overage_bytes=1388314624, got 1073741824"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "24f289498c933d877bca3a5f64c6ad08e411808c4a025ddd8b0d3076287762de",
+    "controls/manifest.toml": "23aab7544c7d885e6b72bdb0d67f6a821e6b143ba815b21a1d9f1677467c77da",
+    "controls/wrong-case-multiplier.pl": "37dc33da8e76fa95764d1f843324107c6f8c9a1fbc7783cec55e67d41c695722",
+    "drill.toml": "e923943f6dc617c95f0926caa9e6a6c76720345f8501c21efc8916177fffd060",
+    "fixtures/quotas.tsv": "a2757592b9248545796ec29d8aff3c36013252358e7c52bffc970dcaf3877d12",
+    "fixtures/usage.txt": "56bd099be32900d6ffc964a342b88b1354cf3f14313191367fe9eeda2e4afcb2",
+    "solutions/solve.pl": "e7546838fc641a50f857c93a22e36bffb90485d3b80e67b2c7a8b91a7896937b",
+    "solutions/solve.py": "2444d212af0e671910167c6317aace32e3202c65d021d3fd95b8539471014b3c",
+    "verify.py": "3c98c6546affaf9b153421eaa4c850f9d9153e34f589575a168a3871c11301f8"
+  },
+  "stage": "reference-calibrated"
+}
