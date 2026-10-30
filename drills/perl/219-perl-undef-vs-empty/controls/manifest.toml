@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/perl-undef-vs-empty"
+fixture_origin = "Synthetic config and wanted-list files authored for this drill"
+
+[[negative]]
+path = "controls/wrong-undef-as-empty.pl"
+defect = "Reads each value with the // operator, which turns a missing setting into the empty string, so the report calls the absent retries setting empty"
+expect = "4/status"

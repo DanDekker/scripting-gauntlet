@@ -1,0 +1,51 @@
+{
+  "calibrated_at": "2026-10-30T04:21:11.069317+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "219-perl-undef-vs-empty",
+  "fixture_origin": "Synthetic config and wanted-list files authored for this drill",
+  "lineage": "scripting-gauntlet/perl-undef-vs-empty",
+  "results": [
+    {
+      "elapsed_ms": 76,
+      "language": "pl",
+      "passed": true,
+      "path": "solutions/solve.pl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 112,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Reads each value with the // operator, which turns a missing setting into the empty string, so the report calls the absent retries setting empty",
+      "elapsed_ms": 60,
+      "expected_diagnostic": "4/status",
+      "language": "pl",
+      "passed": true,
+      "path": "controls/wrong-undef-as-empty.pl",
+      "problems": [
+        "settings.csv row 4 [4/status]: expected 'missing', got 'empty'",
+        "summary.json['empty']: expected 1, got 2",
+        "summary.json['missing']: expected 1, got 0"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "125e56d10c208bbdb3f7f370753d431fb62eedf94032c58ba3b505fb43069ff6",
+    "controls/manifest.toml": "04921163f6c7ae3e00350f18234ee67332b258d436b4f86273155a2007ad9e11",
+    "controls/wrong-undef-as-empty.pl": "e864f0e12902082fde65c4db69c17faff913bd215dbc6daabe6c9afdb8d58f75",
+    "drill.toml": "9fd66b761b5f1ab68926c83e3a3e43b601228054a726c535ff7024c95726bfc4",
+    "fixtures/config.ini": "e6c94e45e850faa52044cda4c6dd0d342971d42a453a3b9a8eb412c8388c2843",
+    "fixtures/wanted.txt": "76c11888c6b2851ae30b7f8ff1c2452cce56100b01da27e6823151bf216b1dcc",
+    "solutions/solve.pl": "0ce43c0b6c422a129b157c4bf4ddc506d9387329f2b28848b241660cc9db6a48",
+    "solutions/solve.py": "5a93e8ee6c296c87d21daebd81cc69b0c0167d694294ce7985e4877537e4faf8",
+    "verify.py": "1fe0abe1c67c0bcdc170f94145de84ead27168e2ab5df6bd80eb4189991bfb83"
+  },
+  "stage": "reference-calibrated"
+}

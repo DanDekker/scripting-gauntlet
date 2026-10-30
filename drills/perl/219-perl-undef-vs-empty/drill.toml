@@ -1,0 +1,11 @@
+id = "219-perl-undef-vs-empty"
+family = "text-munging"
+title = "Tell a missing setting apart from one that is set to nothing"
+difficulty = 3
+timebox = 300
+teaches = [
+  "a missing hash key reads as undef, and an undef value is not the empty string",
+  "the // operator returns the right-hand side only for undef, so it cannot tell missing from empty",
+  "exists is the only test that separates 'the key is absent' from 'the key is present and empty'",
+  "comparing an undef value to '' warns and treats it as empty",
+]
