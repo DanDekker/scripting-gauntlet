@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/perl-hash-key-stringify"
+fixture_origin = "Synthetic inventory and lookup files authored for this drill"
+
+[[negative]]
+path = "controls/wrong-numeric-key.pl"
+defect = "Coerces the lookup key to a number before the lookup, so 007 becomes 7 and 1.0 becomes 1 and neither matches the filed key"
+expect = "3/status"

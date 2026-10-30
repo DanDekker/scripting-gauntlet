@@ -1,0 +1,54 @@
+{
+  "calibrated_at": "2026-10-30T04:38:28.324281+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "224-perl-hash-key-stringify",
+  "fixture_origin": "Synthetic inventory and lookup files authored for this drill",
+  "lineage": "scripting-gauntlet/perl-hash-key-stringify",
+  "results": [
+    {
+      "elapsed_ms": 105,
+      "language": "pl",
+      "passed": true,
+      "path": "solutions/solve.pl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 100,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Coerces the lookup key to a number before the lookup, so 007 becomes 7 and 1.0 becomes 1 and neither matches the filed key",
+      "elapsed_ms": 28,
+      "expected_diagnostic": "3/status",
+      "language": "pl",
+      "passed": true,
+      "path": "controls/wrong-numeric-key.pl",
+      "problems": [
+        "lookups.csv row 3 [3/status]: expected 'hit', got 'miss'",
+        "lookups.csv row 3 [3/name]: expected 'bolts', got ''",
+        "lookups.csv row 4 [4/status]: expected 'hit', got 'miss'",
+        "lookups.csv row 4 [4/name]: expected 'small', got ''",
+        "summary.json['hits']: expected 3, got 1",
+        "summary.json['misses']: expected 1, got 3"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "60c83854b71e8f6a5832eb9f589f66083712bf6549c1d6451b4d277361f77884",
+    "controls/manifest.toml": "4b75b15e1eb506b62f491a00a2fb77b54ad5f9ae556afbbcf6c95dd956971980",
+    "controls/wrong-numeric-key.pl": "ca77a177eab2117720ed3339ffb03b5bc6ae982e9be870635c5e83a802df9193",
+    "drill.toml": "c7b6b5966c79166cc3a89cce2660747cde2570dd73ae2b8f13467f67d284f910",
+    "fixtures/inventory.txt": "6d5e7eafed13e86563ca532b4634140f1b00ef19b6707a9a856e37cde7557bb0",
+    "fixtures/lookups.txt": "97db75a31e2018ad83e49cc50624c240280bfb3001f20bf38fb68fded312d2ed",
+    "solutions/solve.pl": "a02ba52546fa9d167ced331136ef2c587de07b05fee52a0900d3c41fa7acdf83",
+    "solutions/solve.py": "503f1f45010aa97bd8c964867573d6f3f940947e1509ae1eef538d77ba9996f9",
+    "verify.py": "83567ef99091486842429138f5c49f27cfb5a6e3d6757faa8ae2eeff567a4bba"
+  },
+  "stage": "reference-calibrated"
+}

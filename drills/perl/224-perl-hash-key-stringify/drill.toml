@@ -1,0 +1,11 @@
+id = "224-perl-hash-key-stringify"
+family = "data-wrangling"
+title = "Look up inventory by the key exactly as it was written"
+difficulty = 3
+timebox = 300
+teaches = [
+  "a hash key is a string: $h{8080} and $h{\"8080\"} are the same entry",
+  "$h{\"08080\"} is a different entry from $h{8080}",
+  "$h{1.0} is the key \"1\", while $h{\"1.0\"} is the key \"1.0\"",
+  "coercing a lookup key to a number changes which entry you find",
+]
