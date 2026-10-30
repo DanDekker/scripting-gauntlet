@@ -1,0 +1,11 @@
+id = "233-perl-cron-schedule"
+family = "system-recon"
+title = "Parse crontab expressions and identify jobs scheduled in a target hour"
+difficulty = 3
+timebox = 300
+teaches = [
+  "parse 5-field cron specifications (minute, hour, dom, month, dow)",
+  "handle cron syntax: '*' (any), '*/N' (step/modulus), 'A-B' (range), 'A,B' (list), and explicit numbers",
+  "match jobs against an active target window (e.g. current minute, hour, month, day-of-month, day-of-week)",
+  "extract the command string preserving flags and arguments"
+]

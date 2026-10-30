@@ -1,0 +1,13 @@
+# System crontab for background workers
+# min hour dom mon dow command
+*/15 * * * * /opt/scripts/healthcheck.sh --quick
+0 2 * * * /opt/scripts/backup.pl --full
+30 4 1 * * /opt/scripts/monthly-report.sh
+0 14 * * 1-5 /opt/scripts/sync-ldap.pl --dry-run=0
+45 14 * * * /opt/scripts/midday-sweep.sh
+0 14 30 10 * /opt/scripts/october-audit.sh
+45 14 * 12 * /opt/scripts/december-only.sh
+45 14 * * 0,6 /opt/scripts/weekend-sweep.sh
+45 14 1-15 * * /opt/scripts/early-month.sh
+45 14 20-31 10 1-5 /opt/scripts/late-october-weekday.sh
+0 16 * * * /opt/scripts/teatime-ping.sh

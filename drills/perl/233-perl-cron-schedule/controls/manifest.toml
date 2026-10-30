@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/perl-cron-schedule"
+fixture_origin = "Synthetic crontab and target schedule authored for this drill"
+
+[[negative]]
+path = "controls/wrong-step-modulus.pl"
+defect = "Fails to compute modulus for */N step expressions, treating */15 as an exact match for 15 only"
+expect = "summary.json['matched']"

@@ -1,0 +1,50 @@
+{
+  "calibrated_at": "2026-10-30T06:40:07.230739+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "233-perl-cron-schedule",
+  "fixture_origin": "Synthetic crontab and target schedule authored for this drill",
+  "lineage": "scripting-gauntlet/perl-cron-schedule",
+  "results": [
+    {
+      "elapsed_ms": 20,
+      "language": "pl",
+      "passed": true,
+      "path": "solutions/solve.pl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 30,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Fails to compute modulus for */N step expressions, treating */15 as an exact match for 15 only",
+      "elapsed_ms": 16,
+      "expected_diagnostic": "summary.json['matched']",
+      "language": "pl",
+      "passed": true,
+      "path": "controls/wrong-step-modulus.pl",
+      "problems": [
+        "matched.txt: expected ['/opt/scripts/healthcheck.sh --quick', '/opt/scripts/midday-sweep.sh', '/opt/scripts/late-october-weekday.sh'], got ['/opt/scripts/midday-sweep.sh', '/opt/scripts/late-october-weekday.sh']",
+        "summary.json['matched']: expected 3, got 2"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "8fbed792a6e8245a91dfa23d5fb1b3e3fe7ae191e6b7611fc9d6fd4b0f9d29df",
+    "controls/manifest.toml": "e52a6b338018874115360cf4b8ff22ae670bbdaabcefd101e93a0f0ee127a778",
+    "controls/wrong-step-modulus.pl": "38aa7145750d7ec3fa392a9c3bf975c15789dec40064963992d8ea750706fdf1",
+    "drill.toml": "16d039cdab69ae7192a320510f38d8a63c1d9a7cb269af7be0e1d311e9dfb826",
+    "fixtures/crontab.txt": "ab4a16fb44aafb2ce68e112f8a38bb76ea9e490d286c1e8240a5eecb238a5a55",
+    "fixtures/target.ini": "6e281bc4fdbebfe0f8b73cce1e4b885570387e7601f19d1fab3cfb328cf29fb9",
+    "solutions/solve.pl": "71a74be308aba1493b42a5f4909ee5426ac5d5629344cb55d08c90b89938bdeb",
+    "solutions/solve.py": "96ad318b95dd2cff000107bc193984b47c78ebf319ac2712c602518816b1cad2",
+    "verify.py": "c6b788e0b01c2248bcec362803dc953cbf4e8542ad65d34734147cb6b6756103"
+  },
+  "stage": "reference-calibrated"
+}
