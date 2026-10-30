@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/perl-log-retention"
+fixture_origin = "Synthetic log archive directory and policy authored for this drill"
+
+[[negative]]
+path = "controls/wrong-month-offset.pl"
+defect = "Fails to subtract 1 from month when calling timegm, skewing calculated age by an entire month"
+expect = "access-2026-10-28.log/age_days"

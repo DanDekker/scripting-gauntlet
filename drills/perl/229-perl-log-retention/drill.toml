@@ -1,0 +1,11 @@
+id = "229-perl-log-retention"
+family = "file-hygiene"
+title = "Plan retention, compression, and deletion for rotated daily log files"
+difficulty = 3
+timebox = 300
+teaches = [
+  "parse YYYY-MM-DD dates from log filenames and convert to epoch seconds with Time::Local::timegm",
+  "Time::Local::timegm takes month as 0..11, not 1..12: passing $mon without -1 gives the wrong month",
+  "directory entry scanning with opendir/readdir includes '.' and '..' which must be filtered",
+  "calculate file age in whole days: int(($today_epoch - $file_epoch) / 86400)"
+]

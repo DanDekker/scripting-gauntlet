@@ -1,0 +1,68 @@
+{
+  "calibrated_at": "2026-10-30T06:31:26.409889+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "229-perl-log-retention",
+  "fixture_origin": "Synthetic log archive directory and policy authored for this drill",
+  "lineage": "scripting-gauntlet/perl-log-retention",
+  "results": [
+    {
+      "elapsed_ms": 63,
+      "language": "pl",
+      "passed": true,
+      "path": "solutions/solve.pl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 34,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Fails to subtract 1 from month when calling timegm, skewing calculated age by an entire month",
+      "elapsed_ms": 33,
+      "expected_diagnostic": "access-2026-10-28.log/age_days",
+      "language": "pl",
+      "passed": true,
+      "path": "controls/wrong-month-offset.pl",
+      "problems": [
+        "retention.csv row 2 [access-2026-10-05.log.gz/age_days]: expected 25, got '-6'",
+        "retention.csv row 2 [access-2026-10-05.log.gz/action]: expected 'delete', got 'keep'",
+        "retention.csv row 3 [access-2026-10-10.log/age_days]: expected 20, got '-11'",
+        "retention.csv row 3 [access-2026-10-10.log/action]: expected 'delete', got 'keep'",
+        "retention.csv row 4 [access-2026-10-20.log.gz/age_days]: expected 10, got '-21'",
+        "retention.csv row 5 [access-2026-10-25.log/age_days]: expected 5, got '-26'",
+        "retention.csv row 5 [access-2026-10-25.log/action]: expected 'compress', got 'keep'",
+        "retention.csv row 6 [access-2026-10-28.log/age_days]: expected 2, got '-29'",
+        "retention.csv row 7 [error-2026-10-27.log/age_days]: expected 3, got '-28'",
+        "retention.csv row 7 [error-2026-10-27.log/action]: expected 'compress', got 'keep'",
+        "summary.json['keep']: expected 2, got 6",
+        "summary.json['compress']: expected 2, got 0",
+        "summary.json['delete']: expected 3, got 1"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "521062d0e87f25dc53ce52d1d3178b345cc30c35af0ea8e40f574ab00cb97928",
+    "controls/manifest.toml": "c7616e4bb83efafb9d838fef87f6a36764a55eb146716f057d83ac4de17da37d",
+    "controls/wrong-month-offset.pl": "b044bd576087ae84e004c52fadcf9696f3e2467b8a4bb3c3059ec085c4787482",
+    "drill.toml": "d4cb0de3cc4db89d74b1057477f2622c7e2746f9d1def3b625d8014115889215",
+    "fixtures/logs/README.txt": "7cca2e59b2e9f3093205f22ceb63d0ef674ed6b34e0241cc671f0a8c6d9e5932",
+    "fixtures/logs/access-2026-10-05.log.gz": "153bb1b9928bfaa2e5997daa6955afd28f10a814bddfe62802285fd01a891f28",
+    "fixtures/logs/access-2026-10-10.log": "5cac6b670386089356ecea76ca17d70e577682a67bed99e9354146a94490f9dc",
+    "fixtures/logs/access-2026-10-20.log.gz": "de6dd2e2ad79f9c475830f7366fc6e374e53a4684ab64059992e336f4a551aaa",
+    "fixtures/logs/access-2026-10-25.log": "596606ecf5afbb4b3ca615bacac4e425d074ccbc3417ef824e5d39ef84ce5883",
+    "fixtures/logs/access-2026-10-28.log": "988b564901145f19e7df012b569593cbd701b9d29a462d5b2f858b4ec4810d8e",
+    "fixtures/logs/error-2026-10-27.log": "681e105a1ce7d3df9ecd1d1e890c78cfe04fc26d6458e9893df3d98848019d35",
+    "fixtures/logs/worker-temp.tmp": "0ed624fa8d56049f9bea3c788d0d0861e6aca48cc2971382a4f91e7a14857859",
+    "fixtures/policy.ini": "9d152c45be900c5a603e6715fc3a067a4922bce44775f66adebfb682e481b44f",
+    "solutions/solve.pl": "7b3223d29720f78c017f9e0ff229ff93470ef6a66f10ddb40d9e3bf4b18fd3a4",
+    "solutions/solve.py": "f6be6f063e4a38458015ff65de44b53222e7916af9450b3aeb0a46e150e4d0f6",
+    "verify.py": "7654fce739ae32d96eb3ac86984b5ff63de709d0fd7cf811a56adf6375057cee"
+  },
+  "stage": "reference-calibrated"
+}
