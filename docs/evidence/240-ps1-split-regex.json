@@ -1,0 +1,59 @@
+{
+  "calibrated_at": "2026-10-30T07:35:54.424536+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "240-ps1-split-regex",
+  "fixture_origin": "Synthetic pipe-delimited build feed authored for this drill",
+  "lineage": "scripting-gauntlet/ps1-split-regex",
+  "results": [
+    {
+      "elapsed_ms": 434,
+      "language": "ps1",
+      "passed": true,
+      "path": "solutions/solve.ps1",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 34,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Splits the version on -split '.' (the any-character class), so every component comes back empty while the pipe split is already correct",
+      "elapsed_ms": 472,
+      "expected_diagnostic": "row 1",
+      "language": "ps1",
+      "passed": true,
+      "path": "controls/wrong-regex-split.ps1",
+      "problems": [
+        "builds.csv row 1 [web/major]: expected 1, got ''",
+        "builds.csv row 1 [web/minor]: expected 10, got ''",
+        "builds.csv row 1 [web/patch]: expected 2, got ''",
+        "builds.csv row 2 [api/major]: expected 2, got ''",
+        "builds.csv row 2 [api/minor]: expected 0, got ''",
+        "builds.csv row 2 [api/patch]: expected 11, got ''",
+        "builds.csv row 3 [web/major]: expected 1, got ''",
+        "builds.csv row 3 [web/minor]: expected 9, got ''",
+        "builds.csv row 3 [web/patch]: expected 14, got ''",
+        "builds.csv row 4 [cli/major]: expected 0, got ''",
+        "builds.csv row 4 [cli/minor]: expected 4, got ''",
+        "builds.csv row 4 [cli/patch]: expected 0, got ''"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "27d4f31a860837369d0ab2e50412e5496063e26ddeae609c71e01b6317dc28b5",
+    "controls/manifest.toml": "ce502a673d8c54a716ac81bf1ff02b6e7ad389821a0a2e0dc547aeed5c463002",
+    "controls/wrong-regex-split.ps1": "69bbd30785993732cce5049335390ed37f249c2ba417f87df21c68fea489bdb6",
+    "drill.toml": "a9f7c0846651518b54e87e05e2f8becab30fb384fc9c6656c07ee34ccba7bb76",
+    "fixtures/builds.log": "1942584a4104dd6c8640f1c2d5eec8ad8e34ab59542572b7f4619fcb477e9695",
+    "solutions/solve.ps1": "9f2b85bb4df13f03f01d2e8def35f33aad94b1578eefb38d99ee115b6d1dc438",
+    "solutions/solve.py": "7fbf383e6a24cbe14eade8c3892cd217a6820ff58752f4384ffbe46b9fa7fda6",
+    "verify.py": "52105cc54531add3d9d50bb65c5ddde83dfb4bac2ea5ebb99f1856b222b5d691"
+  },
+  "stage": "reference-calibrated"
+}

@@ -1,0 +1,11 @@
+id = "240-ps1-split-regex"
+family = "text-munging"
+title = "Split pipe-delimited rows when -split takes a regex, not a delimiter"
+difficulty = 4
+timebox = 300
+teaches = [
+  "-split is a regex operator: '|' is alternation, so 'a|b|c' -split '|' splits on the empty pattern and returns one element per character",
+  "'.' is the any-character class, so '1.10.2' -split '.' returns six empty strings, not three numbers",
+  "'a+b*c' -split '+' throws: Invalid pattern '+' at offset 1. Quantifier '+' following nothing",
+  "escape the metacharacters (-split '\\|', -split '\\.') or use String.Split, which is literal",
+]

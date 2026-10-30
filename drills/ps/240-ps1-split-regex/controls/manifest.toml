@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/ps1-split-regex"
+fixture_origin = "Synthetic pipe-delimited build feed authored for this drill"
+
+[[negative]]
+path = "controls/wrong-regex-split.ps1"
+defect = "Splits the version on -split '.' (the any-character class), so every component comes back empty while the pipe split is already correct"
+expect = "row 1"
