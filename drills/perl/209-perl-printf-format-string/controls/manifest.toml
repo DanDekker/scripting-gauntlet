@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/perl-printf-format-string"
+fixture_origin = "Synthetic status templates authored for this drill"
+
+[[negative]]
+path = "controls/wrong-template-as-format.pl"
+defect = "Passes the template as the format string, so the percent sign in the data becomes a conversion specifier and the report reads 'Deploy: 100omplete'"
+expect = "0.000000ull"

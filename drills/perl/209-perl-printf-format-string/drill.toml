@@ -1,0 +1,11 @@
+id = "209-perl-printf-format-string"
+family = "text-munging"
+title = "Copy status templates without letting a percent sign become a format directive"
+difficulty = 3
+timebox = 300
+teaches = [
+  "printf and sprintf take the FIRST argument as a format string, so data must never be passed there",
+  "a % in the data is a conversion specifier: % c swallows the following character and % f prints 0.000000",
+  "printf '%s\\n', $data prints the data literally",
+  "a template that contains % must not be interpolated as a format",
+]

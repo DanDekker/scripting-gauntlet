@@ -1,0 +1,48 @@
+{
+  "calibrated_at": "2026-10-30T03:21:51.836139+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "209-perl-printf-format-string",
+  "fixture_origin": "Synthetic status templates authored for this drill",
+  "lineage": "scripting-gauntlet/perl-printf-format-string",
+  "results": [
+    {
+      "elapsed_ms": 55,
+      "language": "pl",
+      "passed": true,
+      "path": "solutions/solve.pl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 39,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Passes the template as the format string, so the percent sign in the data becomes a conversion specifier and the report reads 'Deploy: 100omplete'",
+      "elapsed_ms": 24,
+      "expected_diagnostic": "0.000000ull",
+      "language": "pl",
+      "passed": true,
+      "path": "controls/wrong-template-as-format.pl",
+      "problems": [
+        "report.txt: expected ['Deploy: 100% complete', 'Disk: 85% full', 'Queue: 0 pending'], got ['Deploy: 100\\x00omplete', 'Disk: 85 0.000000ull', 'Queue: 0 pending']"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "f93ffe49a7723eb87da52e03ff1a5264dc13db0df77b0a79c977da2054ec67a8",
+    "controls/manifest.toml": "ada6af233f5babdd58e689f211a3644698b33c21d55f74532ec9183d147971ec",
+    "controls/wrong-template-as-format.pl": "8718d3b6345494cceff95a6d2be4050a771c4b25e70275d780638f9efb1c5ff5",
+    "drill.toml": "1203192ddf7bf3b5d1938f927c5e21b7a25e70604864241ba6619baddd79f908",
+    "fixtures/templates.txt": "9e015499ac7aa80968797daa446ed75f6330356f4dd350d50233ff7462789a44",
+    "solutions/solve.pl": "4b3036a9ca353a8aed24f1bf3d5662efbe6a3d762fdaa6bc6f5a402c77b32172",
+    "solutions/solve.py": "757cd41206398c974d0aff07b4b7926a58625ebf31ffe84411b9768c3ea012b4",
+    "verify.py": "c9c3ccd766f08151f8119ea7e63fc68a760d8c9337f7158b507dda466bfeacd5"
+  },
+  "stage": "reference-calibrated"
+}
