@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/perl-map-scalar-context"
+fixture_origin = "Synthetic invoice ledger authored for this drill"
+
+[[negative]]
+path = "controls/wrong-map-scalar-total.pl"
+defect = "Sums the paid amounts with map in scalar context, which returns the number of elements generated, so paid_total is the invoice count"
+expect = "paid_total"

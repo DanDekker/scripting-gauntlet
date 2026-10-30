@@ -1,0 +1,11 @@
+id = "204-perl-map-scalar-context"
+family = "data-wrangling"
+title = "Total the paid invoices without map's scalar-context count"
+difficulty = 3
+timebox = 300
+teaches = [
+  "map in scalar context returns the number of elements it generated, not their sum and not the last value",
+  "grep in scalar context returns a count; the surviving elements are only available in list context",
+  "adding amounts needs a loop or an explicit sum over the generated list",
+  "text amounts compare and add numerically, not as strings",
+]

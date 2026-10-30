@@ -1,0 +1,6 @@
+id,customer,amount,status
+A1,acme,120.50,paid
+A2,globex,80.00,paid
+A3,initech,45.25,unpaid
+A4,umbrella,310.75,paid
+A5,soylent,12.00,unpaid

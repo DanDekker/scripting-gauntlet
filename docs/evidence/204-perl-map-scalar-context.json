@@ -1,0 +1,49 @@
+{
+  "calibrated_at": "2026-10-30T02:43:37.789202+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "204-perl-map-scalar-context",
+  "fixture_origin": "Synthetic invoice ledger authored for this drill",
+  "lineage": "scripting-gauntlet/perl-map-scalar-context",
+  "results": [
+    {
+      "elapsed_ms": 47,
+      "language": "pl",
+      "passed": true,
+      "path": "solutions/solve.pl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 42,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Sums the paid amounts with map in scalar context, which returns the number of elements generated, so paid_total is the invoice count",
+      "elapsed_ms": 14,
+      "expected_diagnostic": "paid_total",
+      "language": "pl",
+      "passed": true,
+      "path": "controls/wrong-map-scalar-total.pl",
+      "problems": [
+        "summary.json['paid_total']: expected 511.25, got 3.0"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "a66f6159dd336693b869432e1b0908e7e9b9a316a41776607cf7e01f2bfaa56c",
+    "controls/manifest.toml": "eb3f15807415cf46417ab5212c17ac55d83b051f1975fff4d52af7cc3e93d2c1",
+    "controls/wrong-map-scalar-total.pl": "0a96136cbe046a76292cdbe08227e195de3ab64c94853c4e7ef72b3357e01302",
+    "drill.toml": "d6e45148db2ab44c84d230ad7bfd6e9d03664bc17f27130b600a00780ccca0d6",
+    "fixtures/invoices.csv": "be4a88cbbd6edf4bc358493993cd1053a5bcf0ad9a84bdd887386128f2b4b579",
+    "solutions/__pycache__/solve.cpython-314.pyc": "f65a726e099e5b518b18c18a4ff6dbf2357d1df5a3a2339855f8c75944962660",
+    "solutions/solve.pl": "6ecfc43a191fa7c28667409dff5f1cdfed1c418e633b59b848a3d9ca259cb095",
+    "solutions/solve.py": "e24801e9109b77fea0f9d4fd6c94449b9ada1d8fb1eccc65aea89c42e2054f96",
+    "verify.py": "ec18cfd15cdc6349f8f04932890415b8dcdd26d717ee1e7c43ed5baee0269929"
+  },
+  "stage": "reference-calibrated"
+}
