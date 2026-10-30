@@ -1,0 +1,13 @@
+version = 1
+lineage = "scripting-gauntlet/perl-local-global"
+fixture_origin = "Synthetic record list authored for this drill"
+
+[[negative]]
+path = "controls/wrong-my-shadow.pl"
+defect = "Overrides the separator with a my lexical inside the helper, so the helper never reads the override and the wide record is rendered with a comma"
+expect = "'wide,bravo'"
+
+[[negative]]
+path = "controls/wrong-global-leak.pl"
+defect = "Assigns the package global directly, so the override reaches the helper but is never restored and every later record keeps the semicolon"
+expect = "'sep_after']"

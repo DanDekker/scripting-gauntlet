@@ -1,0 +1,6 @@
+# kind value
+plain alpha
+wide bravo
+plain charlie
+wide delta
+plain epsilon

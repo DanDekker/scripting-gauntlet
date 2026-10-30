@@ -1,0 +1,62 @@
+{
+  "calibrated_at": "2026-10-30T04:02:21.352989+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "212-perl-local-global",
+  "fixture_origin": "Synthetic record list authored for this drill",
+  "lineage": "scripting-gauntlet/perl-local-global",
+  "results": [
+    {
+      "elapsed_ms": 280,
+      "language": "pl",
+      "passed": true,
+      "path": "solutions/solve.pl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 105,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Overrides the separator with a my lexical inside the helper, so the helper never reads the override and the wide record is rendered with a comma",
+      "elapsed_ms": 34,
+      "expected_diagnostic": "'wide,bravo'",
+      "language": "pl",
+      "passed": true,
+      "path": "controls/wrong-my-shadow.pl",
+      "problems": [
+        "report.txt: expected ['plain,alpha', 'wide;bravo', 'plain,charlie', 'wide;delta', 'plain,epsilon'], got ['plain,alpha', 'wide,bravo', 'plain,charlie', 'wide,delta', 'plain,epsilon']"
+      ],
+      "stage": "verifier-rejected"
+    },
+    {
+      "defect": "Assigns the package global directly, so the override reaches the helper but is never restored and every later record keeps the semicolon",
+      "elapsed_ms": 42,
+      "expected_diagnostic": "'sep_after']",
+      "language": "pl",
+      "passed": true,
+      "path": "controls/wrong-global-leak.pl",
+      "problems": [
+        "report.txt: expected ['plain,alpha', 'wide;bravo', 'plain,charlie', 'wide;delta', 'plain,epsilon'], got ['plain,alpha', 'wide;bravo', 'plain;charlie', 'wide;delta', 'plain;epsilon']",
+        "summary.json['sep_after']: expected ',', got ';'"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "af6bcf1225d18706f5f2da3bc9b66b042e78f6178f4b3f8c473b48a9dce6ed85",
+    "controls/manifest.toml": "c9ca58616ab65313342f92033860d3b3e00dbebc1a692fd169a3d4314a10a8e8",
+    "controls/wrong-global-leak.pl": "192f3a3c34bd71609d6ad3315e183bbacdbe5ba0ed228fcca20b890f005bfb55",
+    "controls/wrong-my-shadow.pl": "77b0032f68647afefb0ac880905edc38ddc8d10edf2fee22ac0eefe123ddbfbb",
+    "drill.toml": "cca37fdbd2cab59f5a60df0e03c80ebc8ef0942eaaa2edb6ddee974f6725d8f8",
+    "fixtures/records.txt": "f7f1e7932a3d184e68ae25735f963140fe262370fdccba7d8086bc7db52008cd",
+    "solutions/solve.pl": "f760afc373d91dd0709015e10992f2326b7bb36a3a4156dd91c482f8db234ed6",
+    "solutions/solve.py": "7e970a5f71072f128291d254ddc08a39e23d8b7ee6e76fbdf56f259bb0632a31",
+    "verify.py": "c2c7d4cf3df34538da27ae3695cc41dd005f3ccef33622ce1f96aa3502e5399b"
+  },
+  "stage": "reference-calibrated"
+}

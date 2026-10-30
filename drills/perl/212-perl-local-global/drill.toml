@@ -1,0 +1,11 @@
+id = "212-perl-local-global"
+family = "text-munging"
+title = "Temporarily override a package global without leaking it"
+difficulty = 4
+timebox = 300
+teaches = [
+  "our $X is a package global: a sub reads the same variable the caller assigned",
+  "my $X inside a sub creates a new lexical, so other subs never see the override",
+  "local $X = ... changes the global for the enclosing block and restores it on exit",
+  "a bare $X = ... assignment to a global changes it for the rest of the program"
+]
