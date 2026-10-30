@@ -1,0 +1,8 @@
+version = 1
+lineage = "scripting-gauntlet/perl-foreach-alias"
+fixture_origin = "Synthetic name list authored for this drill"
+
+[[negative]]
+path = "controls/wrong-alias-in-place.pl"
+defect = "Normalizes @names in place with foreach, which aliases the elements, so the source list is rewritten and the original report shows normalized names"
+expect = "original.csv row 1"

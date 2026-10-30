@@ -1,0 +1,51 @@
+{
+  "calibrated_at": "2026-10-30T02:48:18.334881+00:00",
+  "contract": "scriptdeck.calibration.v1",
+  "drill": "205-perl-foreach-alias",
+  "fixture_origin": "Synthetic name list authored for this drill",
+  "lineage": "scripting-gauntlet/perl-foreach-alias",
+  "results": [
+    {
+      "elapsed_ms": 10,
+      "language": "pl",
+      "passed": true,
+      "path": "solutions/solve.pl",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "elapsed_ms": 31,
+      "language": "py",
+      "passed": true,
+      "path": "solutions/solve.py",
+      "problems": [],
+      "stage": "accepted"
+    },
+    {
+      "defect": "Normalizes @names in place with foreach, which aliases the elements, so the source list is rewritten and the original report shows normalized names",
+      "elapsed_ms": 9,
+      "expected_diagnostic": "original.csv row 1",
+      "language": "pl",
+      "passed": true,
+      "path": "controls/wrong-alias-in-place.pl",
+      "problems": [
+        "original.csv row 1 [1/name]: expected 'ada lovelace', got 'Ada lovelace'",
+        "original.csv row 2 [2/name]: expected 'grace hopper', got 'Grace hopper'",
+        "original.csv row 4 [4/name]: expected 'jean-luc picard', got 'Jean-luc picard'",
+        "summary.json['changed']: expected 3, got 0"
+      ],
+      "stage": "verifier-rejected"
+    }
+  ],
+  "sources": {
+    "PROMPT.md": "980868672d36c64f449cf98098438626d382c4e8d6e794c4177619b10db2ec36",
+    "controls/manifest.toml": "1207b1bbc7bb404e6ab57562697509628e3ccc34b6a8b10ad7d4aa6b93a11652",
+    "controls/wrong-alias-in-place.pl": "1627d7f11904541f4d29a75d350817bb4a5318e4aca16e3ede9bfa8bf54f84e3",
+    "drill.toml": "d273e57a3551dce1706d7f82cf10fb47a905f2350da6a917d63ec5e547370437",
+    "fixtures/names.txt": "ceccf064b58135204fa499b23994cc6d464e0a46d639f2f3d5cb1201b1f0ee90",
+    "solutions/solve.pl": "770c32fb60cfc79578dfc915a94db9ccee19e67c108229a71c635fc4775a9d09",
+    "solutions/solve.py": "fbf55e4f414520f66b646bd1d9b58496fd0cf1300cc42ba418a3035b272120b8",
+    "verify.py": "d81ce77f703e9bf70a2ea523616dc829b9ec6ba3632d5865a0af96c733b0ce1e"
+  },
+  "stage": "reference-calibrated"
+}

@@ -1,0 +1,11 @@
+id = "205-perl-foreach-alias"
+family = "data-wrangling"
+title = "Normalize a list without corrupting the original"
+difficulty = 3
+timebox = 300
+teaches = [
+  "foreach aliases the list elements, so assigning to the loop variable rewrites the source array",
+  "map and grep alias $_ too, so mutating it inside the block changes the input list",
+  "copy the list before mutating it: my @work = @names",
+  "the original list must survive the normalization pass for the caller's later report",
+]
