@@ -19,7 +19,7 @@ The script can be disposable. The answer has to be right.
 
 | Where | Languages in the committed solutions |
 | --- | --- |
-| Shell, text, and embedded work | Bash, Python, Perl, Tcl, Lua |
+| Shell, text, and embedded work | Bash, Python, Ruby, Perl, Tcl, Lua |
 | Browser DOM | JavaScript, checked locally with jsdom |
 | OS scripting | PowerShell; JXA on macOS |
 
@@ -28,7 +28,11 @@ also needs Node and the locked jsdom dependency.
 
 ## Run
 
+Clone the repository and run these commands from its root:
+
 ```sh
+git clone https://github.com/DanDekker/scripting-gauntlet.git
+cd scripting-gauntlet
 make list
 python3 harness/run.py run 001-csv-rollup --lang py
 npm ci --ignore-scripts
@@ -37,9 +41,10 @@ npm test              # same thing, for tooling that expects npm test
 make calibrate ID=001-csv-rollup
 ```
 
-`make check` needs the interpreters used by the selected solutions and the Node
-dependency above. JXA is skipped outside macOS. For a single language, use
-`python3 harness/run.py run all --lang py`.
+`make check` needs the [interpreters used by the selected solutions](docs/drill-spec.md#interpreters)
+and the Node dependency above. JXA is skipped outside macOS. To start with just
+Python, use `python3 harness/run.py run all --lang py`; Node and jsdom are not
+needed for that selection.
 
 ## The drill contract
 
